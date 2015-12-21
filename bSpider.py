@@ -2,6 +2,7 @@
 import requests
 import re
 import json
+import sys
 
 baseUrl = 'http://www.aizhufu.cn/duanxinku/column/'
 beginUrl = 'http://www.aizhufu.cn/duanxinku/column/77_1/1.html'
@@ -49,9 +50,9 @@ def getAllCatgoryInfo(url):
 
 			dataDict[result2[1]] = subDict
 
-
+	print(sys.path[0])
 	jsonstr = json.dumps(dataDict)
-	f = open('/Users/hp/Documents/工程/Spiders/bSpider/data.json', 'w')
+	f = open(sys.path[0] + '/data.json', 'w')
 	f.write(jsonstr)
 	f.close()
 
