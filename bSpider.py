@@ -7,58 +7,84 @@ import sys
 baseUrl = 'http://www.aizhufu.cn/duanxinku/column/'
 beginUrl = 'http://www.aizhufu.cn/duanxinku/column/77_1/1.html'
 
-def makeCurrentWebPageUrl(categoryId, pageNum):
-	return baseUrl + str(categoryId) + '/' + str(pageNum) + '.html'
-
 category_id = 0
 page_num = 0
 
-def getAllCatgoryInfo(url):
+def makeCurrentWebPageUrl(categoryId, pageNum):
+	return baseUrl + str(categoryId) + '/' + str(pageNum) + '.html'
 
+def readCategoryList():
+	f = open(sys.path[0] + '/data.json', 'r')
 	try:
-		r = requests.get(url)
+		category_jsonstr = f.read()
 	except:
-		print('打开连接错误 --->' + beginUrl)
-		return False
+		print('读取文件出错')
+	finally:
+		f.close()
 
-	r.encoding = 'utf-8'
+	jsonDict = json.loads(category_jsonstr)
+	return jsonDict
 
-	if 'html' not in r.headers['content-type']:
-		return False
+def parseWeb(categoryName,categoryId):
 
-	try: 
-		data = r.text
-	except:
-		return False
+	print(categoryName, categoryId)
 
-	if len(data) <= 0:
-		print('没有数据 --->' + url)
-		return True
+	parseIndex = 0
 
-	dataDict = dict()
+	while True:
+		parseIndex += 1
+		needParseUrl = makeCurrentWebPageUrl(categoryId, parseIndex)
+		print(needParseUrl)
+		try:
+			r = requests.get(needParseUrl)
+		except:
+			print('打开连接错误 --->' + needParseUrl)
+			continue
 
-	linkre2 = re.compile(r'<li><a.*?columnId="(.*?)".*?href="#">(.*?)</a>(.*?)</li>', re.S)
-	for result2 in linkre2.findall(data):
-		# print(result2[0], result2[1])
-		dataDict[result2[1]] = result2[0]
-		if len(result2[2].strip()) > 0:
-			subDict = dict()
-			linkre3 = re.compile(r'<span>-<a href="#".*?columnId="(.*?)".*?>(.*?)</a', re.S)
-			for result3 in linkre3.findall(result2[2]):
-				# print(result3[0], result3[1])
-				subDict[result3[1]] = result3[0]
+		r.encoding = 'utf-8'
 
-			dataDict[result2[1]] = subDict
+		if 'html' not in r.headers['content-type']:
+			continue
 
-	print(sys.path[0])
-	jsonstr = json.dumps(dataDict)
-	f = open(sys.path[0] + '/data.json', 'w')
-	f.write(jsonstr)
-	f.close()
+		if r.status_code == 404:
+			print('链接找不到 --->' + needParseUrl)
+			continue
 
-	print(dataDict)
+		try: 
+			data = r.text
+		except:
+			continue
 
-	return True
+		if len(data) <= 0:
+			print('没有数据 --->' + url)
+			return True
+
+		linkForData = re.compile(r'<meta http-equiv="Content-Type".*?<title>(.*?)</title>', re.S)
+		result = linkForData.findall(data)
+		if '404' in result[0]:
+			print('页面没找到')
+			return True
+
+		dataDict = dict()
+
+		linkre = re.compile(r'<span.*?columnId="%s".*?columnName="%s".*?>(.*?)</span>.*?readContent".*?>(.*?)</span>' % (categoryId, categoryName), re.S)
+		for result in linkre.findall(data):
+			print(result[0], result[1])
 
 
-getAllCatgoryInfo(beginUrl)
+
+def parseDataDict(dataDict):
+	categoryKeys = dataDict.keys()
+	for key in categoryKeys:
+		value = dataDict[key]
+		if isinstance(value, str):
+			print('isStr:' + key)
+			parseWeb(key , value)
+		elif isinstance(value, dict):
+			print('isdict:' + key)
+			parseDataDict(value)
+
+
+categoryDict = readCategoryList()
+parseDataDict(categoryDict)
+
