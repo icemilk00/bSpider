@@ -3,6 +3,7 @@ import requests
 import re
 import json
 import sys
+import time
 
 baseUrl = 'http://www.aizhufu.cn/duanxinku/column/'
 beginUrl = 'http://www.aizhufu.cn/duanxinku/column/77_1/1.html'
@@ -22,8 +23,8 @@ def readCategoryList():
 	finally:
 		f.close()
 
-	jsonDict = json.loads(category_jsonstr)
-	return jsonDict
+	jsonArray = json.loads(category_jsonstr)
+	return jsonArray
 
 def parseWeb(categoryName,categoryId):
 
@@ -65,26 +66,49 @@ def parseWeb(categoryName,categoryId):
 			print('页面没找到')
 			return True
 
-		dataDict = dict()
-
 		linkre = re.compile(r'<span.*?columnId="%s".*?columnName="%s".*?>(.*?)</span>.*?readContent".*?>(.*?)</span>' % (categoryId, categoryName), re.S)
-		for result in linkre.findall(data):
+		for index,result in enumerate(linkre.findall(data)):
+			dataDict = dict()
 			print(result[0], result[1])
+			dataDict['id'] = str(index)
+			dataDict['category_name'] = categoryName
+			dataDict['category_id'] = categoryId
+			dataDict['content'] =  result[1]
+			dataDict['created_at'] = time.time()
+
+			sms_dataArray.append(dataDict)
 
 
+key0 = 'categoryValue'
+key1 = 'categoryName'
 
-def parseDataDict(dataDict):
-	categoryKeys = dataDict.keys()
-	for key in categoryKeys:
-		value = dataDict[key]
+sms_dataArray = list()
+
+def parseJsonData(dataArray):
+	for obj in dataArray:
+		value = obj[key0]
 		if isinstance(value, str):
-			print('isStr:' + key)
-			parseWeb(key , value)
-		elif isinstance(value, dict):
-			print('isdict:' + key)
-			parseDataDict(value)
+			print('isStr:' + obj[key1])
+			parseWeb(obj[key1] , value)
+		elif isinstance(value, list):
+			print('isArray:' + obj[key1])
+			parseJsonData(value)
+
+		return
 
 
-categoryDict = readCategoryList()
-parseDataDict(categoryDict)
+categoryArray = readCategoryList()
+
+try:
+	parseJsonData(categoryArray)
+
+finally:
+	jsonstr = json.dumps(sms_dataArray)
+	f = open(sys.path[0] + '/sms_data.json', 'w')
+	try:
+		f.write(jsonstr)
+	finally:
+		f.close()
+
+
 
