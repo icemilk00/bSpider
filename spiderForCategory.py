@@ -44,8 +44,8 @@ def getAllCatgoryInfo(url):
 			for result3 in linkre3.findall(result2[2]):
 				subDict = dict()
 				# print(result3[0], result3[1])
-				subDict[key0] = result2[0]
-				subDict[key1] = result2[1]
+				subDict[key0] = result3[0]
+				subDict[key1] = result3[1]
 				subArray.append(subDict)
 
 			dataDict[key0] = subArray

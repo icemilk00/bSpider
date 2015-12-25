@@ -69,8 +69,8 @@ def parseWeb(categoryName,categoryId):
 		linkre = re.compile(r'<span.*?columnId="%s".*?columnName="%s".*?>(.*?)</span>.*?readContent".*?>(.*?)</span>' % (categoryId, categoryName), re.S)
 		for index,result in enumerate(linkre.findall(data)):
 			dataDict = dict()
-			print(result[0], result[1])
-			dataDict['id'] = str(index)
+			# print(result[0], result[1])
+			dataDict['id'] = result[0]
 			dataDict['category_name'] = categoryName
 			dataDict['category_id'] = categoryId
 			dataDict['content'] =  result[1]
@@ -94,14 +94,13 @@ def parseJsonData(dataArray):
 			print('isArray:' + obj[key1])
 			parseJsonData(value)
 
-		return
+	return
 
 
 categoryArray = readCategoryList()
 
 try:
 	parseJsonData(categoryArray)
-
 finally:
 	jsonstr = json.dumps(sms_dataArray)
 	f = open(sys.path[0] + '/sms_data.json', 'w')
