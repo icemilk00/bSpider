@@ -28,18 +28,19 @@ def test(loop):
 
 	smsArray = readSmsList()
 
-	i = 0
+	if len(smsArray) > 0:
+		yield from Sms.clearTable()
+	# i = 0
 
 	for obj in smsArray:
 
-		if i > 10:
-			return
+		# if i > 10:
+		# 	return
 
 		sms = Sms(id = obj['id'], category_name = obj['category_name'], category_id = obj['category_id'], content = obj['content'], created_at = obj['created_at'])
-
 		yield from sms.save()
 
-		i+=1
+		# i+=1
 
 #获取runloop
 loop = asyncio.get_event_loop()
