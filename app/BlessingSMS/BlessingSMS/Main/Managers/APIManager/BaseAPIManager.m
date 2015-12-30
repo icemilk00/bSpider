@@ -8,7 +8,7 @@
 
 #import "BaseAPIManager.h"
 
-#define APIURL  @"http://m.mvbox.cn/"
+#define APIURL  @"http://127.0.0.1:9000"
 
 @implementation BaseAPIManager
 
@@ -35,7 +35,7 @@
     if ([method isEqualToString:@"GET"])
     {
         //发送get请求，这里直接把baseurlstr 和 paramstr 拼接即可
-        sendStr = [NSString stringWithFormat:@"%@&%@",baseUrlStr, paramStr];
+        sendStr = [NSString stringWithFormat:@"%@?%@",baseUrlStr, paramStr];
     }
     else if ([method isEqualToString:@"POST"])
     {
@@ -91,26 +91,22 @@
 #pragma mark -- 拼接url --
 -(NSString *)makeRequestBaseUrl:(NSString *)actionId
 {
-    return [NSString stringWithFormat:@"%@sod?%@", APIURL, actionId];
+    return [NSString stringWithFormat:@"%@/api/%@", APIURL, actionId];
 }
 
 @end
 
-@implementation RiHanMaleSingersListAPIManager
+@implementation SMSAPIManager
 
--(void)getDataWithCategoryId:(NSString *)categoryId andLastUpdateTime:(NSString *)lastUpdateTime
+-(void)getSmsWithCategoryId:(NSString *)categoryId andPageNum:(NSInteger)pageNum
 {
     NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=1"];
     
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
-    [paramDic setObject:categoryId forKey:@"categoryID"];
-    [paramDic setObject:@"0" forKey:@"beginIndex"];
-    [paramDic setObject:@"30" forKey:@"rows"];
-    [paramDic setObject:lastUpdateTime forKey:@"newTime"];
+    [paramDic setObject:categoryId forKey:@"categoryId"];
+    [paramDic setObject:[NSNumber numberWithInteger:pageNum] forKey:@"page"];
     
     NSString *paramStr = [paramDic JSONString];
-    
-    paramStr = [NSString stringWithFormat:@"parameter=%@",paramStr];
     
     [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"GET"];
 }

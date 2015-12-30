@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseAPIManager.h"
 
-@interface MainShowViewController : BaseViewController
+@interface MainShowViewController : BaseViewController <APIManagerDelegate>
 
 @end

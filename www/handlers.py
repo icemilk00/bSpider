@@ -37,10 +37,10 @@ def readCategoryList():
 	return jsonArray
 
 #获取categoryID的短信信息，如果categoryId为空默认拉出推荐id的信息
-@get('/api/sms')
+@get('/api/action=1')
 def api_get_sms_list(*, categoryId = None, page='1'):
 
-	if categoryId is None:
+	if categoryId is None or '0':
 		categoryId = configs.categoryId
 
 	page_index = get_page_index(page)
@@ -57,7 +57,7 @@ def api_get_sms_list(*, categoryId = None, page='1'):
 
 
 #获取所有分类信息
-@get('/api/categoryConfig')
+@get('/api/action=2')
 def api_category_conf():
 
 	categoryArray = readCategoryList()

@@ -38,9 +38,9 @@
 
 @end
 
-#pragma mark -- 请求日韩男歌手的API --
-@interface RiHanMaleSingersListAPIManager : BaseAPIManager <APIManager>
+#pragma mark -- 请求分类下短信的API --
+@interface SMSAPIManager : BaseAPIManager <APIManager>
 
--(void)getDataWithCategoryId:(NSString *)categoryId andLastUpdateTime:(NSString *)lastUpdateTime;
+-(void)getSmsWithCategoryId:(NSString *)categoryId andPageNum:(NSInteger)pageNum;
 
 @end

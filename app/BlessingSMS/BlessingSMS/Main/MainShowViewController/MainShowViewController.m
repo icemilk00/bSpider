@@ -10,6 +10,8 @@
 
 @interface MainShowViewController ()
 
+@property (strong, nonatomic) SMSAPIManager *smsApiManager;
+
 @end
 
 @implementation MainShowViewController
@@ -19,6 +21,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.smsApiManager getSmsWithCategoryId:@"0" andPageNum:1];
+    
+}
+
+#pragma mark  RiHanMaleSingersListAPIManager getter
+-(SMSAPIManager *)smsApiManager
+{
+    if (!_smsApiManager) {
+        _smsApiManager = [[SMSAPIManager alloc] init];
+        _smsApiManager.delegate = self;
+    }
+    return _smsApiManager;
+}
+
+#pragma mark -- APIManagerDelegate --
+-(void)APIManagerDidSucess:(BaseAPIManager *)manager
+{
+    
+    if(![manager.retCode isEqualToString:@"1000"])
+    {
+        NSLog(@"出现异常");
+        return;
+    }
+    
+}
+
+-(void)APIManagerDidFailed:(BaseAPIManager *)manager
+{
+//    NSLog(@"请求失败: %@", manager.requestError.description);
 }
 
 - (void)didReceiveMemoryWarning {
