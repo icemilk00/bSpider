@@ -10,7 +10,9 @@ configs = {
 	},
 	'session' :{
 		'secret' : 'Awesome'
-	}
+	},
 
+	#默认拉取的categoryid
+	'categoryId':'121'	
 
 }

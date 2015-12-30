@@ -15,6 +15,7 @@ def makeCurrentWebPageUrl(categoryId, pageNum):
 	return baseUrl + str(categoryId) + '/' + str(pageNum) + '.html'
 
 def readCategoryList():
+	print(sys.path[0])
 	f = open(sys.path[0] + '/data.json', 'r')
 	try:
 		category_jsonstr = f.read()
