@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseAPIManager.h"
 
-@interface DataReformer : NSObject
-
-
+@interface DataReformer : NSObject <ReformerProtocol>
 
 @end
+

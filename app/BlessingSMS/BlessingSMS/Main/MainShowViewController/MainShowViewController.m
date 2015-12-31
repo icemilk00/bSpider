@@ -7,10 +7,16 @@
 //
 
 #import "MainShowViewController.h"
+#import "SMSInfoModel.h"
 
 @interface MainShowViewController ()
-
+{
+    NSMutableArray *_dataSourceArray;
+    NSInteger pageIndex;
+}
 @property (strong, nonatomic) SMSAPIManager *smsApiManager;
+@property (strong, nonatomic) SMSInfoReformer *smsApiReformer;
+@property (strong, nonatomic) UITableView *showTableView;
 
 @end
 
@@ -20,12 +26,83 @@
     self.title = @"推荐";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    pageIndex = 1;
     
-    [self.smsApiManager getSmsWithCategoryId:@"0" andPageNum:1];
+    [self setupDefaultNavWitConfig:@[]];
+    
+    [self arrayInit];
+    [self sendRequest];
+    
+    [self.view addSubview:self.showTableView];
     
 }
 
-#pragma mark  RiHanMaleSingersListAPIManager getter
+-(void)arrayInit
+{
+    _dataSourceArray = [[NSMutableArray alloc] init];
+}
+
+-(void)sendRequest
+{
+    [self.smsApiManager getSmsWithCategoryId:@"0" andPageNum:pageIndex];
+}
+
+#pragma mark - APIManagerDelegate
+-(void)APIManagerDidSucess:(BaseAPIManager *)manager
+{
+    if (manager == self.smsApiManager) [self getSmsSuccessWithManager:manager];
+}
+
+-(void)APIManagerDidFailed:(BaseAPIManager *)manager
+{
+//    NSLog(@"请求失败: %@", manager.requestError.description);
+}
+
+-(void)getSmsSuccessWithManager:(BaseAPIManager *)apiManager
+{
+    if ([apiManager.retCode integerValue] != RTAPIManagerErrorTypeSuccess) {
+        return;
+    }
+    
+    NSArray *dataArray = [apiManager fetchDataWithReformer:self.smsApiReformer];
+    
+    if (pageIndex == 1 && _dataSourceArray.count > 0) {
+        [_dataSourceArray removeAllObjects];
+    }
+    
+    if (_dataSourceArray.count > 0) {
+        pageIndex ++;
+    }
+    
+    [_dataSourceArray addObjectsFromArray:dataArray];
+    [_showTableView reloadData];
+}
+
+#pragma mark - TableViewDelegate and DataSource
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return _dataSourceArray.count;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"smsCell"];
+    }
+    
+    SMSInfoModel *model = _dataSourceArray[indexPath.row];
+    
+    cell.textLabel.text = model.content;
+    return cell;
+}
+
+#pragma mark - getter and setter
 -(SMSAPIManager *)smsApiManager
 {
     if (!_smsApiManager) {
@@ -35,36 +112,29 @@
     return _smsApiManager;
 }
 
-#pragma mark -- APIManagerDelegate --
--(void)APIManagerDidSucess:(BaseAPIManager *)manager
+-(SMSInfoReformer *)smsApiReformer
 {
-    
-    if(![manager.retCode isEqualToString:@"1000"])
-    {
-        NSLog(@"出现异常");
-        return;
+    if (!_smsApiReformer) {
+        _smsApiReformer = [[SMSInfoReformer alloc] init];
     }
-    
+    return _smsApiReformer;
 }
 
--(void)APIManagerDidFailed:(BaseAPIManager *)manager
+-(UITableView *)showTableView
 {
-//    NSLog(@"请求失败: %@", manager.requestError.description);
+    if (!_showTableView) {
+        _showTableView = [[UITableView alloc] init];
+        _showTableView.delegate = self;
+        _showTableView.dataSource = self;
+    }
+    return _showTableView;
 }
 
+#pragma mark - didReceiveMemoryWarning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

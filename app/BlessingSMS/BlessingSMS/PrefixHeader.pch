@@ -27,6 +27,7 @@
 
 #import "RequestManager.h"
 //#import "BaseAPIManager.h"
+#import "DataReformer.h"
 
 #import "JSONKit.h"
 

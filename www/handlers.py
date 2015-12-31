@@ -43,6 +43,9 @@ def api_get_sms_list(*, categoryId = None, page='1'):
 	if categoryId is None or '0':
 		categoryId = configs.categoryId
 
+	if int(page) < 1:
+		page = '1'
+
 	page_index = get_page_index(page)
 	beginIndex = (page_index-1) * 20
 	rows = 20

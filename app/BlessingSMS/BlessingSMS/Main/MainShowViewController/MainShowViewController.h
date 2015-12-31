@@ -9,6 +9,6 @@
 #import "BaseViewController.h"
 #import "BaseAPIManager.h"
 
-@interface MainShowViewController : BaseViewController <APIManagerDelegate>
+@interface MainShowViewController : BaseViewController <APIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end

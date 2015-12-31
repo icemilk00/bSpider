@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC331CB215A23E0E39D8640F /* libPods-BlessingSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2158F987AAE9B81B07FDDEF /* libPods-BlessingSMS.a */; };
+		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
 		E6E6F5391C33BAF4008005EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E6F5381C33BAF4008005EA /* main.m */; };
 		E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E6F53B1C33BAF4008005EA /* AppDelegate.m */; };
 		E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E6F5431C33BAF4008005EA /* Assets.xcassets */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		16718854DCC110FDD0004796 /* Pods-BlessingSMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlessingSMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS.release.xcconfig"; sourceTree = "<group>"; };
 		B0EF774E0AD70F0722E705B3 /* Pods-BlessingSMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlessingSMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS.debug.xcconfig"; sourceTree = "<group>"; };
+		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
+		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
 		E6E6F5341C33BAF4008005EA /* BlessingSMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessingSMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E6F5381C33BAF4008005EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E6F53A1C33BAF4008005EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 			children = (
 				E6E6F5851C33D917008005EA /* MainShowViewController.h */,
 				E6E6F5861C33D917008005EA /* MainShowViewController.m */,
+				E66BD4401C352F57005E3597 /* SMSInfoModel.h */,
+				E66BD4411C352F57005E3597 /* SMSInfoModel.m */,
 			);
 			path = MainShowViewController;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				E6E6F5621C33CF7F008005EA /* DataReformer.m in Sources */,
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
 				E6E6F5751C33D1AF008005EA /* BaseNavController.m in Sources */,
+				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,
 				E6E6F5391C33BAF4008005EA /* main.m in Sources */,
 				E6E6F5611C33CF7F008005EA /* BaseAPIManager.m in Sources */,
 			);

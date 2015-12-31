@@ -27,47 +27,52 @@
     return self;
 }
 
-#pragma mark -- 一般的Get和POST请求发送方法 --
+#pragma mark - 一般的Get和POST请求发送方法
 -(void)sendRequestWithBaseUrlStr:(NSString *)baseUrlStr andParamStr:(NSString *)paramStr andMethod:(NSString *)method
 {
-    
-    NSString *sendStr = nil;
+
     if ([method isEqualToString:@"GET"])
     {
         //发送get请求，这里直接把baseurlstr 和 paramstr 拼接即可
-        sendStr = [NSString stringWithFormat:@"%@?%@",baseUrlStr, paramStr];
+        NSString *sendStr = [NSString stringWithFormat:@"%@?%@",baseUrlStr, paramStr];
+        [self setGETRequestWithUrlStr:sendStr];
     }
     else if ([method isEqualToString:@"POST"])
     {
         //发送post请求，这里发送的url即为baseurlstr，Post体里存放paramstr发送
-        sendStr = baseUrlStr;
+        NSString *sendStr = baseUrlStr;
+        [self setPOSTRequestWithUrlStr:sendStr andParamStr:paramStr];
     }
-    
-    RequestManager *manager = [RequestManager manager];
-    if ([method isEqualToString:@"GET"]) {
-        [manager GET:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
-         {
-             [self requestSucessWithOperation:operation andObject:responseObject];
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error)
-         {
-             [self requestFailedWithError:error];
-         }];
-    }
-    else if ([method isEqualToString:@"POST"])
-    {
-        [manager POST:[sendStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
-        {
-            [self requestSucessWithOperation:operation andObject:responseObject];
-        }
-        failure:^(AFHTTPRequestOperation *operation, NSError *error)
-        {
-            [self requestFailedWithError:error];
-        }];
-    }
+
 }
 
-#pragma mark -- 请求回调成功 --
+-(void)setGETRequestWithUrlStr:(NSString *)urlStr
+{
+    RequestManager *manager = [RequestManager manager];
+    [manager GET:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         [self requestSucessWithOperation:operation andObject:responseObject];
+     }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         [self requestFailedWithError:error];
+     }];
+}
+
+-(void)setPOSTRequestWithUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr
+{
+    RequestManager *manager = [RequestManager manager];
+    [manager GET:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         [self requestSucessWithOperation:operation andObject:responseObject];
+     }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         [self requestFailedWithError:error];
+     }];
+}
+
+#pragma mark - 请求回调成功 和 失败
 -(void)requestSucessWithOperation:(AFHTTPRequestOperation *)operation andObject:(id)responseObject
 {
     self.dataSourceDic = [NSDictionary dictionaryWithDictionary:responseObject];
@@ -78,7 +83,6 @@
     }
 }
 
-#pragma mark -- 请求回调失败 --
 -(void)requestFailedWithError:(NSError *)error
 {
     NSLog(@"Request error : %@", [error description]);
@@ -88,10 +92,16 @@
     }
 }
 
-#pragma mark -- 拼接url --
+#pragma mark - 拼接前缀url
 -(NSString *)makeRequestBaseUrl:(NSString *)actionId
 {
     return [NSString stringWithFormat:@"%@/api/%@", APIURL, actionId];
+}
+
+#pragma mark - DataReformer
+-(id)fetchDataWithReformer:(id <ReformerProtocol>)reformer
+{
+    return [reformer manager:self reformData:self.dataSourceDic];
 }
 
 @end
