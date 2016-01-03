@@ -112,13 +112,32 @@
 {
     NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=1"];
     
-    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
-    [paramDic setObject:categoryId forKey:@"categoryId"];
-    [paramDic setObject:[NSNumber numberWithInteger:pageNum] forKey:@"page"];
+//    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+//    [paramDic setObject:categoryId forKey:@"categoryId"];
+//    [paramDic setObject:[NSNumber numberWithInteger:pageNum] forKey:@"page"];
+//    
+//    NSString *paramStr = [paramDic JSONString];
     
-    NSString *paramStr = [paramDic JSONString];
+    NSString *paramStr = [NSString stringWithFormat:@"categoryId=%@&page=%d",categoryId, (int)pageNum];
     
     [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:paramStr andMethod:@"GET"];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+#pragma mark - 请求分类的API
+@implementation SMSCategoryAPIManager
+
+-(void)getSmsCategory
+{
+    NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=2"];
+    
+    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:nil andMethod:@"GET"];
 }
 
 -(NSString *)apiMethodName

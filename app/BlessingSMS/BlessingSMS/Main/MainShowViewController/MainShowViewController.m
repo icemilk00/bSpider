@@ -8,12 +8,16 @@
 
 #import "MainShowViewController.h"
 #import "SMSInfoModel.h"
+#import "SmsCell.h"
 
 @interface MainShowViewController ()
 {
     NSMutableArray *_dataSourceArray;
     NSInteger pageIndex;
+    
+    NSString *currentCategoryId;
 }
+
 @property (strong, nonatomic) SMSAPIManager *smsApiManager;
 @property (strong, nonatomic) SMSInfoReformer *smsApiReformer;
 @property (strong, nonatomic) UITableView *showTableView;
@@ -23,15 +27,17 @@
 @implementation MainShowViewController
 
 - (void)viewDidLoad {
-    self.title = @"推荐";
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"推荐";
     pageIndex = 1;
+    currentCategoryId = @"0";
     
     [self setupDefaultNavWitConfig:@[]];
     
     [self arrayInit];
-    [self sendRequest];
+    [self loadData];
     
     [self.view addSubview:self.showTableView];
     
@@ -42,9 +48,17 @@
     _dataSourceArray = [[NSMutableArray alloc] init];
 }
 
--(void)sendRequest
+-(void)loadDataWithCategoryId:(NSString *)requestCategoryId
 {
-    [self.smsApiManager getSmsWithCategoryId:@"0" andPageNum:pageIndex];
+    currentCategoryId = requestCategoryId;
+    pageIndex = 1;
+    [self loadData];
+    
+}
+
+-(void)loadData
+{
+    [self.smsApiManager getSmsWithCategoryId:currentCategoryId andPageNum:pageIndex];
 }
 
 #pragma mark - APIManagerDelegate
@@ -56,6 +70,8 @@
 -(void)APIManagerDidFailed:(BaseAPIManager *)manager
 {
 //    NSLog(@"请求失败: %@", manager.requestError.description);
+    [_showTableView.mj_header endRefreshing];
+    [_showTableView.mj_footer endRefreshing];
 }
 
 -(void)getSmsSuccessWithManager:(BaseAPIManager *)apiManager
@@ -70,17 +86,24 @@
         [_dataSourceArray removeAllObjects];
     }
     
-    if (_dataSourceArray.count > 0) {
+    if (dataArray.count > 0) {
         pageIndex ++;
     }
     
     [_dataSourceArray addObjectsFromArray:dataArray];
     [_showTableView reloadData];
+    
+    [_showTableView.mj_header endRefreshing];
+    [_showTableView.mj_footer endRefreshing];
+    
 }
 
 #pragma mark - TableViewDelegate and DataSource
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    
+    NSString *content = ((SMSInfoModel *)(_dataSourceArray[indexPath.row])).content;
+    
+    return [LayerHelper sizeWithContent:content andFont:[UIFont systemFontOfSize:15] andDrawSize:CGSizeMake(SCREEN_WIDTH - 15.0f, MAXFLOAT)].height + 14.0f + 14.0f;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -91,15 +114,29 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
+    SmsCell *cell = (SmsCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"smsCell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsCell" owner:self options:nil] lastObject];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     SMSInfoModel *model = _dataSourceArray[indexPath.row];
     
-    cell.textLabel.text = model.content;
+    cell.contentLabel.text = model.content;
     return cell;
+}
+
+#pragma mark - headRefresh & footRefresh
+-(void)headRefresh
+{
+    pageIndex = 1;
+    [self loadData];
+}
+
+-(void)footRefresh
+{
+    [self loadData];
 }
 
 #pragma mark - getter and setter
@@ -123,9 +160,12 @@
 -(UITableView *)showTableView
 {
     if (!_showTableView) {
-        _showTableView = [[UITableView alloc] init];
+        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
+        
+        _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
+        _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];
     }
     return _showTableView;
 }

@@ -62,3 +62,10 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 -(void)getSmsWithCategoryId:(NSString *)categoryId andPageNum:(NSInteger)pageNum;
 
 @end
+
+#pragma mark - 请求分类的API
+@interface SMSCategoryAPIManager : BaseAPIManager <APIManager>
+
+-(void)getSmsCategory;
+
+@end
