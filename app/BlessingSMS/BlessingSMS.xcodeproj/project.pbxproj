@@ -41,6 +41,7 @@
 		E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */; };
 		E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64052A31C3A845A00598B62 /* SMSSendViewController.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
+		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
 		E6E6F5391C33BAF4008005EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E6F5381C33BAF4008005EA /* main.m */; };
 		E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E6F53B1C33BAF4008005EA /* AppDelegate.m */; };
 		E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E6F5431C33BAF4008005EA /* Assets.xcassets */; };
@@ -123,6 +124,7 @@
 		E64052A31C3A845A00598B62 /* SMSSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSendViewController.m; sourceTree = "<group>"; };
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
 		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
+		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E6E6F5341C33BAF4008005EA /* BlessingSMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessingSMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E6F5381C33BAF4008005EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6E6F53A1C33BAF4008005EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */,
 				CC331CB215A23E0E39D8640F /* libPods-BlessingSMS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +189,7 @@
 		836CEE16F67E49B9FEA15C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E682C6781C3ACF3400499693 /* MessageUI.framework */,
 				F2158F987AAE9B81B07FDDEF /* libPods-BlessingSMS.a */,
 			);
 			name = Frameworks;
@@ -567,6 +571,7 @@
 				TargetAttributes = {
 					E6E6F5331C33BAF4008005EA = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = PL54F4LJG7;
 					};
 				};
 			};
@@ -783,6 +788,7 @@
 			baseConfigurationReference = B0EF774E0AD70F0722E705B3 /* Pods-BlessingSMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 胡 (ABJ5CMP34R)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -797,6 +803,7 @@
 			baseConfigurationReference = 16718854DCC110FDD0004796 /* Pods-BlessingSMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 鹏 胡 (ABJ5CMP34R)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

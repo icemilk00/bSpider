@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SMSInfoModel.h"
+#import <MessageUI/MessageUI.h>
 
-@interface SMSSendViewController : BaseViewController
+@interface SMSSendViewController : BaseViewController <MFMessageComposeViewControllerDelegate>
 
 -(id)initWithSMSModel:(SMSInfoModel *)infoModel;
 
