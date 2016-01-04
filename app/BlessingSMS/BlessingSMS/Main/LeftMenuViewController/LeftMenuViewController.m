@@ -118,6 +118,8 @@
             }
             
             [tableView deleteRowsAtIndexPaths:insertArray withRowAnimation:NO];
+            
+            [(SMSCategoryCell *)[tableView cellForRowAtIndexPath:indexPath] setAccessImageViewType:CategoryCellAccessShowDown];
         }
         else
         {
@@ -132,6 +134,8 @@
             
             [tableView insertRowsAtIndexPaths:insertArray withRowAnimation:NO];
             
+            
+            [(SMSCategoryCell *)[tableView cellForRowAtIndexPath:indexPath] setAccessImageViewType:CategoryCellAccessShowUp];
         }
     }
     else
@@ -139,8 +143,8 @@
         
         MainShowViewController *contentVC = (MainShowViewController *)((UINavigationController *)(self.sideMenuViewController.contentViewController)).topViewController;
         
-        if ([contentVC respondsToSelector:@selector(loadDataWithCategoryId:)]) {
-            [contentVC loadDataWithCategoryId:model.categoryValue];
+        if ([contentVC respondsToSelector:@selector(loadDataWithCategoryId:andCategoryName:)]) {
+            [contentVC loadDataWithCategoryId:model.categoryValue andCategoryName:model.categoryName];
         }
         [self.sideMenuViewController hideMenuViewController];
     }

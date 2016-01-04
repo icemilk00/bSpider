@@ -48,4 +48,23 @@
     return defaultNav;
 }
 
+-(DefaultNavView *)defaultNavView
+{
+    for (UIView *subView in [self.view subviews]) {
+        if ([subView isKindOfClass:[DefaultNavView class]]) {
+            return (DefaultNavView *)subView;
+        }
+    }
+    return nil;
+}
+
+-(void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    DefaultNavView *navView = [self defaultNavView];
+    if (navView) {
+        navView.title = title;
+    }
+}
+
 @end

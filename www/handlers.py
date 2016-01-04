@@ -40,9 +40,11 @@ def readCategoryList():
 @get('/api/action=1')
 def api_get_sms_list(*, categoryId = None, page='1'):
 
-	if categoryId is None or '0':
+	print(categoryId)
+	if categoryId is None or categoryId is '0':
 		categoryId = configs.categoryId
 
+	print(categoryId)
 	if int(page) < 1:
 		page = '1'
 
@@ -50,6 +52,7 @@ def api_get_sms_list(*, categoryId = None, page='1'):
 	beginIndex = (page_index-1) * 20
 	rows = 20
 
+	print(categoryId)
 	sms = yield from Sms.findAll(where= 'category_id = ' + str(categoryId) ,orderBy='id asc', limit=(beginIndex, rows))
 
 	retCode = 1000

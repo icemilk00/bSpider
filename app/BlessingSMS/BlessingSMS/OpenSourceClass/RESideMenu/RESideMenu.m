@@ -100,7 +100,7 @@
     _parallaxContentMinimumRelativeValue = -25;
     _parallaxContentMaximumRelativeValue = 25;
     
-    _bouncesHorizontally = YES;
+    _bouncesHorizontally = NO;
     
     _panGestureEnabled = YES;
     _panFromEdge = YES;
@@ -112,8 +112,8 @@
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
     _contentViewFadeOutAlpha = 1.0f;
-    _contentViewInLandscapeOffsetCenterX = 30.f;
-    _contentViewInPortraitOffsetCenterX  = 30.f;
+    _contentViewInLandscapeOffsetCenterX = 60.f;
+    _contentViewInPortraitOffsetCenterX  = 60.f;
     _contentViewScaleValue = 0.7f;
 }
 

@@ -11,6 +11,6 @@
 
 @interface MainShowViewController : BaseViewController <APIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
--(void)loadDataWithCategoryId:(NSString *)requestCategoryId;
+-(void)loadDataWithCategoryId:(NSString *)requestCategoryId andCategoryName:(NSString *)categoryName;
 
 @end

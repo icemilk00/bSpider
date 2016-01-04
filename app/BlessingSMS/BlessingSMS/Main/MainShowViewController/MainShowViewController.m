@@ -9,6 +9,7 @@
 #import "MainShowViewController.h"
 #import "SMSInfoModel.h"
 #import "SmsCell.h"
+#import "SMSSendViewController.h"
 
 @interface MainShowViewController ()
 {
@@ -46,6 +47,12 @@
 -(void)arrayInit
 {
     _dataSourceArray = [[NSMutableArray alloc] init];
+}
+
+-(void)loadDataWithCategoryId:(NSString *)requestCategoryId andCategoryName:(NSString *)categoryName
+{
+    self.title = categoryName;
+    [self loadDataWithCategoryId:requestCategoryId];
 }
 
 -(void)loadDataWithCategoryId:(NSString *)requestCategoryId
@@ -125,6 +132,14 @@
     
     cell.contentLabel.text = model.content;
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SMSInfoModel *infoModel = _dataSourceArray[indexPath.row];
+    
+    SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
+    [self.navigationController pushViewController:smsSendVC animated:YES];
 }
 
 #pragma mark - headRefresh & footRefresh

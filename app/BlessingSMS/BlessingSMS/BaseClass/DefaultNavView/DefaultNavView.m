@@ -103,7 +103,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 -(void)leftButtonClicked:(UIButton *)sender
 {
     NSLog(@"NavLeftButtonClicked ==");
-    if (self.defaultNavDelegate && [self.defaultNavDelegate respondsToSelector:@selector(leftButtonClicked:)]) {
+    if (self.defaultNavDelegate && [self.defaultNavDelegate respondsToSelector:@selector(navLeftButtonClicked:)]) {
         [self.defaultNavDelegate navLeftButtonClicked:sender];
     }
 }
@@ -132,7 +132,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 -(void)rightButtonClicked:(UIButton *)sender
 {
     NSLog(@"NavRightButtonClicked ==");
-    if (self.defaultNavDelegate && [self.defaultNavDelegate respondsToSelector:@selector(rightButtonClicked:)]) {
+    if (self.defaultNavDelegate && [self.defaultNavDelegate respondsToSelector:@selector(navRightButtonClicked:)]) {
         [self.defaultNavDelegate navRightButtonClicked:sender];
     }
 }
