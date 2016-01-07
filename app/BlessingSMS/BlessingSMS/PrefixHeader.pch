@@ -32,6 +32,7 @@
 #import "DataReformer.h"
 
 #import "LayerHelper.h"
+#import "AddressBookHelper.h"
 
 #import "JSONKit.h"
 

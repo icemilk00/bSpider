@@ -132,7 +132,7 @@ def init(loop):
 	#添加请求的handlers，即各请求相对应的处理函数
 	add_routes(app, 'handlers')
 	#启动
-	srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9000)
+	srv = yield from loop.create_server(app.make_handler(), '192.168.14.36', 9000)
 	logging.info('server started at http://127.0.0.1:9000...')
 	return srv
 

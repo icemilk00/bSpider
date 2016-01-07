@@ -8,7 +8,7 @@
 
 #import "BaseAPIManager.h"
 
-#define APIURL  @"http://127.0.0.1:9000"
+#define APIURL  @"http://192.168.14.36:9000"
 
 @implementation BaseAPIManager
 

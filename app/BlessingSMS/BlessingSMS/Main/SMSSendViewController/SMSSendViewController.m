@@ -7,7 +7,7 @@
 //
 
 #import "SMSSendViewController.h"
-
+#import "AddressBookViewController.h"
 
 @interface SMSSendViewController ()
 {
@@ -59,49 +59,10 @@
 #pragma mark - button action
 
 -(void)smsSend{
-
-    Class messageClass = (NSClassFromString(@"MFMessageComposeViewController"));
-    if (messageClass != nil) {
-        // Check whether the current device is configured for sending SMS messages
-        if ([messageClass canSendText]) {
-            [self displaySMSComposerSheet];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"该设备不支持短信功能" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }
-    else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"ios版本太低" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-}
-
--(void)displaySMSComposerSheet
-{
-    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
-    picker.messageComposeDelegate = self;
     
-    picker.body = _smsTextView.text;
+    AddressBookViewController *addressVC = [[AddressBookViewController alloc] initWithSmsContentStr:_smsTextView.text];
+    [self.navigationController presentViewController:addressVC animated:YES completion:nil];
 
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller
-                 didFinishWithResult:(MessageComposeResult)result {
-    
-    switch (result)
-    {
-        case MessageComposeResultCancelled:
-            break;
-        case MessageComposeResultSent:
-            break;
-        case MessageComposeResultFailed:
-            break;
-        default:
-            break;
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - setter and setter
