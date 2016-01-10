@@ -17,5 +17,6 @@
 @interface BaseViewController (SetupDefaultNavView) <DefaultNavDelegate>
 
 -(DefaultNavView *)setupDefaultNavWitConfig:(NSArray *)array;
+-(DefaultNavView *)defaultNavView;
 
 @end
