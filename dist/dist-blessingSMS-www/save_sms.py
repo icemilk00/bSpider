@@ -7,8 +7,7 @@ import orm, asyncio
 from models import Sms
 
 def readSmsList():
-	print(sys.path[0])
-	f = open(sys.path[0] + '/dataSource/sms_data.json', 'r')
+	f = open(sys.path[0] + '/../sms_data.json', 'r')
 	try:
 		sms_jsonstr = f.read()
 	except:
@@ -25,7 +24,7 @@ def test(loop):
 	#创建数据库连接池，用户名：www-data, 密码：www-data ,访问的数据库为：awesome
 	#在这之前必须现在mysql里创建好awesome数据库，以及对应的表，否则会显示can't connect
 	#可以通过命令行输入：mysql -u root -p <schema.sql ，来执行schema.sql脚本来实现数据库的初始化，schema.sql和本文件在同一目录下
-	yield from orm.create_pool(loop = loop, user = 'blessingSMS-hp', password='blessingSMS-hp', db='blessingSMS')
+	yield from orm.create_pool(loop = loop, user = 'www-data', password='www-data', db='blessingSMS')
 
 	smsArray = readSmsList()
 

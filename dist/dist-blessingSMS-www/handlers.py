@@ -25,7 +25,7 @@ def get_page_index(page_str):
 #获取所有分类信息的数组
 def readCategoryList():
 	print(sys.path[0])
-	f = open(sys.path[0] + '/dataSource/data.json', 'r')
+	f = open(sys.path[0] + '/../dataSource/data.json', 'r')
 	try:
 		category_jsonstr = f.read()
 	except:

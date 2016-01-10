@@ -4,12 +4,12 @@ configs = {
 	'db' : {
 		'host' : '127.0.0.1',
 		'port' : 3306,
-		'user' : 'blessingSMS-hp',
-		'password' : 'blessingSMS-hp',
+		'user' : 'www-data',
+		'password' : 'www-data',
 		'db' : 'blessingSMS'
 	},
 	'session' :{
-		'secret' : 'blessingSMS'
+		'secret' : 'Awesome'
 	},
 
 	#默认拉取的categoryid
