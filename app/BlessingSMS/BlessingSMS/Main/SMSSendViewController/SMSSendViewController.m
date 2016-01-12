@@ -80,7 +80,7 @@
 -(UIButton *)smsSendButton
 {
     if (!_smsSendButton) {
-        _smsSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_smsTextView.frame.origin.x, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
+        _smsSendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 10.0f - 34.0f, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
         _smsSendButton.backgroundColor = [UIColor blueColor];
         [_smsSendButton addTarget:self action:@selector(smsSend) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -90,7 +90,7 @@
 -(UIButton *)weixinSendButton
 {
     if (!_weixinSendButton) {
-        _weixinSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_smsSendButton.frame.origin.x + _smsSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
+        _weixinSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_smsTextView.frame.origin.x, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
         _weixinSendButton.backgroundColor = [UIColor blueColor];
     }
     return _weixinSendButton;

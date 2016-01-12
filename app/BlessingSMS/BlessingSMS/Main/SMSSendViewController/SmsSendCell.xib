@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,29 +21,36 @@
                             <constraint firstAttribute="height" constant="25" id="tvB-Ys-R60"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-Mh-s8J">
-                        <rect key="frame" x="8" y="19" width="254" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldc-Mh-s8J">
+                        <rect key="frame" x="8" y="10" width="254" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="uve-ep-9vm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12222222222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVO-cl-HPC">
+                        <rect key="frame" x="8" y="34" width="204" height="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="P6d-DJ-lUP" secondAttribute="trailing" constant="16" id="1Hr-yu-jYr"/>
                     <constraint firstItem="ldc-Mh-s8J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="DzW-4F-2ub"/>
-                    <constraint firstItem="ldc-Mh-s8J" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FbC-Ja-kAB"/>
                     <constraint firstItem="P6d-DJ-lUP" firstAttribute="leading" secondItem="ldc-Mh-s8J" secondAttribute="trailing" constant="17" id="cq1-74-RgJ"/>
+                    <constraint firstItem="ldc-Mh-s8J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uDu-pN-DBu"/>
                     <constraint firstItem="P6d-DJ-lUP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yhO-4Z-TF6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="selectImageView" destination="P6d-DJ-lUP" id="j7s-hb-8lG"/>
+                <outlet property="showPhoneLabel" destination="AVO-cl-HPC" id="nI5-pn-R4x"/>
                 <outlet property="showTitleLabel" destination="ldc-Mh-s8J" id="Y74-dC-6Ep"/>
             </connections>
-            <point key="canvasLocation" x="275" y="344"/>
+            <point key="canvasLocation" x="398" y="125"/>
         </tableViewCell>
     </objects>
 </document>

@@ -42,7 +42,8 @@
 
 -(void)updateUIWithData:(AddressBookModel *)model
 {
-    self.showTitleLabel.text = [NSString stringWithFormat:@"%@ (%@)", model.name, model.phoneNum];
+    self.showTitleLabel.text = model.name;
+    self.showPhoneLabel.text = [NSString stringWithFormat:@"电话: %@", model.phoneNum ];
     
     [self.selectImageView setImage:model.isSelected == YES ? [UIImage imageNamed:@"cell_selected"] : [UIImage imageNamed:@"cell_unSelected"]];
 

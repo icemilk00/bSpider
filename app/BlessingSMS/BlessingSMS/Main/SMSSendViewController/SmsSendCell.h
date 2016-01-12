@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
 @property (weak, nonatomic) IBOutlet UILabel *showTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *showPhoneLabel;
 
 -(void)sendSelectedWithModel:(AddressBookModel *)model;
 -(void)updateUIWithData:(AddressBookModel *)model;

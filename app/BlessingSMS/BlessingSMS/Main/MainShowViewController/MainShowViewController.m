@@ -35,7 +35,9 @@
     pageIndex = 1;
     currentCategoryId = @"0";
     
-    [self setupDefaultNavWitConfig:@[]];
+    [self setupDefaultNavWitConfig:@[KeyLeftButton]];
+    [self.defaultNavView.leftButton setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
+    self.defaultNavView.titleLabel.textColor = [UIColor whiteColor];
     
     [self arrayInit];
     [self loadData];
@@ -142,6 +144,18 @@
     [self.navigationController pushViewController:smsSendVC animated:YES];
 }
 
+#pragma mark - leftAction
+-(void)navLeftButtonClicked:(UIButton *)sender
+{
+    if (self.sideMenuViewController.visible) {
+        [self.sideMenuViewController hideMenuViewController];
+    }
+    else
+    {
+        [self.sideMenuViewController presentLeftMenuViewController];
+    }
+}
+
 #pragma mark - headRefresh & footRefresh
 -(void)headRefresh
 {
@@ -178,6 +192,7 @@
         _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
+        _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
         _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];

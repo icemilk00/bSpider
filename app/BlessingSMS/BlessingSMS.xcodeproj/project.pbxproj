@@ -33,6 +33,12 @@
 		E60F10571C3971CE006B62CC /* SMSCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10561C3971CE006B62CC /* SMSCategoryModel.m */; };
 		E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10591C397939006B62CC /* SMSCategoryCell.m */; };
 		E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60F105A1C397939006B62CC /* SMSCategoryCell.xib */; };
+		E62C846A1C4406F400FD29D5 /* navigationbarBg_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C84681C4406F400FD29D5 /* navigationbarBg_red@2x.png */; };
+		E62C846B1C4406F400FD29D5 /* navigationbarBg_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C84691C4406F400FD29D5 /* navigationbarBg_red@3x.png */; };
+		E62C846E1C44087800FD29D5 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C846C1C44087800FD29D5 /* menu@2x.png */; };
+		E62C846F1C44087800FD29D5 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C846D1C44087800FD29D5 /* menu@3x.png */; };
+		E62C84721C44122300FD29D5 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C84701C44122300FD29D5 /* arrow@2x.png */; };
+		E62C84731C44122300FD29D5 /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62C84711C44122300FD29D5 /* arrow@3x.png */; };
 		E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E63539F71C3E06FE005E3A2F /* AddressBookHelper.m */; };
 		E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63539FB1C3E0B1F005E3A2F /* AddressBookViewController.m */; };
 		E6353A001C3E1418005E3A2F /* SmsSendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E63539FE1C3E1418005E3A2F /* SmsSendCell.m */; };
@@ -122,6 +128,12 @@
 		E60F10581C397939006B62CC /* SMSCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCategoryCell.h; sourceTree = "<group>"; };
 		E60F10591C397939006B62CC /* SMSCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCategoryCell.m; sourceTree = "<group>"; };
 		E60F105A1C397939006B62CC /* SMSCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMSCategoryCell.xib; sourceTree = "<group>"; };
+		E62C84681C4406F400FD29D5 /* navigationbarBg_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbarBg_red@2x.png"; sourceTree = "<group>"; };
+		E62C84691C4406F400FD29D5 /* navigationbarBg_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbarBg_red@3x.png"; sourceTree = "<group>"; };
+		E62C846C1C44087800FD29D5 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		E62C846D1C44087800FD29D5 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@3x.png"; sourceTree = "<group>"; };
+		E62C84701C44122300FD29D5 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		E62C84711C44122300FD29D5 /* arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
 		E63539F61C3E06FE005E3A2F /* AddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookHelper.h; sourceTree = "<group>"; };
 		E63539F71C3E06FE005E3A2F /* AddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookHelper.m; sourceTree = "<group>"; };
 		E63539FA1C3E0B1F005E3A2F /* AddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookViewController.h; sourceTree = "<group>"; };
@@ -576,6 +588,12 @@
 		E6E6F58F1C33DDC3008005EA /* DefaultNav */ = {
 			isa = PBXGroup;
 			children = (
+				E62C84701C44122300FD29D5 /* arrow@2x.png */,
+				E62C84711C44122300FD29D5 /* arrow@3x.png */,
+				E62C846C1C44087800FD29D5 /* menu@2x.png */,
+				E62C846D1C44087800FD29D5 /* menu@3x.png */,
+				E62C84681C4406F400FD29D5 /* navigationbarBg_red@2x.png */,
+				E62C84691C4406F400FD29D5 /* navigationbarBg_red@3x.png */,
 				E6E6F5901C33DDC3008005EA /* navigationbar_back@2x.png */,
 				E6E6F5911C33DDC3008005EA /* navigationbar_back@3x.png */,
 				E6E6F5921C33DDC3008005EA /* navigationbarBg@2x.png */,
@@ -644,16 +662,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62C846F1C44087800FD29D5 /* menu@3x.png in Resources */,
 				E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */,
 				E6353A091C3E1585005E3A2F /* cell_unSelected@3x.png in Resources */,
 				E640529E1C3A7D5900598B62 /* cell_arrow_down@3x.png in Resources */,
 				E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */,
 				E600ED811C36994500AB6916 /* MJRefresh.bundle in Resources */,
+				E62C84731C44122300FD29D5 /* arrow@3x.png in Resources */,
+				E62C846B1C4406F400FD29D5 /* navigationbarBg_red@3x.png in Resources */,
 				E6E6F5961C33DDC3008005EA /* navigationbarBg@2x.png in Resources */,
 				E6E6F5951C33DDC3008005EA /* navigationbar_back@3x.png in Resources */,
 				E6353A081C3E1585005E3A2F /* cell_unSelected@2x.png in Resources */,
 				E64052971C3A6F9700598B62 /* cell_arrow@2x.png in Resources */,
 				E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */,
+				E62C846E1C44087800FD29D5 /* menu@2x.png in Resources */,
 				E64052981C3A6F9700598B62 /* cell_arrow@3x.png in Resources */,
 				E6353A061C3E1585005E3A2F /* cell_selected@2x.png in Resources */,
 				E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */,
@@ -661,8 +683,10 @@
 				E6353A071C3E1585005E3A2F /* cell_selected@3x.png in Resources */,
 				E6E6F5941C33DDC3008005EA /* navigationbar_back@2x.png in Resources */,
 				E6353A011C3E1418005E3A2F /* SmsSendCell.xib in Resources */,
+				E62C84721C44122300FD29D5 /* arrow@2x.png in Resources */,
 				E6E6F5971C33DDC3008005EA /* navigationbarBg@3x.png in Resources */,
 				E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */,
+				E62C846A1C4406F400FD29D5 /* navigationbarBg_red@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

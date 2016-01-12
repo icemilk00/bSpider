@@ -50,7 +50,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 {
     if (!_bgImageView) {
         self.bgImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        [_bgImageView setImage:[UIImage imageNamed:@"navigationbarBg"]];
+        [_bgImageView setImage:[UIImage imageNamed:@"navigationbarBg_red"]];
         _bgImageView.backgroundColor = [UIColor clearColor];
     }
     return _bgImageView;
@@ -95,7 +95,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 -(void)setupLeftButton
 {
     self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 20.0f, 44.0f, 44.0f)];
-    [self.leftButton setImage:[UIImage imageNamed:@"navigationbar_back"] forState:UIControlStateNormal];
+    [self.leftButton setImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftButton];
 }
