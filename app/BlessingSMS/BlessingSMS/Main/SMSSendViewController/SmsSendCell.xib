@@ -50,7 +50,7 @@
                 <outlet property="showPhoneLabel" destination="AVO-cl-HPC" id="nI5-pn-R4x"/>
                 <outlet property="showTitleLabel" destination="ldc-Mh-s8J" id="Y74-dC-6Ep"/>
             </connections>
-            <point key="canvasLocation" x="398" y="125"/>
+            <point key="canvasLocation" x="358" y="151"/>
         </tableViewCell>
     </objects>
 </document>

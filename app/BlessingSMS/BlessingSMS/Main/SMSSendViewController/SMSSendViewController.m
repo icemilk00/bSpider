@@ -20,6 +20,7 @@
 @property (nonatomic ,strong) UIButton *weixinZoneSendButton;
 @property (nonatomic ,strong) UIButton *qqSendButton;
 @property (nonatomic ,strong) UIButton *weiboSendButton;
+@property (nonatomic ,strong) UIImageView *smsBgImageView;
 
 @end
 
@@ -42,6 +43,7 @@
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     
+    [self.view addSubview:self.smsBgImageView];
     [self.view addSubview:self.smsTextView];
     [self.view addSubview:self.smsSendButton];
     [self.view addSubview:self.weixinSendButton];
@@ -66,13 +68,23 @@
 }
 
 #pragma mark - setter and setter
+-(UIImageView *)smsBgImageView
+{
+    if (!_smsBgImageView) {
+        _smsBgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5.0f, NAVIGATIONBAR_HEIGHT + 20.0f, SCREEN_WIDTH - 10.0f, 190.0f)];
+        _smsBgImageView.image = [UIImage imageNamed:@"sms_bg"];
+    }
+    return _smsBgImageView;
+}
+
 -(UITextView *)smsTextView
 {
     if (!_smsTextView) {
-        _smsTextView = [[UITextView alloc] initWithFrame:CGRectMake(10.0f, NAVIGATIONBAR_HEIGHT + 30.0f, SCREEN_WIDTH - 20.0f, 160.0f)];
+        _smsTextView = [[UITextView alloc] initWithFrame:CGRectMake(20.0f, NAVIGATIONBAR_HEIGHT + 75.0f, SCREEN_WIDTH - 40.0f, 135.0f)];
         _smsTextView.text = _currentShowSMSInfoModel.content;
-        _smsTextView.backgroundColor = [UIColor redColor];
-        _smsTextView.font = [UIFont systemFontOfSize:16];
+        _smsTextView.backgroundColor = [UIColor clearColor];
+        _smsTextView.font = [UIFont systemFontOfSize:14];
+        [_smsTextView becomeFirstResponder];
     }
     return _smsTextView;
 }
@@ -81,7 +93,7 @@
 {
     if (!_smsSendButton) {
         _smsSendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 10.0f - 34.0f, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
-        _smsSendButton.backgroundColor = [UIColor blueColor];
+        [_smsSendButton setImage:[UIImage imageNamed:@"send"] forState:UIControlStateNormal];
         [_smsSendButton addTarget:self action:@selector(smsSend) forControlEvents:UIControlEventTouchUpInside];
     }
     return _smsSendButton;
@@ -91,7 +103,7 @@
 {
     if (!_weixinSendButton) {
         _weixinSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_smsTextView.frame.origin.x, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
-        _weixinSendButton.backgroundColor = [UIColor blueColor];
+        [_weixinSendButton setImage:[UIImage imageNamed:@"weixin"] forState:UIControlStateNormal];
     }
     return _weixinSendButton;
 }
@@ -100,7 +112,7 @@
 {
     if (!_weixinZoneSendButton) {
         _weixinZoneSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_weixinSendButton.frame.origin.x + _weixinSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
-        _weixinZoneSendButton.backgroundColor = [UIColor blueColor];
+        [_weixinZoneSendButton setImage:[UIImage imageNamed:@"weixinZone"] forState:UIControlStateNormal];
     }
     return _weixinZoneSendButton;
 }
@@ -109,7 +121,7 @@
 {
     if (!_qqSendButton) {
         _qqSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_weixinZoneSendButton.frame.origin.x + _weixinZoneSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
-        _qqSendButton.backgroundColor = [UIColor blueColor];
+        [_qqSendButton setImage:[UIImage imageNamed:@"qq"] forState:UIControlStateNormal];
     }
     return _qqSendButton;
 }
@@ -118,7 +130,7 @@
 {
     if (!_weiboSendButton) {
         _weiboSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_qqSendButton.frame.origin.x + _qqSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
-        _weiboSendButton.backgroundColor = [UIColor blueColor];
+        [_weiboSendButton setImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
     }
     return _weiboSendButton;
 }

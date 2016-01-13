@@ -12,9 +12,11 @@
 
 - (void)awakeFromNib {
     // Initialization code
-//    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, SCREEN_WIDTH, self.frame.size.height);
-    
-    [self layoutIfNeeded];
+    self.bgImageView.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.bgImageView.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    self.bgImageView.layer.shadowOpacity = 0.8;
+    self.bgImageView.layer.shadowRadius = 1;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

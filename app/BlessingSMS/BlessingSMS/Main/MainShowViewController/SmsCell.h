@@ -11,4 +11,5 @@
 @interface SmsCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *bgImageView;
 @end

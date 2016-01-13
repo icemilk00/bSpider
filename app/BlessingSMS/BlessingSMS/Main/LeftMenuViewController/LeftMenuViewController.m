@@ -26,10 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithRed:246/255.0f green:56/255.0f blue:56/255.0f alpha:1];
     
     [self arrayInit];
     [self loadData];
     
+//    [self setupBgView];
     [self.view addSubview:self.leftTableView];
 }
 
@@ -89,7 +91,8 @@
     SMSCategoryCell *cell = (SMSCategoryCell*)[tableView dequeueReusableCellWithIdentifier:@"SMSCategoryCell"];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SMSCategoryCell" owner:self options:nil] lastObject];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.backgroundColor = [UIColor clearColor];
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
@@ -189,9 +192,18 @@
         _leftTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
+        _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _leftTableView.backgroundColor = [UIColor clearColor];
 
     }
     return _leftTableView;
+}
+
+-(void)setupBgView
+{
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    bgImageView.image = [UIImage imageNamed:@"left_bg"];
+    [self.view addSubview:bgImageView];
 }
 
 - (void)didReceiveMemoryWarning {

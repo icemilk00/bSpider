@@ -37,7 +37,7 @@
     self.title = @"选择联系人";
     [self setupDefaultNavWitConfig:@[KeyLeftButton, KeyRightButton]];
     [[self defaultNavView].rightButton setTitle:@"发送" forState:UIControlStateNormal];
-    [[self defaultNavView].rightButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    
     
     _allAddressBookArray = [[NSMutableArray alloc] init];
     _selectArray = [[NSMutableArray alloc] init];

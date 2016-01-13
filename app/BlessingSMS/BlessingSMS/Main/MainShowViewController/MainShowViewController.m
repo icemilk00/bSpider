@@ -37,7 +37,6 @@
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     [self.defaultNavView.leftButton setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
-    self.defaultNavView.titleLabel.textColor = [UIColor whiteColor];
     
     [self arrayInit];
     [self loadData];
@@ -126,7 +125,7 @@
     SmsCell *cell = (SmsCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsCell" owner:self options:nil] lastObject];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
@@ -193,6 +192,7 @@
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
         _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _showTableView.backgroundColor = [UIColor colorWithRed:222/255.0f green:222/255.0f blue:222/255.0f alpha:1];
         
         _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
         _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];

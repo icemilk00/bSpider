@@ -40,7 +40,8 @@ NSString * const KeyRightButton = @"KeyRightButton";
         self.titleLabel = [[UILabel alloc] initWithFrame:NAV_TITLE_LABEL_FRAME];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.textColor = [UIColor colorWithRed:38.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1];
+//        _titleLabel.textColor = [UIColor colorWithRed:38.0f/255.0f green:38.0f/255.0f blue:38.0f/255.0f alpha:1];
+        _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.font = [UIFont systemFontOfSize:17];
     }
     return _titleLabel;
@@ -126,6 +127,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 {
     self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 44.0f, 20.0f, 44.0f, 44.0f)];
     [self.rightButton addTarget:self action:@selector(rightButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+   [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self addSubview:self.rightButton];
 }
 
