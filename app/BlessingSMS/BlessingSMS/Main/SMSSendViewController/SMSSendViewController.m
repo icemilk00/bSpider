@@ -67,6 +67,26 @@
 
 }
 
+-(void)weixinSend
+{
+    [[ShareManager sharedInstance] shareToWeixinWithText:_smsTextView.text];
+}
+
+-(void)weixinZoneSend
+{
+    [[ShareManager sharedInstance] shareToWeixinZoneWithText:_smsTextView.text];
+}
+
+-(void)qqSend
+{
+    [[ShareManager sharedInstance] shareToQQWithText:_smsTextView.text];
+}
+
+-(void)weiboSend
+{
+    [[ShareManager sharedInstance] shareToWeiboWithText:_smsTextView.text];
+}
+
 #pragma mark - setter and setter
 -(UIImageView *)smsBgImageView
 {
@@ -104,6 +124,7 @@
     if (!_weixinSendButton) {
         _weixinSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_smsTextView.frame.origin.x, _smsTextView.frame.origin.y + _smsTextView.frame.size.height + 10.0f, 34.0f, 34.0f)];
         [_weixinSendButton setImage:[UIImage imageNamed:@"weixin"] forState:UIControlStateNormal];
+        [_weixinSendButton addTarget:self action:@selector(weixinSend) forControlEvents:UIControlEventTouchUpInside];
     }
     return _weixinSendButton;
 }
@@ -113,6 +134,7 @@
     if (!_weixinZoneSendButton) {
         _weixinZoneSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_weixinSendButton.frame.origin.x + _weixinSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
         [_weixinZoneSendButton setImage:[UIImage imageNamed:@"weixinZone"] forState:UIControlStateNormal];
+        [_weixinZoneSendButton addTarget:self action:@selector(weixinZoneSend) forControlEvents:UIControlEventTouchUpInside];
     }
     return _weixinZoneSendButton;
 }
@@ -122,6 +144,7 @@
     if (!_qqSendButton) {
         _qqSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_weixinZoneSendButton.frame.origin.x + _weixinZoneSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
         [_qqSendButton setImage:[UIImage imageNamed:@"qq"] forState:UIControlStateNormal];
+        [_qqSendButton addTarget:self action:@selector(qqSend) forControlEvents:UIControlEventTouchUpInside];
     }
     return _qqSendButton;
 }
@@ -131,6 +154,7 @@
     if (!_weiboSendButton) {
         _weiboSendButton = [[UIButton alloc] initWithFrame:CGRectMake(_qqSendButton.frame.origin.x + _qqSendButton.frame.size.width + 10.0f, _smsSendButton.frame.origin.y, 34.0f, 34.0f)];
         [_weiboSendButton setImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
+        [_weiboSendButton addTarget:self action:@selector(weiboSend) forControlEvents:UIControlEventTouchUpInside];
     }
     return _weiboSendButton;
 }

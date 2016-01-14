@@ -19,6 +19,8 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [[ShareManager sharedInstance] shareInit];
+    
     BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:[[MainShowViewController alloc] init]];
     UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
     
@@ -38,6 +40,19 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+#pragma mark -  Open Platform
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    return [[ShareManager sharedInstance] handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    
+    return [[ShareManager sharedInstance] handleOpenURL:url];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
