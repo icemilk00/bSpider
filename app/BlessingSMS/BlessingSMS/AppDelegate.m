@@ -20,6 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [[ShareManager sharedInstance] shareInit];
+    [MobClick startWithAppkey:UMAPPKEY reportPolicy:BATCH   channelId:@"AppStore"];
     
     BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:[[MainShowViewController alloc] init]];
     UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];

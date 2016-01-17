@@ -139,6 +139,8 @@
 {
     SMSInfoModel *infoModel = _dataSourceArray[indexPath.row];
     
+    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
+    
     SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
     [self.navigationController pushViewController:smsSendVC animated:YES];
 }

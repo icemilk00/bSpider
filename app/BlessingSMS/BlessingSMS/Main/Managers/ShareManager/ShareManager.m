@@ -169,6 +169,7 @@ static ShareManager *shareManager = nil;
 {
     if (![WXApi isWXAppInstalled]) {
         //您没安装微信客户端
+        [MBProgressHUD showHUDWithTitle:@"您没安装微信客户端"];
         return;
     }
     
@@ -187,11 +188,13 @@ static ShareManager *shareManager = nil;
     
     if (![WeiboSDK isWeiboAppInstalled]) {
         //您没安装微博客户端
+        [MBProgressHUD showHUDWithTitle:@"您没安装微博客户端"];
         return;
     }
     
     if (![WeiboSDK isCanShareInWeiboAPP]) {
         //您不能分享
+        [MBProgressHUD showHUDWithTitle:@"您不能分享"];
         return;
     }
     
@@ -212,6 +215,8 @@ static ShareManager *shareManager = nil;
     if(![QQApiInterface isQQInstalled])
     {
         //您没安装QQ客户端
+        [MBProgressHUD showHUDWithTitle:@"您没安装QQ客户端"];
+        
         return;
     }
     

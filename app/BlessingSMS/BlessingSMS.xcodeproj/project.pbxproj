@@ -70,6 +70,10 @@
 		E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529B1C3A7D5900598B62 /* cell_arrow_up@2x.png */; };
 		E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */; };
 		E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64052A31C3A845A00598B62 /* SMSSendViewController.m */; };
+		E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624191C4A70A6002DCE76 /* MBProgressHUD.m */; };
+		E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */; };
+		E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65624201C4AA071002DCE76 /* libMobClickLibrary.a */; };
+		E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624261C4AA36C002DCE76 /* AnalyticsManager.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
 		E6A080AB1C47EE41000E67CC /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A080AA1C47EE41000E67CC /* ShareManager.m */; };
@@ -200,6 +204,15 @@
 		E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow_up@3x.png"; sourceTree = "<group>"; };
 		E64052A21C3A845A00598B62 /* SMSSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSendViewController.h; sourceTree = "<group>"; };
 		E64052A31C3A845A00598B62 /* SMSSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSendViewController.m; sourceTree = "<group>"; };
+		E65624181C4A70A6002DCE76 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E65624191C4A70A6002DCE76 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		E656241C1C4A721E002DCE76 /* MBProgressHUD+EasyShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+EasyShow.h"; sourceTree = "<group>"; };
+		E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+EasyShow.m"; sourceTree = "<group>"; };
+		E65624201C4AA071002DCE76 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		E65624211C4AA071002DCE76 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		E65624221C4AA071002DCE76 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		E65624251C4AA36C002DCE76 /* AnalyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsManager.h; sourceTree = "<group>"; };
+		E65624261C4AA36C002DCE76 /* AnalyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsManager.m; sourceTree = "<group>"; };
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
 		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -286,6 +299,7 @@
 				E6A080D01C47F826000E67CC /* Security.framework in Frameworks */,
 				E6A080CC1C47F798000E67CC /* libsqlite3.tbd in Frameworks */,
 				E6A080CA1C47F77D000E67CC /* ImageIO.framework in Frameworks */,
+				E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */,
 				E6A080C71C47F5D3000E67CC /* libWeiboSDK.a in Frameworks */,
 				E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */,
 				E6A080B51C47F124000E67CC /* TencentOpenAPI.framework in Frameworks */,
@@ -328,6 +342,7 @@
 		E600ED411C36896700AB6916 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E656241B1C4A7201002DCE76 /* MBProgressHUD+EasyShow */,
 				E63539F51C3E06EF005E3A2F /* AddressBookHelper */,
 				E600ED421C36896700AB6916 /* LayerHelper */,
 			);
@@ -508,6 +523,43 @@
 			path = SMSSendViewController;
 			sourceTree = "<group>";
 		};
+		E65624171C4A70A6002DCE76 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E65624181C4A70A6002DCE76 /* MBProgressHUD.h */,
+				E65624191C4A70A6002DCE76 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		E656241B1C4A7201002DCE76 /* MBProgressHUD+EasyShow */ = {
+			isa = PBXGroup;
+			children = (
+				E656241C1C4A721E002DCE76 /* MBProgressHUD+EasyShow.h */,
+				E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */,
+			);
+			path = "MBProgressHUD+EasyShow";
+			sourceTree = "<group>";
+		};
+		E656241F1C4AA071002DCE76 /* UMAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E65624201C4AA071002DCE76 /* libMobClickLibrary.a */,
+				E65624211C4AA071002DCE76 /* MobClick.h */,
+				E65624221C4AA071002DCE76 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics;
+			sourceTree = "<group>";
+		};
+		E65624241C4AA34B002DCE76 /* AnalyticsManager */ = {
+			isa = PBXGroup;
+			children = (
+				E65624251C4AA36C002DCE76 /* AnalyticsManager.h */,
+				E65624261C4AA36C002DCE76 /* AnalyticsManager.m */,
+			);
+			path = AnalyticsManager;
+			sourceTree = "<group>";
+		};
 		E6A080A81C47EE2D000E67CC /* ShareManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +572,7 @@
 		E6A080AC1C47F124000E67CC /* OpenPlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
+				E656241F1C4AA071002DCE76 /* UMAnalytics */,
 				E6A080BA1C47F5D3000E67CC /* WeiboSDK */,
 				E6A080AD1C47F124000E67CC /* QQSDK */,
 				E6A080B01C47F124000E67CC /* WeixinSDK */,
@@ -626,6 +679,7 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E65624241C4AA34B002DCE76 /* AnalyticsManager */,
 				E6A080A81C47EE2D000E67CC /* ShareManager */,
 				E6E6F5541C33CF7F008005EA /* APIManager */,
 				E6E6F5571C33CF7F008005EA /* DataReformer */,
@@ -664,6 +718,7 @@
 		E6E6F55D1C33CF7F008005EA /* OpenSourceClass */ = {
 			isa = PBXGroup;
 			children = (
+				E65624171C4A70A6002DCE76 /* MBProgressHUD */,
 				E600ED461C36994500AB6916 /* MJRefresh */,
 				E6E6F5791C33D5F1008005EA /* RESideMenu */,
 			);
@@ -937,6 +992,7 @@
 				E6E6F5771C33D1AF008005EA /* BaseViewController.m in Sources */,
 				E6E6F5811C33D5F1008005EA /* RESideMenu.m in Sources */,
 				E6E6F58D1C33DA43008005EA /* LeftMenuViewController.m in Sources */,
+				E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */,
 				E600ED791C36994500AB6916 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */,
 				E6E6F5781C33D1AF008005EA /* DefaultNavView.m in Sources */,
@@ -957,10 +1013,12 @@
 				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
 				E6E6F5751C33D1AF008005EA /* BaseNavController.m in Sources */,
+				E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */,
 				E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */,
 				E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */,
 				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
+				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
 				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,
 				E600ED821C36994500AB6916 /* MJRefreshConst.m in Sources */,
 				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,
@@ -1081,6 +1139,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeixinSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hxp.BlessingSMS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1105,6 +1164,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeixinSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hxp.BlessingSMS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

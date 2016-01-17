@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 #import <MessageUI/MessageUI.h>
 @interface AddressBookViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
--(id)initWithSmsContentStr:(NSString *)str;
+-(id)initWithSmsInfo:(SMSInfoModel *)smsInfoModel;
 @end

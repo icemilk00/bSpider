@@ -62,28 +62,33 @@
 
 -(void)smsSend{
     
-    AddressBookViewController *addressVC = [[AddressBookViewController alloc] initWithSmsContentStr:_smsTextView.text];
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendFirst withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
+    AddressBookViewController *addressVC = [[AddressBookViewController alloc] initWithSmsInfo:_currentShowSMSInfoModel];
     [self.navigationController presentViewController:addressVC animated:YES completion:nil];
 
 }
 
 -(void)weixinSend
 {
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendToWeixin withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
     [[ShareManager sharedInstance] shareToWeixinWithText:_smsTextView.text];
 }
 
 -(void)weixinZoneSend
 {
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendToWeixinZone withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
     [[ShareManager sharedInstance] shareToWeixinZoneWithText:_smsTextView.text];
 }
 
 -(void)qqSend
 {
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendToQQ withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
     [[ShareManager sharedInstance] shareToQQWithText:_smsTextView.text];
 }
 
 -(void)weiboSend
 {
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendToWeibo withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
     [[ShareManager sharedInstance] shareToWeiboWithText:_smsTextView.text];
 }
 

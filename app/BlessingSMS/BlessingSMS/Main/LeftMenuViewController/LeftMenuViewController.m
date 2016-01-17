@@ -144,11 +144,14 @@
     else
     {
         
+        [AnalyticsManager eventCategoryChooseWithCategoryID:model.categoryValue withCategoryName:model.categoryName];
+        
         MainShowViewController *contentVC = (MainShowViewController *)((UINavigationController *)(self.sideMenuViewController.contentViewController)).topViewController;
         
         if ([contentVC respondsToSelector:@selector(loadDataWithCategoryId:andCategoryName:)]) {
             [contentVC loadDataWithCategoryId:model.categoryValue andCategoryName:model.categoryName];
         }
+        
         [self.sideMenuViewController hideMenuViewController];
     }
 }

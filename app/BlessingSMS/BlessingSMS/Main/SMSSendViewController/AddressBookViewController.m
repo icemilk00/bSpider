@@ -8,12 +8,15 @@
 
 #import "AddressBookViewController.h"
 #import "SmsSendCell.h"
+#import "SMSInfoModel.h"
 
 @interface AddressBookViewController ()
 {
     NSMutableArray *_selectArray;
     NSMutableArray *_allAddressBookArray;
     
+    NSString *_smsCategoryID;
+    NSString *_smsID;
     NSString *_smsSendStr;
 }
 @property (nonatomic, strong) UITableView *addressBookTableView;
@@ -21,11 +24,13 @@
 @end
 
 @implementation AddressBookViewController
--(id)initWithSmsContentStr:(NSString *)str
+-(id)initWithSmsInfo:(SMSInfoModel *)smsInfoModel
 {
     self = [super init];
     if (self) {
-        _smsSendStr = str;
+        _smsCategoryID = smsInfoModel.category_id;
+        _smsID = smsInfoModel.id;
+        _smsSendStr = smsInfoModel.content;
     }
     return self;
 }
@@ -124,6 +129,8 @@
 
 -(void)displaySMSComposerSheet
 {
+    [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendSecond withCategoryID:_smsCategoryID withSMSID:_smsID];
+    
     MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
     picker.messageComposeDelegate = self;
     
