@@ -38,6 +38,7 @@
 
 #import "LayerHelper.h"
 #import "AddressBookHelper.h"
+#import "PinyinHelper.h"
 
 #import "JSONKit.h"
 

@@ -16,6 +16,7 @@
     if (self) {
         self.name = dic[@"name"];
         self.phoneNum = dic[@"phoneNum"];
+        self.firstCharacter = [PinyinHelper firstCharactor:_name];
         self.isSelected = NO;
     }
     return self;

@@ -8,7 +8,7 @@
 
 #import "AddressBookViewController.h"
 #import "SmsSendCell.h"
-#import "SMSInfoModel.h"
+
 
 @interface AddressBookViewController ()
 {
@@ -18,6 +18,10 @@
     NSString *_smsCategoryID;
     NSString *_smsID;
     NSString *_smsSendStr;
+    
+    NSMutableDictionary *_dataSourceDic;
+    NSMutableArray *_indexArray;
+    NSArray *_baseCharsArray;
 }
 @property (nonatomic, strong) UITableView *addressBookTableView;
 
@@ -43,9 +47,7 @@
     [self setupDefaultNavWitConfig:@[KeyLeftButton, KeyRightButton]];
     [[self defaultNavView].rightButton setTitle:@"发送" forState:UIControlStateNormal];
     
-    
-    _allAddressBookArray = [[NSMutableArray alloc] init];
-    _selectArray = [[NSMutableArray alloc] init];
+    [self arrayInit];
     
     NSArray *tempAddressArray = [AddressBookHelper getAddressBookInfo];
     NSLog(@"addressArray = %@", tempAddressArray);
@@ -55,7 +57,67 @@
         [_allAddressBookArray addObject:model];
     }
     
+    [self makeDataSourceWithDataArray:_allAddressBookArray];
     [self.view addSubview:self.addressBookTableView];
+}
+
+-(void)arrayInit
+{
+    _allAddressBookArray = [[NSMutableArray alloc] init];
+    _selectArray = [[NSMutableArray alloc] init];
+    
+    _baseCharsArray = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#"];
+    _indexArray = [[NSMutableArray alloc] init];
+    _dataSourceDic = [[NSMutableDictionary alloc] init];
+    
+}
+
+-(void)makeDataSourceWithDataArray:(NSArray *)dataArray
+{
+    for (NSString *baseChar in _baseCharsArray) {
+        NSMutableArray *tempDataArray = [[NSMutableArray alloc] init];
+        
+        if ([baseChar isEqualToString:@"#"]) {
+            for (AddressBookModel *model in dataArray) {
+                
+                if (!model || !model.firstCharacter || model.firstCharacter.length <= 0) {
+                    [tempDataArray addObject:model];
+                    continue;
+                }
+                
+                const char *c_pinYinFirst = [model.firstCharacter cStringUsingEncoding:NSASCIIStringEncoding];
+                
+                if (c_pinYinFirst == nil) {
+                    [tempDataArray addObject:model];
+                    continue;
+                }
+                
+                if (!( c_pinYinFirst[0] <= 'Z' && c_pinYinFirst[0] >= 'A') && !( c_pinYinFirst[0] <= 'z' && c_pinYinFirst[0] >= 'a')) {
+                    [tempDataArray addObject:model];
+                }
+            }
+        }
+        else
+        {
+            for (AddressBookModel *model in dataArray) {
+                
+                if (!model || !model.firstCharacter) {
+                    continue;
+                }
+                
+                if ([model.firstCharacter isEqualToString:baseChar]) {
+                    [tempDataArray addObject:model];
+                }
+            }
+        }
+        
+        
+        if (tempDataArray.count > 0) {
+            [_dataSourceDic setObject:tempDataArray forKey:baseChar];
+            [_indexArray addObject:baseChar];
+        }
+        
+    }
 }
 
 #pragma mark - TableViewDelegate and DataSource
@@ -66,7 +128,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _allAddressBookArray.count;
+    return ((NSArray *)(_dataSourceDic[_indexArray[section]])).count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,15 +139,15 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsSendCell" owner:self options:nil] lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    [cell updateUIWithData:_allAddressBookArray[indexPath.row]];
+
+    [cell updateUIWithData:[((NSArray *)(_dataSourceDic[_indexArray[indexPath.section]])) objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AddressBookModel *model = _allAddressBookArray[indexPath.row];
+    AddressBookModel *model = ((NSArray *)(_dataSourceDic[_indexArray[indexPath.section]]))[indexPath.row];
     if (model.isSelected) {
         if ([_selectArray containsObject:model]) {
             [_selectArray removeObject:model];
@@ -103,6 +165,26 @@
     
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return _indexArray.count;
+}
+
+//返回索引数组
+
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return _indexArray;
+}
+
+//返回每个索引的内容
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return _indexArray[section];
+}
+
+#pragma mark - nav button action
 -(void)navLeftButtonClicked:(UIButton *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];

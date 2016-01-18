@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "SMSInfoModel.h"
+
 @interface AddressBookViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
 -(id)initWithSmsInfo:(SMSInfoModel *)smsInfoModel;
 @end
