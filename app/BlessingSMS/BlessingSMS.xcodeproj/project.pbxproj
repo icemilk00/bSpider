@@ -83,6 +83,7 @@
 		E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624261C4AA36C002DCE76 /* AnalyticsManager.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
+		E696C24A1C4F882200340146 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E696C2491C4F882200340146 /* SettingViewController.m */; };
 		E6A080AB1C47EE41000E67CC /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A080AA1C47EE41000E67CC /* ShareManager.m */; };
 		E6A080B51C47F124000E67CC /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080AE1C47F124000E67CC /* TencentOpenAPI.framework */; };
 		E6A080B61C47F124000E67CC /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E6A080AF1C47F124000E67CC /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -231,6 +232,8 @@
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
 		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E696C2481C4F882200340146 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		E696C2491C4F882200340146 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		E6A080A91C47EE41000E67CC /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
 		E6A080AA1C47EE41000E67CC /* ShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
 		E6A080AE1C47F124000E67CC /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
@@ -598,6 +601,15 @@
 			path = AnalyticsManager;
 			sourceTree = "<group>";
 		};
+		E696C2471C4F880E00340146 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E696C2481C4F882200340146 /* SettingViewController.h */,
+				E696C2491C4F882200340146 /* SettingViewController.m */,
+			);
+			path = SettingViewController;
+			sourceTree = "<group>";
+		};
 		E6A080A81C47EE2D000E67CC /* ShareManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +718,7 @@
 		E6E6F5521C33CF7F008005EA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E696C2471C4F880E00340146 /* SettingViewController */,
 				E6E6F5531C33CF7F008005EA /* Managers */,
 				E6E6F5841C33D902008005EA /* MainShowViewController */,
 				E6E6F5831C33D902008005EA /* LeftMenuViewController */,
@@ -1043,6 +1056,7 @@
 				E6E6F5781C33D1AF008005EA /* DefaultNavView.m in Sources */,
 				E6353A001C3E1418005E3A2F /* SmsSendCell.m in Sources */,
 				E6E6F5821C33D5F1008005EA /* UIViewController+RESideMenu.m in Sources */,
+				E696C24A1C4F882200340146 /* SettingViewController.m in Sources */,
 				E600ED3E1C3685F500AB6916 /* SmsCell.m in Sources */,
 				E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */,
 				E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */,

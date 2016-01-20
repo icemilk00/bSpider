@@ -9,6 +9,7 @@
 #import "LeftMenuViewController.h"
 #import "SMSCategoryModel.h"
 #import "SMSCategoryCell.h"
+#import "SettingViewController.h"
 
 @interface LeftMenuViewController ()
 {
@@ -16,6 +17,7 @@
 }
 
 @property (nonatomic, strong) UITableView *leftTableView;
+@property (nonatomic, strong) UIButton *settingButton;
 @property (strong, nonatomic) SMSCategoryAPIManager *smsCategoryAPIManager;
 @property (strong, nonatomic) SMSCategoryReformer *smsCategoryReformer;
 
@@ -32,6 +34,7 @@
     [self loadData];
     
 //    [self setupBgView];
+    [self.view addSubview:self.settingButton];
     [self.view addSubview:self.leftTableView];
 }
 
@@ -171,6 +174,12 @@
     return model;
 }
 
+-(void)settingAction
+{
+    SettingViewController *settingVC = [[SettingViewController alloc] init];
+    [self.sideMenuViewController presentViewController:settingVC animated:YES completion:nil];
+}
+
 #pragma mark - getter and setter
 -(SMSCategoryAPIManager *)smsCategoryAPIManager
 {
@@ -200,6 +209,16 @@
 
     }
     return _leftTableView;
+}
+
+-(UIButton *)settingButton
+{
+    if (!_settingButton) {
+        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 20.0f, 44.0f, 44.0f)];
+        _settingButton.backgroundColor = [UIColor blueColor];
+        [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _settingButton;
 }
 
 -(void)setupBgView
