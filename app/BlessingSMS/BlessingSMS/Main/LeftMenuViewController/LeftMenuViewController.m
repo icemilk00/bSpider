@@ -28,13 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:246/255.0f green:56/255.0f blue:56/255.0f alpha:1];
+    self.view.backgroundColor = DEFAULT_BG_COLOR;
     
     [self arrayInit];
     [self loadData];
     
 //    [self setupBgView];
-    [self.view addSubview:self.settingButton];
+//    [self.view addSubview:self.settingButton];
     [self.view addSubview:self.leftTableView];
 }
 
@@ -96,7 +96,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SMSCategoryCell" owner:self options:nil] lastObject];
         cell.backgroundColor = [UIColor clearColor];
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     SMSCategoryModel *model = [self modelAtIndexPath:indexPath];

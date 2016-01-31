@@ -38,7 +38,7 @@
     sideMenuViewController.contentViewShadowEnabled = YES;
     self.window.rootViewController = sideMenuViewController;
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = DEFAULT_BG_COLOR;
     [self.window makeKeyAndVisible];
     return YES;
 }

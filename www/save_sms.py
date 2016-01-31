@@ -38,7 +38,12 @@ def test(loop):
 		# if i > 10:
 		# 	return
 
-		sms = Sms(id = obj['id'], category_name = obj['category_name'], category_id = obj['category_id'], content = obj['content'], created_at = obj['created_at'])
+		try:
+			objId = int(obj['id'])
+		except:
+			continue
+
+		sms = Sms(id = objId, category_name = obj['category_name'], category_id = obj['category_id'], content = obj['content'], created_at = obj['created_at'])
 		yield from sms.save()
 
 		# i+=1

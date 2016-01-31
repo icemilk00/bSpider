@@ -43,6 +43,7 @@ def deploy():
 		sudo('ln -s %s www' % newdir)
 		sudo('chown root:root www')
 		sudo('chown -R root:root %s' % newdir)
+		sudo('python3.4 www/save_sms.py')
 
 	with settings(warn_only=True):
 		sudo('supervisorctl stop blessingSMS')

@@ -1,6 +1,6 @@
 import time, uuid
 
-from orm import Model, StringField,BooleanField, FloatField, TextField
+from orm import Model, StringField,BooleanField, FloatField, TextField, IntegerField
 
 def next_id():
 	return '%015d%s000' % (int(time.time() * 1000), uuid.uuid4().hex)
@@ -9,7 +9,7 @@ def next_id():
 class Sms(Model):
     __table__ = 'sms'
 
-    id = StringField(primary_key=True, default=next_id, ddl='varchar(50)')
+    id = IntegerField(primary_key=True)
     category_name = StringField(ddl='varchar(50)')
     category_id = StringField(ddl='varchar(50)')
     content = StringField(ddl='varchar(500)')

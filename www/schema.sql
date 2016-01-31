@@ -10,7 +10,7 @@ use blessingSMS;
 grant select, insert, update, delete on blessingSMS.* to 'blessingSMS-hp'@'127.0.0.1' identified by 'blessingSMS-hp';
 #创建表sms
 create table sms (
-    `id` varchar(50) not null,
+    `id` int not null,
     `category_name` varchar(50) not null,
     `category_id` varchar(50) not null,
     `content` varchar(500) not null,

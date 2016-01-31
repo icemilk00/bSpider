@@ -16,7 +16,7 @@
     if (self) {
         self.category_id = dic[@"category_id"];
         self.content = dic[@"content"];
-        self.id = dic[@"id"];
+        self.id = [NSString stringWithFormat:@"%@", dic[@"id"]];
         self.created_at = dic[@"created_at"];
         self.category_name = dic[@"category_name"];
     }

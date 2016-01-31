@@ -12,6 +12,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+
+    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
+    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:200/255.0f green:56/255.0f blue:56/255.0f alpha:1];
 }
 
 -(void)updateWithModel:(SMSCategoryModel *)model andIsSubCategory:(BOOL)isSubCategory

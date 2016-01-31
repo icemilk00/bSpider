@@ -27,7 +27,8 @@ NSString * const KeyRightButton = @"KeyRightButton";
 {
     self = [super initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, NAVIGATIONBAR_HEIGHT)];
     if (self) {
-        [self addSubview:self.bgImageView];
+//        [self addSubview:self.bgImageView];
+        self.backgroundColor = DEFAULT_BG_COLOR;
         [self addSubview:self.titleLabel];
         [self setupUICongif:configArray];
     }
