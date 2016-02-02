@@ -35,6 +35,7 @@
 //#import "BaseAPIManager.h"
 #import "DataReformer.h"
 #import "AnalyticsManager.h"
+#import "PushManager.h"
 
 #import "LayerHelper.h"
 #import "AddressBookHelper.h"
