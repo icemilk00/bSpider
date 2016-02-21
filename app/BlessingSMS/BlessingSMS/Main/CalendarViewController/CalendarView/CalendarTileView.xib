@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CalendarTileView">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCr-GP-i6e">
+                    <rect key="frame" x="25" y="0.0" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="DbV-07-3E2"/>
+                        <constraint firstAttribute="height" constant="20" id="cJ1-j0-vib"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-0m-7me">
+                    <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHf-0P-82U">
+                    <rect key="frame" x="0.0" y="25" width="45" height="15"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="vSH-s3-XAb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="B1r-0m-7me" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1dq-o8-JZq"/>
+                <constraint firstAttribute="bottom" secondItem="B1r-0m-7me" secondAttribute="bottom" constant="15" id="7Wu-8e-gRi"/>
+                <constraint firstAttribute="trailing" secondItem="B1r-0m-7me" secondAttribute="trailing" id="8T5-Bp-juD"/>
+                <constraint firstItem="rCr-GP-i6e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9vd-v2-Nfl"/>
+                <constraint firstAttribute="trailing" secondItem="rCr-GP-i6e" secondAttribute="trailing" id="FvD-EC-PXI"/>
+                <constraint firstItem="B1r-0m-7me" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="U8q-ia-dfw"/>
+                <constraint firstAttribute="trailing" secondItem="NHf-0P-82U" secondAttribute="trailing" id="Y6f-pR-6ZQ"/>
+                <constraint firstItem="NHf-0P-82U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mBF-tD-dyT"/>
+                <constraint firstAttribute="bottom" secondItem="NHf-0P-82U" secondAttribute="bottom" constant="5" id="zz0-ci-0yp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="recordFlagImageView" destination="rCr-GP-i6e" id="xVG-8h-5gG"/>
+                <outlet property="showChineseDayLabel" destination="NHf-0P-82U" id="M4h-gE-GZh"/>
+                <outlet property="showDayLabel" destination="B1r-0m-7me" id="kel-I8-PpT"/>
+            </connections>
+            <point key="canvasLocation" x="266.5" y="183.5"/>
+        </view>
+    </objects>
+</document>

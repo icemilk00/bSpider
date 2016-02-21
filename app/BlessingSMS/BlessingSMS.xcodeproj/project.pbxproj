@@ -81,6 +81,18 @@
 		E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */; };
 		E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65624201C4AA071002DCE76 /* libMobClickLibrary.a */; };
 		E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624261C4AA36C002DCE76 /* AnalyticsManager.m */; };
+		E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609321C7A008200B5E5A7 /* CalendarNotifiCenter.m */; };
+		E66609361C7A020600B5E5A7 /* CalendarNotiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609351C7A020600B5E5A7 /* CalendarNotiModel.m */; };
+		E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */; };
+		E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */; };
+		E66AE7DA1C78C5AF009CB7EE /* CalendarDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */; };
+		E66AE7DB1C78C5AF009CB7EE /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */; };
+		E66AE7DC1C78C5AF009CB7EE /* CalendarTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */; };
+		E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */; };
+		E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D41C78C5AF009CB7EE /* CalendarView.m */; };
+		E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */; };
+		E66AE7E01C78C5AF009CB7EE /* weeklyTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */; };
+		E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
 		E67B2E171C553D76001408E2 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E151C553D76001408E2 /* icon-76.png */; };
 		E67B2E181C553D76001408E2 /* icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E161C553D76001408E2 /* icon-152.png */; };
@@ -237,6 +249,27 @@
 		E65624221C4AA071002DCE76 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		E65624251C4AA36C002DCE76 /* AnalyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsManager.h; sourceTree = "<group>"; };
 		E65624261C4AA36C002DCE76 /* AnalyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsManager.m; sourceTree = "<group>"; };
+		E66609311C7A008200B5E5A7 /* CalendarNotifiCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotifiCenter.h; sourceTree = "<group>"; };
+		E66609321C7A008200B5E5A7 /* CalendarNotifiCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNotifiCenter.m; sourceTree = "<group>"; };
+		E66609341C7A020600B5E5A7 /* CalendarNotiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotiModel.h; sourceTree = "<group>"; };
+		E66609351C7A020600B5E5A7 /* CalendarNotiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNotiModel.m; sourceTree = "<group>"; };
+		E66609371C7A0CDE00B5E5A7 /* CalendarNotiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotiViewController.h; sourceTree = "<group>"; };
+		E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNotiViewController.m; sourceTree = "<group>"; };
+		E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarNotiViewController.xib; sourceTree = "<group>"; };
+		E66AE7CC1C78C5AF009CB7EE /* CalendarDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDatePickerView.h; sourceTree = "<group>"; };
+		E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDatePickerView.m; sourceTree = "<group>"; };
+		E66AE7CE1C78C5AF009CB7EE /* CalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
+		E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
+		E66AE7D01C78C5AF009CB7EE /* CalendarTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTileView.h; sourceTree = "<group>"; };
+		E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTileView.m; sourceTree = "<group>"; };
+		E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTileView.xib; sourceTree = "<group>"; };
+		E66AE7D31C78C5AF009CB7EE /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		E66AE7D41C78C5AF009CB7EE /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		E66AE7D51C78C5AF009CB7EE /* NSDate+CalendarHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CalendarHelper.h"; sourceTree = "<group>"; };
+		E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CalendarHelper.m"; sourceTree = "<group>"; };
+		E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weeklyTitle@2x.png"; sourceTree = "<group>"; };
+		E66AE7D81C78C5AF009CB7EE /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
 		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
 		E67B2E151C553D76001408E2 /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
@@ -628,6 +661,49 @@
 			path = AnalyticsManager;
 			sourceTree = "<group>";
 		};
+		E66609301C79FF5800B5E5A7 /* CalendarNotifiCenter */ = {
+			isa = PBXGroup;
+			children = (
+				E66609311C7A008200B5E5A7 /* CalendarNotifiCenter.h */,
+				E66609321C7A008200B5E5A7 /* CalendarNotifiCenter.m */,
+				E66609341C7A020600B5E5A7 /* CalendarNotiModel.h */,
+				E66609351C7A020600B5E5A7 /* CalendarNotiModel.m */,
+			);
+			path = CalendarNotifiCenter;
+			sourceTree = "<group>";
+		};
+		E66AE7CA1C78C5AF009CB7EE /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E66AE7CB1C78C5AF009CB7EE /* CalendarView */,
+				E66AE7D81C78C5AF009CB7EE /* CalendarViewController.h */,
+				E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */,
+				E66609371C7A0CDE00B5E5A7 /* CalendarNotiViewController.h */,
+				E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */,
+				E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */,
+			);
+			path = CalendarViewController;
+			sourceTree = "<group>";
+		};
+		E66AE7CB1C78C5AF009CB7EE /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				E66AE7CC1C78C5AF009CB7EE /* CalendarDatePickerView.h */,
+				E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */,
+				E66AE7CE1C78C5AF009CB7EE /* CalendarModel.h */,
+				E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */,
+				E66AE7D01C78C5AF009CB7EE /* CalendarTileView.h */,
+				E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */,
+				E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */,
+				E66AE7D31C78C5AF009CB7EE /* CalendarView.h */,
+				E66AE7D41C78C5AF009CB7EE /* CalendarView.m */,
+				E66AE7D51C78C5AF009CB7EE /* NSDate+CalendarHelper.h */,
+				E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */,
+				E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
 		E696C2471C4F880E00340146 /* SettingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -765,6 +841,7 @@
 		E6E6F5521C33CF7F008005EA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E66AE7CA1C78C5AF009CB7EE /* CalendarViewController */,
 				E696C2471C4F880E00340146 /* SettingViewController */,
 				E6E6F5531C33CF7F008005EA /* Managers */,
 				E6E6F5841C33D902008005EA /* MainShowViewController */,
@@ -777,6 +854,7 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E66609301C79FF5800B5E5A7 /* CalendarNotifiCenter */,
 				E6AD68981C5FA2530056C04F /* PushManager */,
 				E65624241C4AA34B002DCE76 /* AnalyticsManager */,
 				E6A080A81C47EE2D000E67CC /* ShareManager */,
@@ -1010,6 +1088,8 @@
 				E60EDFED1C4D582400FAA637 /* icon-57.png in Resources */,
 				E60EDFEF1C4D582400FAA637 /* icon-120.png in Resources */,
 				E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */,
+				E66AE7E01C78C5AF009CB7EE /* weeklyTitle@2x.png in Resources */,
+				E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */,
 				E63343991C46B4C80055A9C9 /* send@2x.png in Resources */,
 				E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */,
 				E67B2E171C553D76001408E2 /* icon-76.png in Resources */,
@@ -1045,6 +1125,7 @@
 				E6E6F5941C33DDC3008005EA /* navigationbar_back@2x.png in Resources */,
 				E6353A011C3E1418005E3A2F /* SmsSendCell.xib in Resources */,
 				E62C84721C44122300FD29D5 /* arrow@2x.png in Resources */,
+				E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */,
 				E6E6F5971C33DDC3008005EA /* navigationbarBg@3x.png in Resources */,
 				E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */,
 				E63343851C46A28F0055A9C9 /* main_cell_arrow@2x.png in Resources */,
@@ -1123,22 +1204,31 @@
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
 				E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */,
 				E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */,
+				E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */,
 				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
+				E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */,
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
 				E6E6F5751C33D1AF008005EA /* BaseNavController.m in Sources */,
 				E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */,
+				E66AE7DC1C78C5AF009CB7EE /* CalendarTileView.m in Sources */,
 				E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */,
 				E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */,
 				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
+				E66AE7DB1C78C5AF009CB7EE /* CalendarModel.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
 				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,
+				E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */,
 				E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */,
 				E600ED821C36994500AB6916 /* MJRefreshConst.m in Sources */,
+				E66609361C7A020600B5E5A7 /* CalendarNotiModel.m in Sources */,
 				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,
 				E6E6F5391C33BAF4008005EA /* main.m in Sources */,
 				E600ED731C36994500AB6916 /* MJRefreshAutoFooter.m in Sources */,
+				E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */,
+				E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */,
 				E6E6F5611C33CF7F008005EA /* BaseAPIManager.m in Sources */,
+				E66AE7DA1C78C5AF009CB7EE /* CalendarDatePickerView.m in Sources */,
 				E600ED761C36994500AB6916 /* MJRefreshFooter.m in Sources */,
 				E600ED851C36994500AB6916 /* UIView+MJExtension.m in Sources */,
 				E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */,
@@ -1192,6 +1282,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1231,6 +1322,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1242,8 +1334,8 @@
 			baseConfigurationReference = B0EF774E0AD70F0722E705B3 /* Pods-BlessingSMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xuyu Lu (HZFZ6YNRV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xuyu Lu (HZFZ6YNRV4)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1272,8 +1364,8 @@
 			baseConfigurationReference = 16718854DCC110FDD0004796 /* Pods-BlessingSMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Xuyu Lu";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xuyu Lu";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

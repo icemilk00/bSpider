@@ -10,6 +10,7 @@
 #import "SMSCategoryModel.h"
 #import "SMSCategoryCell.h"
 #import "SettingViewController.h"
+#import "CalendarViewController.h"
 
 @interface LeftMenuViewController ()
 {
@@ -18,6 +19,7 @@
 
 @property (nonatomic, strong) UITableView *leftTableView;
 @property (nonatomic, strong) UIButton *settingButton;
+@property (nonatomic, strong) UIButton *calendarButton;
 @property (strong, nonatomic) SMSCategoryAPIManager *smsCategoryAPIManager;
 @property (strong, nonatomic) SMSCategoryReformer *smsCategoryReformer;
 
@@ -34,7 +36,8 @@
     [self loadData];
     
 //    [self setupBgView];
-//    [self.view addSubview:self.settingButton];
+    [self.view addSubview:self.calendarButton];
+    [self.view addSubview:self.settingButton];
     [self.view addSubview:self.leftTableView];
 }
 
@@ -180,6 +183,12 @@
     [self.sideMenuViewController presentViewController:settingVC animated:YES completion:nil];
 }
 
+-(void)calendarAction
+{
+    CalendarViewController *calendalVC = [[CalendarViewController alloc] init];
+    [self.sideMenuViewController presentViewController:calendalVC animated:YES completion:nil];
+}
+
 #pragma mark - getter and setter
 -(SMSCategoryAPIManager *)smsCategoryAPIManager
 {
@@ -201,7 +210,7 @@
 -(UITableView *)leftTableView
 {
     if (!_leftTableView) {
-        _leftTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
+        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, NAVIGATIONBAR_HEIGHT + 50.0f, SCREEN_WIDTH, SCREEN_HEIGTH - NAVIGATIONBAR_HEIGHT) style:UITableViewStylePlain];
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
         _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -211,10 +220,20 @@
     return _leftTableView;
 }
 
+-(UIButton *)calendarButton
+{
+    if (!_calendarButton) {
+        _calendarButton = [[UIButton alloc] initWithFrame:CGRectMake(10.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 40.0f)];
+        _calendarButton.backgroundColor = [UIColor yellowColor];
+        [_calendarButton addTarget:self action:@selector(calendarAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _calendarButton;
+}
+
 -(UIButton *)settingButton
 {
     if (!_settingButton) {
-        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 20.0f, 44.0f, 44.0f)];
+        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(_calendarButton.frame.origin.x + _calendarButton.frame.size.width + 20.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 40.0f)];
         _settingButton.backgroundColor = [UIColor blueColor];
         [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
     }

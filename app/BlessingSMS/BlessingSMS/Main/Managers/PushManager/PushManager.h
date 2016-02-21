@@ -13,4 +13,7 @@
 +(void)registerDevice:(NSData *)deviceToken;
 +(void)setAccount:(NSString *)account;
 +(void)startApp;
++(void)handleReceiveNotification:(NSDictionary *)userInfo;
++(void)handleLaunching:(NSDictionary *)launchOptions;
++(void)showPushAlert:(NSDictionary *)userInfo;
 @end

@@ -22,7 +22,15 @@
     [[ShareManager sharedInstance] shareInit];
     [PushManager startApp];
     [PushManager registerPushNofitication];
+    [PushManager handleLaunching:launchOptions];
     [MobClick startWithAppkey:UMAPPKEY reportPolicy:BATCH   channelId:@"AppStore"];
+    
+    //角标清0
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+
+    NSDictionary *remoteNotify = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    [PushManager showPushAlert:remoteNotify];
     
     BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:[[MainShowViewController alloc] init]];
     UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
@@ -75,7 +83,8 @@
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
-    
+    [PushManager handleReceiveNotification:userInfo];
+    [PushManager showPushAlert:userInfo];
 }
 
 

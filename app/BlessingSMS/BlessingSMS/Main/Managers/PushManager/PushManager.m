@@ -43,7 +43,7 @@
         }
     };
     [XGPush initForReregister:successCallback];
-//    [[self class] setAccount:@"hp'iphone"];
+//    [[self class] setAccount:@"123"];
 }
 
 +(void)registerPush{
@@ -99,6 +99,26 @@
     [XGPush setAccount:account];
 }
 
++(void)handleReceiveNotification:(NSDictionary *)userInfo
+{
+    //推送反馈(app运行时)
+    [XGPush handleReceiveNotification:userInfo];
+}
+
++(void)handleLaunching:(NSDictionary *)launchOptions
+{
+    [XGPush handleLaunching:launchOptions];
+}
+
++(void)showPushAlert:(NSDictionary *)userInfo
+{
+    NSString *content = userInfo[@"content"];
+    
+    if (content && content.length > 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:content delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
 
 
 @end
