@@ -13,6 +13,7 @@
 
 - (NSUInteger)numberOfWeeksInCurrentMonth;
 - (NSUInteger)weeklyOrdinality;
+- (NSString *)weeklyOrdinalityStr;
 - (NSDate *)firstDayInCurrentMonth;
 - (NSUInteger)numberOfDaysInCurrentMonth;
 - (NSDate *)lastDayOfCurrentMonth;

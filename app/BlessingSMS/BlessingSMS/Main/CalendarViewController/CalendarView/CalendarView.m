@@ -250,4 +250,9 @@
     return [_selectDate numberOfWeeksInCurrentMonth];
 }
 
+-(CalendarModel *)selectedCalendarModel
+{
+    return _selectedCalendarModel;
+}
+
 @end

@@ -36,12 +36,21 @@ static CalendarNotifiCenter *calendarNotifiCenter = nil;
 
 -(void)addNotifi:(CalendarNotiModel *)notiModel
 {
-
+    NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)notiModel.calendarModel.year, (unsigned long)notiModel.calendarModel.month, (unsigned long)notiModel.calendarModel.day];
+    
+    [[DataStore dataStoreWithName:CALENDAR_NOTI] addObject:notiModel forKey:saveKey];
 }
 
 -(void)delNotifi:(CalendarNotiModel *)notiModel
 {
-    
+    NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)notiModel.calendarModel.year, (unsigned long)notiModel.calendarModel.month, (unsigned long)notiModel.calendarModel.day];
+    [[DataStore dataStoreWithName:CALENDAR_NOTI] removeObject:notiModel ForKey:saveKey];
+}
+
+-(NSDictionary *)calendarNotiDic
+{
+    NSLog(@"%@", [[DataStore dataStoreWithName:CALENDAR_NOTI] dictonary]);
+    return [[DataStore dataStoreWithName:CALENDAR_NOTI] dictonary];
 }
 
 @end

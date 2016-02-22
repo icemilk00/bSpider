@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "CalendarNotiModel.h"
 
+#define CALENDAR_NOTI  @"CalendatNoti"
+
 @interface CalendarNotifiCenter : NSObject
 
--(CalendarNotifiCenter *)defaultCenter;
++(CalendarNotifiCenter *)defaultCenter;
 
 -(void)addNotifi:(CalendarNotiModel *)notiModel;
 -(void)delNotifi:(CalendarNotiModel *)notiModel;
 
+-(NSDictionary *)calendarNotiDic;
 @end

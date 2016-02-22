@@ -77,6 +77,7 @@
 		E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529B1C3A7D5900598B62 /* cell_arrow_up@2x.png */; };
 		E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */; };
 		E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64052A31C3A845A00598B62 /* SMSSendViewController.m */; };
+		E644076A1C7AF8860062102A /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E64407691C7AF8860062102A /* DataStore.m */; };
 		E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624191C4A70A6002DCE76 /* MBProgressHUD.m */; };
 		E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */; };
 		E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65624201C4AA071002DCE76 /* libMobClickLibrary.a */; };
@@ -240,6 +241,8 @@
 		E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow_up@3x.png"; sourceTree = "<group>"; };
 		E64052A21C3A845A00598B62 /* SMSSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSendViewController.h; sourceTree = "<group>"; };
 		E64052A31C3A845A00598B62 /* SMSSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSendViewController.m; sourceTree = "<group>"; };
+		E64407681C7AF8860062102A /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		E64407691C7AF8860062102A /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		E65624181C4A70A6002DCE76 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E65624191C4A70A6002DCE76 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E656241C1C4A721E002DCE76 /* MBProgressHUD+EasyShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+EasyShow.h"; sourceTree = "<group>"; };
@@ -624,6 +627,15 @@
 			path = SMSSendViewController;
 			sourceTree = "<group>";
 		};
+		E64407671C7AF83A0062102A /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				E64407681C7AF8860062102A /* DataStore.h */,
+				E64407691C7AF8860062102A /* DataStore.m */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		E65624171C4A70A6002DCE76 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -854,6 +866,7 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E64407671C7AF83A0062102A /* DataStore */,
 				E66609301C79FF5800B5E5A7 /* CalendarNotifiCenter */,
 				E6AD68981C5FA2530056C04F /* PushManager */,
 				E65624241C4AA34B002DCE76 /* AnalyticsManager */,
@@ -1189,6 +1202,7 @@
 				E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */,
 				E6E6F5781C33D1AF008005EA /* DefaultNavView.m in Sources */,
 				E6353A001C3E1418005E3A2F /* SmsSendCell.m in Sources */,
+				E644076A1C7AF8860062102A /* DataStore.m in Sources */,
 				E6E6F5821C33D5F1008005EA /* UIViewController+RESideMenu.m in Sources */,
 				E696C24A1C4F882200340146 /* SettingViewController.m in Sources */,
 				E600ED3E1C3685F500AB6916 /* SmsCell.m in Sources */,

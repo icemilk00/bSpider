@@ -45,7 +45,9 @@
     
     [self setDateShowLabelTextWithDate:[NSDate date]];
     
+    [self makeNotiTableViewDataSource];
     [self.view addSubview:self.notiTableView];
+    
 }
 
 -(void)setDateShowLabelTextWithDate:(NSDate *)date
@@ -66,7 +68,21 @@
 
 - (void)calendarView:(CalendarView *)calendarView didSelectAtRow:(NSUInteger)row column:(NSUInteger)column
 {
+    [self makeNotiTableViewDataSource];
+    [_notiTableView reloadData];
     
+}
+
+-(void)makeNotiTableViewDataSource
+{
+    [_notifiDataSourceArray removeAllObjects];
+    
+    NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)_calendarView.selectedCalendarModel.year, (unsigned long)_calendarView.selectedCalendarModel.month, (unsigned long)_calendarView.selectedCalendarModel.day];
+    
+    NSMutableArray *notiArray = [CalendarNotifiCenter defaultCenter].calendarNotiDic[saveKey];
+    if (notiArray) {
+        [_notifiDataSourceArray addObjectsFromArray:notiArray];
+    }
 }
 
 -(void)dateChangeTap:(UITapGestureRecognizer *)tap
@@ -79,6 +95,13 @@
 {
     [_calendarView reloadCalendarWithDate:date];
     [self setDateShowLabelTextWithDate:date];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self makeNotiTableViewDataSource];
+    [_notiTableView reloadData];
 }
 
 #pragma mark - button action
@@ -104,6 +127,7 @@
 -(void)navRightButtonClicked:(UIButton *)sender
 {
     CalendarNotiViewController *v = [[CalendarNotiViewController alloc] initWithNibName:@"CalendarNotiViewController" bundle:nil];
+    v.calendarModel = [_calendarView selectedCalendarModel];
     [self presentViewController:v animated:YES completion:nil];
 }
 
@@ -124,15 +148,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    
+    CalendarNotiModel *model = _notifiDataSourceArray[indexPath.row];
+    cell.textLabel.text = model.notiContent;
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
 }
 
 #pragma mark - setter and getter
