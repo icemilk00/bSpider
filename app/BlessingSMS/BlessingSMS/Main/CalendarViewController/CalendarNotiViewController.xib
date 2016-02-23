@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="dateLabel" destination="9nI-Fa-OG5" id="2XV-IX-EMf"/>
                 <outlet property="notiContentTextView" destination="jp5-n9-tNL" id="eHi-4W-5eK"/>
+                <outlet property="notiTimeBgView" destination="uoC-Pk-Oem" id="Lig-7b-ci3"/>
                 <outlet property="openNotiSwitch" destination="xbX-9z-hZd" id="HbN-SE-BD5"/>
                 <outlet property="timeLabel" destination="i4o-Pi-Gge" id="zP9-uP-F1S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,7 +39,7 @@
                                 <constraint firstAttribute="width" constant="134" id="lHu-jy-R5T"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbX-9z-hZd">
@@ -68,7 +69,7 @@
                                 <constraint firstAttribute="width" constant="86" id="9kg-5P-PCj"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05月27日 周五" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nI-Fa-OG5">

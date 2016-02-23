@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONKit (1.5pre)
+  - MJExtension (3.0.10)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - JSONKit (~> 1.5pre)
+  - MJExtension
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
 
 COCOAPODS: 0.38.2

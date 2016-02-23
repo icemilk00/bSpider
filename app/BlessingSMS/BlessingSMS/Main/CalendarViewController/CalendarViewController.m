@@ -8,7 +8,7 @@
 
 #import "CalendarViewController.h"
 #import "CalendarTileView.h"
-#import "CalendarModel.h"
+#import "CalendarDataModel.h"
 #import "CalendarNotiViewController.h"
 
 
@@ -32,6 +32,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"日历提醒";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _notifiDataSourceArray = [[NSMutableArray alloc] init];
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton,KeyRightButton]];
     [[self defaultNavView].rightButton setTitle:@"+" forState:UIControlStateNormal];
@@ -79,7 +81,7 @@
     
     NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)_calendarView.selectedCalendarModel.year, (unsigned long)_calendarView.selectedCalendarModel.month, (unsigned long)_calendarView.selectedCalendarModel.day];
     
-    NSMutableArray *notiArray = [CalendarNotifiCenter defaultCenter].calendarNotiDic[saveKey];
+    NSMutableArray *notiArray = [[CalendarNotifiCenter defaultCenter] calendarNotiDicWithKey:saveKey];
     if (notiArray) {
         [_notifiDataSourceArray addObjectsFromArray:notiArray];
     }
@@ -126,12 +128,11 @@
 
 -(void)navRightButtonClicked:(UIButton *)sender
 {
-    CalendarNotiViewController *v = [[CalendarNotiViewController alloc] initWithNibName:@"CalendarNotiViewController" bundle:nil];
-    v.calendarModel = [_calendarView selectedCalendarModel];
-    [self presentViewController:v animated:YES completion:nil];
+    CalendarNotiViewController *v = [[CalendarNotiViewController alloc] initWithNibName:@"CalendarNotiViewController" bundle:nil withCalendarModel:[_calendarView selectedCalendarModel]];
+    [self.navigationController pushViewController:v animated:YES];
 }
 
-#pragma makr - UITableViewDelegate and datasource
+#pragma mark - UITableViewDelegate and datasource
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -160,7 +161,24 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    CalendarNotiViewController *v = [[CalendarNotiViewController alloc] initWithNibName:@"CalendarNotiViewController" bundle:nil withCalendarNotiModel:_notifiDataSourceArray[indexPath.row] andIndex:indexPath.row];
+
+    [self.navigationController pushViewController:v animated:YES];
 }
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[CalendarNotifiCenter defaultCenter] delNotifi:_notifiDataSourceArray[indexPath.row]];
+        [_notifiDataSourceArray removeObjectAtIndex:[indexPath row]];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+}
+
 
 #pragma mark - setter and getter
 -(CalendarView *)calendarView

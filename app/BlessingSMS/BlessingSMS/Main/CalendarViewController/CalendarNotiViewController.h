@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CalendarModel.h"
+#import "CalendarDataModel.h"
+#import "CalendarDatePickerView.h"
 
-@interface CalendarNotiViewController : BaseViewController
+@interface CalendarNotiViewController : BaseViewController <CalendarDatePickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *notiContentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *openNotiSwitch;
+@property (weak, nonatomic) IBOutlet UIView *notiTimeBgView;
 
-@property (nonatomic, strong) CalendarModel *calendarModel;
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withCalendarModel:(CalendarDataModel *)calendarModel;
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withCalendarNotiModel:(CalendarNotiModel *)calendarNotiModel andIndex:(NSInteger)editIndex;
 
 @end

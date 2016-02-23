@@ -18,6 +18,9 @@
 
 @property (nonatomic , assign) id <CalendarDatePickerViewDelegate> delegate;
 
+@property (nonatomic, assign) UIDatePickerMode datePickerMode;
+@property (nonatomic, strong) NSDate *date;
+
 -(id)initWithDelegate:(id <CalendarDatePickerViewDelegate>)delegate;
 -(void)show;
 @end

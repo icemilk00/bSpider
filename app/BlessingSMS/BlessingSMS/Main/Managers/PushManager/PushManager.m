@@ -120,5 +120,10 @@
     }
 }
 
++(void)localNotification:(NSDate *)fireDate alertBody:(NSString *)alertBody badge:(int)badge alertAction:(NSString *)alertAction userInfo:(NSDictionary *)userInfo
+{
+    [XGPush localNotification:fireDate alertBody:alertBody badge:badge alertAction:alertAction userInfo:userInfo];
+}
+
 
 @end

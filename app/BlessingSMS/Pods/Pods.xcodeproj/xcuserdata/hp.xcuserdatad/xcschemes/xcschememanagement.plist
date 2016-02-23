@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BlessingSMS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08AE74336EC520CF51C69E65CE98DEF9</key>
+		<key>447F80AA986C64217F9D2F4367FCE7A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C2AAB3C13A41AE9C13E4C6136F7805E</key>
+		<key>66A1BF80035D5DF689559F9ABEC93DAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F24B44E7707B0CBA7B0C68AC8971AF38</key>
+		<key>88628B56BDAC9104E90BB0CFD3C2343F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A488063138435D367FF78C074D99EC05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

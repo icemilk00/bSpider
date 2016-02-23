@@ -28,6 +28,8 @@
     if (self) {
         self.delegate = delegate;
         self.frame = [UIScreen mainScreen].bounds;
+        self.datePickerMode = UIDatePickerModeDate;
+        self.date = [NSDate date];
     }
     return self;
 }
@@ -99,15 +101,14 @@
 {
     if (!_datePicker) {
         self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0f, 30.0f, _mainShowView.frame.size.width, _mainShowView.frame.size.height - 40.0f - 40.0f)];
-        _datePicker.datePickerMode = UIDatePickerModeDate;
+        _datePicker.datePickerMode = self.datePickerMode;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd"];
         _datePicker.minimumDate = [formatter dateFromString:@"1900-01-01"];
         _datePicker.maximumDate = [formatter dateFromString:@"2100-01-01"];
 
         _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
-        
-        _datePicker.date = [formatter dateFromString:@"2016-2-19"];
+        _datePicker.date = self.date;
 
     }
     return _datePicker;
@@ -133,5 +134,13 @@
         [_selectButton addTarget:self action:@selector(selectButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _selectButton;
+}
+
+-(void)setDate:(NSDate *)date
+{
+    if (date) {
+        _date = date;
+        _datePicker.date = date;
+    }
 }
 @end

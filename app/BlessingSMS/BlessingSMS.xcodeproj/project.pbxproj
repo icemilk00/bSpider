@@ -87,7 +87,7 @@
 		E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */; };
 		E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */; };
 		E66AE7DA1C78C5AF009CB7EE /* CalendarDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */; };
-		E66AE7DB1C78C5AF009CB7EE /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */; };
+		E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7CF1C78C5AF009CB7EE /* CalendarDataModel.m */; };
 		E66AE7DC1C78C5AF009CB7EE /* CalendarTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */; };
 		E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */; };
 		E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D41C78C5AF009CB7EE /* CalendarView.m */; };
@@ -261,8 +261,8 @@
 		E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarNotiViewController.xib; sourceTree = "<group>"; };
 		E66AE7CC1C78C5AF009CB7EE /* CalendarDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDatePickerView.h; sourceTree = "<group>"; };
 		E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDatePickerView.m; sourceTree = "<group>"; };
-		E66AE7CE1C78C5AF009CB7EE /* CalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
-		E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
+		E66AE7CE1C78C5AF009CB7EE /* CalendarDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDataModel.h; sourceTree = "<group>"; };
+		E66AE7CF1C78C5AF009CB7EE /* CalendarDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDataModel.m; sourceTree = "<group>"; };
 		E66AE7D01C78C5AF009CB7EE /* CalendarTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTileView.h; sourceTree = "<group>"; };
 		E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTileView.m; sourceTree = "<group>"; };
 		E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarTileView.xib; sourceTree = "<group>"; };
@@ -702,8 +702,8 @@
 			children = (
 				E66AE7CC1C78C5AF009CB7EE /* CalendarDatePickerView.h */,
 				E66AE7CD1C78C5AF009CB7EE /* CalendarDatePickerView.m */,
-				E66AE7CE1C78C5AF009CB7EE /* CalendarModel.h */,
-				E66AE7CF1C78C5AF009CB7EE /* CalendarModel.m */,
+				E66AE7CE1C78C5AF009CB7EE /* CalendarDataModel.h */,
+				E66AE7CF1C78C5AF009CB7EE /* CalendarDataModel.m */,
 				E66AE7D01C78C5AF009CB7EE /* CalendarTileView.h */,
 				E66AE7D11C78C5AF009CB7EE /* CalendarTileView.m */,
 				E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */,
@@ -1228,7 +1228,7 @@
 				E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */,
 				E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */,
 				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
-				E66AE7DB1C78C5AF009CB7EE /* CalendarModel.m in Sources */,
+				E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
 				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,

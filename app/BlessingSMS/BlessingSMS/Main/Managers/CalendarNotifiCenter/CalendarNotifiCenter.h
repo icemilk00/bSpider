@@ -17,6 +17,7 @@
 
 -(void)addNotifi:(CalendarNotiModel *)notiModel;
 -(void)delNotifi:(CalendarNotiModel *)notiModel;
+-(void)editNotifi:(CalendarNotiModel *)notiModel withIndex:(NSInteger)editIndex;
 
--(NSDictionary *)calendarNotiDic;
+-(NSMutableArray *)calendarNotiDicWithKey:(NSString *)key;
 @end

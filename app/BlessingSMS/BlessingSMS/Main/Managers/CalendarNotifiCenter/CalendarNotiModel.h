@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CalendarModel.h"
+#import "CalendarDataModel.h"
 
 @interface CalendarNotiModel : NSObject
 
 @property (nonatomic, strong) NSString *notiContent;
-@property (nonatomic, strong) CalendarModel *calendarModel;
+@property (nonatomic, strong) CalendarDataModel *calendarModel;
 @property (nonatomic, strong) NSString *notiTimeStr;
 @property (nonatomic, assign) BOOL isNeedNoti;
+
+//-(NSMutableDictionary *)mutableDic;
 
 @end

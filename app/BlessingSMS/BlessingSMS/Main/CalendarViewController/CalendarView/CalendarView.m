@@ -21,8 +21,8 @@
 @property (nonatomic, readwrite) NSInteger selectedRow;
 @property (nonatomic, readwrite) NSInteger selectedColumn;
 @property (nonatomic, strong) CalendarTileView *selectedTileView;
-@property (nonatomic, strong) CalendarModel *selectedCalendarModel;
-@property (nonatomic, strong) CalendarModel *currentDayCalendarModel;
+@property (nonatomic, strong) CalendarDataModel *selectedCalendarModel;
+@property (nonatomic, strong) CalendarDataModel *currentDayCalendarModel;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 
@@ -44,7 +44,7 @@
         self.backgroundColor = [UIColor redColor];
         
         NSDateComponents *c = [self.selectDate YMDComponents];
-        self.currentDayCalendarModel = [CalendarModel calendarModuleWithYear:c.year month:c.month day:c.day];
+        self.currentDayCalendarModel = [CalendarDataModel calendarModuleWithYear:c.year month:c.month day:c.day];
         self.selectedCalendarModel = _currentDayCalendarModel;
         
         [self addSubview:self.calendarHeadView];
@@ -88,7 +88,7 @@
             NSUInteger index = i*7 + j;
             
             if (self.dataSourceArray.count > index) {
-                CalendarModel *configModel = self.dataSourceArray[i * 7 + j];
+                CalendarDataModel *configModel = self.dataSourceArray[i * 7 + j];
                 [tileView configTileViewWithModel:configModel];
                 tileView.isCurrentDay = [configModel isEqualTo:self.currentDayCalendarModel] ? YES : NO;
                 tileView.selected = [configModel isEqualTo:self.selectedCalendarModel] ? YES : NO;
@@ -119,7 +119,7 @@
     self.selectDate = date;
     
     NSDateComponents *c = [date YMDComponents];
-    self.selectedCalendarModel = [CalendarModel calendarModuleWithYear:c.year month:c.month day:c.day];
+    self.selectedCalendarModel = [CalendarDataModel calendarModuleWithYear:c.year month:c.month day:c.day];
     
     [self.dataSourceArray removeAllObjects];
     
@@ -152,7 +152,7 @@
     NSDateComponents *components = [dayInThePreviousMonth YMDComponents];
 
     for (NSUInteger i = daysCount - partialDaysCount + 1; i < daysCount + 1; ++i) {
-        CalendarModel *model = [CalendarModel calendarModuleWithYear:components.year month:components.month day:i];
+        CalendarDataModel *model = [CalendarDataModel calendarModuleWithYear:components.year month:components.month day:i];
         [self.dataSourceArray addObject:model];
     }
 }
@@ -164,7 +164,7 @@
     
 
     for (int i = 1; i < daysCount + 1; ++i) {
-        CalendarModel *model = [CalendarModel calendarModuleWithYear:components.year month:components.month day:i];
+        CalendarDataModel *model = [CalendarDataModel calendarModuleWithYear:components.year month:components.month day:i];
         [self.dataSourceArray addObject:model];
     }
 }
@@ -178,7 +178,7 @@
     NSDateComponents *components = [[date dayInTheFollowingMonth] YMDComponents];
     
     for (int i = 1; i < partialDaysCount + 1; ++i) {
-        CalendarModel *model = [CalendarModel calendarModuleWithYear:components.year month:components.month day:i];
+        CalendarDataModel *model = [CalendarDataModel calendarModuleWithYear:components.year month:components.month day:i];
         [self.dataSourceArray addObject:model];
     }
 }
@@ -211,7 +211,7 @@
     self.selectedRow = row;
     self.selectedColumn = column;
     
-    CalendarModel *selectModel = _dataSourceArray[row * 7 + column];
+    CalendarDataModel *selectModel = _dataSourceArray[row * 7 + column];
     BOOL sameMonth = _selectedCalendarModel.month == selectModel.month;
     
     self.selectedCalendarModel = selectModel;
@@ -250,7 +250,7 @@
     return [_selectDate numberOfWeeksInCurrentMonth];
 }
 
--(CalendarModel *)selectedCalendarModel
+-(CalendarDataModel *)selectedCalendarModel
 {
     return _selectedCalendarModel;
 }

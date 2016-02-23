@@ -48,7 +48,7 @@
     }
 }
 
--(void)configTileViewWithModel:(CalendarModel *)model
+-(void)configTileViewWithModel:(CalendarDataModel *)model
 {
     self.showDayLabel.text = [NSString stringWithFormat:@"%d",(int)model.day];
     self.showChineseDayLabel.text = [model.date chineseCalendar];

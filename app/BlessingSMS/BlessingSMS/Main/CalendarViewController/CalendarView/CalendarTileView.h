@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CalendarModel.h"
+#import "CalendarDataModel.h"
 
 @interface CalendarTileView : UIView
 
@@ -19,5 +19,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *showChineseDayLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *recordFlagImageView;
 
--(void)configTileViewWithModel:(CalendarModel *)model;
+-(void)configTileViewWithModel:(CalendarDataModel *)model;
 @end

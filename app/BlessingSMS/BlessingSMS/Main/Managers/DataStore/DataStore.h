@@ -18,5 +18,5 @@
 -(void)saveDic:(NSDictionary *)dic;
 -(void)addObject:(id)object forKey:(NSString *)key;
 -(void)removeObject:(id)object ForKey:(NSString *)key;
-
+-(void)editObject:(id)object ForKey:(NSString *)key withIndex:(NSInteger)index;
 @end

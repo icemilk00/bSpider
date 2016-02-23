@@ -16,4 +16,6 @@
 +(void)handleReceiveNotification:(NSDictionary *)userInfo;
 +(void)handleLaunching:(NSDictionary *)launchOptions;
 +(void)showPushAlert:(NSDictionary *)userInfo;
+
++(void)localNotification:(NSDate *)fireDate alertBody:(NSString *)alertBody badge:(int)badge alertAction:(NSString *)alertAction userInfo:(NSDictionary *)userInfo;
 @end

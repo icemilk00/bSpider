@@ -22,7 +22,7 @@
         }
     }
     
-    NSString *filePath = [docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@.plist",name]];
+    NSString *filePath = [docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",name]];
     //如果当前用到的plist文件与之前打开的plist文件不同，则重新初始化一个datastore
 
     DataStore *dataStore = [[DataStore alloc]init];
@@ -59,6 +59,7 @@
 
 -(void)removeObject:(id)object ForKey:(NSString *)key
 {
+    
     NSMutableArray *dataArray = self.dictonary[key];
     if (dataArray && dataArray.count > 0) {
         
@@ -72,6 +73,21 @@
         
         [self.dictonary writeToFile:self.savePath atomically:YES];
     }
+}
+
+-(void)editObject:(id)object ForKey:(NSString *)key withIndex:(NSInteger)index
+{
+
+    NSMutableArray *dataArray = self.dictonary[key];
+    if (dataArray && dataArray.count > index) {
+        
+        [dataArray removeObjectAtIndex:index];
+        [dataArray insertObject:object atIndex:index];
+        
+        [self.dictonary writeToFile:self.savePath atomically:YES];
+    }
+    
+    
 }
 
 @end

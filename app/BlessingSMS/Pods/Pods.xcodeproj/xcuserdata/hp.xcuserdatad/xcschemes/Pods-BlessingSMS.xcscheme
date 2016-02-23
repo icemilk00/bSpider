@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4E0D4FC011A91CFA5A63375"
+               BlueprintIdentifier = "D0FD5D8A8BF9904B17D0CF6F"
                BuildableName = "libPods-BlessingSMS.a"
                BlueprintName = "Pods-BlessingSMS"
                ReferencedContainer = "container:Pods.xcodeproj">

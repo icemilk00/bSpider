@@ -186,7 +186,9 @@
 -(void)calendarAction
 {
     CalendarViewController *calendalVC = [[CalendarViewController alloc] init];
-    [self.sideMenuViewController presentViewController:calendalVC animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:calendalVC];
+    nav.navigationBarHidden = YES;
+    [self.sideMenuViewController presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - getter and setter
