@@ -125,5 +125,19 @@
     [XGPush localNotification:fireDate alertBody:alertBody badge:badge alertAction:alertAction userInfo:userInfo];
 }
 
++(void)localNotificationAtFrontEnd:(UILocalNotification *)notification userInfoKey:(NSString *)userInfoKey userInfoValue:(NSString *)userInfoValue
+{
+    [XGPush localNotificationAtFrontEnd:notification userInfoKey:userInfoKey userInfoValue:userInfoValue];
+}
+
++(void)delLocalNotification:(UILocalNotification *)myUILocalNotification
+{
+    [XGPush delLocalNotification:myUILocalNotification];
+}
+
++(void)delLocalNotification:(NSString *)userInfoKey userInfoValue:(NSString *)userInfoValue
+{
+    [XGPush delLocalNotification:userInfoKey userInfoValue:userInfoValue];
+}
 
 @end

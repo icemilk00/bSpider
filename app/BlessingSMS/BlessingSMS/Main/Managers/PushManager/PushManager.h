@@ -18,4 +18,7 @@
 +(void)showPushAlert:(NSDictionary *)userInfo;
 
 +(void)localNotification:(NSDate *)fireDate alertBody:(NSString *)alertBody badge:(int)badge alertAction:(NSString *)alertAction userInfo:(NSDictionary *)userInfo;
++(void)localNotificationAtFrontEnd:(UILocalNotification *)notification userInfoKey:(NSString *)userInfoKey userInfoValue:(NSString *)userInfoValue;
++(void)delLocalNotification:(UILocalNotification *)myUILocalNotification;
+
 @end
