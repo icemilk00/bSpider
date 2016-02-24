@@ -45,6 +45,16 @@ static CalendarNotifiCenter *calendarNotifiCenter = nil;
 {
     NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)notiModel.calendarModel.year, (unsigned long)notiModel.calendarModel.month, (unsigned long)notiModel.calendarModel.day];
     [[DataStore dataStoreWithName:CALENDAR_NOTI] removeObject:notiModel.mj_keyValues ForKey:saveKey];
+    
+    
+    NSDate *modelDate = notiModel.calendarModel.date;
+    NSDateFormatter *modelFormatter = [[NSDateFormatter alloc] init];
+    modelFormatter.dateFormat = @"yyyy-MM-dd";
+    NSString *dateStr = [modelFormatter stringFromDate:modelDate];
+    NSString *keyStr = [NSString stringWithFormat:@"%@ %@", dateStr, notiModel.notiTimeStr];
+    NSString *valueStr = notiModel.notiContent;
+    [PushManager delLocalNotification:keyStr userInfoValue:valueStr];
+    
 }
 
 -(void)editNotifi:(CalendarNotiModel *)notiModel withIndex:(NSInteger)editIndex

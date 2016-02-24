@@ -130,6 +130,10 @@
 {
     CalendarNotiViewController *v = [[CalendarNotiViewController alloc] initWithNibName:@"CalendarNotiViewController" bundle:nil withCalendarModel:[_calendarView selectedCalendarModel]];
     [self.navigationController pushViewController:v animated:YES];
+    
+    
+    NSLog(@"notifiArray = %@", [PushManager localNotifications]);
+    
 }
 
 #pragma mark - UITableViewDelegate and datasource

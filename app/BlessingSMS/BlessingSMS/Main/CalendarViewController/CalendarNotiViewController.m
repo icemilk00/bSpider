@@ -85,18 +85,57 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
 
 -(void)navRightButtonClicked:(UIButton *)sender
 {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSString *formatStr1 = [formatter stringFromDate:self.pushDate];
+    self.pushDate = [formatter dateFromString:formatStr1];
+    NSString *notifiValue = _calendarNotiModel.notiContent;
+    
+    
     self.calendarNotiModel = [[CalendarNotiModel alloc] init];
     _calendarNotiModel.notiContent = self.notiContentTextView.text;
     _calendarNotiModel.calendarModel = self.calendarModel;
     _calendarNotiModel.notiTimeStr = self.timeLabel.text;
     _calendarNotiModel.isNeedNoti = self.openNotiSwitch.on;
     
+
     if (calendarNotiType == CalendarNotiTypeEdit) {
+        
+        UILocalNotification *tempLocalNoti = [PushManager localNotiWithKey:formatStr1 andValue:notifiValue];
+        
+        [PushManager delLocalNotification:tempLocalNoti];
+        
+        NSLog(@"array1 = %@", [PushManager localNotifications]);
+        
+        if ([PushManager isHasLocalNotificationWithKey:formatStr1 andValue:_notiContentTextView.text]) {
+            [MBProgressHUD showHUDWithTitle:@"已有同样的提醒"];
+            
+            [[UIApplication sharedApplication] scheduleLocalNotification:tempLocalNoti];
+            
+             NSLog(@"array2 = %@", [PushManager localNotifications]);
+            return;
+        }
+        
         [[CalendarNotifiCenter defaultCenter] editNotifi:_calendarNotiModel withIndex:_editIndex];
+        if (_calendarNotiModel.isNeedNoti) {
+            [PushManager localNotification:self.pushDate alertBody:_notiContentTextView.text badge:1 alertAction:@"确定" userInfo:@{formatStr1:_notiContentTextView.text}];
+        }
+        
+        
     }
     else if (calendarNotiType == CalendarNotiTypeAdd)
     {
+        //新增推送
+        if ([PushManager isHasLocalNotificationWithKey:formatStr1 andValue:_notiContentTextView.text]) {
+            [MBProgressHUD showHUDWithTitle:@"已有同样的提醒"];
+            return;
+        }
+        
         [[CalendarNotifiCenter defaultCenter] addNotifi:_calendarNotiModel];
+        if (_calendarNotiModel.isNeedNoti) {
+            [PushManager localNotification:self.pushDate alertBody:_notiContentTextView.text badge:1 alertAction:@"确定" userInfo:@{formatStr1:_notiContentTextView.text}];
+        }
+        
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -78,7 +78,8 @@
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    
+    NSLog(@"notif.userinfo = %@", notification.userInfo);
+    [PushManager localNotificationAtFrontEnd:notification userInfoKey:[notification.userInfo.allKeys firstObject] userInfoValue:[notification.userInfo.allValues firstObject]];
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo

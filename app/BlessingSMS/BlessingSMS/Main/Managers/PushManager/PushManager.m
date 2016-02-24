@@ -140,4 +140,48 @@
     [XGPush delLocalNotification:userInfoKey userInfoValue:userInfoValue];
 }
 
++(void)clearLocalNotifications
+{
+    [XGPush clearLocalNotifications];
+}
+
++(NSArray *)localNotifications
+{
+    return  [UIApplication sharedApplication].scheduledLocalNotifications;
+}
+
+/*
+ *  key为日期  value为content内容
+ */
+
++(BOOL)isHasLocalNotificationWithKey:(NSString *)key andValue:(NSString *)value
+{
+    for (UILocalNotification *notifi in [PushManager localNotifications]) {
+        NSDictionary *userInfo = notifi.userInfo;
+        if (userInfo) {
+            NSString *userInfoValue = userInfo[key];
+            if ([userInfoValue isEqualToString:value]) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
++(UILocalNotification *)localNotiWithKey:(NSString *)key andValue:(NSString *)value
+{
+    for (UILocalNotification *notifi in [PushManager localNotifications]) {
+        NSDictionary *userInfo = notifi.userInfo;
+        if (userInfo) {
+            NSString *userInfoValue = userInfo[key];
+            if ([userInfoValue isEqualToString:value]) {
+                return notifi;
+            }
+        }
+    }
+    
+    return nil;
+}
+
 @end
