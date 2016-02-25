@@ -154,6 +154,16 @@
     return day;
 }
 
+/*
+ *
+ */
+-(BOOL)isBeforeCurrentDate
+{
+    NSTimeInterval time = [self timeIntervalSinceNow];
+    
+    return time > 0 ? NO : YES;
+}
+
 -(NSString *)getChineseHoliday
 {
     NSDictionary *chineseHolidayDict = [NSDictionary dictionaryWithObjectsAndKeys:

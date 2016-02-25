@@ -48,6 +48,18 @@
     }
 }
 
+-(void)setIsHasNotification:(BOOL)isHasNotification
+{
+    _isHasNotification = isHasNotification;
+    if (_isHasNotification) {
+        self.recordFlagImageView.backgroundColor = DEFAULT_BG_COLOR;
+    }
+    else
+    {
+        self.recordFlagImageView.backgroundColor = [UIColor clearColor];
+    }
+}
+
 -(void)configTileViewWithModel:(CalendarDataModel *)model
 {
     self.showDayLabel.text = [NSString stringWithFormat:@"%d",(int)model.day];

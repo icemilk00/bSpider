@@ -78,6 +78,8 @@
 		E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */; };
 		E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64052A31C3A845A00598B62 /* SMSSendViewController.m */; };
 		E644076A1C7AF8860062102A /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E64407691C7AF8860062102A /* DataStore.m */; };
+		E6472FF81C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6472FF61C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m */; };
+		E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6472FF71C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib */; };
 		E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E65624191C4A70A6002DCE76 /* MBProgressHUD.m */; };
 		E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E656241D1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m */; };
 		E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E65624201C4AA071002DCE76 /* libMobClickLibrary.a */; };
@@ -243,6 +245,9 @@
 		E64052A31C3A845A00598B62 /* SMSSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSendViewController.m; sourceTree = "<group>"; };
 		E64407681C7AF8860062102A /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		E64407691C7AF8860062102A /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		E6472FF51C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotiTableViewCell.h; sourceTree = "<group>"; };
+		E6472FF61C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNotiTableViewCell.m; sourceTree = "<group>"; };
+		E6472FF71C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarNotiTableViewCell.xib; sourceTree = "<group>"; };
 		E65624181C4A70A6002DCE76 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		E65624191C4A70A6002DCE76 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E656241C1C4A721E002DCE76 /* MBProgressHUD+EasyShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+EasyShow.h"; sourceTree = "<group>"; };
@@ -693,6 +698,9 @@
 				E66609371C7A0CDE00B5E5A7 /* CalendarNotiViewController.h */,
 				E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */,
 				E66609391C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib */,
+				E6472FF51C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.h */,
+				E6472FF61C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m */,
+				E6472FF71C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib */,
 			);
 			path = CalendarViewController;
 			sourceTree = "<group>";
@@ -1132,6 +1140,7 @@
 				E63343811C4692380055A9C9 /* left_bg@2x.png in Resources */,
 				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,
 				E67B2E1D1C554102001408E2 /* Default.png in Resources */,
+				E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */,
 				E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */,
 				E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */,
 				E6353A071C3E1585005E3A2F /* cell_selected@3x.png in Resources */,
@@ -1234,6 +1243,7 @@
 				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,
 				E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */,
 				E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */,
+				E6472FF81C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m in Sources */,
 				E600ED821C36994500AB6916 /* MJRefreshConst.m in Sources */,
 				E66609361C7A020600B5E5A7 /* CalendarNotiModel.m in Sources */,
 				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,

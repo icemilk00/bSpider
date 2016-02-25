@@ -25,4 +25,6 @@
 - (NSString *)chineseCalendar;
 -(NSString *)getChineseHoliday;
 -(NSString *)getWorldHoliday;
+
+-(BOOL)isBeforeCurrentDate;
 @end

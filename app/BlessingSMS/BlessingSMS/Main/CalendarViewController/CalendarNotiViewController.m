@@ -60,6 +60,8 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"提醒";
     
+    self.notiContentTextView.delegate = self;
+    
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap:)];
     [self.view addGestureRecognizer:tap1];
     
@@ -97,6 +99,7 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     _calendarNotiModel.calendarModel = self.calendarModel;
     _calendarNotiModel.notiTimeStr = self.timeLabel.text;
     _calendarNotiModel.isNeedNoti = self.openNotiSwitch.on;
+    _calendarNotiModel.isExpired = [self.pushDate isBeforeCurrentDate];
     
 
     if (calendarNotiType == CalendarNotiTypeEdit) {
@@ -120,7 +123,6 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         if (_calendarNotiModel.isNeedNoti) {
             [PushManager localNotification:self.pushDate alertBody:_notiContentTextView.text badge:1 alertAction:@"确定" userInfo:@{formatStr1:_notiContentTextView.text}];
         }
-        
         
     }
     else if (calendarNotiType == CalendarNotiTypeAdd)
@@ -149,6 +151,8 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
 
 -(void)editNotiTimeTap:(UITapGestureRecognizer *)tap
 {
+    [_notiContentTextView resignFirstResponder];
+    
     CalendarDatePickerView *pickerView = [[CalendarDatePickerView alloc] initWithDelegate:self];
     pickerView.datePickerMode = UIDatePickerModeTime;
     pickerView.date = self.calendarModel.date;
@@ -174,6 +178,25 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         self.pushDate = [formatter dateFromString:[NSString stringWithFormat:@"%ld-%ld-%ld %@", self.calendarModel.year, self.calendarModel.month, self.calendarModel.day, self.timeLabel.text]];
     }
     return _pushDate;
+}
+
+#pragma mark - textview delegate
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSString *str = textView.text;
+    if ([str length]<1) {
+        return;
+    }
+    
+    NSRange strRange = [str rangeOfString:@"\n"];
+    
+    if (strRange.length > 0) {
+        
+        NSString *sendStr = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        textView.text = sendStr;
+        [textView resignFirstResponder];
+        return;
+    }
 }
 
 #pragma mark - setter and getter

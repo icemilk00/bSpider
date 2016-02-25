@@ -15,6 +15,7 @@
 @property (nonatomic, strong) CalendarDataModel *calendarModel;
 @property (nonatomic, strong) NSString *notiTimeStr;
 @property (nonatomic, assign) BOOL isNeedNoti;
+@property (nonatomic, assign) BOOL isExpired;
 
 //-(NSMutableDictionary *)mutableDic;
 

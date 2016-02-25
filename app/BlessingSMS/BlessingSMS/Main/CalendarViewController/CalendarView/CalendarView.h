@@ -38,6 +38,9 @@
 @property (nonatomic, strong) NSDate *selectDate;
 -(CalendarDataModel *)selectedCalendarModel;
 
+-(CalendarDataModel *)modelAtRow:(NSInteger)row andColumn:(NSInteger)column;
+-(CalendarTileView *)selectedTileView;
+
 -(void)reloadCalendarWithDate:(NSDate *)date;
 -(void)reloadDataWithCurrentDate;
 

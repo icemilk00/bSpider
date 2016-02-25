@@ -10,6 +10,7 @@
 #import "CalendarTileView.h"
 #import "CalendarDataModel.h"
 #import "CalendarNotiViewController.h"
+#import "CalendarNotiTableViewCell.h"
 
 
 @interface CalendarViewController ()
@@ -64,12 +65,26 @@
     if (tileView == nil) {
         tileView = [[[NSBundle mainBundle] loadNibNamed:@"CalendarTileView" owner:self options:nil] lastObject];
     }
+    
+    CalendarDataModel *model = [gridView modelAtRow:row andColumn:column];
+    
+    NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)model.year, (unsigned long)model.month, (unsigned long)model.day];
+    NSMutableArray *notiArray = [[CalendarNotifiCenter defaultCenter] calendarNotiDicWithKey:saveKey];
+    if (notiArray && notiArray.count > 0) {
+        tileView.isHasNotification = YES;
+    }
+    else
+    {
+        tileView.isHasNotification = NO;
+    }
 
     return tileView;
 }
 
 - (void)calendarView:(CalendarView *)calendarView didSelectAtRow:(NSUInteger)row column:(NSUInteger)column
 {
+    [self setDateShowLabelTextWithDate:calendarView.selectDate];
+    
     [self makeNotiTableViewDataSource];
     [_notiTableView reloadData];
     
@@ -82,8 +97,13 @@
     NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)_calendarView.selectedCalendarModel.year, (unsigned long)_calendarView.selectedCalendarModel.month, (unsigned long)_calendarView.selectedCalendarModel.day];
     
     NSMutableArray *notiArray = [[CalendarNotifiCenter defaultCenter] calendarNotiDicWithKey:saveKey];
-    if (notiArray) {
+    if (notiArray && notiArray.count > 0) {
+        _calendarView.selectedTileView.isHasNotification = YES;
         [_notifiDataSourceArray addObjectsFromArray:notiArray];
+    }
+    else
+    {
+        _calendarView.selectedTileView.isHasNotification = NO;
     }
 }
 
@@ -150,14 +170,26 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    CalendarNotiTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CalendarNotiTableViewCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CalendarNotiTableViewCell" owner:self options:nil] lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     CalendarNotiModel *model = _notifiDataSourceArray[indexPath.row];
-    cell.textLabel.text = model.notiContent;
+    cell.notiContentLabel.text = model.notiContent;
+    cell.notiStateLabel.text = model.notiTimeStr;
+    if(model.isExpired)
+    {
+        cell.notiContentLabel.textColor = [UIColor grayColor];
+        cell.notiStateLabel.textColor = [UIColor grayColor];
+        cell.notiStateLabel.text = @"已过期";
+    }
+    else
+    {
+        cell.notiContentLabel.textColor = [UIColor blackColor];
+        cell.notiStateLabel.textColor = [UIColor blackColor];
+    }
     
     return cell;
 }
@@ -179,8 +211,17 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[CalendarNotifiCenter defaultCenter] delNotifi:_notifiDataSourceArray[indexPath.row]];
         [_notifiDataSourceArray removeObjectAtIndex:[indexPath row]];
+        if (_notifiDataSourceArray.count <= 0) {
+            _calendarView.selectedTileView.isHasNotification = NO;
+        }
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
     }
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+    return [NSString stringWithFormat:@"%@%lu日", self.dateShowLabel.text, (unsigned long)self.calendarView.selectedCalendarModel.day];
 }
 
 

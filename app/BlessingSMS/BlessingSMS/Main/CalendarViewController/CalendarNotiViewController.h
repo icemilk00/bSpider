@@ -10,7 +10,7 @@
 #import "CalendarDataModel.h"
 #import "CalendarDatePickerView.h"
 
-@interface CalendarNotiViewController : BaseViewController <CalendarDatePickerViewDelegate>
+@interface CalendarNotiViewController : BaseViewController <CalendarDatePickerViewDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *notiContentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;

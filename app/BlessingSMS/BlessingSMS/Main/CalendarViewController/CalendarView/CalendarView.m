@@ -255,4 +255,15 @@
     return _selectedCalendarModel;
 }
 
+-(CalendarDataModel *)modelAtRow:(NSInteger)row andColumn:(NSInteger)column
+{
+    CalendarDataModel *model = self.dataSourceArray[row * 7 + column];
+    return model;
+}
+
+-(CalendarTileView *)selectedTileView
+{
+    return _selectedTileView;
+}
+
 @end

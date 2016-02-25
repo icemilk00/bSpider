@@ -20,15 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jp5-n9-tNL">
-                    <rect key="frame" x="15" y="73" width="290" height="67"/>
-                    <color key="backgroundColor" red="0.2462948744" green="0.88133285979999998" blue="0.73277373030000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="67" id="lHu-tk-JBt"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHF-O6-C0e">
                     <rect key="frame" x="15" y="224" width="290" height="59"/>
                     <subviews>
@@ -92,6 +83,15 @@
                         <constraint firstItem="9nI-Fa-OG5" firstAttribute="top" secondItem="uoC-Pk-Oem" secondAttribute="top" constant="8" id="oG5-o2-Egv"/>
                     </constraints>
                 </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jp5-n9-tNL">
+                    <rect key="frame" x="15" y="73" width="290" height="67"/>
+                    <color key="backgroundColor" red="0.2462948744" green="0.88133285979999998" blue="0.73277373030000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="lHu-tk-JBt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
