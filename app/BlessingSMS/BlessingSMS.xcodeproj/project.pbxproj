@@ -103,6 +103,12 @@
 		E67B2E1D1C554102001408E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1A1C554102001408E2 /* Default.png */; };
 		E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1B1C554102001408E2 /* Default@2x.png */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
+		E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC31C7F689B0041F4C5 /* calendar@2x.png */; };
+		E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC41C7F689B0041F4C5 /* calendar@3x.png */; };
+		E6934BC91C7F6C5C0041F4C5 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */; };
+		E6934BCA1C7F6C5C0041F4C5 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */; };
+		E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */; };
+		E6934BCE1C7F73900041F4C5 /* chooseFlag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */; };
 		E696C24A1C4F882200340146 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E696C2491C4F882200340146 /* SettingViewController.m */; };
 		E6A080AB1C47EE41000E67CC /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A080AA1C47EE41000E67CC /* ShareManager.m */; };
 		E6A080B51C47F124000E67CC /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080AE1C47F124000E67CC /* TencentOpenAPI.framework */; };
@@ -286,6 +292,12 @@
 		E67B2E1A1C554102001408E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E67B2E1B1C554102001408E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E6934BC31C7F689B0041F4C5 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		E6934BC41C7F689B0041F4C5 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
+		E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
+		E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseFlag@2x.png"; sourceTree = "<group>"; };
+		E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseFlag@3x.png"; sourceTree = "<group>"; };
 		E696C2481C4F882200340146 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		E696C2491C4F882200340146 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		E6A080A91C47EE41000E67CC /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
@@ -563,6 +575,12 @@
 		E633437E1C4692380055A9C9 /* sourceImg */ = {
 			isa = PBXGroup;
 			children = (
+				E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */,
+				E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */,
+				E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */,
+				E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */,
+				E6934BC31C7F689B0041F4C5 /* calendar@2x.png */,
+				E6934BC41C7F689B0041F4C5 /* calendar@3x.png */,
 				E63343971C46B4C80055A9C9 /* send@2x.png */,
 				E633439B1C46B8770055A9C9 /* sms_bg@2x.png */,
 				E633439C1C46B8770055A9C9 /* sms_bg@3x.png */,
@@ -1105,12 +1123,15 @@
 				E6353A091C3E1585005E3A2F /* cell_unSelected@3x.png in Resources */,
 				E633438E1C46A7580055A9C9 /* weixinZone@3x.png in Resources */,
 				E640529E1C3A7D5900598B62 /* cell_arrow_down@3x.png in Resources */,
+				E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */,
+				E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */,
 				E63343961C46A7CF0055A9C9 /* weibo@3x.png in Resources */,
 				E60EDFED1C4D582400FAA637 /* icon-57.png in Resources */,
 				E60EDFEF1C4D582400FAA637 /* icon-120.png in Resources */,
 				E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */,
 				E66AE7E01C78C5AF009CB7EE /* weeklyTitle@2x.png in Resources */,
 				E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */,
+				E6934BCA1C7F6C5C0041F4C5 /* Settings@3x.png in Resources */,
 				E63343991C46B4C80055A9C9 /* send@2x.png in Resources */,
 				E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */,
 				E67B2E171C553D76001408E2 /* icon-76.png in Resources */,
@@ -1118,6 +1139,7 @@
 				E63343941C46A7CF0055A9C9 /* qq@3x.png in Resources */,
 				E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */,
 				E63343951C46A7CF0055A9C9 /* weibo@2x.png in Resources */,
+				E6934BC91C7F6C5C0041F4C5 /* Settings@2x.png in Resources */,
 				E6A080C81C47F5D3000E67CC /* WeiboSDK.bundle in Resources */,
 				E600ED811C36994500AB6916 /* MJRefresh.bundle in Resources */,
 				E62C84731C44122300FD29D5 /* arrow@3x.png in Resources */,
@@ -1134,8 +1156,10 @@
 				E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */,
 				E60EDFF01C4D582400FAA637 /* icon-1024.png in Resources */,
 				E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */,
+				E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */,
 				E62C846E1C44087800FD29D5 /* menu@2x.png in Resources */,
 				E64052981C3A6F9700598B62 /* cell_arrow@3x.png in Resources */,
+				E6934BCE1C7F73900041F4C5 /* chooseFlag@3x.png in Resources */,
 				E6353A061C3E1585005E3A2F /* cell_selected@2x.png in Resources */,
 				E63343811C4692380055A9C9 /* left_bg@2x.png in Resources */,
 				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,

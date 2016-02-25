@@ -226,7 +226,7 @@
 {
     if (!_calendarButton) {
         _calendarButton = [[UIButton alloc] initWithFrame:CGRectMake(10.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 40.0f)];
-        _calendarButton.backgroundColor = [UIColor yellowColor];
+        [_calendarButton setImage:[UIImage imageNamed:@"calendar"] forState:UIControlStateNormal];
         [_calendarButton addTarget:self action:@selector(calendarAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _calendarButton;
@@ -235,8 +235,8 @@
 -(UIButton *)settingButton
 {
     if (!_settingButton) {
-        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(_calendarButton.frame.origin.x + _calendarButton.frame.size.width + 20.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 40.0f)];
-        _settingButton.backgroundColor = [UIColor blueColor];
+        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(_calendarButton.frame.origin.x + _calendarButton.frame.size.width + 20.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 41.0f)];
+        [_settingButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
         [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _settingButton;

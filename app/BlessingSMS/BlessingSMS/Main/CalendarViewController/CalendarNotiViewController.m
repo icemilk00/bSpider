@@ -82,11 +82,15 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
 
 -(void)navLeftButtonClicked:(UIButton *)sender
 {
+    if ([self.notiContentTextView isFirstResponder]) {
+        [self.notiContentTextView resignFirstResponder];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)navRightButtonClicked:(UIButton *)sender
 {
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm";
     NSString *formatStr1 = [formatter stringFromDate:self.pushDate];
@@ -120,7 +124,7 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         }
         
         [[CalendarNotifiCenter defaultCenter] editNotifi:_calendarNotiModel withIndex:_editIndex];
-        if (_calendarNotiModel.isNeedNoti) {
+        if (_calendarNotiModel.isNeedNoti && !_calendarNotiModel.isExpired) {
             [PushManager localNotification:self.pushDate alertBody:_notiContentTextView.text badge:1 alertAction:@"确定" userInfo:@{formatStr1:_notiContentTextView.text}];
         }
         
@@ -134,11 +138,16 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         }
         
         [[CalendarNotifiCenter defaultCenter] addNotifi:_calendarNotiModel];
-        if (_calendarNotiModel.isNeedNoti) {
+        if (_calendarNotiModel.isNeedNoti && !_calendarNotiModel.isExpired) {
             [PushManager localNotification:self.pushDate alertBody:_notiContentTextView.text badge:1 alertAction:@"确定" userInfo:@{formatStr1:_notiContentTextView.text}];
         }
         
     }
+    
+    if ([self.notiContentTextView isFirstResponder]) {
+        [self.notiContentTextView resignFirstResponder];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
