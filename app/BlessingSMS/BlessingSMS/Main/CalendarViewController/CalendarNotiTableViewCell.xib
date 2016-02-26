@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xv-Mf-KoK">
-                        <rect key="frame" x="227" y="11" width="56" height="21"/>
+                        <rect key="frame" x="221" y="11" width="56" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="56" id="2am-TD-Dyz"/>
                             <constraint firstAttribute="height" constant="21" id="OcO-Xb-gFy"/>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMe-Gs-2Gl">
-                        <rect key="frame" x="8" y="11" width="211" height="21"/>
+                        <rect key="frame" x="8" y="11.5" width="205" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="0xv-Mf-KoK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MDz-nM-jgC"/>
-                    <constraint firstItem="y6o-41-PuV" firstAttribute="leading" secondItem="0xv-Mf-KoK" secondAttribute="trailing" constant="14" id="RGz-4J-wEy"/>
+                    <constraint firstItem="y6o-41-PuV" firstAttribute="leading" secondItem="0xv-Mf-KoK" secondAttribute="trailing" constant="20" id="RGz-4J-wEy"/>
                     <constraint firstItem="y6o-41-PuV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Z2c-pj-hyF"/>
                     <constraint firstAttribute="trailing" secondItem="y6o-41-PuV" secondAttribute="trailing" constant="8" id="Zho-lC-O1C"/>
                     <constraint firstItem="hMe-Gs-2Gl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="oWk-gF-UaB"/>

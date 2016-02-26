@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UILabel *dateShowLabel;
 @property (nonatomic, strong) UIImageView *chooseFlagImageView;
 
+@property (nonatomic, strong) UILabel *noNotiLabel;
+
 @end
 
 @implementation CalendarViewController
@@ -52,6 +54,8 @@
     
     [self makeNotiTableViewDataSource];
     [self.view addSubview:self.notiTableView];
+    
+    [self.notiTableView addSubview:self.noNotiLabel];
     
 }
 
@@ -102,10 +106,18 @@
     if (notiArray && notiArray.count > 0) {
         _calendarView.selectedTileView.isHasNotification = YES;
         [_notifiDataSourceArray addObjectsFromArray:notiArray];
+        
+        if (_noNotiLabel) {
+            _noNotiLabel.hidden = YES;
+        }
     }
     else
     {
         _calendarView.selectedTileView.isHasNotification = NO;
+        
+        if (_noNotiLabel) {
+            _noNotiLabel.hidden = NO;
+        }
     }
 }
 
@@ -294,11 +306,31 @@
         self.notiTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, _calendarView.frame.origin.y + _calendarView.frame.size.height, _calendarView.frame.size.width,self.view.frame.size.height - _calendarView.frame.origin.y - _calendarView.frame.size.height) style:UITableViewStylePlain];
         _notiTableView.delegate = self;
         _notiTableView.dataSource = self;
+        _notiTableView.tableFooterView = [[UIView alloc] init];
     }
     
     return _notiTableView;
 }
 
+-(UILabel *)noNotiLabel
+{
+    if (_noNotiLabel == nil) {
+        self.noNotiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_notiTableView.frame.size.width/2 - 30.0f, 50.0f, 60.0f, 40.0f)];
+        _noNotiLabel.text = @"无提醒";
+        _noNotiLabel.textColor = [UIColor lightGrayColor];
+        _noNotiLabel.textAlignment = NSTextAlignmentCenter;
+        
+        if(_notifiDataSourceArray && _notifiDataSourceArray.count > 0)
+        {
+            _noNotiLabel.hidden = YES;
+        }
+        else
+        {
+            _noNotiLabel.hidden = NO;
+        }
+    }
+    return _noNotiLabel;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

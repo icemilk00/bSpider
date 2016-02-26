@@ -69,7 +69,7 @@
 
 -(void)bgTap:(UITapGestureRecognizer *)tap
 {
-    
+    [self cancel];
 }
 
 #pragma mark - getter and setter

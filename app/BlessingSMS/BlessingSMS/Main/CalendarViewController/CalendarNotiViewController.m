@@ -60,6 +60,9 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"提醒";
     
+//    self.notiContentTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    self.notiContentTextView.layer.borderWidth = 1;
+    [self.notiContentTextView becomeFirstResponder];
     self.notiContentTextView.delegate = self;
     
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap:)];

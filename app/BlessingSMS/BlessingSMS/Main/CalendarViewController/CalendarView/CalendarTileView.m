@@ -16,7 +16,8 @@
 {
     static UIColor *selectedColor = nil;
     if (selectedColor == nil) {
-        selectedColor = [UIColor colorWithRed:70/255.0f green:171/255.0f blue:179/255.0f alpha:1];
+        selectedColor = [UIColor colorWithRed:254/255.0f green:173/255.0f blue:0/255.0f alpha:1];
+//        [UIColor colorWithRed:70/255.0f green:171/255.0f blue:179/255.0f alpha:1];
     }
     
     if (selected) {

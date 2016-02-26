@@ -212,7 +212,7 @@
 -(UITableView *)leftTableView
 {
     if (!_leftTableView) {
-        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, NAVIGATIONBAR_HEIGHT + 50.0f, SCREEN_WIDTH, SCREEN_HEIGTH - NAVIGATIONBAR_HEIGHT) style:UITableViewStylePlain];
+        _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, NAVIGATIONBAR_HEIGHT + 50.0f, SCREEN_WIDTH, SCREEN_HEIGTH - NAVIGATIONBAR_HEIGHT -50.0f) style:UITableViewStylePlain];
         _leftTableView.delegate = self;
         _leftTableView.dataSource = self;
         _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
