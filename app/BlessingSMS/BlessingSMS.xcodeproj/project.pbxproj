@@ -249,6 +249,7 @@
 		E640529C1C3A7D5900598B62 /* cell_arrow_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow_up@3x.png"; sourceTree = "<group>"; };
 		E64052A21C3A845A00598B62 /* SMSSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSSendViewController.h; sourceTree = "<group>"; };
 		E64052A31C3A845A00598B62 /* SMSSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSSendViewController.m; sourceTree = "<group>"; };
+		E642738B1DF510E00000081A /* BlessingSMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlessingSMS.entitlements; sourceTree = "<group>"; };
 		E64407681C7AF8860062102A /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		E64407691C7AF8860062102A /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		E6472FF51C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotiTableViewCell.h; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 		E67B2E1A1C554102001408E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E67B2E1B1C554102001408E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E68316721CFEDCAF003EDA7B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E6934BC31C7F689B0041F4C5 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		E6934BC41C7F689B0041F4C5 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
 		E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		836CEE16F67E49B9FEA15C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E68316721CFEDCAF003EDA7B /* libc++.tbd */,
 				E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */,
 				E6A080DB1C47F86F000E67CC /* libz.tbd */,
 				E6A080D91C47F868000E67CC /* libstdc++.tbd */,
@@ -851,6 +854,7 @@
 		E6E6F5361C33BAF4008005EA /* BlessingSMS */ = {
 			isa = PBXGroup;
 			children = (
+				E642738B1DF510E00000081A /* BlessingSMS.entitlements */,
 				E600ED411C36896700AB6916 /* Helper */,
 				E6E6F5681C33D1AF008005EA /* BaseClass */,
 				E6E6F55D1C33CF7F008005EA /* OpenSourceClass */,
@@ -1091,6 +1095,12 @@
 					E6E6F5331C33BAF4008005EA = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 92U9K98A75;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1382,8 +1392,10 @@
 			baseConfigurationReference = B0EF774E0AD70F0722E705B3 /* Pods-BlessingSMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlessingSMS/BlessingSMS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xuyu Lu (HZFZ6YNRV4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xuyu Lu (HZFZ6YNRV4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1403,6 +1415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hxp.BlessingSMS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1412,8 +1425,10 @@
 			baseConfigurationReference = 16718854DCC110FDD0004796 /* Pods-BlessingSMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlessingSMS/BlessingSMS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Xuyu Lu";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Xuyu Lu";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1433,6 +1448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hxp.BlessingSMS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

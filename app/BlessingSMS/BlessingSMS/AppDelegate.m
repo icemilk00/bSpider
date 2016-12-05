@@ -63,7 +63,6 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     
     return [[ShareManager sharedInstance] handleOpenURL:url];
-
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken

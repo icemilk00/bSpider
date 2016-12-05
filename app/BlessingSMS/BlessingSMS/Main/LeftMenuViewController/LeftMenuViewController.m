@@ -236,7 +236,7 @@
 {
     if (!_settingButton) {
         _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(_calendarButton.frame.origin.x + _calendarButton.frame.size.width + 20.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 41.0f)];
-        [_settingButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
+        [_settingButton setImage:[UIImage imageNamed:@"Settings"] forState:UIControlStateNormal];
         [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _settingButton;
