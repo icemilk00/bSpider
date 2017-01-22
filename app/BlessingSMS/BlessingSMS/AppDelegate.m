@@ -79,7 +79,30 @@
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     NSLog(@"notif.userinfo = %@", notification.userInfo);
-    [PushManager localNotificationAtFrontEnd:notification userInfoKey:[notification.userInfo.allKeys firstObject] userInfoValue:[notification.userInfo.allValues firstObject]];
+    NSString *keyStr = [notification.userInfo.allKeys firstObject];
+    NSString *valueStr = [notification.userInfo.allValues firstObject];
+    
+    NSDictionary *userInfo = @{@"content":valueStr};
+    [PushManager showPushAlert:userInfo];
+//    [PushManager localNotificationAtFrontEnd:notification userInfoKey:keyStr userInfoValue:valueStr];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSDate *pushDate = [formatter dateFromString:keyStr];
+    
+    NSDateComponents *c = [pushDate YMDComponents];
+    CalendarDataModel *model = [CalendarDataModel calendarModuleWithYear:c.year month:c.month day:c.day];
+    NSString *saveKey = [NSString stringWithFormat:@"%lu|%lu|%lu", (unsigned long)model.year, (unsigned long)model.month, (unsigned long)model.day];
+    
+    NSMutableArray *m_array = [[CalendarNotifiCenter defaultCenter] calendarNotiDicWithKey:saveKey];
+    
+    for (CalendarNotiModel *notiModel in m_array) {
+        if ([notiModel.notiContent isEqualToString:valueStr]) {
+            notiModel.isExpired = YES;
+            [[CalendarNotifiCenter defaultCenter] editNotifi:notiModel withIndex:[m_array indexOfObject:notiModel]];
+        }
+    }
+    
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
@@ -101,6 +124,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    //角标清0
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

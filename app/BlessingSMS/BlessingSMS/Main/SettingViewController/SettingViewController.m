@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "AboutSMSViewController.h"
 
 @interface SettingViewController ()
 {
@@ -25,7 +26,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     
-    _settingDataArray = [[NSArray alloc] initWithObjects:@"反馈", @"给我们评分", @"关于祝福短信", nil];
+    _settingDataArray = [[NSArray alloc] initWithObjects:@"给我们评分", @"关于祝福短信", nil];
     
     [self.view addSubview:self.settingTableView];
 }
@@ -57,12 +58,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    SMSInfoModel *infoModel = _dataSourceArray[indexPath.row];
-//    
-//    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
-//    
-//    SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
-//    [self.navigationController pushViewController:smsSendVC animated:YES];
+    if(indexPath.row == 0)
+    {
+        NSString  * nsStringToOpen = [NSString  stringWithFormat: @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",@"1078083583"];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen]];
+    }
+    if(indexPath.row == 1)
+    {
+        AboutSMSViewController *aboutVC = [[AboutSMSViewController alloc] initWithNibName:@"AboutSMSViewController" bundle:nil];
+        [self.navigationController pushViewController:aboutVC animated:YES];
+    }
 }
 
 

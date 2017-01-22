@@ -94,7 +94,6 @@
 		E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66AE7D21C78C5AF009CB7EE /* CalendarTileView.xib */; };
 		E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D41C78C5AF009CB7EE /* CalendarView.m */; };
 		E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */; };
-		E66AE7E01C78C5AF009CB7EE /* weeklyTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */; };
 		E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
 		E67B2E171C553D76001408E2 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E151C553D76001408E2 /* icon-76.png */; };
@@ -105,8 +104,6 @@
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
 		E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC31C7F689B0041F4C5 /* calendar@2x.png */; };
 		E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC41C7F689B0041F4C5 /* calendar@3x.png */; };
-		E6934BC91C7F6C5C0041F4C5 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */; };
-		E6934BCA1C7F6C5C0041F4C5 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */; };
 		E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */; };
 		E6934BCE1C7F73900041F4C5 /* chooseFlag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */; };
 		E696C24A1C4F882200340146 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E696C2491C4F882200340146 /* SettingViewController.m */; };
@@ -125,6 +122,18 @@
 		E6A080D81C47F85A000E67CC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080D71C47F85A000E67CC /* CoreTelephony.framework */; };
 		E6A080DA1C47F868000E67CC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080D91C47F868000E67CC /* libstdc++.tbd */; };
 		E6A080DC1C47F86F000E67CC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080DB1C47F86F000E67CC /* libz.tbd */; };
+		E6A20EB11C817707005890FD /* hasClock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EAD1C817707005890FD /* hasClock@2x.png */; };
+		E6A20EB21C817707005890FD /* hasClock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EAE1C817707005890FD /* hasClock@3x.png */; };
+		E6A20EB31C817707005890FD /* unhasClock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EAF1C817707005890FD /* unhasClock@2x.png */; };
+		E6A20EB41C817707005890FD /* unhasClock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EB01C817707005890FD /* unhasClock@3x.png */; };
+		E6A20EB71C817C73005890FD /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EB51C817C73005890FD /* Setting@2x.png */; };
+		E6A20EB81C817C73005890FD /* Setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EB61C817C73005890FD /* Setting@3x.png */; };
+		E6A20EBB1C81907C005890FD /* add_noti@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EB91C81907C005890FD /* add_noti@2x.png */; };
+		E6A20EBC1C81907C005890FD /* add_noti@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EBA1C81907C005890FD /* add_noti@3x.png */; };
+		E6A20EBF1C819AA2005890FD /* weeklyTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EBD1C819AA2005890FD /* weeklyTitle@2x.png */; };
+		E6A20EC01C819AA2005890FD /* weeklyTitle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */; };
+		E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */; };
+		E6A20EC71C81DF01005890FD /* AboutSMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */; };
 		E6AD689B1C5FA2530056C04F /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AD689A1C5FA2530056C04F /* PushManager.m */; };
 		E6AD68A01C5FA38B0056C04F /* libXG-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD689D1C5FA38B0056C04F /* libXG-SDK.a */; };
 		E6AD68A21C5FA3B00056C04F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */; };
@@ -281,7 +290,6 @@
 		E66AE7D41C78C5AF009CB7EE /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		E66AE7D51C78C5AF009CB7EE /* NSDate+CalendarHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CalendarHelper.h"; sourceTree = "<group>"; };
 		E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CalendarHelper.m"; sourceTree = "<group>"; };
-		E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weeklyTitle@2x.png"; sourceTree = "<group>"; };
 		E66AE7D81C78C5AF009CB7EE /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
@@ -294,8 +302,6 @@
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E6934BC31C7F689B0041F4C5 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		E6934BC41C7F689B0041F4C5 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
-		E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
-		E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
 		E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseFlag@2x.png"; sourceTree = "<group>"; };
 		E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseFlag@3x.png"; sourceTree = "<group>"; };
 		E696C2481C4F882200340146 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -330,6 +336,19 @@
 		E6A080D71C47F85A000E67CC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E6A080D91C47F868000E67CC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		E6A080DB1C47F86F000E67CC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E6A20EAD1C817707005890FD /* hasClock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hasClock@2x.png"; sourceTree = "<group>"; };
+		E6A20EAE1C817707005890FD /* hasClock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hasClock@3x.png"; sourceTree = "<group>"; };
+		E6A20EAF1C817707005890FD /* unhasClock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unhasClock@2x.png"; sourceTree = "<group>"; };
+		E6A20EB01C817707005890FD /* unhasClock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unhasClock@3x.png"; sourceTree = "<group>"; };
+		E6A20EB51C817C73005890FD /* Setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@2x.png"; sourceTree = "<group>"; };
+		E6A20EB61C817C73005890FD /* Setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@3x.png"; sourceTree = "<group>"; };
+		E6A20EB91C81907C005890FD /* add_noti@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_noti@2x.png"; sourceTree = "<group>"; };
+		E6A20EBA1C81907C005890FD /* add_noti@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_noti@3x.png"; sourceTree = "<group>"; };
+		E6A20EBD1C819AA2005890FD /* weeklyTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weeklyTitle@2x.png"; sourceTree = "<group>"; };
+		E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weeklyTitle@3x.png"; sourceTree = "<group>"; };
+		E6A20EC31C81DF01005890FD /* AboutSMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSMSViewController.h; sourceTree = "<group>"; };
+		E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSMSViewController.m; sourceTree = "<group>"; };
+		E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSMSViewController.xib; sourceTree = "<group>"; };
 		E6AD68991C5FA2530056C04F /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
 		E6AD689A1C5FA2530056C04F /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		E6AD689D1C5FA38B0056C04F /* libXG-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libXG-SDK.a"; sourceTree = "<group>"; };
@@ -575,10 +594,18 @@
 		E633437E1C4692380055A9C9 /* sourceImg */ = {
 			isa = PBXGroup;
 			children = (
+				E6A20EBD1C819AA2005890FD /* weeklyTitle@2x.png */,
+				E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */,
+				E6A20EB91C81907C005890FD /* add_noti@2x.png */,
+				E6A20EBA1C81907C005890FD /* add_noti@3x.png */,
+				E6A20EB51C817C73005890FD /* Setting@2x.png */,
+				E6A20EB61C817C73005890FD /* Setting@3x.png */,
+				E6A20EAD1C817707005890FD /* hasClock@2x.png */,
+				E6A20EAE1C817707005890FD /* hasClock@3x.png */,
+				E6A20EAF1C817707005890FD /* unhasClock@2x.png */,
+				E6A20EB01C817707005890FD /* unhasClock@3x.png */,
 				E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */,
 				E6934BCC1C7F73900041F4C5 /* chooseFlag@3x.png */,
-				E6934BC71C7F6C5C0041F4C5 /* Settings@2x.png */,
-				E6934BC81C7F6C5C0041F4C5 /* Settings@3x.png */,
 				E6934BC31C7F689B0041F4C5 /* calendar@2x.png */,
 				E6934BC41C7F689B0041F4C5 /* calendar@3x.png */,
 				E63343971C46B4C80055A9C9 /* send@2x.png */,
@@ -737,7 +764,6 @@
 				E66AE7D41C78C5AF009CB7EE /* CalendarView.m */,
 				E66AE7D51C78C5AF009CB7EE /* NSDate+CalendarHelper.h */,
 				E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */,
-				E66AE7D71C78C5AF009CB7EE /* weeklyTitle@2x.png */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
@@ -747,6 +773,7 @@
 			children = (
 				E696C2481C4F882200340146 /* SettingViewController.h */,
 				E696C2491C4F882200340146 /* SettingViewController.m */,
+				E6A20EC21C81DEE8005890FD /* AboutSMSViewController */,
 			);
 			path = SettingViewController;
 			sourceTree = "<group>";
@@ -809,6 +836,16 @@
 				E6A080C61C47F5D3000E67CC /* WeiboUser.h */,
 			);
 			path = WeiboSDK;
+			sourceTree = "<group>";
+		};
+		E6A20EC21C81DEE8005890FD /* AboutSMSViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6A20EC31C81DF01005890FD /* AboutSMSViewController.h */,
+				E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */,
+				E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */,
+			);
+			path = AboutSMSViewController;
 			sourceTree = "<group>";
 		};
 		E6AD68981C5FA2530056C04F /* PushManager */ = {
@@ -1117,21 +1154,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A20EC71C81DF01005890FD /* AboutSMSViewController.xib in Resources */,
+				E6A20EB31C817707005890FD /* unhasClock@2x.png in Resources */,
 				E62C846F1C44087800FD29D5 /* menu@3x.png in Resources */,
 				E60EDFEE1C4D582400FAA637 /* icon-114.png in Resources */,
 				E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */,
 				E6353A091C3E1585005E3A2F /* cell_unSelected@3x.png in Resources */,
+				E6A20EB11C817707005890FD /* hasClock@2x.png in Resources */,
 				E633438E1C46A7580055A9C9 /* weixinZone@3x.png in Resources */,
 				E640529E1C3A7D5900598B62 /* cell_arrow_down@3x.png in Resources */,
+				E6A20EB71C817C73005890FD /* Setting@2x.png in Resources */,
+				E6A20EBB1C81907C005890FD /* add_noti@2x.png in Resources */,
+				E6A20EBF1C819AA2005890FD /* weeklyTitle@2x.png in Resources */,
 				E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */,
 				E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */,
 				E63343961C46A7CF0055A9C9 /* weibo@3x.png in Resources */,
 				E60EDFED1C4D582400FAA637 /* icon-57.png in Resources */,
+				E6A20EC01C819AA2005890FD /* weeklyTitle@3x.png in Resources */,
 				E60EDFEF1C4D582400FAA637 /* icon-120.png in Resources */,
 				E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */,
-				E66AE7E01C78C5AF009CB7EE /* weeklyTitle@2x.png in Resources */,
 				E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */,
-				E6934BCA1C7F6C5C0041F4C5 /* Settings@3x.png in Resources */,
 				E63343991C46B4C80055A9C9 /* send@2x.png in Resources */,
 				E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */,
 				E67B2E171C553D76001408E2 /* icon-76.png in Resources */,
@@ -1139,10 +1181,10 @@
 				E63343941C46A7CF0055A9C9 /* qq@3x.png in Resources */,
 				E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */,
 				E63343951C46A7CF0055A9C9 /* weibo@2x.png in Resources */,
-				E6934BC91C7F6C5C0041F4C5 /* Settings@2x.png in Resources */,
 				E6A080C81C47F5D3000E67CC /* WeiboSDK.bundle in Resources */,
 				E600ED811C36994500AB6916 /* MJRefresh.bundle in Resources */,
 				E62C84731C44122300FD29D5 /* arrow@3x.png in Resources */,
+				E6A20EB21C817707005890FD /* hasClock@3x.png in Resources */,
 				E633439E1C46B8770055A9C9 /* sms_bg@3x.png in Resources */,
 				E62C846B1C4406F400FD29D5 /* navigationbarBg_red@3x.png in Resources */,
 				E6E6F5961C33DDC3008005EA /* navigationbarBg@2x.png in Resources */,
@@ -1153,9 +1195,11 @@
 				E64052971C3A6F9700598B62 /* cell_arrow@2x.png in Resources */,
 				E633439A1C46B4C80055A9C9 /* send@3x.png in Resources */,
 				E63343931C46A7CF0055A9C9 /* qq@2x.png in Resources */,
+				E6A20EB81C817C73005890FD /* Setting@3x.png in Resources */,
 				E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */,
 				E60EDFF01C4D582400FAA637 /* icon-1024.png in Resources */,
 				E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */,
+				E6A20EB41C817707005890FD /* unhasClock@3x.png in Resources */,
 				E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */,
 				E62C846E1C44087800FD29D5 /* menu@2x.png in Resources */,
 				E64052981C3A6F9700598B62 /* cell_arrow@3x.png in Resources */,
@@ -1181,6 +1225,7 @@
 				E633439D1C46B8770055A9C9 /* sms_bg@2x.png in Resources */,
 				E633438D1C46A7580055A9C9 /* weixinZone@2x.png in Resources */,
 				E633438A1C46A5EA0055A9C9 /* weixin@3x.png in Resources */,
+				E6A20EBC1C81907C005890FD /* add_noti@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,6 +1293,7 @@
 				E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */,
 				E600ED7A1C36994500AB6916 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6E6F5621C33CF7F008005EA /* DataReformer.m in Sources */,
+				E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */,
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
 				E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */,
 				E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */,

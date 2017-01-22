@@ -230,7 +230,7 @@
 -(UIImageView *)calendarHeadView
 {
     if (_calendarHeadView == nil) {
-        self.calendarHeadView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.bounds.size.width, 32.0f)];
+        self.calendarHeadView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.bounds.size.width, 32.0f * self.bounds.size.width/320.0f)];
         _calendarHeadView.image = [UIImage imageNamed:@"weeklyTitle"];
     }
     return _calendarHeadView;

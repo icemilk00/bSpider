@@ -10,6 +10,15 @@
 
 @implementation CalendarNotiModel
 
+
+-(NSDate *)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSDate *pushDate = [formatter dateFromString:[NSString stringWithFormat:@"%ld-%ld-%ld %@", (unsigned long)self.calendarModel.year, (unsigned long)self.calendarModel.month, (unsigned long)self.calendarModel.day, self.notiTimeStr]];
+    
+    return pushDate;
+}
 //-(NSMutableDictionary *)mutableDic
 //{
 //    NSMutableDictionary *mutableDic = [[NSMutableDictionary alloc] init];

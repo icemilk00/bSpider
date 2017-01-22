@@ -40,7 +40,7 @@
     _notifiDataSourceArray = [[NSMutableArray alloc] init];
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton,KeyRightButton]];
-    [[self defaultNavView].rightButton setTitle:@"+" forState:UIControlStateNormal];
+    [[self defaultNavView].rightButton setImage:[UIImage imageNamed:@"add_noti" ] forState:UIControlStateNormal];
     
     [self.view addSubview:self.prevMonthButton];
     [self.view addSubview:self.nextMonthButton];
@@ -131,6 +131,9 @@
 {
     [_calendarView reloadCalendarWithDate:date];
     [self setDateShowLabelTextWithDate:date];
+    
+    [self makeNotiTableViewDataSource];
+    [_notiTableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -146,6 +149,9 @@
     NSDate *prevDate = [_calendarView.selectDate dayInThePreviousMonth];
     [_calendarView reloadCalendarWithDate:prevDate];
     [self setDateShowLabelTextWithDate:prevDate];
+    
+    [self makeNotiTableViewDataSource];
+    [_notiTableView reloadData];
 }
 
 -(void)goNextMonth:(UIButton *)sender
@@ -153,6 +159,9 @@
     NSDate *nextDate = [_calendarView.selectDate dayInTheFollowingMonth];
     [_calendarView reloadCalendarWithDate:nextDate];
     [self setDateShowLabelTextWithDate:nextDate];
+    
+    [self makeNotiTableViewDataSource];
+    [_notiTableView reloadData];
 }
 
 -(void)navLeftButtonClicked:(UIButton *)sender
@@ -191,19 +200,15 @@
     }
     
     CalendarNotiModel *model = _notifiDataSourceArray[indexPath.row];
-    cell.notiContentLabel.text = model.notiContent;
-    cell.notiStateLabel.text = model.notiTimeStr;
-    if(model.isExpired)
-    {
-        cell.notiContentLabel.textColor = [UIColor grayColor];
-        cell.notiStateLabel.textColor = [UIColor grayColor];
-        cell.notiStateLabel.text = @"已过期";
+    
+    BOOL isExpired = [model.date isBeforeCurrentDate];
+    
+    if (model.isExpired != isExpired) {
+        model.isExpired = isExpired;
+        [[CalendarNotifiCenter defaultCenter] editNotifi:model withIndex:indexPath.row];
     }
-    else
-    {
-        cell.notiContentLabel.textColor = [UIColor blackColor];
-        cell.notiStateLabel.textColor = [UIColor blackColor];
-    }
+    
+    [cell configUIWithModel:model];
     
     return cell;
 }

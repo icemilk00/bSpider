@@ -113,7 +113,9 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         
         UILocalNotification *tempLocalNoti = [PushManager localNotiWithKey:formatStr1 andValue:notifiValue];
         
-        [PushManager delLocalNotification:tempLocalNoti];
+        if (tempLocalNoti) {
+            [PushManager delLocalNotification:tempLocalNoti];
+        }
         
         NSLog(@"array1 = %@", [PushManager localNotifications]);
         
@@ -167,7 +169,7 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     
     CalendarDatePickerView *pickerView = [[CalendarDatePickerView alloc] initWithDelegate:self];
     pickerView.datePickerMode = UIDatePickerModeTime;
-    pickerView.date = self.calendarModel.date;
+    pickerView.date = self.calendarNotiModel.date;
     [pickerView show];
 }
 

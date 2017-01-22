@@ -17,6 +17,8 @@
 @property (nonatomic, assign) BOOL isNeedNoti;
 @property (nonatomic, assign) BOOL isExpired;
 
+-(NSDate *)date;
+
 //-(NSMutableDictionary *)mutableDic;
 
 @end

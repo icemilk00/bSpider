@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutSMSViewController">
+            <connections>
+                <outlet property="versionLabel" destination="w2a-zj-Pxi" id="zbL-lK-eQf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-76.png" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-rG-OZ0">
+                    <rect key="frame" x="130" y="141" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Mf5-5I-cve"/>
+                        <constraint firstAttribute="width" constant="60" id="cyk-yT-1WO"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="祝福短信大全" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0W-wg-t6B">
+                    <rect key="frame" x="85" y="221" width="150" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="8Xm-wa-kEG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本 2.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2a-zj-Pxi">
+                    <rect key="frame" x="94" y="250" width="132" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="nXQ-Ks-ugK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.8666666666666667" green="0.0" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如有问题或建议请联系邮箱:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDz-Lw-rXD">
+                    <rect key="frame" x="8" y="304" width="304" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="PTq-dr-HK9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hxpdevelop@163.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf1-uy-Vqn">
+                    <rect key="frame" x="8" y="333" width="304" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="pkO-MN-L4T"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.86666666670000003" green="0.0" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pDz-Lw-rXD" secondAttribute="trailing" constant="8" id="0XC-Sr-Scb"/>
+                <constraint firstItem="WVh-rG-OZ0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9rL-jm-OGb"/>
+                <constraint firstItem="X0W-wg-t6B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="85" id="E2e-mq-FwW"/>
+                <constraint firstItem="pDz-Lw-rXD" firstAttribute="top" secondItem="w2a-zj-Pxi" secondAttribute="bottom" constant="33" id="FlV-xx-Dud"/>
+                <constraint firstItem="kf1-uy-Vqn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Mnb-yp-bAP"/>
+                <constraint firstItem="w2a-zj-Pxi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="94" id="OI6-kL-4Kj"/>
+                <constraint firstItem="kf1-uy-Vqn" firstAttribute="top" secondItem="pDz-Lw-rXD" secondAttribute="bottom" constant="8" id="Pf6-7U-NUl"/>
+                <constraint firstAttribute="trailing" secondItem="w2a-zj-Pxi" secondAttribute="trailing" constant="94" id="Swc-Xh-aXg"/>
+                <constraint firstAttribute="trailing" secondItem="kf1-uy-Vqn" secondAttribute="trailing" constant="8" id="TNT-mz-3g5"/>
+                <constraint firstItem="WVh-rG-OZ0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="141" id="Wqx-ky-9aN"/>
+                <constraint firstItem="pDz-Lw-rXD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="aMy-ph-8Cg"/>
+                <constraint firstItem="X0W-wg-t6B" firstAttribute="top" secondItem="WVh-rG-OZ0" secondAttribute="bottom" constant="20" id="bfB-Ru-wqb"/>
+                <constraint firstAttribute="trailing" secondItem="X0W-wg-t6B" secondAttribute="trailing" constant="85" id="gDl-Yy-Jfq"/>
+                <constraint firstItem="w2a-zj-Pxi" firstAttribute="top" secondItem="X0W-wg-t6B" secondAttribute="bottom" constant="8" id="ixh-Ec-Ivn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="244" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-76.png" width="76" height="76"/>
+    </resources>
+</document>

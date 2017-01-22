@@ -53,11 +53,11 @@
 {
     _isHasNotification = isHasNotification;
     if (_isHasNotification) {
-        self.recordFlagImageView.backgroundColor = DEFAULT_BG_COLOR;
+        [self.recordFlagImageView setImage:[UIImage imageNamed:@"hasClock"]];
     }
     else
     {
-        self.recordFlagImageView.backgroundColor = [UIColor clearColor];
+        self.recordFlagImageView.image = nil;
     }
 }
 

@@ -9,6 +9,8 @@
 #import "CalendarDatePickerView.h"
 #import "AppDelegate.h"
 
+#define PICKER_HEIGHT  (CURRENT_IOS_VERISON >= 9 ? 200.0f : 296.0f)
+
 @interface CalendarDatePickerView ()
 
 @property (nonatomic, strong) UIView *bgShowView;
@@ -76,6 +78,7 @@
 -(UIView *)bgShowView
 {
     if (!_bgShowView) {
+        
         self.bgShowView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.frame.size.width , self.frame.size.height)];
         _bgShowView.backgroundColor = [UIColor blackColor];
         _bgShowView.alpha = 0.6;
@@ -89,8 +92,8 @@
 -(UIView *)mainShowView
 {
     if (!_mainShowView) {
-        self.mainShowView = [[UIView alloc] initWithFrame:CGRectMake(20.0f, self.frame.size.height/2 - 200/2, self.frame.size.width - 40.0f , 200.0f)];
         
+        self.mainShowView = [[UIView alloc] initWithFrame:CGRectMake(20.0f, self.frame.size.height/2 - PICKER_HEIGHT/2, self.frame.size.width - 40.0f , PICKER_HEIGHT)];
         _mainShowView.backgroundColor = [UIColor whiteColor];
     }
     return _mainShowView;
@@ -100,7 +103,8 @@
 -(UIDatePicker *)datePicker
 {
     if (!_datePicker) {
-        self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0f, 30.0f, _mainShowView.frame.size.width, _mainShowView.frame.size.height - 40.0f - 40.0f)];
+        self.datePicker = [[UIDatePicker alloc] init];
+        _datePicker.frame = CGRectMake(0.0f, 30.0f, _mainShowView.frame.size.width, _mainShowView.frame.size.height - 40.0f - 40.0f);
         _datePicker.datePickerMode = self.datePickerMode;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd"];

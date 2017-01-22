@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *notiStateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *notiImageView;
 
+-(void)configUIWithModel:(CalendarNotiModel *)model;
 @end

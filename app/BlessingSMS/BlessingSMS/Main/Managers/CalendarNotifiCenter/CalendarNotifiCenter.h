@@ -19,5 +19,6 @@
 -(void)delNotifi:(CalendarNotiModel *)notiModel;
 -(void)editNotifi:(CalendarNotiModel *)notiModel withIndex:(NSInteger)editIndex;
 
+//key : year|month|day
 -(NSMutableArray *)calendarNotiDicWithKey:(NSString *)key;
 @end

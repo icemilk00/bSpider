@@ -13,6 +13,8 @@
 
 +(NSArray *)getAddressBookInfo
 {
+    BOOL __block isAgree = YES;
+    
     ABAddressBookRef addressBook = nil;
     
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 6.0)
@@ -22,6 +24,9 @@
         dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error)
                                                  {
+                                                     if (!granted) {
+                                                         isAgree = NO;
+                                                     }
                                                      dispatch_semaphore_signal(sema);
                                                  });
         
@@ -34,6 +39,12 @@
     else
     {
         addressBook = ABAddressBookCreate();
+    }
+    
+    if (!isAgree) {
+        UIAlertView * alart = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请您设置允许APP访问您的通讯录\n设置>通用>隐私" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alart show];
+        return [NSArray array];
     }
     
     CFArrayRef personArray = ABAddressBookCopyArrayOfAllPeople(addressBook);
