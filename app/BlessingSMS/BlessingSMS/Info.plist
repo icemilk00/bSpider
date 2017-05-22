@@ -27,7 +27,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.0</string>
+	<string>2.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -72,11 +72,23 @@
 				<string>blessingsms</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tb</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tbopen23318409</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>tbopen</string>
+		<string>tmall</string>
 		<string>weixin</string>
 		<string>wechat</string>
 		<string>mqqapi</string>

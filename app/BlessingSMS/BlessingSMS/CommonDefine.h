@@ -23,6 +23,8 @@
 
 #define DEFAULT_BG_COLOR [UIColor colorWithRed:246/255.0f green:56/255.0f blue:56/255.0f alpha:1]
 
+#define RGB_COLOR(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
+
 #define UMAPPKEY @"569a695ce0f55af3f60019a5"
 
 #endif

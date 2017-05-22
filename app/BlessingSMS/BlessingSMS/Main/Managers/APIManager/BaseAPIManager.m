@@ -12,6 +12,8 @@
 #define APIURL  @"http://121.42.29.56:9000"
 
 
+
+
 @implementation BaseAPIManager
 
 -(instancetype)init
@@ -106,6 +108,21 @@
     return [reformer manager:self reformData:self.dataSourceDic];
 }
 
++(NSString *)paramStrForDic:(NSDictionary *)paramDic
+{
+    if (!paramDic) return nil;
+    
+    NSMutableString *paramStr = [[NSMutableString alloc] init];
+    for (int i = 0; i < paramDic.allKeys.count; i ++) {
+        [paramStr appendString:[NSString stringWithFormat:@"%@=%@",paramDic.allKeys[i],paramDic.allValues[i]]];
+        if (i != paramDic.allKeys.count - 1) {
+            [paramStr appendString:@"&"];
+        }
+    }
+    
+    return paramStr;
+}
+
 @end
 
 @implementation SMSAPIManager
@@ -148,3 +165,5 @@
 }
 
 @end
+
+

@@ -50,9 +50,14 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 
 @property (nonatomic, strong) NSDictionary *dataSourceDic;  //服务器返回的原始数据的字典
 @property (nonatomic, strong) NSString *retCode;            //服务器返回的retCode码
-@property (nonatomic, strong) NSError* requestError;       //请求失败的error
+@property (nonatomic, strong) NSError* requestError;        //请求失败的error
 
 -(id)fetchDataWithReformer:(id <ReformerProtocol> )reformer;
+
++(NSString *)paramStrForDic:(NSDictionary *)paramDic;
+
+-(void)setGETRequestWithUrlStr:(NSString *)urlStr;
+-(void)setPOSTRequestWithUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr;
 
 @end
 
@@ -69,3 +74,5 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 -(void)getSmsCategory;
 
 @end
+
+

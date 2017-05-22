@@ -31,10 +31,12 @@
 #import "MBProgressHUD+EasyShow.h"
 #import "MobClick.h"
 #import "NSDate+CalendarHelper.h"
+#import "UIImageView+WebCache.h"
 
 
 #import "RequestManager.h"
 //#import "BaseAPIManager.h"
+#import "TBAPIManager.h"
 #import "DataReformer.h"
 #import "AnalyticsManager.h"
 #import "PushManager.h"
@@ -44,12 +46,16 @@
 #import "LayerHelper.h"
 #import "AddressBookHelper.h"
 #import "PinyinHelper.h"
+#import "DateHelper.h"
 
 #import "JSONKit.h"
 
 #import <objc/runtime.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 #import "ShareManager.h"
 
+#import <AlibcTradeSDK/AlibcTradeSDK.h>
+#import <AlibcTradeBiz/AlibcTradeBiz.h>
 
 #endif /* PrefixHeader_pch */

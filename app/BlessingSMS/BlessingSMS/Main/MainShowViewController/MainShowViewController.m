@@ -10,6 +10,7 @@
 #import "SMSInfoModel.h"
 #import "SmsCell.h"
 #import "SMSSendViewController.h"
+#import "RecommendViewController.h"
 
 @interface MainShowViewController ()
 {
@@ -21,7 +22,9 @@
 
 @property (strong, nonatomic) SMSAPIManager *smsApiManager;
 @property (strong, nonatomic) SMSInfoReformer *smsApiReformer;
+
 @property (strong, nonatomic) UITableView *showTableView;
+@property (strong, nonatomic) UIButton *recommendButton;
 
 @end
 
@@ -42,7 +45,7 @@
     [self loadData];
     
     [self.view addSubview:self.showTableView];
-    
+    [self.view addSubview:self.recommendButton];
 }
 
 -(void)arrayInit
@@ -148,6 +151,7 @@
 #pragma mark - leftAction
 -(void)navLeftButtonClicked:(UIButton *)sender
 {
+
     if (self.sideMenuViewController.visible) {
         [self.sideMenuViewController hideMenuViewController];
     }
@@ -156,6 +160,13 @@
         [self.sideMenuViewController presentLeftMenuViewController];
     }
 }
+
+-(void)recommendAction:(UIButton *)sender
+{
+    RecommendViewController *recommendVc = [[RecommendViewController alloc] init];
+    [self.navigationController pushViewController:recommendVc animated:YES];
+}
+
 
 #pragma mark - headRefresh & footRefresh
 -(void)headRefresh
@@ -187,6 +198,7 @@
     return _smsApiReformer;
 }
 
+
 -(UITableView *)showTableView
 {
     if (!_showTableView) {
@@ -200,6 +212,16 @@
         _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];
     }
     return _showTableView;
+}
+
+-(UIButton *)recommendButton
+{
+    if (!_recommendButton) {
+        _recommendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54, 44, 44)];
+        _recommendButton.backgroundColor = [UIColor redColor];
+        [_recommendButton addTarget:self action:@selector(recommendAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _recommendButton;
 }
 
 #pragma mark - didReceiveMemoryWarning

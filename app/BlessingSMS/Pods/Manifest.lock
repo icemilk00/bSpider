@@ -21,16 +21,23 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONKit (1.5pre)
-  - MJExtension (3.0.10)
+  - MJExtension (3.0.13)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - JSONKit (~> 1.5pre)
   - MJExtension
+  - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
-  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: aa15c3585337cf459c138db908b546a3295cce37
+
+COCOAPODS: 1.0.1

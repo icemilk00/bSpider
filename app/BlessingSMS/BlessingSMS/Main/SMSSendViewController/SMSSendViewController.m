@@ -53,11 +53,6 @@
     
 }
 
--(void)navLeftButtonClicked:(UIButton *)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - button action
 
 -(void)smsSend{

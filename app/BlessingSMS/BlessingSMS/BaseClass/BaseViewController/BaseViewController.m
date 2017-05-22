@@ -24,6 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)navLeftButtonClicked:(UIButton *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 
