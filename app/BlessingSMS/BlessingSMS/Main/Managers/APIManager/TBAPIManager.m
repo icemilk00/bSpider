@@ -22,8 +22,7 @@
              @"timestamp":[DateHelper currentDateToStringWithFormat:@"yyyy-MM-dd HH:mm:ss"],
              @"v":@"2.0",
              @"sign_method":@"md5",
-             @"format":@"json",
-             @"platform":@"2"};
+             @"format":@"json"};
 }
 
 
@@ -68,6 +67,7 @@
     [parameterDic setObject:itemID forKey:@"favorites_id"];
     [parameterDic setObject:@"95982835" forKey:@"adzone_id"];
     [parameterDic setObject:@(pageNum) forKey:@"page_no"];
+    [parameterDic setObject:@(2) forKey:@"platform"];
     [parameterDic setObject:@"num_iid,title,Cpict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,seller_id,volume,nick,shop_title,zk_final_price_wap,event_start_time,event_end_time,tk_rate,status,type,click_url" forKey:@"fields"];
 
     NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
@@ -76,6 +76,38 @@
 
     NSString *paramStr = [[self class] paramStrForDic:parameterDic];
     //    NSString *baseUrlStr = @"http://gw.api.taobao.com/router/rest?sign=D3C05213CE66AF1325729B80F460F38C&timestamp=2017-05-19+18%3A06%3A42&v=2.0&app_key=23832822&method=taobao.tbk.uatm.favorites.item.get&partner_id=top-apitools&format=json&adzone_id=95982835&platform=2&favorites_id=5580797&force_sensitive_param_fuzzy=true&fields=num_iid%2Ctitle%2Cpict_url%2Csmall_images%2Creserve_price%2Czk_final_price%2Cuser_type%2Cprovcity%2Citem_url%2Cseller_id%2Cvolume%2Cnick%2Cshop_title%2Czk_final_price_wap%2Cevent_start_time%2Cevent_end_time%2Ctk_rate%2Cstatus%2Ctype%2Cclick_url";
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+#pragma mark - 淘宝客API:(获取淘宝联盟选品库的宝贝信息)
+@implementation TB_FavoritesListAPIManager
+
+-(void)getTB_FavoritesList
+{
+    //@"5580797"
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.uatm.favorites.get" forKey:@"method"];
+    
+    [parameterDic setObject:@(1) forKey:@"page_no"];
+    [parameterDic setObject:@(100) forKey:@"page_size"];
+    
+    [parameterDic setObject:@"favorites_title,favorites_id,type" forKey:@"fields"];
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
     NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
     
     [self setGETRequestWithUrlStr:baseUrlStr];

@@ -9,7 +9,8 @@
 #import "BaseAPIManager.h"
 
 
-#define APIURL  @"http://121.42.29.56:9000"
+//#define APIURL  @"http://121.42.29.56:9000"
+#define APIURL  @"http://127.0.0.1:9000"
 
 
 
@@ -155,6 +156,23 @@
 -(void)getSmsCategory
 {
     NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=2"];
+    
+    [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:nil andMethod:@"GET"];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+#pragma mark - 请求客户端默认配置的API
+@implementation DefaultConfigAPIManager
+
+-(void)getDefaultConfig
+{
+    NSString *baseUrlStr = [self makeRequestBaseUrl:@"action=10000"];
     
     [self sendRequestWithBaseUrlStr:baseUrlStr andParamStr:nil andMethod:@"GET"];
 }

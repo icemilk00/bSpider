@@ -69,6 +69,7 @@
 		E6353A071C3E1585005E3A2F /* cell_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6353A031C3E1585005E3A2F /* cell_selected@3x.png */; };
 		E6353A081C3E1585005E3A2F /* cell_unSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6353A041C3E1585005E3A2F /* cell_unSelected@2x.png */; };
 		E6353A091C3E1585005E3A2F /* cell_unSelected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6353A051C3E1585005E3A2F /* cell_unSelected@3x.png */; };
+		E63D30A51ED410370017488A /* TBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E63D30A41ED410370017488A /* TBManager.m */; };
 		E64052971C3A6F9700598B62 /* cell_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E64052951C3A6F9700598B62 /* cell_arrow@2x.png */; };
 		E64052981C3A6F9700598B62 /* cell_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E64052961C3A6F9700598B62 /* cell_arrow@3x.png */; };
 		E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E64052991C3A7D5900598B62 /* cell_arrow_down@2x.png */; };
@@ -121,6 +122,9 @@
 		E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E191C554102001408E2 /* Default-568h@2x.png */; };
 		E67B2E1D1C554102001408E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1A1C554102001408E2 /* Default.png */; };
 		E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1B1C554102001408E2 /* Default@2x.png */; };
+		E67D91591ED42C1900F86AC3 /* ClientConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */; };
+		E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */; };
+		E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
 		E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC31C7F689B0041F4C5 /* calendar@2x.png */; };
 		E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC41C7F689B0041F4C5 /* calendar@3x.png */; };
@@ -279,6 +283,8 @@
 		E6353A031C3E1585005E3A2F /* cell_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_selected@3x.png"; sourceTree = "<group>"; };
 		E6353A041C3E1585005E3A2F /* cell_unSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unSelected@2x.png"; sourceTree = "<group>"; };
 		E6353A051C3E1585005E3A2F /* cell_unSelected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unSelected@3x.png"; sourceTree = "<group>"; };
+		E63D30A31ED410370017488A /* TBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBManager.h; sourceTree = "<group>"; };
+		E63D30A41ED410370017488A /* TBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBManager.m; sourceTree = "<group>"; };
 		E64052951C3A6F9700598B62 /* cell_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow@2x.png"; sourceTree = "<group>"; };
 		E64052961C3A6F9700598B62 /* cell_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow@3x.png"; sourceTree = "<group>"; };
 		E64052991C3A7D5900598B62 /* cell_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_arrow_down@2x.png"; sourceTree = "<group>"; };
@@ -350,6 +356,10 @@
 		E67B2E191C554102001408E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E67B2E1A1C554102001408E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E67B2E1B1C554102001408E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E67D91571ED42C1900F86AC3 /* ClientConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientConfigManager.h; sourceTree = "<group>"; };
+		E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientConfigManager.m; sourceTree = "<group>"; };
+		E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_recommend@2x.png"; sourceTree = "<group>"; };
+		E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_recommend@3x.png"; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E68316721CFEDCAF003EDA7B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		E6934BC31C7F689B0041F4C5 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
@@ -677,6 +687,8 @@
 		E633437E1C4692380055A9C9 /* sourceImg */ = {
 			isa = PBXGroup;
 			children = (
+				E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */,
+				E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */,
 				E6A20EBD1C819AA2005890FD /* weeklyTitle@2x.png */,
 				E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */,
 				E6A20EB91C81907C005890FD /* add_noti@2x.png */,
@@ -728,6 +740,15 @@
 				E63539FF1C3E1418005E3A2F /* SmsSendCell.xib */,
 			);
 			name = AddressBookViewController;
+			sourceTree = "<group>";
+		};
+		E63D30A21ED410250017488A /* TBManager */ = {
+			isa = PBXGroup;
+			children = (
+				E63D30A31ED410370017488A /* TBManager.h */,
+				E63D30A41ED410370017488A /* TBManager.m */,
+			);
+			path = TBManager;
 			sourceTree = "<group>";
 		};
 		E64052941C3A6F9700598B62 /* Cell */ = {
@@ -891,6 +912,15 @@
 				E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */,
 			);
 			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		E67D91561ED42C0E00F86AC3 /* ClientConfigManager */ = {
+			isa = PBXGroup;
+			children = (
+				E67D91571ED42C1900F86AC3 /* ClientConfigManager.h */,
+				E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */,
+			);
+			path = ClientConfigManager;
 			sourceTree = "<group>";
 		};
 		E6935B2F1ED2864700F3A279 /* DateHelper */ = {
@@ -1082,6 +1112,8 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E67D91561ED42C0E00F86AC3 /* ClientConfigManager */,
+				E63D30A21ED410250017488A /* TBManager */,
 				E64407671C7AF83A0062102A /* DataStore */,
 				E66609301C79FF5800B5E5A7 /* CalendarNotifiCenter */,
 				E6AD68981C5FA2530056C04F /* PushManager */,
@@ -1322,6 +1354,7 @@
 				E62C846F1C44087800FD29D5 /* menu@3x.png in Resources */,
 				E60EDFEE1C4D582400FAA637 /* icon-114.png in Resources */,
 				E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */,
+				E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */,
 				E65B88981ECDA31A006CD3E4 /* ALPLinkPartnerSDK.bundle in Resources */,
 				E6353A091C3E1585005E3A2F /* cell_unSelected@3x.png in Resources */,
 				E6A20EB11C817707005890FD /* hasClock@2x.png in Resources */,
@@ -1376,6 +1409,7 @@
 				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,
 				E67B2E1D1C554102001408E2 /* Default.png in Resources */,
 				E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */,
+				E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */,
 				E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */,
 				E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */,
 				E6353A071C3E1585005E3A2F /* cell_selected@3x.png in Resources */,
@@ -1482,6 +1516,7 @@
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
 				E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */,
 				E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */,
+				E63D30A51ED410370017488A /* TBManager.m in Sources */,
 				E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */,
 				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
 				E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */,
@@ -1496,6 +1531,7 @@
 				E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
+				E67D91591ED42C1900F86AC3 /* ClientConfigManager.m in Sources */,
 				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,
 				E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */,
 				E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */,

@@ -75,4 +75,10 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 
 @end
 
+#pragma mark - 请求客户端默认配置的API
+@interface DefaultConfigAPIManager : BaseAPIManager <APIManager>
+
+-(void)getDefaultConfig;
+
+@end
 

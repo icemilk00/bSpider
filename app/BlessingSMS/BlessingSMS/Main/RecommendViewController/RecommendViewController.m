@@ -15,6 +15,7 @@
 {
     NSMutableArray *_dataSourceArray;
     NSInteger _pageIndex;
+    NSString *_favID;
 }
 @property (strong, nonatomic) TB_FavoritesItemAPIManager *tb_FavoritesItemApiManager;
 @property (strong, nonatomic) RecommendCollectionView *recommendCollectView;
@@ -22,6 +23,15 @@
 @end
 
 @implementation RecommendViewController
+
+-(id)initWithFavID:(NSString *)favID
+{
+    self = [super init];
+    if (self) {
+        _favID = favID;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +49,6 @@
     
     [self loadData];
     
-    
 }
 
 -(void)arrayInit
@@ -49,7 +58,7 @@
 
 -(void)loadData
 {
-    [self.tb_FavoritesItemApiManager getTB_FavoritesItem:@"5580797" andPageNum:_pageIndex];
+    [self.tb_FavoritesItemApiManager getTB_FavoritesItem:_favID andPageNum:_pageIndex];
 }
 
 #pragma mark - collectionView delegate & datasource
@@ -74,7 +83,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     RecommendInfoModel *model = _dataSourceArray[indexPath.row];
+    
+    [AnalyticsManager eventRecommendClickedWithFavID:model.num_iid withItemName:model.title];
     
     id<AlibcTradePage> page = [AlibcTradePageFactory page:model.click_url];
 //    [AlibcTradePageFactory itemDetailPage:@"45281461519"];
@@ -82,11 +94,14 @@
     AlibcTradeShowParams *showParams = [[AlibcTradeShowParams alloc] init];
     showParams.openType = AlibcOpenTypeAuto;
 
+    AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
+    taokeParams.pid = @"mm_17747039_0_0";
+    
     [service
      show:showParams.isNeedPush ? self.navigationController : self
      page:page
      showParams:showParams
-     taoKeParams:nil
+     taoKeParams:taokeParams
      trackParam:nil
      tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
 

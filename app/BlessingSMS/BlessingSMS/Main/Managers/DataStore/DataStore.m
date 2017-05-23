@@ -77,7 +77,6 @@
 
 -(void)editObject:(id)object ForKey:(NSString *)key withIndex:(NSInteger)index
 {
-
     NSMutableArray *dataArray = self.dictonary[key];
     if (dataArray && dataArray.count > index) {
         
@@ -86,8 +85,6 @@
         
         [self.dictonary writeToFile:self.savePath atomically:YES];
     }
-    
-    
 }
 
 @end

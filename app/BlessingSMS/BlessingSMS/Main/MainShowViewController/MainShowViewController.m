@@ -163,7 +163,18 @@
 
 -(void)recommendAction:(UIButton *)sender
 {
-    RecommendViewController *recommendVc = [[RecommendViewController alloc] init];
+    [AnalyticsManager eventHomeRecommendWithCategoryID:currentCategoryId withCategoryName:self.title];
+    
+    NSString *recommendFavID = @"";
+    if ([currentCategoryId isEqualToString:@"0"]) {
+        recommendFavID = [[ClientConfigManager sharedInstance] homePageRecommendFavID];
+    }
+    else
+    {
+        recommendFavID = [[TBManager sharedInstance] favIDForCategoryID:currentCategoryId];
+    }
+    
+    RecommendViewController *recommendVc = [[RecommendViewController alloc] initWithFavID:recommendFavID];
     [self.navigationController pushViewController:recommendVc animated:YES];
 }
 
@@ -217,9 +228,15 @@
 -(UIButton *)recommendButton
 {
     if (!_recommendButton) {
-        _recommendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54, 44, 44)];
-        _recommendButton.backgroundColor = [UIColor redColor];
+        _recommendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54, 40, 40)];
+        _recommendButton.backgroundColor = [UIColor whiteColor];
         [_recommendButton addTarget:self action:@selector(recommendAction:) forControlEvents:UIControlEventTouchUpInside];
+        _recommendButton.layer.cornerRadius = 44/2;
+        _recommendButton.layer.shadowColor = [UIColor grayColor].CGColor;
+        _recommendButton.layer.shadowOffset = CGSizeMake(1, 1);
+        _recommendButton.layer.shadowOpacity = 0.8;
+        
+        [_recommendButton setImage:[UIImage imageNamed:@"home_recommend"] forState:UIControlStateNormal];
     }
     return _recommendButton;
 }

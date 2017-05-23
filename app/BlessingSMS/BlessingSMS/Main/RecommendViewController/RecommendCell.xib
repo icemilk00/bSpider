@@ -21,7 +21,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8a1-4G-iIk">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                        <color key="backgroundColor" red="0.15615933870000001" green="0.83979373000000002" blue="0.71419286469999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="8a1-4G-iIk" secondAttribute="height" multiplier="1:1" id="ZcV-TG-12M"/>
                         </constraints>
@@ -62,7 +62,7 @@
                 <outlet property="titleHeight" destination="gtV-MZ-5wH" id="tGK-J4-oBa"/>
                 <outlet property="titleLabel" destination="CUt-U5-gvI" id="xOu-DB-2wl"/>
             </connections>
-            <point key="canvasLocation" x="-293" y="-40"/>
+            <point key="canvasLocation" x="-167" y="-47"/>
         </collectionViewCell>
     </objects>
 </document>

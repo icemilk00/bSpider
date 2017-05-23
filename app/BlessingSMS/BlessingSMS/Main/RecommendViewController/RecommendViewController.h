@@ -10,4 +10,6 @@
 
 @interface RecommendViewController : BaseViewController <APIManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
+-(id)initWithFavID:(NSString *)favID;
+
 @end

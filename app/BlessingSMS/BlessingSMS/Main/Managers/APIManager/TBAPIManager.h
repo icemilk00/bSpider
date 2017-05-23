@@ -19,3 +19,10 @@
 -(void)getTB_FavoritesItem:(NSString *)itemID andPageNum:(NSInteger)pageNum;
 
 @end
+
+#pragma mark - 淘宝客API:(获取淘宝联盟选品库列表信息)
+@interface TB_FavoritesListAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_FavoritesList;
+
+@end
