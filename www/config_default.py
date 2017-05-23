@@ -15,6 +15,12 @@ configs = {
 	},
 
 	#默认拉取的categoryid
-	'categoryId':'121'	
+	'categoryId':'121',	
+
+	'clientConfigs':{
+		'recommendCf':{
+			'homeRecommendID': 5580797
+		}
+	}
 
 }

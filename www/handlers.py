@@ -74,3 +74,14 @@ def api_category_conf():
 
 	return dict(retCode=retCode, categoryArray=categoryArray)
 
+
+
+
+#获取默认配置信息
+@get('/api/action=10000')
+def api_client_conf():
+
+	clientCf = configs.clientConfigs
+	return dict(retCode=1000, clientConfigs=clientCf)
+	
+
