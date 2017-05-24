@@ -17,9 +17,21 @@ configs = {
 	#默认拉取的categoryid
 	'categoryId':'121',	
 
+	'client_review_version': '0.0.0.1',		#审核版本，过审后设置为飞使用版本的版本号
+
 	'clientConfigs':{
 		'recommendCf':{
-			'homeRecommendID': 5580797
+			'recommendItemCanClicked': True,	#是否可进详情页
+			'homeRecommendID': 5580797,			#首页的推荐库id，即分类id为0
+			'defaultRecommendID': 5761142		#默认的推荐库id （非定向关联分类的推荐库）
+		}
+	},
+
+	'review_clientConfigs':{
+		'recommendCf':{
+			'recommendItemCanClicked': False,
+			'homeRecommendID': 5580797,
+			'defaultRecommendID': 5761142
 		}
 	}
 

@@ -84,6 +84,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if(![[ClientConfigManager sharedInstance] canGoDetailPage])
+    {
+        return;
+    }
+    
     RecommendInfoModel *model = _dataSourceArray[indexPath.row];
     
     [AnalyticsManager eventRecommendClickedWithFavID:model.num_iid withItemName:model.title];

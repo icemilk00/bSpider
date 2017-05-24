@@ -79,9 +79,24 @@ def api_category_conf():
 
 #获取默认配置信息
 @get('/api/action=10000')
-def api_client_conf():
+def api_client_conf(request):
+	#print('request head = %s' % request.headers)
+	clientVersion = request.headers['c_version']
+	reviewVersion = configs.client_review_version;
 
 	clientCf = configs.clientConfigs
+
+	if clientVersion == reviewVersion:
+		clientCf = configs.review_clientConfigs
+		
+
+	print('clientcf = %s' % clientCf)
 	return dict(retCode=1000, clientConfigs=clientCf)
+
+#获取默认配置信息
+@post('/api/action=20000')
+def api_client_conf(request, *, feedContent, feedTime):
+	#print('request head = %s' % request.headers)
+	return dict(retCode=1000)
 	
 

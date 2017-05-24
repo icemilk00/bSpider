@@ -58,13 +58,32 @@ static ClientConfigManager *configManager = nil;
     }
 }
 
+-(NSString *)defaultPageRecommendFavID
+{
+    if (_defaultConfigDic) {
+        return [NSString stringWithFormat:@"%@", _defaultConfigDic[@"recommendCf"][@"defaultRecommendID"]];
+    }
+    
+    return @"5761142";
+}
+
+
 -(NSString *)homePageRecommendFavID
 {
     if (_defaultConfigDic) {
         return [NSString stringWithFormat:@"%@", _defaultConfigDic[@"recommendCf"][@"homeRecommendID"]];
     }
     
-    return @"5580797";
+    return [self defaultPageRecommendFavID];
+}
+
+-(BOOL)canGoDetailPage
+{
+    if (_defaultConfigDic) {
+        return [_defaultConfigDic[@"recommendCf"][@"recommendItemCanClicked"] boolValue];
+    }
+    
+    return YES;
 }
 
 -(DefaultConfigAPIManager *)defaultConfigApiManager

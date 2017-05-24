@@ -39,7 +39,11 @@
     if ([method isEqualToString:@"GET"])
     {
         //发送get请求，这里直接把baseurlstr 和 paramstr 拼接即可
-        NSString *sendStr = [NSString stringWithFormat:@"%@?%@",baseUrlStr, paramStr];
+        NSMutableString *sendStr = [[NSMutableString alloc] initWithString:baseUrlStr];
+        if (paramStr) {
+            [sendStr appendString:[NSString stringWithFormat:@"?%@", paramStr]];
+        }
+
         [self setGETRequestWithUrlStr:sendStr];
     }
     else if ([method isEqualToString:@"POST"])
@@ -67,7 +71,7 @@
 -(void)setPOSTRequestWithUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr
 {
     RequestManager *manager = [RequestManager manager];
-    [manager GET:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
+    [manager POST:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          [self requestSucessWithOperation:operation andObject:responseObject];
      }

@@ -16,5 +16,7 @@
 
 @property (nonatomic, strong) NSDictionary *defaultConfigDic;
 
--(NSString *)homePageRecommendFavID;
+-(NSString *)homePageRecommendFavID;    //配置的首页默认进入的推荐页
+-(NSString *)defaultPageRecommendFavID; //配置的默认进入的推荐页
+-(BOOL)canGoDetailPage;                 //配置是否可以点击推荐商品进入详情页
 @end
