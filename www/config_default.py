@@ -4,10 +4,10 @@ configs = {
 	'db' : {
 		'host' : '127.0.0.1',
 		'port' : 3306,
-		# 'user' : 'blessingSMS-hp',
-		# 'password' : 'blessingSMS-hp',
-		'user' : 'root',
-		'password' : 'root',
+		'user' : 'blessingSMS-hp',
+		'password' : 'blessingSMS-hp',
+		# 'user' : 'root',
+		# 'password' : 'root',
 		'db' : 'blessingSMS'
 	},
 	'session' :{
@@ -17,7 +17,7 @@ configs = {
 	#默认拉取的categoryid
 	'categoryId':'121',	
 
-	'client_review_version': '0.0.0.1',		#审核版本，过审后设置为飞使用版本的版本号
+	'client_review_version': '3.0.0.1',		#审核版本，过审后设置为飞使用版本的版本号
 
 	'clientConfigs':{
 		'recommendCf':{

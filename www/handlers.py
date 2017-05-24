@@ -93,7 +93,7 @@ def api_client_conf(request):
 	print('clientcf = %s' % clientCf)
 	return dict(retCode=1000, clientConfigs=clientCf)
 
-#获取默认配置信息
+#反馈接口 - 未完成
 @post('/api/action=20000')
 def api_client_conf(request, *, feedContent, feedTime):
 	#print('request head = %s' % request.headers)
