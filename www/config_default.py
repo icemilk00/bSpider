@@ -4,10 +4,10 @@ configs = {
 	'db' : {
 		'host' : '127.0.0.1',
 		'port' : 3306,
-		'user' : 'blessingSMS-hp',
-		'password' : 'blessingSMS-hp',
-		# 'user' : 'root',
-		# 'password' : 'root',
+		# 'user' : 'blessingSMS-hp',
+		# 'password' : 'blessingSMS-hp',
+		'user' : 'root',
+		'password' : 'root',
 		'db' : 'blessingSMS'
 	},
 	'session' :{

@@ -34,6 +34,7 @@ def readCategoryList():
 		f.close()
 
 	jsonArray = json.loads(category_jsonstr)
+	jsonArray.insert(0, {"categoryValue": "0", "categoryName": "今日推荐"})
 	return jsonArray
 
 #获取categoryID的短信信息，如果categoryId为空默认拉出推荐id的信息
@@ -76,11 +77,10 @@ def api_category_conf():
 
 
 
-
 #获取默认配置信息
 @get('/api/action=10000')
 def api_client_conf(request):
-	#print('request head = %s' % request.headers)
+	# print('request head = %s' % request.headers)
 	clientVersion = request.headers['c_version']
 	reviewVersion = configs.client_review_version;
 
@@ -89,13 +89,13 @@ def api_client_conf(request):
 	if clientVersion == reviewVersion:
 		clientCf = configs.review_clientConfigs
 		
-
-	print('clientcf = %s' % clientCf)
+	# print('clientcf = %s' % clientCf)
 	return dict(retCode=1000, clientConfigs=clientCf)
+
 
 #反馈接口 - 未完成
 @post('/api/action=20000')
-def api_client_conf(request, *, feedContent, feedTime):
+def api_feedback(request, *, feedContent, feedTime):
 	#print('request head = %s' % request.headers)
 	return dict(retCode=1000)
 	
