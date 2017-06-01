@@ -126,6 +126,11 @@
 		E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */; };
 		E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
+		E692F9CB1EDFFC9B00E6FF0B /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */; };
+		E692F9CD1EDFFCB400E6FF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */; };
+		E692F9CE1EDFFCB900E6FF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080CD1C47F7AD000E67CC /* AdSupport.framework */; };
+		E692F9D01EDFFCD100E6FF0B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CF1EDFFCD100E6FF0B /* StoreKit.framework */; };
+		E692F9D41EDFFCF000E6FF0B /* ADManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E692F9D31EDFFCF000E6FF0B /* ADManager.m */; };
 		E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC31C7F689B0041F4C5 /* calendar@2x.png */; };
 		E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BC41C7F689B0041F4C5 /* calendar@3x.png */; };
 		E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */; };
@@ -362,6 +367,16 @@
 		E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_recommend@3x.png"; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E68316721CFEDCAF003EDA7B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E692F9C51EDFFC9B00E6FF0B /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		E692F9C61EDFFC9B00E6FF0B /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		E692F9C71EDFFC9B00E6FF0B /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		E692F9C81EDFFC9B00E6FF0B /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		E692F9C91EDFFC9B00E6FF0B /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
+		E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E692F9CF1EDFFCD100E6FF0B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E692F9D21EDFFCF000E6FF0B /* ADManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADManager.h; sourceTree = "<group>"; };
+		E692F9D31EDFFCF000E6FF0B /* ADManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADManager.m; sourceTree = "<group>"; };
 		E6934BC31C7F689B0041F4C5 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		E6934BC41C7F689B0041F4C5 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
 		E6934BCB1C7F73900041F4C5 /* chooseFlag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseFlag@2x.png"; sourceTree = "<group>"; };
@@ -473,6 +488,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E692F9D01EDFFCD100E6FF0B /* StoreKit.framework in Frameworks */,
+				E692F9CE1EDFFCB900E6FF0B /* AdSupport.framework in Frameworks */,
+				E692F9CD1EDFFCB400E6FF0B /* CoreLocation.framework in Frameworks */,
 				E65B889F1ECDC888006CD3E4 /* CoreMotion.framework in Frameworks */,
 				E6AD68A21C5FA3B00056C04F /* CFNetwork.framework in Frameworks */,
 				E6A080DC1C47F86F000E67CC /* libz.tbd in Frameworks */,
@@ -480,6 +498,7 @@
 				E65B888B1ECDA31A006CD3E4 /* AlibcTradeCommon.framework in Frameworks */,
 				E65B88911ECDA31A006CD3E4 /* SGMain.framework in Frameworks */,
 				E65B88901ECDA31A006CD3E4 /* SecurityGuardSDK.framework in Frameworks */,
+				E692F9CB1EDFFC9B00E6FF0B /* libGDTMobSDK.a in Frameworks */,
 				E65B88881ECDA31A006CD3E4 /* AlibabaAuthSDK.framework in Frameworks */,
 				E6A080DA1C47F868000E67CC /* libstdc++.tbd in Frameworks */,
 				E6A080D81C47F85A000E67CC /* CoreTelephony.framework in Frameworks */,
@@ -515,6 +534,8 @@
 		836CEE16F67E49B9FEA15C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E692F9CF1EDFFCD100E6FF0B /* StoreKit.framework */,
+				E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */,
 				E65B889E1ECDC888006CD3E4 /* CoreMotion.framework */,
 				E68316721CFEDCAF003EDA7B /* libc++.tbd */,
 				E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */,
@@ -923,6 +944,28 @@
 			path = ClientConfigManager;
 			sourceTree = "<group>";
 		};
+		E692F9C41EDFFC9B00E6FF0B /* GDTSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E692F9C51EDFFC9B00E6FF0B /* GDTMobBannerView.h */,
+				E692F9C61EDFFC9B00E6FF0B /* GDTMobInterstitial.h */,
+				E692F9C71EDFFC9B00E6FF0B /* GDTNativeAd.h */,
+				E692F9C81EDFFC9B00E6FF0B /* GDTSplashAd.h */,
+				E692F9C91EDFFC9B00E6FF0B /* GDTTrack.h */,
+				E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */,
+			);
+			path = GDTSDK;
+			sourceTree = "<group>";
+		};
+		E692F9D11EDFFCF000E6FF0B /* ADManager */ = {
+			isa = PBXGroup;
+			children = (
+				E692F9D21EDFFCF000E6FF0B /* ADManager.h */,
+				E692F9D31EDFFCF000E6FF0B /* ADManager.m */,
+			);
+			path = ADManager;
+			sourceTree = "<group>";
+		};
 		E6935B2F1ED2864700F3A279 /* DateHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +1013,7 @@
 		E6A080AC1C47F124000E67CC /* OpenPlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
+				E692F9C41EDFFC9B00E6FF0B /* GDTSDK */,
 				E65B88711ECDA31A006CD3E4 /* ALiSDK */,
 				E6AD689C1C5FA38B0056C04F /* XGPushSDK */,
 				E656241F1C4AA071002DCE76 /* UMAnalytics */,
@@ -1112,6 +1156,7 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E692F9D11EDFFCF000E6FF0B /* ADManager */,
 				E67D91561ED42C0E00F86AC3 /* ClientConfigManager */,
 				E63D30A21ED410250017488A /* TBManager */,
 				E64407671C7AF83A0062102A /* DataStore */,
@@ -1503,6 +1548,7 @@
 				E6E6F5821C33D5F1008005EA /* UIViewController+RESideMenu.m in Sources */,
 				E696C24A1C4F882200340146 /* SettingViewController.m in Sources */,
 				E600ED3E1C3685F500AB6916 /* SmsCell.m in Sources */,
+				E692F9D41EDFFCF000E6FF0B /* ADManager.m in Sources */,
 				E6AD689B1C5FA2530056C04F /* PushManager.m in Sources */,
 				E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */,
 				E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1674,6 +1720,7 @@
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/XGPushSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/GDTSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -1724,6 +1771,7 @@
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/XGPushSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/GDTSDK",
 				);
 				OTHER_LDFLAGS = (
 					"-lstdc++",

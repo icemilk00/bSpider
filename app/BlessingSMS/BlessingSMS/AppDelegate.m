@@ -30,6 +30,7 @@
     [[TBManager sharedInstance] initConfig];    //初始化SDK
     [[TBManager sharedInstance] initTBFavList]; //获取选品库列表
     
+    [ADManager showSplashAD];
     
     //角标清0
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
@@ -56,6 +57,23 @@
     self.window.backgroundColor = DEFAULT_BG_COLOR;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+
+/**
+ *  开屏广告成功展示
+ */
+-(void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd
+{
+    
+}
+
+/**
+ *  开屏广告展示失败
+ */
+-(void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error
+{
+    
 }
 
 #pragma mark -  Open Platform

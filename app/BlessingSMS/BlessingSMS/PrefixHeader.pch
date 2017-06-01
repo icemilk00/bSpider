@@ -44,6 +44,7 @@
 #import "DataStore.h"
 #import "TBManager.h"
 #import "ClientConfigManager.h"
+#import "ADManager.h"
 
 #import "LayerHelper.h"
 #import "AddressBookHelper.h"
