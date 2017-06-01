@@ -14,6 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     self.layer.cornerRadius = 3.0f;
+    _showImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 -(void)setupWithModel:(RecommendInfoModel *)model
