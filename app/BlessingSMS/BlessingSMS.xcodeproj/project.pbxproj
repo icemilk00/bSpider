@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C8205A1FF6217E002EC0E7 /* ActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C820561FF6217E002EC0E7 /* ActivityManager.m */; };
+		04C8205B1FF6217E002EC0E7 /* ActivityShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C820591FF6217E002EC0E7 /* ActivityShowView.m */; };
+		04C8205D1FF62256002EC0E7 /* ActivityShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C8205C1FF62256002EC0E7 /* ActivityShowView.xib */; };
+		04C820621FF622E7002EC0E7 /* active_left_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C8205E1FF622E7002EC0E7 /* active_left_btn@3x.png */; };
+		04C820631FF622E7002EC0E7 /* active_right_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C8205F1FF622E7002EC0E7 /* active_right_btn@2x.png */; };
+		04C820641FF622E7002EC0E7 /* active_right_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C820601FF622E7002EC0E7 /* active_right_btn@3x.png */; };
+		04C820651FF622E7002EC0E7 /* active_left_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C820611FF622E7002EC0E7 /* active_left_btn@2x.png */; };
 		E600ED3E1C3685F500AB6916 /* SmsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED3C1C3685F500AB6916 /* SmsCell.m */; };
 		E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E600ED3D1C3685F500AB6916 /* SmsCell.xib */; };
 		E600ED451C36897900AB6916 /* LayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED441C36897900AB6916 /* LayerHelper.m */; };
@@ -197,6 +204,15 @@
 
 /* Begin PBXFileReference section */
 		007B0B086DE52A99E5EB5BDA /* Pods-BlessingSMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlessingSMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS.debug.xcconfig"; sourceTree = "<group>"; };
+		04C820551FF6217E002EC0E7 /* ActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityManager.h; sourceTree = "<group>"; };
+		04C820561FF6217E002EC0E7 /* ActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityManager.m; sourceTree = "<group>"; };
+		04C820581FF6217E002EC0E7 /* ActivityShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityShowView.h; sourceTree = "<group>"; };
+		04C820591FF6217E002EC0E7 /* ActivityShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityShowView.m; sourceTree = "<group>"; };
+		04C8205C1FF62256002EC0E7 /* ActivityShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityShowView.xib; sourceTree = "<group>"; };
+		04C8205E1FF622E7002EC0E7 /* active_left_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_left_btn@3x.png"; sourceTree = "<group>"; };
+		04C8205F1FF622E7002EC0E7 /* active_right_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_right_btn@2x.png"; sourceTree = "<group>"; };
+		04C820601FF622E7002EC0E7 /* active_right_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_right_btn@3x.png"; sourceTree = "<group>"; };
+		04C820611FF622E7002EC0E7 /* active_left_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_left_btn@2x.png"; sourceTree = "<group>"; };
 		0FE30EBD1073D84BEC1FEFB6 /* libPods-BlessingSMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BlessingSMS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3504F30EF39DF319499509 /* Pods-BlessingSMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlessingSMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS.release.xcconfig"; sourceTree = "<group>"; };
 		E600ED3B1C3685F500AB6916 /* SmsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsCell.h; sourceTree = "<group>"; };
@@ -531,6 +547,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C820541FF6217E002EC0E7 /* ActivtyManager */ = {
+			isa = PBXGroup;
+			children = (
+				04C820551FF6217E002EC0E7 /* ActivityManager.h */,
+				04C820561FF6217E002EC0E7 /* ActivityManager.m */,
+				04C820571FF6217E002EC0E7 /* View */,
+			);
+			path = ActivtyManager;
+			sourceTree = "<group>";
+		};
+		04C820571FF6217E002EC0E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04C820581FF6217E002EC0E7 /* ActivityShowView.h */,
+				04C820591FF6217E002EC0E7 /* ActivityShowView.m */,
+				04C8205C1FF62256002EC0E7 /* ActivityShowView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		836CEE16F67E49B9FEA15C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +744,10 @@
 		E633437E1C4692380055A9C9 /* sourceImg */ = {
 			isa = PBXGroup;
 			children = (
+				04C820611FF622E7002EC0E7 /* active_left_btn@2x.png */,
+				04C8205E1FF622E7002EC0E7 /* active_left_btn@3x.png */,
+				04C8205F1FF622E7002EC0E7 /* active_right_btn@2x.png */,
+				04C820601FF622E7002EC0E7 /* active_right_btn@3x.png */,
 				E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */,
 				E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */,
 				E6A20EBD1C819AA2005890FD /* weeklyTitle@2x.png */,
@@ -1156,6 +1196,7 @@
 		E6E6F5531C33CF7F008005EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				04C820541FF6217E002EC0E7 /* ActivtyManager */,
 				E692F9D11EDFFCF000E6FF0B /* ADManager */,
 				E67D91561ED42C0E00F86AC3 /* ClientConfigManager */,
 				E63D30A21ED410250017488A /* TBManager */,
@@ -1439,10 +1480,13 @@
 				E64052971C3A6F9700598B62 /* cell_arrow@2x.png in Resources */,
 				E633439A1C46B4C80055A9C9 /* send@3x.png in Resources */,
 				E63343931C46A7CF0055A9C9 /* qq@2x.png in Resources */,
+				04C820641FF622E7002EC0E7 /* active_right_btn@3x.png in Resources */,
 				E6A20EB81C817C73005890FD /* Setting@3x.png in Resources */,
 				E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */,
 				E60EDFF01C4D582400FAA637 /* icon-1024.png in Resources */,
 				E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */,
+				04C820631FF622E7002EC0E7 /* active_right_btn@2x.png in Resources */,
+				04C820651FF622E7002EC0E7 /* active_left_btn@2x.png in Resources */,
 				E6A20EB41C817707005890FD /* unhasClock@3x.png in Resources */,
 				E6934BCD1C7F73900041F4C5 /* chooseFlag@2x.png in Resources */,
 				E62C846E1C44087800FD29D5 /* menu@2x.png in Resources */,
@@ -1451,7 +1495,9 @@
 				E6353A061C3E1585005E3A2F /* cell_selected@2x.png in Resources */,
 				E6935B451ED2E51400F3A279 /* RecommendCell.xib in Resources */,
 				E63343811C4692380055A9C9 /* left_bg@2x.png in Resources */,
+				04C820621FF622E7002EC0E7 /* active_left_btn@3x.png in Resources */,
 				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,
+				04C8205D1FF62256002EC0E7 /* ActivityShowView.xib in Resources */,
 				E67B2E1D1C554102001408E2 /* Default.png in Resources */,
 				E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */,
 				E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */,
@@ -1522,7 +1568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1539,6 +1585,7 @@
 				E6E6F5811C33D5F1008005EA /* RESideMenu.m in Sources */,
 				E6E6F58D1C33DA43008005EA /* LeftMenuViewController.m in Sources */,
 				E6935B3C1ED2D43C00F3A279 /* RecommendInfoModel.m in Sources */,
+				04C8205B1FF6217E002EC0E7 /* ActivityShowView.m in Sources */,
 				E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */,
 				E600ED791C36994500AB6916 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */,
@@ -1566,6 +1613,7 @@
 				E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */,
 				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
 				E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */,
+				04C8205A1FF6217E002EC0E7 /* ActivityManager.m in Sources */,
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
 				E6E6F5751C33D1AF008005EA /* BaseNavController.m in Sources */,
 				E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */,

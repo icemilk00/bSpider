@@ -24,7 +24,11 @@ configs = {
 			'recommendItemCanClicked': True,	#是否可进详情页
 			'homeRecommendID': 5580797,			#首页的推荐库id，即分类id为0
 			'defaultRecommendID': 5761142		#默认的推荐库id （非定向关联分类的推荐库）
-		}
+		},
+		'activityCf':{
+			'showActive': True,					#是否显示活动按钮
+			'activityStr': '复制这段文字，打开支付宝，最高188红包立马送，Ti28Sc10cB',		#活动字符
+		},
 	},
 
 	'review_clientConfigs':{
@@ -34,5 +38,8 @@ configs = {
 			'defaultRecommendID': 5761142
 		}
 	}
+
+
+
 
 }

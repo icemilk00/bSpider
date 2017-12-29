@@ -11,6 +11,7 @@
 #import "SmsCell.h"
 #import "SMSSendViewController.h"
 #import "RecommendViewController.h"
+#import "ActivityManager.h"
 
 @interface MainShowViewController ()
 {
@@ -24,7 +25,8 @@
 @property (strong, nonatomic) SMSInfoReformer *smsApiReformer;
 
 @property (strong, nonatomic) UITableView *showTableView;
-@property (strong, nonatomic) UIButton *recommendButton;
+@property (strong, nonatomic) UIButton *recommendButton;    //淘宝客推荐
+@property (strong, nonatomic) UIButton *hbButton;           //红包
 
 @end
 
@@ -38,6 +40,8 @@
     pageIndex = 1;
     currentCategoryId = @"0";
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hbShow:) name:ActivityUpdateNotifi object:nil];
+    
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     [self.defaultNavView.leftButton setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     
@@ -46,6 +50,7 @@
     
     [self.view addSubview:self.showTableView];
     [self.view addSubview:self.recommendButton];
+    [self.view addSubview:self.hbButton];
 }
 
 -(void)arrayInit
@@ -178,6 +183,17 @@
     [self.navigationController pushViewController:recommendVc animated:YES];
 }
 
+-(void)hbAction:(UIButton *)sender
+{
+    [[ActivityManager shareInstance] showAlert];
+}
+
+-(void)hbShow:(NSNotification *)noti
+{
+    if (_hbButton) {
+        _hbButton.hidden = ![ActivityManager shareInstance].isShow;
+    }
+}
 
 #pragma mark - headRefresh & footRefresh
 -(void)headRefresh
@@ -241,10 +257,32 @@
     return _recommendButton;
 }
 
+-(UIButton *)hbButton
+{
+    if (!_hbButton) {
+        _hbButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54 - 54, 40, 40)];
+        _hbButton.backgroundColor = [UIColor whiteColor];
+        [_hbButton addTarget:self action:@selector(hbAction:) forControlEvents:UIControlEventTouchUpInside];
+        _hbButton.layer.cornerRadius = 44/2;
+        _hbButton.layer.shadowColor = [UIColor grayColor].CGColor;
+        _hbButton.layer.shadowOffset = CGSizeMake(1, 1);
+        _hbButton.layer.shadowOpacity = 0.8;
+        _hbButton.hidden = ![ActivityManager shareInstance].isShow;
+        
+        [_hbButton setImage:[UIImage imageNamed:@"home_recommend"] forState:UIControlStateNormal];
+    }
+    return _hbButton;
+}
+
 #pragma mark - didReceiveMemoryWarning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 

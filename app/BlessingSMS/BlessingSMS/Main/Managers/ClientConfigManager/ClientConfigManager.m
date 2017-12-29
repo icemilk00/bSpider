@@ -7,6 +7,7 @@
 //
 
 #import "ClientConfigManager.h"
+#import "ActivityManager.h"
 
 static ClientConfigManager *configManager = nil;
 
@@ -54,8 +55,20 @@ static ClientConfigManager *configManager = nil;
         NSDictionary *dic = manager.dataSourceDic;
         if (dic && dic[@"clientConfigs"]) {
             self.defaultConfigDic = dic[@"clientConfigs"];
+            if(self.defaultConfigDic)
+            {
+               [self configActivity];
+            }
         }
     }
+}
+
+-(void)configActivity
+{
+    [ActivityManager shareInstance].isShow = YES;//[_defaultConfigDic[@"showActive"] boolValue];
+    [ActivityManager shareInstance].showStr = @"复制这段文字，打开支付宝，最高188红包立马送，Ti28Sc10cB";//_defaultConfigDic[@"activityStr"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ActivityUpdateNotifi object:nil];
 }
 
 -(NSString *)defaultPageRecommendFavID
