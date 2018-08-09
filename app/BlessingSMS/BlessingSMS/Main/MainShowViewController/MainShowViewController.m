@@ -260,7 +260,7 @@
 -(UIButton *)hbButton
 {
     if (!_hbButton) {
-        _hbButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54 - 54, 40, 40)];
+        _hbButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 52, SCREEN_HEIGTH - 54 - 54, 36, 40)];
         _hbButton.backgroundColor = [UIColor whiteColor];
         [_hbButton addTarget:self action:@selector(hbAction:) forControlEvents:UIControlEventTouchUpInside];
         _hbButton.layer.cornerRadius = 44/2;
@@ -269,7 +269,7 @@
         _hbButton.layer.shadowOpacity = 0.8;
         _hbButton.hidden = ![ActivityManager shareInstance].isShow;
         
-        [_hbButton setImage:[UIImage imageNamed:@"home_recommend"] forState:UIControlStateNormal];
+        [_hbButton setImage:[UIImage imageNamed:@"hb"] forState:UIControlStateNormal];
     }
     return _hbButton;
 }

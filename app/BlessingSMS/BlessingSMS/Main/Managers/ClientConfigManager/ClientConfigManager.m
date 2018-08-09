@@ -65,8 +65,11 @@ static ClientConfigManager *configManager = nil;
 
 -(void)configActivity
 {
-    [ActivityManager shareInstance].isShow = YES;//[_defaultConfigDic[@"showActive"] boolValue];
-    [ActivityManager shareInstance].showStr = @"复制这段文字，打开支付宝，最高188红包立马送，Ti28Sc10cB";//_defaultConfigDic[@"activityStr"];
+    [ActivityManager shareInstance].isShow = [_defaultConfigDic[@"activityCf"][@"showActive"] boolValue];
+    [ActivityManager shareInstance].showStr = _defaultConfigDic[@"activityCf"][@"activityStr"];
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [ActivityManager shareInstance].showStr;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:ActivityUpdateNotifi object:nil];
 }
