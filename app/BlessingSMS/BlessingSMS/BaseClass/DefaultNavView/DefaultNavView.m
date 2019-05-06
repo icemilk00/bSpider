@@ -96,7 +96,7 @@ NSString * const KeyRightButton = @"KeyRightButton";
 
 -(void)setupLeftButton
 {
-    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 20.0f, 44.0f, 44.0f)];
+    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, STATENBAR_HEIGHT, 44.0f, 44.0f)];
     [self.leftButton setImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(leftButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftButton];
@@ -126,9 +126,9 @@ NSString * const KeyRightButton = @"KeyRightButton";
 
 -(void)setupRightButton
 {
-    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 44.0f, 20.0f, 44.0f, 44.0f)];
+    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 44.0f, STATENBAR_HEIGHT, 44.0f, 44.0f)];
     [self.rightButton addTarget:self action:@selector(rightButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-   [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self addSubview:self.rightButton];
 }
 
