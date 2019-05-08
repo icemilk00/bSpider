@@ -57,6 +57,7 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 #import "ShareManager.h"
+#import "NSString+JFKit.h"
 
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibcTradeBiz/AlibcTradeBiz.h>

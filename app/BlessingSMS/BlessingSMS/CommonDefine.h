@@ -31,6 +31,7 @@
 
 
 #define VIEW_FRAME_WITH_NAV  CGRectMake(0.0f, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGTH - NAVIGATIONBAR_HEIGHT)
+#define VIEW_FRAME_WITH_NAV_TABBAR  CGRectMake(0.0f, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGTH - NAVIGATIONBAR_HEIGHT - TABBAR_HEIGHT)
 
 #define DEFAULT_BG_COLOR [UIColor colorWithRed:246/255.0f green:56/255.0f blue:56/255.0f alpha:1]
 
@@ -56,5 +57,7 @@
 
 //判断 设备 iphoneXs Max （6.5英寸）
 #define iPhoneXM ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define UIColorFromHex(s)  [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
 
 #endif

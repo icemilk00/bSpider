@@ -36,6 +36,9 @@
 		E600ED831C36994500AB6916 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED6E1C36994500AB6916 /* UIScrollView+MJExtension.m */; };
 		E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED701C36994500AB6916 /* UIScrollView+MJRefresh.m */; };
 		E600ED851C36994500AB6916 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED721C36994500AB6916 /* UIView+MJExtension.m */; };
+		E604002D228287C5007099F6 /* SMSTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E604002B228287C5007099F6 /* SMSTabbarController.m */; };
+		E604003122828D2E007099F6 /* HaoWuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E604003022828D2E007099F6 /* HaoWuViewController.m */; };
+		E60400352282B782007099F6 /* NSString+JFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E60400342282B782007099F6 /* NSString+JFKit.m */; };
 		E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EDFD61C4D36D300FAA637 /* PinyinHelper.m */; };
 		E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE51C4D582400FAA637 /* icon-29.png */; };
 		E60EDFEC1C4D582400FAA637 /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE61C4D582400FAA637 /* icon-40.png */; };
@@ -260,6 +263,12 @@
 		E600ED701C36994500AB6916 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		E600ED711C36994500AB6916 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		E600ED721C36994500AB6916 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		E604002B228287C5007099F6 /* SMSTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSTabbarController.m; sourceTree = "<group>"; };
+		E604002C228287C5007099F6 /* SMSTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSTabbarController.h; sourceTree = "<group>"; };
+		E604002F22828D2E007099F6 /* HaoWuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaoWuViewController.h; sourceTree = "<group>"; };
+		E604003022828D2E007099F6 /* HaoWuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaoWuViewController.m; sourceTree = "<group>"; };
+		E60400332282B782007099F6 /* NSString+JFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JFKit.h"; sourceTree = "<group>"; };
+		E60400342282B782007099F6 /* NSString+JFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JFKit.m"; sourceTree = "<group>"; };
 		E60EDFD51C4D36D300FAA637 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
 		E60EDFD61C4D36D300FAA637 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
 		E60EDFE51C4D582400FAA637 /* icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-29.png"; sourceTree = "<group>"; };
@@ -607,6 +616,7 @@
 		E600ED411C36896700AB6916 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E60400322282B782007099F6 /* helpers */,
 				E6935B2F1ED2864700F3A279 /* DateHelper */,
 				E60EDFD41C4D36C300FAA637 /* PinyinHelper */,
 				E656241B1C4A7201002DCE76 /* MBProgressHUD+EasyShow */,
@@ -716,6 +726,33 @@
 				E600ED681C36994500AB6916 /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		E604002A228287C5007099F6 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				E604002B228287C5007099F6 /* SMSTabbarController.m */,
+				E604002C228287C5007099F6 /* SMSTabbarController.h */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		E604002E22828D12007099F6 /* HaoWuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E604002F22828D2E007099F6 /* HaoWuViewController.h */,
+				E604003022828D2E007099F6 /* HaoWuViewController.m */,
+			);
+			path = HaoWuViewController;
+			sourceTree = "<group>";
+		};
+		E60400322282B782007099F6 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E60400332282B782007099F6 /* NSString+JFKit.h */,
+				E60400342282B782007099F6 /* NSString+JFKit.m */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		E60EDFD41C4D36C300FAA637 /* PinyinHelper */ = {
@@ -1188,6 +1225,8 @@
 		E6E6F5521C33CF7F008005EA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E604002E22828D12007099F6 /* HaoWuViewController */,
+				E604002A228287C5007099F6 /* Tabbar */,
 				E6935B361ED2CAF800F3A279 /* RecommendViewController */,
 				E66AE7CA1C78C5AF009CB7EE /* CalendarViewController */,
 				E696C2471C4F880E00340146 /* SettingViewController */,
@@ -1612,6 +1651,7 @@
 				E600ED451C36897900AB6916 /* LayerHelper.m in Sources */,
 				E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */,
 				E600ED7A1C36994500AB6916 /* MJRefreshAutoStateFooter.m in Sources */,
+				E604002D228287C5007099F6 /* SMSTabbarController.m in Sources */,
 				E6E6F5621C33CF7F008005EA /* DataReformer.m in Sources */,
 				E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */,
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
@@ -1645,6 +1685,7 @@
 				E6935B481ED2E90C00F3A279 /* RecommendCollectionView.m in Sources */,
 				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,
 				E6E6F5391C33BAF4008005EA /* main.m in Sources */,
+				E60400352282B782007099F6 /* NSString+JFKit.m in Sources */,
 				E600ED731C36994500AB6916 /* MJRefreshAutoFooter.m in Sources */,
 				E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */,
 				E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */,
@@ -1656,6 +1697,7 @@
 				E6935B351ED2B8B300F3A279 /* TBAPIManager.m in Sources */,
 				E600ED831C36994500AB6916 /* UIScrollView+MJExtension.m in Sources */,
 				E600ED771C36994500AB6916 /* MJRefreshHeader.m in Sources */,
+				E604003122828D2E007099F6 /* HaoWuViewController.m in Sources */,
 				E600ED801C36994500AB6916 /* MJRefreshStateHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

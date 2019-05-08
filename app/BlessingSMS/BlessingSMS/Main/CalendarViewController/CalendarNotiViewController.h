@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *openNotiSwitch;
 @property (weak, nonatomic) IBOutlet UIView *notiTimeBgView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *noticeTextViewTop;
 
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil withCalendarModel:(CalendarDataModel *)calendarModel;
