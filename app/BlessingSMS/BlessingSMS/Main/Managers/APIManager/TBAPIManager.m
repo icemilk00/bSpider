@@ -13,6 +13,7 @@
 
 #define TBAPIUrl  @"http://gw.api.taobao.com/router/rest"
 
+#define ADZONE_ID @"95982835"
 
 @implementation TBAPIManager
 
@@ -65,7 +66,7 @@
     [parameterDic setObject:@"taobao.tbk.uatm.favorites.item.get" forKey:@"method"];
     
     [parameterDic setObject:itemID forKey:@"favorites_id"];
-    [parameterDic setObject:@"95982835" forKey:@"adzone_id"];
+    [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
     [parameterDic setObject:@(pageNum) forKey:@"page_no"];
     [parameterDic setObject:@(2) forKey:@"platform"];
     [parameterDic setObject:@"num_iid,title,Cpict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,seller_id,volume,nick,shop_title,zk_final_price_wap,event_start_time,event_end_time,tk_rate,status,type,click_url" forKey:@"fields"];
@@ -103,6 +104,48 @@
     [parameterDic setObject:@(100) forKey:@"page_size"];
     
     [parameterDic setObject:@"favorites_title,favorites_id,type" forKey:@"fields"];
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+
+#pragma mark - 好卷清单API:(获取淘宝客优惠券)
+@implementation TB_JuanListAPIManager
+
+-(void)getTB_JuanListWithCat:(NSString *)cat searchStr:(NSString *)q andPageNum:(NSInteger)pageNum
+{
+    //@"5580797"
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.dg.item.coupon.get" forKey:@"method"];
+    
+    [parameterDic setObject:@(pageNum) forKey:@"page_no"];
+    [parameterDic setObject:@(30) forKey:@"page_size"];
+    
+    [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
+    [parameterDic setObject:@(2) forKey:@"platform"];
+    
+    if (![NSString isEmpty:q]) {
+        [parameterDic setObject:q forKey:@"q"];      //查询词，用于搜索
+    }
+    
+    if (![NSString isEmpty:cat]) {
+        [parameterDic setObject:cat forKey:@"cat"];    //分类
+    }
     
     NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
     [parameterDic setObject:sign forKey:@"sign"];

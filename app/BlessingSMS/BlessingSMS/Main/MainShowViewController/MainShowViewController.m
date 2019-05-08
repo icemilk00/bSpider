@@ -229,7 +229,7 @@
 -(UITableView *)showTableView
 {
     if (!_showTableView) {
-        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
+        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV_TABBAR style:UITableViewStylePlain];
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
         _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -244,7 +244,7 @@
 -(UIButton *)recommendButton
 {
     if (!_recommendButton) {
-        _recommendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54, 40, 40)];
+        _recommendButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 54, SCREEN_HEIGTH - 54 - TABBAR_HEIGHT, 40, 40)];
         _recommendButton.backgroundColor = [UIColor whiteColor];
         [_recommendButton addTarget:self action:@selector(recommendAction:) forControlEvents:UIControlEventTouchUpInside];
         _recommendButton.layer.cornerRadius = 44/2;
@@ -260,7 +260,7 @@
 -(UIButton *)hbButton
 {
     if (!_hbButton) {
-        _hbButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 52, SCREEN_HEIGTH - 54 - 54, 36, 40)];
+        _hbButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 52, SCREEN_HEIGTH - 54 - 54 - TABBAR_HEIGHT, 36, 40)];
         _hbButton.backgroundColor = [UIColor whiteColor];
         [_hbButton addTarget:self action:@selector(hbAction:) forControlEvents:UIControlEventTouchUpInside];
         _hbButton.layer.cornerRadius = 44/2;

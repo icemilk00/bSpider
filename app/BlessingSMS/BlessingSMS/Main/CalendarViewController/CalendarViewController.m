@@ -39,7 +39,7 @@
     
     _notifiDataSourceArray = [[NSMutableArray alloc] init];
     
-    [self setupDefaultNavWitConfig:@[KeyLeftButton,KeyRightButton]];
+    [self setupDefaultNavWitConfig:@[KeyRightButton]];
     [[self defaultNavView].rightButton setImage:[UIImage imageNamed:@"add_noti" ] forState:UIControlStateNormal];
     
     [self.view addSubview:self.prevMonthButton];
@@ -320,8 +320,8 @@
 -(UILabel *)noNotiLabel
 {
     if (_noNotiLabel == nil) {
-        self.noNotiLabel = [[UILabel alloc] initWithFrame:CGRectMake(_notiTableView.frame.size.width/2 - 30.0f, 50.0f, 60.0f, 40.0f)];
-        _noNotiLabel.text = @"无提醒";
+        self.noNotiLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 50.0f, SCREEN_WIDTH - 20, 40.0f)];
+        _noNotiLabel.text = @"无提醒，右上角可以新增提醒哦";
         _noNotiLabel.textColor = [UIColor lightGrayColor];
         _noNotiLabel.textAlignment = NSTextAlignmentCenter;
         

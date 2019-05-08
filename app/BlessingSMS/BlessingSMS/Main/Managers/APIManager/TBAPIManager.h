@@ -26,3 +26,10 @@
 -(void)getTB_FavoritesList;
 
 @end
+
+#pragma mark - 好卷清单API:(获取淘宝客优惠券)
+@interface TB_JuanListAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_JuanListWithCat:(NSString *)cat searchStr:(NSString *)q andPageNum:(NSInteger)pageNum;
+
+@end

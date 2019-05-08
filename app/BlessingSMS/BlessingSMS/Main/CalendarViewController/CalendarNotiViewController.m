@@ -83,6 +83,12 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     self.dateLabel.text = [NSString stringWithFormat:@"%lu月%lu日 %@", (unsigned long)_calendarModel.month, (unsigned long)_calendarModel.day, [_calendarModel.date weeklyOrdinalityStr]];
 }
 
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.noticeTextViewTop.constant = NAVIGATIONBAR_HEIGHT + 40;
+}
+
+
 -(void)navLeftButtonClicked:(UIButton *)sender
 {
     if ([self.notiContentTextView isFirstResponder]) {

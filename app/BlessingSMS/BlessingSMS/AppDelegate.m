@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "SMSTabbarController.h"
+#import "HaoWuViewController.h"
+#import "CalendarViewController.h"
 
 @interface AppDelegate ()
 
@@ -38,10 +41,10 @@
     NSDictionary *remoteNotify = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     [PushManager showPushAlert:remoteNotify];
     
-    BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:[[MainShowViewController alloc] init]];
+
     UIViewController *leftMenuViewController = [[LeftMenuViewController alloc] init];
     
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[[MainShowViewController alloc] init]
                                                                     leftMenuViewController:leftMenuViewController
                                                                    rightMenuViewController:nil];
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
@@ -52,7 +55,17 @@
 //    sideMenuViewController.contentViewShadowOpacity = 0.6;
 //    sideMenuViewController.contentViewShadowRadius = 12;
     sideMenuViewController.contentViewShadowEnabled = YES;
-    self.window.rootViewController = sideMenuViewController;
+    
+    SMSTabbarController *tabbar = [[SMSTabbarController alloc] init];
+    [tabbar addChildVc:sideMenuViewController title:@"短信" image:@"" selectedImage:@""];
+    [tabbar addChildVc:[HaoWuViewController new] title:@"好物" image:@"" selectedImage:@""];
+    [tabbar addChildVc:[CalendarViewController new] title:@"提醒" image:@"" selectedImage:@""];
+    
+    
+    BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:tabbar];
+    navigationController.navigationBarHidden = YES;
+    
+    self.window.rootViewController = navigationController;
     
     self.window.backgroundColor = DEFAULT_BG_COLOR;
     [self.window makeKeyAndVisible];
