@@ -7,6 +7,7 @@
 //
 
 #import "HaoWuViewController.h"
+#import "YHQTableViewCell.h"
 
 @interface HaoWuViewController ()
 {
@@ -15,8 +16,7 @@
     NSString *_favID;
 }
 @property (strong, nonatomic) TB_JuanListAPIManager *tb_JuanListAPIManager;
-//@property (strong, nonatomic) RecommendCollectionView *recommendCollectView;
-
+@property (strong, nonatomic) UITableView *showTableView;
 @end
 
 @implementation HaoWuViewController
@@ -31,7 +31,7 @@
     
     [self arrayInit];
     
-//    [self.view addSubview:self.recommendCollectView];
+    [self.view addSubview:self.showTableView];
     
     [self loadData];
     
@@ -47,6 +47,52 @@
     [self.tb_JuanListAPIManager getTB_JuanListWithCat:@"" searchStr:@"" andPageNum:_pageIndex];
 }
 
+#pragma mark - TableViewDelegate and DataSource
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 106;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return _dataSourceArray.count;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    YHQTableViewCell *cell = (YHQTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"YHQTableViewCell"];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"YHQTableViewCell" owner:self options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    YHQInfoModel *model = _dataSourceArray[indexPath.row];
+    [cell setupWithModel:model];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YHQInfoModel *infoModel = _dataSourceArray[indexPath.row];
+    
+//    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
+    
+//    SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
+//    [self.navigationController pushViewController:smsSendVC animated:YES];
+}
+
+#pragma mark - headRefresh & footRefresh
+-(void)headRefresh
+{
+    _pageIndex = 1;
+    [self loadData];
+}
+
+-(void)footRefresh
+{
+    [self loadData];
+}
+
 #pragma mark - APIManagerDelegate
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager
 {
@@ -56,29 +102,29 @@
         }
         
         NSDictionary *dic = manager.dataSourceDic;
-//        NSArray *resultArray = dic[@"tbk_uatm_favorites_item_get_response"][@"results"][@"uatm_tbk_item"];
-//        
-//        if (resultArray.count > 0) {
-//            _pageIndex ++;
-//        }
+        NSArray *resultArray = dic[@"tbk_dg_item_coupon_get_response"][@"results"][@"tbk_coupon"];
+
+        if (resultArray.count > 0) {
+            _pageIndex ++;
+        }
         
-//        for (NSDictionary *dataDic in resultArray) {
-//            RecommendInfoModel *model = [RecommendInfoModel mj_objectWithKeyValues:dataDic];
-//            [_dataSourceArray addObject:model];
-//        }
-//
-//        [_recommendCollectView reloadData];
-//
-//        [_recommendCollectView.mj_header endRefreshing];
-//        [_recommendCollectView.mj_footer endRefreshing];
+        for (NSDictionary *dataDic in resultArray) {
+            YHQInfoModel *model = [YHQInfoModel mj_objectWithKeyValues:dataDic];
+            [_dataSourceArray addObject:model];
+        }
+
+        [_showTableView reloadData];
+
+        [_showTableView.mj_header endRefreshing];
+        [_showTableView.mj_footer endRefreshing];
     }
 }
 
 -(void)APIManagerDidFailed:(BaseAPIManager *)manager
 {
-    //    NSLog(@"请求失败: %@", manager.requestError.description);
-//    [_recommendCollectView.mj_header endRefreshing];
-//    [_recommendCollectView.mj_footer endRefreshing];
+    NSLog(@"请求失败: %@", manager.requestError.description);
+    [_showTableView.mj_header endRefreshing];
+    [_showTableView.mj_footer endRefreshing];
 }
 
 
@@ -89,6 +135,21 @@
         _tb_JuanListAPIManager.delegate = self;
     }
     return _tb_JuanListAPIManager;
+}
+
+-(UITableView *)showTableView
+{
+    if (!_showTableView) {
+        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV_TABBAR style:UITableViewStylePlain];
+        _showTableView.delegate = self;
+        _showTableView.dataSource = self;
+        _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _showTableView.backgroundColor = [UIColor whiteColor];
+        
+        _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
+        _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];
+    }
+    return _showTableView;
 }
 
 

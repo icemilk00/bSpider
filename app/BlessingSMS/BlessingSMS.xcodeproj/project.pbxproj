@@ -117,6 +117,9 @@
 		E65B88991ECDA31A006CD3E4 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E65B88861ECDA31A006CD3E4 /* NBResource.bundle */; };
 		E65B889D1ECDC0B2006CD3E4 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E65B889C1ECDC0B2006CD3E4 /* yw_1222.jpg */; };
 		E65B889F1ECDC888006CD3E4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65B889E1ECDC888006CD3E4 /* CoreMotion.framework */; };
+		E660C78022850EE700DAB7CE /* YHQInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E660C77F22850EE700DAB7CE /* YHQInfoModel.m */; };
+		E660C784228521B500DAB7CE /* YHQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E660C782228521B500DAB7CE /* YHQTableViewCell.m */; };
+		E660C785228521B500DAB7CE /* YHQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E660C783228521B500DAB7CE /* YHQTableViewCell.xib */; };
 		E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609321C7A008200B5E5A7 /* CalendarNotifiCenter.m */; };
 		E66609361C7A020600B5E5A7 /* CalendarNotiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609351C7A020600B5E5A7 /* CalendarNotiModel.m */; };
 		E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66609381C7A0CDE00B5E5A7 /* CalendarNotiViewController.m */; };
@@ -363,6 +366,11 @@
 		E65B88861ECDA31A006CD3E4 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
 		E65B889C1ECDC0B2006CD3E4 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = SOURCE_ROOT; };
 		E65B889E1ECDC888006CD3E4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E660C77E22850EE700DAB7CE /* YHQInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHQInfoModel.h; sourceTree = "<group>"; };
+		E660C77F22850EE700DAB7CE /* YHQInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHQInfoModel.m; sourceTree = "<group>"; };
+		E660C781228521B500DAB7CE /* YHQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHQTableViewCell.h; sourceTree = "<group>"; };
+		E660C782228521B500DAB7CE /* YHQTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHQTableViewCell.m; sourceTree = "<group>"; };
+		E660C783228521B500DAB7CE /* YHQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YHQTableViewCell.xib; sourceTree = "<group>"; };
 		E66609311C7A008200B5E5A7 /* CalendarNotifiCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotifiCenter.h; sourceTree = "<group>"; };
 		E66609321C7A008200B5E5A7 /* CalendarNotifiCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarNotifiCenter.m; sourceTree = "<group>"; };
 		E66609341C7A020600B5E5A7 /* CalendarNotiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarNotiModel.h; sourceTree = "<group>"; };
@@ -742,6 +750,11 @@
 			children = (
 				E604002F22828D2E007099F6 /* HaoWuViewController.h */,
 				E604003022828D2E007099F6 /* HaoWuViewController.m */,
+				E660C781228521B500DAB7CE /* YHQTableViewCell.h */,
+				E660C782228521B500DAB7CE /* YHQTableViewCell.m */,
+				E660C783228521B500DAB7CE /* YHQTableViewCell.xib */,
+				E660C77E22850EE700DAB7CE /* YHQInfoModel.h */,
+				E660C77F22850EE700DAB7CE /* YHQInfoModel.m */,
 			);
 			path = HaoWuViewController;
 			sourceTree = "<group>";
@@ -1522,6 +1535,7 @@
 				E63343861C46A28F0055A9C9 /* main_cell_arrow@3x.png in Resources */,
 				E65B889D1ECDC0B2006CD3E4 /* yw_1222.jpg in Resources */,
 				E6A080B61C47F124000E67CC /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				E660C785228521B500DAB7CE /* YHQTableViewCell.xib in Resources */,
 				E64052971C3A6F9700598B62 /* cell_arrow@2x.png in Resources */,
 				E633439A1C46B4C80055A9C9 /* send@3x.png in Resources */,
 				E63343931C46A7CF0055A9C9 /* qq@2x.png in Resources */,
@@ -1627,6 +1641,7 @@
 			files = (
 				E6E6F5631C33CF7F008005EA /* RequestManager.m in Sources */,
 				E6A080AB1C47EE41000E67CC /* ShareManager.m in Sources */,
+				E660C784228521B500DAB7CE /* YHQTableViewCell.m in Sources */,
 				E6E6F5801C33D5F1008005EA /* RECommonFunctions.m in Sources */,
 				E6E6F5771C33D1AF008005EA /* BaseViewController.m in Sources */,
 				E6E6F5811C33D5F1008005EA /* RESideMenu.m in Sources */,
@@ -1670,6 +1685,7 @@
 				E6935B441ED2E51400F3A279 /* RecommendCell.m in Sources */,
 				E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */,
 				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
+				E660C78022850EE700DAB7CE /* YHQInfoModel.m in Sources */,
 				E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
