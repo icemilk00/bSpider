@@ -134,7 +134,7 @@
     [parameterDic setObject:@"taobao.tbk.dg.item.coupon.get" forKey:@"method"];
     
     [parameterDic setObject:@(pageNum) forKey:@"page_no"];
-    [parameterDic setObject:@(30) forKey:@"page_size"];
+    [parameterDic setObject:@(20) forKey:@"page_size"];
     
     [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
     [parameterDic setObject:@(2) forKey:@"platform"];

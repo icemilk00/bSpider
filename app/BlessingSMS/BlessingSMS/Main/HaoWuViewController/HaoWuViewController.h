@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HaoWuViewController : BaseViewController <APIManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface HaoWuViewController : BaseViewController <APIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end
 
