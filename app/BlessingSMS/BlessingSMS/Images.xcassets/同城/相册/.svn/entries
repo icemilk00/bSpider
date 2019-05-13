@@ -1,113 +1,0 @@
-10
-
-dir
-8
-svn://hupeng@121.42.29.56/repos/Projects/components/projects/dadetong/common/DTCommon/DTCommon/Images.xcassets/%E5%90%8C%E5%9F%8E/%E7%9B%B8%E5%86%8C
-svn://hupeng@121.42.29.56/repos
-
-
-
-2018-09-08T10:01:32.222682Z
-1
-hupeng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e5c17f24-d3df-4d87-815f-05dc73020d4e
-
-tc_playVideo.imageset
-dir
-
-tc_takePhoto.imageset
-dir
-
-tc_videoView.imageset
-dir
-
-camer.imageset
-dir
-
-tc_navBack.imageset
-dir
-
-tc_video.imageset
-dir
-
-camerChange.imageset
-dir
-
-手持身份证.imageset
-dir
-
-tc_retake.imageset
-dir
-
-tc_takeok.imageset
-dir
-
-身份证扫描正.imageset
-dir
-
-tc_focus.imageset
-dir
-
-tc_arrow_down.imageset
-dir
-
-Contents.json
-file
-
-
-
-
-2018-09-08T11:46:51.000000Z
-31cc68f34934a99c0b0c1bebde56309c
-2018-09-08T10:01:32.222682Z
-1
-hupeng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-62
-
-身份证正面.imageset
-dir
-
-身份证扫描反.imageset
-dir
-
-tc_toggle_camera.imageset
-dir
-
-身份证背面.imageset
-dir
-
