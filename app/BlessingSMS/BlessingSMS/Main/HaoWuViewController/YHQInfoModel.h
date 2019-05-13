@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *coupon_click_url;     //商品优惠券推广链接
 @property (strong, nonatomic) NSString *item_description;     //宝贝描述（推荐理由）
 -(NSString *)showImageStr;
+-(NSString *)juanPrice;
 @end
 
 NS_ASSUME_NONNULL_END

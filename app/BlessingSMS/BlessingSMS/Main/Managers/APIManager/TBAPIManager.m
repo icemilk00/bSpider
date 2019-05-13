@@ -162,3 +162,33 @@
 }
 
 @end
+
+#pragma mark - 宝贝详情API:(获取宝贝详情)
+@implementation TB_ItemDetailAPIManager
+
+-(void)getTB_ItemDetailWithId:(NSString *)itemId
+{
+    //@"5580797"
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.item.info.get" forKey:@"method"];
+    
+    [parameterDic setObject:itemId forKey:@"num_iids"];
+    [parameterDic setObject:@(2) forKey:@"platform"];
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end

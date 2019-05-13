@@ -8,6 +8,8 @@
 
 #import "HaoWuViewController.h"
 #import "YHQTableViewCell.h"
+#import "HaoWuDetailViewController.h"
+
 
 @interface HaoWuViewController ()
 {
@@ -75,10 +77,13 @@
 {
     YHQInfoModel *infoModel = _dataSourceArray[indexPath.row];
     
+    
+    
 //    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
     
-//    SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
-//    [self.navigationController pushViewController:smsSendVC animated:YES];
+    HaoWuDetailViewController *vc = [[HaoWuDetailViewController alloc] init];
+    vc.infoModel = infoModel;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - headRefresh & footRefresh
@@ -143,7 +148,7 @@
         _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV_TABBAR style:UITableViewStylePlain];
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
-        _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _showTableView.backgroundColor = [UIColor whiteColor];
         
         _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];

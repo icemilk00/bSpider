@@ -185,6 +185,14 @@
 		E6A20EC01C819AA2005890FD /* weeklyTitle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */; };
 		E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */; };
 		E6A20EC71C81DF01005890FD /* AboutSMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */; };
+		E6AC2DEA2286D05600E9A95F /* 券@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DE82286D05500E9A95F /* 券@2x.png */; };
+		E6AC2DEB2286D05600E9A95F /* 券@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DE92286D05500E9A95F /* 券@3x.png */; };
+		E6AC2DF02286D29A00E9A95F /* 天猫@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DEC2286D29700E9A95F /* 天猫@2x.png */; };
+		E6AC2DF12286D29A00E9A95F /* 天猫@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DED2286D29800E9A95F /* 天猫@3x.png */; };
+		E6AC2DF22286D29A00E9A95F /* 淘宝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DEE2286D29900E9A95F /* 淘宝@2x.png */; };
+		E6AC2DF32286D29A00E9A95F /* 淘宝@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DEF2286D29A00E9A95F /* 淘宝@3x.png */; };
+		E6AC2DF62286DB2800E9A95F /* HaoWuDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2DF52286DB2800E9A95F /* HaoWuDetailViewController.m */; };
+		E6AC2DF92286E08C00E9A95F /* HaoWuDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC2DF82286E08C00E9A95F /* HaoWuDetailModel.m */; };
 		E6AD689B1C5FA2530056C04F /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AD689A1C5FA2530056C04F /* PushManager.m */; };
 		E6AD68A01C5FA38B0056C04F /* libXG-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD689D1C5FA38B0056C04F /* libXG-SDK.a */; };
 		E6AD68A21C5FA3B00056C04F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */; };
@@ -476,6 +484,16 @@
 		E6A20EC31C81DF01005890FD /* AboutSMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSMSViewController.h; sourceTree = "<group>"; };
 		E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSMSViewController.m; sourceTree = "<group>"; };
 		E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSMSViewController.xib; sourceTree = "<group>"; };
+		E6AC2DE82286D05500E9A95F /* 券@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "券@2x.png"; sourceTree = "<group>"; };
+		E6AC2DE92286D05500E9A95F /* 券@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "券@3x.png"; sourceTree = "<group>"; };
+		E6AC2DEC2286D29700E9A95F /* 天猫@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天猫@2x.png"; sourceTree = "<group>"; };
+		E6AC2DED2286D29800E9A95F /* 天猫@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天猫@3x.png"; sourceTree = "<group>"; };
+		E6AC2DEE2286D29900E9A95F /* 淘宝@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "淘宝@2x.png"; sourceTree = "<group>"; };
+		E6AC2DEF2286D29A00E9A95F /* 淘宝@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "淘宝@3x.png"; sourceTree = "<group>"; };
+		E6AC2DF42286DB2800E9A95F /* HaoWuDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaoWuDetailViewController.h; sourceTree = "<group>"; };
+		E6AC2DF52286DB2800E9A95F /* HaoWuDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaoWuDetailViewController.m; sourceTree = "<group>"; };
+		E6AC2DF72286E08C00E9A95F /* HaoWuDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaoWuDetailModel.h; sourceTree = "<group>"; };
+		E6AC2DF82286E08C00E9A95F /* HaoWuDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaoWuDetailModel.m; sourceTree = "<group>"; };
 		E6AD68991C5FA2530056C04F /* PushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushManager.h; sourceTree = "<group>"; };
 		E6AD689A1C5FA2530056C04F /* PushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushManager.m; sourceTree = "<group>"; };
 		E6AD689D1C5FA38B0056C04F /* libXG-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libXG-SDK.a"; sourceTree = "<group>"; };
@@ -750,11 +768,15 @@
 			children = (
 				E604002F22828D2E007099F6 /* HaoWuViewController.h */,
 				E604003022828D2E007099F6 /* HaoWuViewController.m */,
+				E6AC2DF42286DB2800E9A95F /* HaoWuDetailViewController.h */,
+				E6AC2DF52286DB2800E9A95F /* HaoWuDetailViewController.m */,
 				E660C781228521B500DAB7CE /* YHQTableViewCell.h */,
 				E660C782228521B500DAB7CE /* YHQTableViewCell.m */,
 				E660C783228521B500DAB7CE /* YHQTableViewCell.xib */,
 				E660C77E22850EE700DAB7CE /* YHQInfoModel.h */,
 				E660C77F22850EE700DAB7CE /* YHQInfoModel.m */,
+				E6AC2DF72286E08C00E9A95F /* HaoWuDetailModel.h */,
+				E6AC2DF82286E08C00E9A95F /* HaoWuDetailModel.m */,
 			);
 			path = HaoWuViewController;
 			sourceTree = "<group>";
@@ -1169,6 +1191,19 @@
 			path = AboutSMSViewController;
 			sourceTree = "<group>";
 		};
+		E6AC2DE32286CB2C00E9A95F /* tk */ = {
+			isa = PBXGroup;
+			children = (
+				E6AC2DEE2286D29900E9A95F /* 淘宝@2x.png */,
+				E6AC2DEF2286D29A00E9A95F /* 淘宝@3x.png */,
+				E6AC2DEC2286D29700E9A95F /* 天猫@2x.png */,
+				E6AC2DED2286D29800E9A95F /* 天猫@3x.png */,
+				E6AC2DE82286D05500E9A95F /* 券@2x.png */,
+				E6AC2DE92286D05500E9A95F /* 券@3x.png */,
+			);
+			path = tk;
+			sourceTree = "<group>";
+		};
 		E6AD68981C5FA2530056C04F /* PushManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1400,6 +1435,7 @@
 		E6E6F58E1C33DDC3008005EA /* ImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				E6AC2DE32286CB2C00E9A95F /* tk */,
 				E65B889C1ECDC0B2006CD3E4 /* yw_1222.jpg */,
 				E60EDFD81C4D57F600FAA637 /* icon */,
 				E633437E1C4692380055A9C9 /* sourceImg */,
@@ -1519,6 +1555,7 @@
 				E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */,
 				E67B2E171C553D76001408E2 /* icon-76.png in Resources */,
 				E60EDFEC1C4D582400FAA637 /* icon-40.png in Resources */,
+				E6AC2DEA2286D05600E9A95F /* 券@2x.png in Resources */,
 				E63343941C46A7CF0055A9C9 /* qq@3x.png in Resources */,
 				E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */,
 				E65B88971ECDA31A006CD3E4 /* AlipaySDK.bundle in Resources */,
@@ -1531,6 +1568,8 @@
 				E62C846B1C4406F400FD29D5 /* navigationbarBg_red@3x.png in Resources */,
 				E6E6F5961C33DDC3008005EA /* navigationbarBg@2x.png in Resources */,
 				E6E6F5951C33DDC3008005EA /* navigationbar_back@3x.png in Resources */,
+				E6AC2DF12286D29A00E9A95F /* 天猫@3x.png in Resources */,
+				E6AC2DF22286D29A00E9A95F /* 淘宝@2x.png in Resources */,
 				E6353A081C3E1585005E3A2F /* cell_unSelected@2x.png in Resources */,
 				E63343861C46A28F0055A9C9 /* main_cell_arrow@3x.png in Resources */,
 				E65B889D1ECDC0B2006CD3E4 /* yw_1222.jpg in Resources */,
@@ -1554,12 +1593,14 @@
 				E6934BCE1C7F73900041F4C5 /* chooseFlag@3x.png in Resources */,
 				E6353A061C3E1585005E3A2F /* cell_selected@2x.png in Resources */,
 				E6935B451ED2E51400F3A279 /* RecommendCell.xib in Resources */,
+				E6AC2DF02286D29A00E9A95F /* 天猫@2x.png in Resources */,
 				E63343811C4692380055A9C9 /* left_bg@2x.png in Resources */,
 				04C820621FF622E7002EC0E7 /* active_left_btn@3x.png in Resources */,
 				E617497D1FF7424000726AE0 /* hb@3x.png in Resources */,
 				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,
 				04C8205D1FF62256002EC0E7 /* ActivityShowView.xib in Resources */,
 				E67B2E1D1C554102001408E2 /* Default.png in Resources */,
+				E6AC2DEB2286D05600E9A95F /* 券@3x.png in Resources */,
 				E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */,
 				E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */,
 				E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */,
@@ -1572,6 +1613,7 @@
 				E6E6F5971C33DDC3008005EA /* navigationbarBg@3x.png in Resources */,
 				E65B88991ECDA31A006CD3E4 /* NBResource.bundle in Resources */,
 				E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */,
+				E6AC2DF32286D29A00E9A95F /* 淘宝@3x.png in Resources */,
 				E63343851C46A28F0055A9C9 /* main_cell_arrow@2x.png in Resources */,
 				E63343821C4692380055A9C9 /* left_bg@3x.png in Resources */,
 				E63343891C46A5EA0055A9C9 /* weixin@2x.png in Resources */,
@@ -1641,6 +1683,7 @@
 			files = (
 				E6E6F5631C33CF7F008005EA /* RequestManager.m in Sources */,
 				E6A080AB1C47EE41000E67CC /* ShareManager.m in Sources */,
+				E6AC2DF62286DB2800E9A95F /* HaoWuDetailViewController.m in Sources */,
 				E660C784228521B500DAB7CE /* YHQTableViewCell.m in Sources */,
 				E6E6F5801C33D5F1008005EA /* RECommonFunctions.m in Sources */,
 				E6E6F5771C33D1AF008005EA /* BaseViewController.m in Sources */,
@@ -1687,6 +1730,7 @@
 				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
 				E660C78022850EE700DAB7CE /* YHQInfoModel.m in Sources */,
 				E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */,
+				E6AC2DF92286E08C00E9A95F /* HaoWuDetailModel.m in Sources */,
 				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
 				E67D91591ED42C1900F86AC3 /* ClientConfigManager.m in Sources */,

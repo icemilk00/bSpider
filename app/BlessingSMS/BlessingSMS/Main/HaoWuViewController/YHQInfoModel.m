@@ -22,4 +22,12 @@
     
     return array[0];
 }
+
+-(NSString *)juanPrice {
+    NSString *juanStr = self.coupon_info;
+    NSArray *strArray = [juanStr componentsSeparatedByString:@"减"];
+    juanStr = strArray[1];
+    juanStr = [juanStr stringByReplacingOccurrencesOfString:@"元" withString:@""];
+    return juanStr;
+}
 @end

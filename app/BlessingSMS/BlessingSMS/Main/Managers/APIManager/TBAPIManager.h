@@ -33,3 +33,10 @@
 -(void)getTB_JuanListWithCat:(NSString *)cat searchStr:(NSString *)q andPageNum:(NSInteger)pageNum;
 
 @end
+
+#pragma mark - 宝贝详情API:(获取宝贝详情)
+@interface TB_ItemDetailAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_ItemDetailWithId:(NSString *)itemId;
+
+@end

@@ -12,6 +12,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YHQTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *showImageView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *juanLabel;
+@property (strong, nonatomic) IBOutlet UILabel *soldNumLabel;
+@property (strong, nonatomic) IBOutlet UILabel *afterPriceLabel;
 
 -(void)setupWithModel:(YHQInfoModel *)model;
 
