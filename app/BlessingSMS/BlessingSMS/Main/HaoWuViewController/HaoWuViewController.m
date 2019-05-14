@@ -17,7 +17,7 @@
     NSInteger _pageIndex;
     NSString *_favID;
 }
-@property (strong, nonatomic) TB_JuanListAPIManager *tb_JuanListAPIManager;
+@property (strong, nonatomic) TB_MaterialAPIManager *tb_MaterialAPIManager;
 @property (strong, nonatomic) UITableView *showTableView;
 @end
 
@@ -46,7 +46,7 @@
 
 -(void)loadData
 {
-    [self.tb_JuanListAPIManager getTB_JuanListWithCat:@"" searchStr:@"" andPageNum:_pageIndex];
+    [self.tb_MaterialAPIManager getTB_MaterialWithId:@"4094" andPageNum:_pageIndex];
 }
 
 #pragma mark - TableViewDelegate and DataSource
@@ -68,17 +68,14 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    YHQInfoModel *model = _dataSourceArray[indexPath.row];
+    MaterialDetailModel *model = _dataSourceArray[indexPath.row];
     [cell setupWithModel:model];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YHQInfoModel *infoModel = _dataSourceArray[indexPath.row];
-    
-    
-    
+    MaterialDetailModel *infoModel = _dataSourceArray[indexPath.row];
 //    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
     
     HaoWuDetailViewController *vc = [[HaoWuDetailViewController alloc] init];
@@ -101,25 +98,26 @@
 #pragma mark - APIManagerDelegate
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager
 {
-    if (manager == self.tb_JuanListAPIManager){
+    if ( manager == self.tb_MaterialAPIManager) {
+        
         if (_pageIndex == 1 && _dataSourceArray.count > 0) {
             [_dataSourceArray removeAllObjects];
         }
         
         NSDictionary *dic = manager.dataSourceDic;
-        NSArray *resultArray = dic[@"tbk_dg_item_coupon_get_response"][@"results"][@"tbk_coupon"];
-
+        NSArray *resultArray = dic[@"tbk_dg_optimus_material_response"][@"result_list"][@"map_data"];
+        
         if (resultArray.count > 0) {
             _pageIndex ++;
         }
         
         for (NSDictionary *dataDic in resultArray) {
-            YHQInfoModel *model = [YHQInfoModel mj_objectWithKeyValues:dataDic];
+            MaterialDetailModel *model = [MaterialDetailModel mj_objectWithKeyValues:dataDic];
             [_dataSourceArray addObject:model];
         }
-
+        
         [_showTableView reloadData];
-
+        
         [_showTableView.mj_header endRefreshing];
         [_showTableView.mj_footer endRefreshing];
     }
@@ -132,14 +130,13 @@
     [_showTableView.mj_footer endRefreshing];
 }
 
-
--(TB_JuanListAPIManager *)tb_JuanListAPIManager
+-(TB_MaterialAPIManager *)tb_MaterialAPIManager
 {
-    if (!_tb_JuanListAPIManager) {
-        _tb_JuanListAPIManager = [[TB_JuanListAPIManager alloc] init];
-        _tb_JuanListAPIManager.delegate = self;
+    if (!_tb_MaterialAPIManager) {
+        _tb_MaterialAPIManager = [[TB_MaterialAPIManager alloc] init];
+        _tb_MaterialAPIManager.delegate = self;
     }
-    return _tb_JuanListAPIManager;
+    return _tb_MaterialAPIManager;
 }
 
 -(UITableView *)showTableView

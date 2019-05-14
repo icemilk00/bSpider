@@ -192,3 +192,38 @@
 }
 
 @end
+
+
+#pragma mark - 通用物料API:(通用物料)
+@implementation TB_MaterialAPIManager
+
+-(void)getTB_MaterialWithId:(NSString *)material_id andPageNum:(NSInteger)pageNum
+{
+    //@"5580797"
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.dg.optimus.material" forKey:@"method"];
+    
+    [parameterDic setObject:@(pageNum) forKey:@"page_no"];
+    [parameterDic setObject:@(20) forKey:@"page_size"];
+    
+    [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
+    [parameterDic setObject:@(2) forKey:@"platform"];
+    [parameterDic setObject:material_id forKey:@"material_id"];
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end

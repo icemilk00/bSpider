@@ -141,6 +141,12 @@
 		E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */; };
 		E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */; };
 		E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682C6781C3ACF3400499693 /* MessageUI.framework */; };
+		E6837BFC228A6E07007449A2 /* MaterialDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837BFB228A6E07007449A2 /* MaterialDetailModel.m */; };
+		E6837BFF228A9665007449A2 /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837BFE228A9665007449A2 /* CommonHelper.m */; };
+		E6837C02228ABAD2007449A2 /* JFBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837C00228ABAD1007449A2 /* JFBannerView.m */; };
+		E6837C05228ABADF007449A2 /* MaterialBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837C03228ABADF007449A2 /* MaterialBannerCell.m */; };
+		E6837C09228AC19D007449A2 /* MaterialInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837C07228AC19D007449A2 /* MaterialInfoCell.m */; };
+		E6837C0A228AC19D007449A2 /* MaterialInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6837C08228AC19D007449A2 /* MaterialInfoCell.xib */; };
 		E692F9CB1EDFFC9B00E6FF0B /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */; };
 		E692F9CD1EDFFCB400E6FF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */; };
 		E692F9CE1EDFFCB900E6FF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080CD1C47F7AD000E67CC /* AdSupport.framework */; };
@@ -412,6 +418,17 @@
 		E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_recommend@3x.png"; sourceTree = "<group>"; };
 		E682C6781C3ACF3400499693 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E68316721CFEDCAF003EDA7B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E6837BFA228A6E06007449A2 /* MaterialDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialDetailModel.h; sourceTree = "<group>"; };
+		E6837BFB228A6E07007449A2 /* MaterialDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaterialDetailModel.m; sourceTree = "<group>"; };
+		E6837BFD228A9665007449A2 /* CommonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHelper.h; sourceTree = "<group>"; };
+		E6837BFE228A9665007449A2 /* CommonHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonHelper.m; sourceTree = "<group>"; };
+		E6837C00228ABAD1007449A2 /* JFBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFBannerView.m; sourceTree = "<group>"; };
+		E6837C01228ABAD2007449A2 /* JFBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFBannerView.h; sourceTree = "<group>"; };
+		E6837C03228ABADF007449A2 /* MaterialBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialBannerCell.m; sourceTree = "<group>"; };
+		E6837C04228ABADF007449A2 /* MaterialBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialBannerCell.h; sourceTree = "<group>"; };
+		E6837C06228AC19D007449A2 /* MaterialInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialInfoCell.h; sourceTree = "<group>"; };
+		E6837C07228AC19D007449A2 /* MaterialInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaterialInfoCell.m; sourceTree = "<group>"; };
+		E6837C08228AC19D007449A2 /* MaterialInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialInfoCell.xib; sourceTree = "<group>"; };
 		E692F9C51EDFFC9B00E6FF0B /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
 		E692F9C61EDFFC9B00E6FF0B /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
 		E692F9C71EDFFC9B00E6FF0B /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
@@ -777,6 +794,15 @@
 				E660C77F22850EE700DAB7CE /* YHQInfoModel.m */,
 				E6AC2DF72286E08C00E9A95F /* HaoWuDetailModel.h */,
 				E6AC2DF82286E08C00E9A95F /* HaoWuDetailModel.m */,
+				E6837BFA228A6E06007449A2 /* MaterialDetailModel.h */,
+				E6837BFB228A6E07007449A2 /* MaterialDetailModel.m */,
+				E6837C01228ABAD2007449A2 /* JFBannerView.h */,
+				E6837C00228ABAD1007449A2 /* JFBannerView.m */,
+				E6837C04228ABADF007449A2 /* MaterialBannerCell.h */,
+				E6837C03228ABADF007449A2 /* MaterialBannerCell.m */,
+				E6837C06228AC19D007449A2 /* MaterialInfoCell.h */,
+				E6837C07228AC19D007449A2 /* MaterialInfoCell.m */,
+				E6837C08228AC19D007449A2 /* MaterialInfoCell.xib */,
 			);
 			path = HaoWuViewController;
 			sourceTree = "<group>";
@@ -786,6 +812,8 @@
 			children = (
 				E60400332282B782007099F6 /* NSString+JFKit.h */,
 				E60400342282B782007099F6 /* NSString+JFKit.m */,
+				E6837BFD228A9665007449A2 /* CommonHelper.h */,
+				E6837BFE228A9665007449A2 /* CommonHelper.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -1612,6 +1640,7 @@
 				E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */,
 				E6E6F5971C33DDC3008005EA /* navigationbarBg@3x.png in Resources */,
 				E65B88991ECDA31A006CD3E4 /* NBResource.bundle in Resources */,
+				E6837C0A228AC19D007449A2 /* MaterialInfoCell.xib in Resources */,
 				E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */,
 				E6AC2DF32286D29A00E9A95F /* 淘宝@3x.png in Resources */,
 				E63343851C46A28F0055A9C9 /* main_cell_arrow@2x.png in Resources */,
@@ -1691,6 +1720,7 @@
 				E6E6F58D1C33DA43008005EA /* LeftMenuViewController.m in Sources */,
 				E6935B3C1ED2D43C00F3A279 /* RecommendInfoModel.m in Sources */,
 				04C8205B1FF6217E002EC0E7 /* ActivityShowView.m in Sources */,
+				E6837C02228ABAD2007449A2 /* JFBannerView.m in Sources */,
 				E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */,
 				E600ED791C36994500AB6916 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */,
@@ -1705,6 +1735,7 @@
 				E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */,
 				E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */,
 				E60F10571C3971CE006B62CC /* SMSCategoryModel.m in Sources */,
+				E6837C09228AC19D007449A2 /* MaterialInfoCell.m in Sources */,
 				E6E6F5871C33D917008005EA /* MainShowViewController.m in Sources */,
 				E600ED451C36897900AB6916 /* LayerHelper.m in Sources */,
 				E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */,
@@ -1715,6 +1746,7 @@
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
 				E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */,
 				E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */,
+				E6837BFF228A9665007449A2 /* CommonHelper.m in Sources */,
 				E63D30A51ED410370017488A /* TBManager.m in Sources */,
 				E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */,
 				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
@@ -1723,6 +1755,8 @@
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
 				E6E6F5751C33D1AF008005EA /* BaseNavController.m in Sources */,
 				E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */,
+				E6837C05228ABADF007449A2 /* MaterialBannerCell.m in Sources */,
+				E6837BFC228A6E07007449A2 /* MaterialDetailModel.m in Sources */,
 				E66AE7DC1C78C5AF009CB7EE /* CalendarTileView.m in Sources */,
 				E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */,
 				E6935B441ED2E51400F3A279 /* RecommendCell.m in Sources */,

@@ -1,28 +1,24 @@
 //
-//  YHQTableViewCell.m
+//  MaterialInfoCell.m
 //  BlessingSMS
 //
-//  Created by hp on 2019/5/10.
+//  Created by hp on 2019/5/14.
 //  Copyright © 2019 hxp. All rights reserved.
 //
 
-#import "YHQTableViewCell.h"
+#import "MaterialInfoCell.h"
 
-@implementation YHQTableViewCell
+@implementation MaterialInfoCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.showImageView.layer.cornerRadius = 3;
-    self.showImageView.layer.masksToBounds = YES;
     self.juanLabel.layer.borderColor = [UIColor redColor].CGColor;
     self.juanLabel.layer.borderWidth = 1;
 }
 
 -(void)setupWithModel:(MaterialDetailModel *)model {
-    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:[CommonHelper addHttpsForUrlStr:model.pict_url]]];
-    
-    
+
     NSMutableAttributedString *fullTitle = [[NSMutableAttributedString alloc] init];
     NSTextAttachment *attchment = [[NSTextAttachment alloc] init];
     attchment.bounds = CGRectMake(0, -3, 15, 15);//设置frame
@@ -38,18 +34,21 @@
     self.titleLabel.attributedText = fullTitle;
     
     self.juanLabel.text = [NSString stringWithFormat:@"%@元",[model coupon_amount]];
-//    self.juanLabel.text = [NSString stringWithFormat:@"%@元",[model juanPrice]];
+    //    self.juanLabel.text = [NSString stringWithFormat:@"%@元",[model juanPrice]];
     self.soldNumLabel.text = [NSString stringWithFormat:@"月售%@件",model.volume];
     
-    NSMutableAttributedString *allStr = [[NSMutableAttributedString alloc] initWithString:@"卷后￥"];
+    NSMutableAttributedString *allStr = [[NSMutableAttributedString alloc] initWithString:@"卷后："];
     NSString *afterPrice = [NSString getSubStringWithStringA:model.zk_final_price stringB:[model coupon_amount]];
     afterPrice = [NSString interceptionPointString:afterPrice];
-    NSAttributedString *price = [[NSAttributedString alloc] initWithString:afterPrice attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName:[UIColor blackColor]}];
-    NSAttributedString *beforePrice = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"￥%@",model.zk_final_price] attributes:@{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]}];
+    NSAttributedString *price = [[NSAttributedString alloc] initWithString:afterPrice attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName:[UIColor redColor]}];
+    NSAttributedString *moneyUnit = [[NSAttributedString alloc] initWithString:@"￥" attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:13], NSForegroundColorAttributeName:[UIColor redColor]}];
+    [allStr appendAttributedString:moneyUnit];
     [allStr appendAttributedString:price];
-    [allStr appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" "]]];
-    [allStr appendAttributedString:beforePrice];
+    
     self.afterPriceLabel.attributedText = allStr;
+    
+    NSAttributedString *beforePrice = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"原价：￥%@", [NSString interceptionPointString:model.zk_final_price]] attributes:@{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]}];
+    self.beforePriceLabel.attributedText = beforePrice;
     
 }
 

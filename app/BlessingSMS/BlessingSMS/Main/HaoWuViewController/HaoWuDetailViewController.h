@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YHQInfoModel.h"
+#import "MaterialDetailModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HaoWuDetailViewController : BaseViewController <APIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) YHQInfoModel *infoModel;
+@property (nonatomic, strong) MaterialDetailModel *infoModel;
 @end
 
 NS_ASSUME_NONNULL_END

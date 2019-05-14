@@ -62,4 +62,5 @@
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibcTradeBiz/AlibcTradeBiz.h>
 
+#import "CommonHelper.h"
 #endif /* PrefixHeader_pch */

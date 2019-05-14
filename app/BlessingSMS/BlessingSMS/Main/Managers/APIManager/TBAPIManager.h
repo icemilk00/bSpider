@@ -40,3 +40,10 @@
 -(void)getTB_ItemDetailWithId:(NSString *)itemId;
 
 @end
+
+#pragma mark - 通用物料API:(通用物料)
+@interface TB_MaterialAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_MaterialWithId:(NSString *)material_id andPageNum:(NSInteger)pageNum;
+
+@end
