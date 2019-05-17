@@ -15,6 +15,7 @@
 typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     HaoWuDetailSectionBanner,                // banner
     HaoWuDetailSectionInfo,                  // 商品信息
+//    HaoWuDetailSectionRecommand,             // 关联推荐
     HaoWuDetailSectionMax
 };
 
@@ -119,7 +120,7 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     //    [AlibcTradePageFactory itemDetailPage:@"45281461519"];
     id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
     AlibcTradeShowParams *showParams = [[AlibcTradeShowParams alloc] init];
-    showParams.openType = AlibcOpenTypeAuto;
+    showParams.openType = AlibcOpenTypeNative;
     
     AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
     taokeParams.pid = @"mm_17747039_0_0";
@@ -197,7 +198,7 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     if (!_bottomBtn) {
         _bottomBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.bottomView.frame.size.width, self.bottomView.frame.size.height)];
         _bottomBtn.backgroundColor = DEFAULT_BG_COLOR;
-        [_bottomBtn setTitle:@"领劵购买" forState:UIControlStateNormal];
+        [_bottomBtn setTitle:@"领劵" forState:UIControlStateNormal];
         [_bottomBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _bottomBtn.titleLabel.font = [UIFont boldSystemFontOfSize:16];
         [_bottomBtn addTarget:self action:@selector(juanAction) forControlEvents:UIControlEventTouchUpInside];

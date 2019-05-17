@@ -47,3 +47,10 @@
 -(void)getTB_MaterialWithId:(NSString *)material_id andPageNum:(NSInteger)pageNum;
 
 @end
+
+#pragma mark - 关联推荐API:()
+@interface TB_ItemRecommendAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_MaterialWithId:(NSString *)itemId;
+
+@end
