@@ -53,6 +53,7 @@
 
 }
 
+#pragma mark - 未编码
 -(void)setGETRequestWithUrlStr:(NSString *)urlStr
 {
     RequestManager *manager = [RequestManager manager];
@@ -79,6 +80,32 @@
      }];
 }
 
+#pragma mark - 已编码
+-(void)setGETRequestWithEncodeUrlStr:(NSString *)urlStr
+{
+    RequestManager *manager = [RequestManager manager];
+    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         [self requestSucessWithOperation:operation andObject:responseObject];
+     }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         [self requestFailedWithError:error];
+     }];
+}
+
+-(void)setPOSTRequestWithEncodeUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr
+{
+    RequestManager *manager = [RequestManager manager];
+    [manager POST:urlStr parameters:paramStr success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         [self requestSucessWithOperation:operation andObject:responseObject];
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         [self requestFailedWithError:error];
+     }];
+}
 #pragma mark - 请求回调成功 和 失败
 -(void)requestSucessWithOperation:(AFHTTPRequestOperation *)operation andObject:(id)responseObject
 {

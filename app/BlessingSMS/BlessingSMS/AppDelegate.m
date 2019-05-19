@@ -57,9 +57,9 @@
     sideMenuViewController.contentViewShadowEnabled = YES;
     
     SMSTabbarController *tabbar = [[SMSTabbarController alloc] init];
-    [tabbar addChildVc:sideMenuViewController title:@"短信" image:@"" selectedImage:@""];
-    [tabbar addChildVc:[HaoWuViewController new] title:@"好物" image:@"" selectedImage:@""];
-    [tabbar addChildVc:[CalendarViewController new] title:@"提醒" image:@"" selectedImage:@""];
+    [tabbar addChildVc:sideMenuViewController title:@"短信" image:@"短信1" selectedImage:@"短信2"];
+    [tabbar addChildVc:[HaoWuViewController new] title:@"好物" image:@"好物1" selectedImage:@"好物2"];
+    [tabbar addChildVc:[CalendarViewController new] title:@"提醒" image:@"闹钟1" selectedImage:@"闹钟2"];
     
     
     BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:tabbar];

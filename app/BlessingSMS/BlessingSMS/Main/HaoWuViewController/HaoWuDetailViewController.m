@@ -10,21 +10,25 @@
 #import "HaoWuDetailModel.h"
 #import "MaterialBannerCell.h"
 #import "MaterialInfoCell.h"
+#import "HaowuDetailCell.h"
 
 
 typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     HaoWuDetailSectionBanner,                // banner
     HaoWuDetailSectionInfo,                  // 商品信息
-//    HaoWuDetailSectionRecommand,             // 关联推荐
+    HaoWuDetailSectionDetail,               // 商品详情
     HaoWuDetailSectionMax
 };
 
 @interface HaoWuDetailViewController ()
 @property (strong, nonatomic) HaoWuDetailModel *haowuModel;
-@property (strong, nonatomic) TB_ItemDetailAPIManager *tb_itemDetailAPIManager;
+@property (strong, nonatomic) TB_ItemH5DetailAPIManager *tb_itemDetailAPIManager;
 @property (strong, nonatomic) UITableView *showTableView;
 @property (strong, nonatomic) UIView *bottomView;
 @property (strong, nonatomic) UIButton *bottomBtn;
+
+@property (strong, nonatomic) NSString *detailStr;
+
 @end
 
 @implementation HaoWuDetailViewController
@@ -50,12 +54,15 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
 }
 
 #pragma mark - TableViewDelegate and DataSource
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == HaoWuDetailSectionBanner) {
         return SCREEN_WIDTH;
+    } else if (indexPath.section == HaoWuDetailSectionDetail) {
+        return self.showTableView.frame.size.height;
     }
 
-    return 106;
+    return 115;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -63,13 +70,6 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == HaoWuDetailSectionBanner) {
-        return 1;
-    }
-    
-    if (section == HaoWuDetailSectionInfo) {
-        return 1;
-    }
     
     return 1;
 }
@@ -94,6 +94,16 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         [cell setupWithModel:self.infoModel];
+        return cell;
+    }
+    
+    if (indexPath.section == HaoWuDetailSectionDetail) {
+        HaowuDetailCell *cell = (HaowuDetailCell*)[tableView dequeueReusableCellWithIdentifier:@"HaowuDetailCell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"HaowuDetailCell" owner:self options:nil] lastObject];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        [cell.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_detailStr]]];
         return cell;
     }
     
@@ -144,9 +154,12 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     if ( manager == self.tb_itemDetailAPIManager) {
         
         NSDictionary *dic = manager.dataSourceDic;
-        NSArray *resultArray = dic[@"tbk_item_info_get_response"][@"results"][@"n_tbk_item"];
+        self.detailStr = dic[@"data"][@"item"][@"tmallDescUrl"];
+        if ([NSString isEmpty:_detailStr]) {
+            _detailStr = dic[@"data"][@"item"][@"taobaoDescUrl"];
+        }
         
-        self.haowuModel = [HaoWuDetailModel mj_objectWithKeyValues:resultArray[0]];
+        _detailStr = [CommonHelper addHttpsForUrlStr:_detailStr];
         
         [_showTableView reloadData];
         
@@ -162,10 +175,10 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     [_showTableView.mj_footer endRefreshing];
 }
 
--(TB_ItemDetailAPIManager *)tb_itemDetailAPIManager
+-(TB_ItemH5DetailAPIManager *)tb_itemDetailAPIManager
 {
     if (!_tb_itemDetailAPIManager) {
-        _tb_itemDetailAPIManager = [[TB_ItemDetailAPIManager alloc] init];
+        _tb_itemDetailAPIManager = [[TB_ItemH5DetailAPIManager alloc] init];
         _tb_itemDetailAPIManager.delegate = self;
     }
     return _tb_itemDetailAPIManager;

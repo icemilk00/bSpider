@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, strong) UITableView *leftTableView;
-//@property (nonatomic, strong) UIButton *settingButton;
+@property (nonatomic, strong) UIButton *settingButton;
 //@property (nonatomic, strong) UIButton *calendarButton;
 @property (strong, nonatomic) SMSCategoryAPIManager *smsCategoryAPIManager;
 @property (strong, nonatomic) SMSCategoryReformer *smsCategoryReformer;
@@ -37,7 +37,7 @@
     
 //    [self setupBgView];
 //    [self.view addSubview:self.calendarButton];
-//    [self.view addSubview:self.settingButton];
+    [self.view addSubview:self.settingButton];
     [self.view addSubview:self.leftTableView];
 }
 
@@ -234,16 +234,16 @@
 //    return _calendarButton;
 //}
 //
-//-(UIButton *)settingButton
-//{
-//    if (!_settingButton) {
-//        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(_calendarButton.frame.origin.x + _calendarButton.frame.size.width + 20.0f, NAVIGATIONBAR_HEIGHT, 40.0f, 41.0f)];
-//        [_settingButton setImage:[UIImage imageNamed:@"Setting"] forState:UIControlStateNormal];
-//
-//        [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//    return _settingButton;
-//}
+-(UIButton *)settingButton
+{
+    if (!_settingButton) {
+        _settingButton = [[UIButton alloc] initWithFrame:CGRectMake(10.0f, STATENBAR_HEIGHT, 40.0f, 40.0f)];
+        [_settingButton setImage:[UIImage imageNamed:@"Setting"] forState:UIControlStateNormal];
+
+        [_settingButton addTarget:self action:@selector(settingAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _settingButton;
+}
 
 -(void)setupBgView
 {

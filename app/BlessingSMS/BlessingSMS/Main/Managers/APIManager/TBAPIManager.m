@@ -262,3 +262,26 @@
 }
 
 @end
+
+#pragma mark - 详情API:()
+@implementation TB_ItemH5DetailAPIManager
+
+-(void)getTB_ItemDetailWithId:(NSString *)itemId
+{
+    //@"5580797"
+    NSDictionary *dic = @{@"itemNumId":itemId};
+    NSString *jsonStr = [dic mj_JSONString];
+    NSString *encodedString = (NSString *)
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)jsonStr,NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8));
+
+    NSString *baseUrlStr = [NSString stringWithFormat:@"https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?data=%@",encodedString];
+    
+    [self setGETRequestWithEncodeUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end

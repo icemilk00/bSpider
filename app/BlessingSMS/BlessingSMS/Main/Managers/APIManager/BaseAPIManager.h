@@ -59,6 +59,10 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 -(void)setGETRequestWithUrlStr:(NSString *)urlStr;
 -(void)setPOSTRequestWithUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr;
 
+-(void)setGETRequestWithEncodeUrlStr:(NSString *)urlStr;
+-(void)setPOSTRequestWithEncodeUrlStr:(NSString *)urlStr andParamStr:(NSString *)paramStr
+;
+
 @end
 
 #pragma mark - 请求分类下短信的API

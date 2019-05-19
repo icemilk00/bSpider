@@ -54,3 +54,10 @@
 -(void)getTB_MaterialWithId:(NSString *)itemId;
 
 @end
+
+#pragma mark - h5详情API:()
+@interface TB_ItemH5DetailAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_ItemDetailWithId:(NSString *)itemId;
+
+@end

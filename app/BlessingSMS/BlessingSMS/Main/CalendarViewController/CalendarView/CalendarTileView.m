@@ -53,7 +53,7 @@
 {
     _isHasNotification = isHasNotification;
     if (_isHasNotification) {
-        [self.recordFlagImageView setImage:[UIImage imageNamed:@"hasClock"]];
+        [self.recordFlagImageView setImage:[UIImage imageNamed:@"闹钟2"]];
     }
     else
     {
