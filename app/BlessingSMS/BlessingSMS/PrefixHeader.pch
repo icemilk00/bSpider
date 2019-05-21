@@ -58,6 +58,7 @@
 
 #import "ShareManager.h"
 #import "NSString+JFKit.h"
+#import "UIView+JFKit.h"
 
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibcTradeBiz/AlibcTradeBiz.h>

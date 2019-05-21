@@ -1,17 +1,17 @@
 //
-//  HaoWuViewController.m
+//  HaoWuThemeViewController.m
 //  BlessingSMS
 //
 //  Created by hp on 2019/5/8.
 //  Copyright © 2019 hxp. All rights reserved.
 //
 
-#import "HaoWuViewController.h"
+#import "HaoWuThemeViewController.h"
 #import "YHQTableViewCell.h"
 #import "HaoWuDetailViewController.h"
-#import "HaoWuThemeView.h"
 
-@interface HaoWuViewController ()
+
+@interface HaoWuThemeViewController ()
 {
     NSMutableArray *_dataSourceArray;
     NSInteger _pageIndex;
@@ -19,18 +19,17 @@
 }
 @property (strong, nonatomic) TB_MaterialAPIManager *tb_MaterialAPIManager;
 @property (strong, nonatomic) UITableView *showTableView;
-@property (strong, nonatomic) HaoWuThemeView *themeView;
 @end
 
-@implementation HaoWuViewController
+@implementation HaoWuThemeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"好物";
+    self.view.backgroundColor = [UIColor whiteColor];
     _pageIndex = 1;
 
-    [self setupDefaultNavWitConfig:@[]];
+    [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     
     [self arrayInit];
     
@@ -48,7 +47,7 @@
 //4094 特惠
 -(void)loadData
 {
-    [self.tb_MaterialAPIManager getTB_MaterialWithId:@"9660" andPageNum:_pageIndex];
+    [self.tb_MaterialAPIManager getTB_MaterialWithId:self.materialId andPageNum:_pageIndex];
 }
 
 #pragma mark - TableViewDelegate and DataSource
@@ -144,12 +143,12 @@
 -(UITableView *)showTableView
 {
     if (!_showTableView) {
-        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV_TABBAR style:UITableViewStylePlain];
+        _showTableView = [[UITableView alloc] initWithFrame:VIEW_FRAME_WITH_NAV style:UITableViewStylePlain];
         _showTableView.delegate = self;
         _showTableView.dataSource = self;
 //        _showTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _showTableView.backgroundColor = [UIColor whiteColor];
-        _showTableView.tableHeaderView = self.themeView;
+        _showTableView.tableFooterView = [UIView new];
         
         _showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headRefresh)];
         _showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footRefresh)];
@@ -157,12 +156,6 @@
     return _showTableView;
 }
 
--(HaoWuThemeView *)themeView {
-    if (!_themeView) {
-        _themeView = [[HaoWuThemeView alloc] initWithFrame:CGRectMake(0.0f, 0.0, SCREEN_WIDTH, 180)];
-    }
-    return _themeView;
-}
 
 /*
 #pragma mark - Navigation
