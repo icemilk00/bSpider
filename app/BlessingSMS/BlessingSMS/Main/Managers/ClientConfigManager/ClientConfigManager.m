@@ -55,7 +55,7 @@ static ClientConfigManager *configManager = nil;
         NSDictionary *dic = manager.dataSourceDic;
         if (dic && dic[@"clientConfigs"]) {
             self.defaultConfigDic = dic[@"clientConfigs"];
-            if(self.defaultConfigDic)
+            if(self.defaultConfigDic && self.defaultConfigDic[@"activityCf"])
             {
                [self configActivity];
             }
@@ -68,10 +68,12 @@ static ClientConfigManager *configManager = nil;
     [ActivityManager shareInstance].isShow = [_defaultConfigDic[@"activityCf"][@"showActive"] boolValue];
     [ActivityManager shareInstance].showStr = _defaultConfigDic[@"activityCf"][@"activityStr"];
     
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = [ActivityManager shareInstance].showStr;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:ActivityUpdateNotifi object:nil];
+    if (![NSString isEmpty:[ActivityManager shareInstance].showStr]) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [ActivityManager shareInstance].showStr;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ActivityUpdateNotifi object:nil];
+    }
 }
 
 -(NSString *)defaultPageRecommendFavID

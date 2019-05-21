@@ -83,7 +83,13 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
             cell = [[MaterialBannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MaterialBannerCell"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        cell.data = self.infoModel.small_images[@"string"];
+        NSArray *imageArray = self.infoModel.small_images[@"string"];
+        if (imageArray && imageArray.count > 0) {
+            cell.data = imageArray;
+        } else {
+            cell.data = @[self.infoModel.pict_url];
+        }
+        
         return cell;
     }
     
