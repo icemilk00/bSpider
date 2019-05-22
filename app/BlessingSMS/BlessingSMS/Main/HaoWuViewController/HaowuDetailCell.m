@@ -16,6 +16,20 @@
     self.detailWebView.scalesPageToFit = YES;
     self.detailWebView.backgroundColor = [UIColor whiteColor];
     self.detailWebView.delegate = self;
+    
+    
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    if(![[ClientConfigManager sharedInstance] canGoDetailPage])
+    {
+        if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {

@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlessingSMS/Main/RecommendViewController/RecommendViewController.m"
-            timestampString = "580142853.631932"
+            timestampString = "578993536.380174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlessingSMS/Main/RecommendViewController/RecommendViewController.m"
-            timestampString = "580142853.632444"
+            timestampString = "578993536.380235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlessingSMS/Main/HaoWuViewController/HaoWuViewController.m"
-            timestampString = "580131021.249642"
+            timestampString = "580190618.295431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -224,6 +224,22 @@
             startingLineNumber = "137"
             endingLineNumber = "137"
             landmarkName = "-setCompletionBlockWithSuccess:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlessingSMS/Main/HaoWuViewController/HaoWuDetailViewController.m"
+            timestampString = "580204206.192082"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

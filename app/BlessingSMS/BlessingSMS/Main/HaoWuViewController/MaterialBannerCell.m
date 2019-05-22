@@ -60,8 +60,8 @@
 
 - (void)bannerView:(JFBannerView *)bannerView configImageView:(UIImageView *)imageView atIndex:(NSUInteger)index {
     
-    NSString *imagePath = [CommonHelper addHttpsForUrlStr:self.data[index]];
-    NSURL *url = [NSURL URLWithString:imagePath];
+    NSString *imagePath = [CommonHelper addHttpForUrlStr:self.data[index]];
+    NSURL *url = [NSURL URLWithString:[imagePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     [imageView sd_setImageWithURL:url];
 }
 

@@ -18,4 +18,12 @@
     return str;
 }
 
++(NSString *)addHttpForUrlStr:(NSString *)urlStr {
+    NSMutableString *str = [[NSMutableString alloc] initWithString:urlStr];
+    if (![urlStr containString:@"http"]) {
+        [str insertString:@"http:" atIndex:0];
+    }
+    return str;
+}
+
 @end

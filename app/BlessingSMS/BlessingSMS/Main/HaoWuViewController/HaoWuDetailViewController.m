@@ -41,8 +41,17 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
     
+    
     [self.view addSubview:self.bottomView];
     [self.bottomView addSubview:self.bottomBtn];
+    
+    if(![[ClientConfigManager sharedInstance] canGoDetailPage])
+    {
+        _bottomView.frame = CGRectMake(_bottomView.left, _bottomView.bottom, _bottomView.width, 0);
+        _bottomBtn.hidden = YES;
+    }
+    
+    
     [self.view addSubview:self.showTableView];
     
     [self loadData];

@@ -40,12 +40,6 @@
 		E604003122828D2E007099F6 /* HaoWuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E604003022828D2E007099F6 /* HaoWuViewController.m */; };
 		E60400352282B782007099F6 /* NSString+JFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E60400342282B782007099F6 /* NSString+JFKit.m */; };
 		E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E60EDFD61C4D36D300FAA637 /* PinyinHelper.m */; };
-		E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE51C4D582400FAA637 /* icon-29.png */; };
-		E60EDFEC1C4D582400FAA637 /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE61C4D582400FAA637 /* icon-40.png */; };
-		E60EDFED1C4D582400FAA637 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE71C4D582400FAA637 /* icon-57.png */; };
-		E60EDFEE1C4D582400FAA637 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE81C4D582400FAA637 /* icon-114.png */; };
-		E60EDFEF1C4D582400FAA637 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFE91C4D582400FAA637 /* icon-120.png */; };
-		E60EDFF01C4D582400FAA637 /* icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = E60EDFEA1C4D582400FAA637 /* icon-1024.png */; };
 		E60F10571C3971CE006B62CC /* SMSCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10561C3971CE006B62CC /* SMSCategoryModel.m */; };
 		E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10591C397939006B62CC /* SMSCategoryCell.m */; };
 		E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60F105A1C397939006B62CC /* SMSCategoryCell.xib */; };
@@ -165,11 +159,6 @@
 		E6734BFC2294162C00E3948A /* 潮流@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6734BFA2294162C00E3948A /* 潮流@2x.png */; };
 		E6734BFF2294166400E3948A /* 特惠@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6734BFD2294166400E3948A /* 特惠@3x.png */; };
 		E6734C002294166400E3948A /* 特惠@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6734BFE2294166400E3948A /* 特惠@2x.png */; };
-		E67B2E171C553D76001408E2 /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E151C553D76001408E2 /* icon-76.png */; };
-		E67B2E181C553D76001408E2 /* icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E161C553D76001408E2 /* icon-152.png */; };
-		E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E191C554102001408E2 /* Default-568h@2x.png */; };
-		E67B2E1D1C554102001408E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1A1C554102001408E2 /* Default.png */; };
-		E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67B2E1B1C554102001408E2 /* Default@2x.png */; };
 		E67D91591ED42C1900F86AC3 /* ClientConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */; };
 		E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */; };
 		E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E67D915B1ED4457800F86AC3 /* home_recommend@3x.png */; };
@@ -224,6 +213,8 @@
 		E6A20EC01C819AA2005890FD /* weeklyTitle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EBE1C819AA2005890FD /* weeklyTitle@3x.png */; };
 		E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */; };
 		E6A20EC71C81DF01005890FD /* AboutSMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */; };
+		E6A27ECA2294FC25009A077C /* icon60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A27EC82294FC25009A077C /* icon60@2x.png */; };
+		E6A27ECB2294FC25009A077C /* icon60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A27EC92294FC25009A077C /* icon60@3x.png */; };
 		E6AC2DEA2286D05600E9A95F /* 券@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DE82286D05500E9A95F /* 券@2x.png */; };
 		E6AC2DEB2286D05600E9A95F /* 券@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DE92286D05500E9A95F /* 券@3x.png */; };
 		E6AC2DF02286D29A00E9A95F /* 天猫@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AC2DEC2286D29700E9A95F /* 天猫@2x.png */; };
@@ -321,12 +312,6 @@
 		E60400342282B782007099F6 /* NSString+JFKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JFKit.m"; sourceTree = "<group>"; };
 		E60EDFD51C4D36D300FAA637 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
 		E60EDFD61C4D36D300FAA637 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
-		E60EDFE51C4D582400FAA637 /* icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-29.png"; sourceTree = "<group>"; };
-		E60EDFE61C4D582400FAA637 /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
-		E60EDFE71C4D582400FAA637 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
-		E60EDFE81C4D582400FAA637 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
-		E60EDFE91C4D582400FAA637 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
-		E60EDFEA1C4D582400FAA637 /* icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-1024.png"; sourceTree = "<group>"; };
 		E60F10551C3971CE006B62CC /* SMSCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCategoryModel.h; sourceTree = "<group>"; };
 		E60F10561C3971CE006B62CC /* SMSCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCategoryModel.m; sourceTree = "<group>"; };
 		E60F10581C397939006B62CC /* SMSCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCategoryCell.h; sourceTree = "<group>"; };
@@ -477,11 +462,6 @@
 		E6734BFA2294162C00E3948A /* 潮流@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "潮流@2x.png"; sourceTree = "<group>"; };
 		E6734BFD2294166400E3948A /* 特惠@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "特惠@3x.png"; sourceTree = "<group>"; };
 		E6734BFE2294166400E3948A /* 特惠@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "特惠@2x.png"; sourceTree = "<group>"; };
-		E67B2E151C553D76001408E2 /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
-		E67B2E161C553D76001408E2 /* icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-152.png"; sourceTree = "<group>"; };
-		E67B2E191C554102001408E2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E67B2E1A1C554102001408E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		E67B2E1B1C554102001408E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E67D91571ED42C1900F86AC3 /* ClientConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientConfigManager.h; sourceTree = "<group>"; };
 		E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientConfigManager.m; sourceTree = "<group>"; };
 		E67D915A1ED4457800F86AC3 /* home_recommend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_recommend@2x.png"; sourceTree = "<group>"; };
@@ -571,6 +551,8 @@
 		E6A20EC31C81DF01005890FD /* AboutSMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutSMSViewController.h; sourceTree = "<group>"; };
 		E6A20EC41C81DF01005890FD /* AboutSMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutSMSViewController.m; sourceTree = "<group>"; };
 		E6A20EC51C81DF01005890FD /* AboutSMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutSMSViewController.xib; sourceTree = "<group>"; };
+		E6A27EC82294FC25009A077C /* icon60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon60@2x.png"; sourceTree = "<group>"; };
+		E6A27EC92294FC25009A077C /* icon60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon60@3x.png"; sourceTree = "<group>"; };
 		E6AC2DE82286D05500E9A95F /* 券@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "券@2x.png"; sourceTree = "<group>"; };
 		E6AC2DE92286D05500E9A95F /* 券@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "券@3x.png"; sourceTree = "<group>"; };
 		E6AC2DEC2286D29700E9A95F /* 天猫@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天猫@2x.png"; sourceTree = "<group>"; };
@@ -909,17 +891,8 @@
 		E60EDFD81C4D57F600FAA637 /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				E67B2E191C554102001408E2 /* Default-568h@2x.png */,
-				E67B2E1A1C554102001408E2 /* Default.png */,
-				E67B2E1B1C554102001408E2 /* Default@2x.png */,
-				E67B2E151C553D76001408E2 /* icon-76.png */,
-				E67B2E161C553D76001408E2 /* icon-152.png */,
-				E60EDFE51C4D582400FAA637 /* icon-29.png */,
-				E60EDFE61C4D582400FAA637 /* icon-40.png */,
-				E60EDFE71C4D582400FAA637 /* icon-57.png */,
-				E60EDFE81C4D582400FAA637 /* icon-114.png */,
-				E60EDFE91C4D582400FAA637 /* icon-120.png */,
-				E60EDFEA1C4D582400FAA637 /* icon-1024.png */,
+				E6A27EC82294FC25009A077C /* icon60@2x.png */,
+				E6A27EC92294FC25009A077C /* icon60@3x.png */,
 			);
 			path = icon;
 			sourceTree = "<group>";
@@ -1667,7 +1640,6 @@
 				E6A20EC71C81DF01005890FD /* AboutSMSViewController.xib in Resources */,
 				E6A20EB31C817707005890FD /* unhasClock@2x.png in Resources */,
 				E62C846F1C44087800FD29D5 /* menu@3x.png in Resources */,
-				E60EDFEE1C4D582400FAA637 /* icon-114.png in Resources */,
 				E66F34C722902BB80029E7E2 /* 首页-未选中@3x.png in Resources */,
 				E6E6F5441C33BAF4008005EA /* Assets.xcassets in Resources */,
 				E67D915D1ED4457800F86AC3 /* home_recommend@3x.png in Resources */,
@@ -1682,19 +1654,14 @@
 				E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */,
 				E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */,
 				E63343961C46A7CF0055A9C9 /* weibo@3x.png in Resources */,
-				E60EDFED1C4D582400FAA637 /* icon-57.png in Resources */,
 				E66F34D722902E0A0029E7E2 /* 好物1@3x.png in Resources */,
 				E6734BEB229414FB00E3948A /* 大额优惠券@2x.png in Resources */,
 				E6A20EC01C819AA2005890FD /* weeklyTitle@3x.png in Resources */,
-				E60EDFEF1C4D582400FAA637 /* icon-120.png in Resources */,
-				E67B2E1C1C554102001408E2 /* Default-568h@2x.png in Resources */,
 				E6734BF4229415C200E3948A /* 品牌@3x.png in Resources */,
+				E6A27ECB2294FC25009A077C /* icon60@3x.png in Resources */,
 				E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */,
 				E66F34C822902BB80029E7E2 /* 首页-选中@2x.png in Resources */,
 				E63343991C46B4C80055A9C9 /* send@2x.png in Resources */,
-				E60EDFEB1C4D582400FAA637 /* icon-29.png in Resources */,
-				E67B2E171C553D76001408E2 /* icon-76.png in Resources */,
-				E60EDFEC1C4D582400FAA637 /* icon-40.png in Resources */,
 				E6734BF02294157200E3948A /* 好物居@2x.png in Resources */,
 				E6AC2DEA2286D05600E9A95F /* 券@2x.png in Resources */,
 				E63343941C46A7CF0055A9C9 /* qq@3x.png in Resources */,
@@ -1727,8 +1694,6 @@
 				E6734BFC2294162C00E3948A /* 潮流@2x.png in Resources */,
 				E617497C1FF7424000726AE0 /* hb@2x.png in Resources */,
 				E6A20EB81C817C73005890FD /* Setting@3x.png in Resources */,
-				E67B2E1E1C554102001408E2 /* Default@2x.png in Resources */,
-				E60EDFF01C4D582400FAA637 /* icon-1024.png in Resources */,
 				E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */,
 				E66F34D122902D900029E7E2 /* 短信1@3x.png in Resources */,
 				04C820631FF622E7002EC0E7 /* active_right_btn@2x.png in Resources */,
@@ -1750,12 +1715,11 @@
 				E6734BEC229414FB00E3948A /* 大额优惠券@3x.png in Resources */,
 				E617497D1FF7424000726AE0 /* hb@3x.png in Resources */,
 				E66F34CF22902D900029E7E2 /* 短信2@3x.png in Resources */,
-				E67B2E181C553D76001408E2 /* icon-152.png in Resources */,
 				04C8205D1FF62256002EC0E7 /* ActivityShowView.xib in Resources */,
-				E67B2E1D1C554102001408E2 /* Default.png in Resources */,
 				E6734BF7229415F400E3948A /* 购物车@3x.png in Resources */,
 				E6734BFB2294162C00E3948A /* 潮流@3x.png in Resources */,
 				E6AC2DEB2286D05600E9A95F /* 券@3x.png in Resources */,
+				E6A27ECA2294FC25009A077C /* icon60@2x.png in Resources */,
 				E6472FF91C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.xib in Resources */,
 				E66F34E1229033F20029E7E2 /* 闹钟1@2x.png in Resources */,
 				E67D915C1ED4457800F86AC3 /* home_recommend@2x.png in Resources */,
@@ -1977,7 +1941,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -2018,7 +1982,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2032,9 +1996,11 @@
 			baseConfigurationReference = 007B0B086DE52A99E5EB5BDA /* Pods-BlessingSMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BlessingSMS/BlessingSMS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xuyu Lu (HZFZ6YNRV4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2044,7 +2010,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2083,9 +2049,11 @@
 			baseConfigurationReference = 5B3504F30EF39DF319499509 /* Pods-BlessingSMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BlessingSMS/BlessingSMS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Xuyu Lu";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2095,7 +2063,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
