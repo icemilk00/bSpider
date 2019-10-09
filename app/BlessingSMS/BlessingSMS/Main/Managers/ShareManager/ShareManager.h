@@ -18,7 +18,7 @@ typedef enum{
     typeQQ
 } OpenPlatformType;
 
-@interface ShareManager : NSObject <WXApiDelegate, WeiboSDKDelegate,WBHttpRequestDelegate,TencentSessionDelegate,TencentLoginDelegate>
+@interface ShareManager : NSObject <WXApiDelegate, WeiboSDKDelegate,WBHttpRequestDelegate>
 
 +(ShareManager *)sharedInstance;
 -(void)shareInit;

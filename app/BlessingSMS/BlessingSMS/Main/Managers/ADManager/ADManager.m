@@ -49,7 +49,7 @@ static ADManager *adManager = nil;
 +(void)showSplashAD
 {
     //开屏广告初始化并展示代码
-    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppkey:@"3630" placementId:@"88633644363093"];
+    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:@"1106197212" placementId:@"3070684501191623"];
     splash.delegate = APPDELEGATE; //设置代理
     
     //根据iPhone设备不同设置不同背景图

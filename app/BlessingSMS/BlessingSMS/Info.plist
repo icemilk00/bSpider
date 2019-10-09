@@ -76,7 +76,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tbopen</string>
@@ -101,9 +101,9 @@
 		<true/>
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>是否允许此App使用日历？</string>
+	<string>是否允许此App使用日历来添加提醒？</string>
 	<key>NSContactsUsageDescription</key>
-	<string>是否允许此App访问你的通讯录？</string>
+	<string>是否允许此App访问你的通讯录来获取联系人发送短信？</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
