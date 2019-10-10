@@ -109,20 +109,30 @@
 #pragma mark - 请求回调成功 和 失败
 -(void)requestSucessWithOperation:(AFHTTPRequestOperation *)operation andObject:(id)responseObject
 {
+    self.success = YES;
     self.dataSourceDic = [NSDictionary dictionaryWithDictionary:responseObject];
     self.retCode = _dataSourceDic[@"retCode"];
     NSLog(@"dataSourceDic = %@", _dataSourceDic);
     if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidSucess:)]) {
         [self.delegate APIManagerDidSucess:self];
     }
+    
+    if (self.completeBlock) {
+        self.completeBlock(self);
+    }
 }
 
 -(void)requestFailedWithError:(NSError *)error
 {
     NSLog(@"Request error : %@", [error description]);
+    self.success = NO;
     self.requestError = error;
     if (self.delegate && [self.delegate respondsToSelector:@selector(APIManagerDidFailed:)]) {
         [self.delegate APIManagerDidFailed:self];
+    }
+    
+    if (self.completeBlock) {
+        self.completeBlock(self);
     }
 }
 
@@ -212,5 +222,7 @@
 }
 
 @end
+
+
 
 

@@ -10,6 +10,8 @@
 
 @class BaseAPIManager;
 
+typedef void (^APIManagerComplete)(BaseAPIManager *manager);
+
 #pragma mark - APIManager
 @protocol APIManager <NSObject>
 
@@ -51,6 +53,9 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 @property (nonatomic, strong) NSDictionary *dataSourceDic;  //服务器返回的原始数据的字典
 @property (nonatomic, strong) NSString *retCode;            //服务器返回的retCode码
 @property (nonatomic, strong) NSError* requestError;        //请求失败的error
+@property (nonatomic, assign) BOOL success;                 //请求成功失败
+
+@property (nonatomic, strong) APIManagerComplete completeBlock;
 
 -(id)fetchDataWithReformer:(id <ReformerProtocol> )reformer;
 
@@ -85,4 +90,5 @@ typedef NS_ENUM (NSUInteger, RTAPIManagerErrorType){
 -(void)getDefaultConfig;
 
 @end
+
 

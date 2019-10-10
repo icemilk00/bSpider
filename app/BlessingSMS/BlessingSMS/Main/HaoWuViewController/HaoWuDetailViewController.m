@@ -11,23 +11,31 @@
 #import "MaterialBannerCell.h"
 #import "MaterialInfoCell.h"
 #import "HaowuDetailCell.h"
-
+#import "YHQTableViewCell.h"
+#import "SMSWebViewController.h"
 
 typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     HaoWuDetailSectionBanner,                // banner
     HaoWuDetailSectionInfo,                  // 商品信息
-    HaoWuDetailSectionDetail,               // 商品详情
+    HaoWuDetailSectionGuessLike,             // 猜你喜欢
     HaoWuDetailSectionMax
 };
 
 @interface HaoWuDetailViewController ()
 @property (strong, nonatomic) HaoWuDetailModel *haowuModel;
-@property (strong, nonatomic) TB_ItemH5DetailAPIManager *tb_itemDetailAPIManager;
+
 @property (strong, nonatomic) UITableView *showTableView;
 @property (strong, nonatomic) UIView *bottomView;
 @property (strong, nonatomic) UIButton *bottomBtn;
 
 @property (strong, nonatomic) NSString *detailStr;
+
+@property (assign, nonatomic) BOOL firstIn;
+
+@property (strong, nonatomic) NSMutableArray *dataSourceArray;
+@property (nonatomic, strong) UILabel *noDataLabel;
+
+@property (nonatomic, strong) NSString *tkl;
 
 @end
 
@@ -38,9 +46,10 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     // Do any additional setup after loading the view.
     self.title = @"商品详情";
     self.view.backgroundColor = DEFAULT_BG_COLOR;
+    self.dataSourceArray = [[NSMutableArray alloc] init];
+    self.firstIn = YES;
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
-    
     
     [self.view addSubview:self.bottomView];
     [self.bottomView addSubview:self.bottomBtn];
@@ -51,24 +60,60 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
         _bottomBtn.hidden = YES;
     }
     
-    
     [self.view addSubview:self.showTableView];
+    [self.showTableView addSubview:self.noDataLabel];
     
     [self loadData];
 }
 
 -(void)loadData
 {
-    [self.tb_itemDetailAPIManager getTB_ItemDetailWithId:self.infoModel.item_id];
+    int index = arc4random() % 10;
+    
+    NSString *searchStr = self.infoModel.title;
+    if (searchStr) {
+        searchStr = [searchStr substringToIndex:10];
+    }
+    
+    if (self.firstIn) [self.view showHud];
+    [[[TB_SearchMaterialAPIManager alloc] init] getTB_SearchMaterialWithPageNum:index cat:nil searchStr:searchStr complete:^(BaseAPIManager *manager) {
+        
+        self.firstIn = NO;
+        [self.view hideHud];
+        
+        if (manager.success) {
+            [self.dataSourceArray removeAllObjects];
+            
+            NSDictionary *dic = manager.dataSourceDic;
+            NSArray *resultArray = dic[@"tbk_dg_material_optional_response"][@"result_list"][@"map_data"];
+            
+            self.noDataLabel.hidden = YES;
+            if (resultArray.count == 0) {
+                self.noDataLabel.hidden = NO;
+            }
+            
+            for (NSDictionary *dataDic in resultArray) {
+                MaterialDetailModel *model = [MaterialDetailModel mj_objectWithKeyValues:dataDic];
+                [self.dataSourceArray addObject:model];
+            }
+            
+            [self.showTableView reloadData];
+            
+        } else {
+            [self.view showHudWithMessage:@"网络不给力哦，请重试"];
+        }
+        
+    }];
 }
+
 
 #pragma mark - TableViewDelegate and DataSource
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == HaoWuDetailSectionBanner) {
         return SCREEN_WIDTH;
-    } else if (indexPath.section == HaoWuDetailSectionDetail) {
-        return self.showTableView.frame.size.height;
+    } else if (indexPath.section == HaoWuDetailSectionGuessLike) {
+        return 126;
     }
 
     return 115;
@@ -79,8 +124,40 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
+    if (section == HaoWuDetailSectionGuessLike) {
+        
+        return _dataSourceArray.count;
+    }
     return 1;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (section == HaoWuDetailSectionGuessLike) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 50)];
+        view.backgroundColor = [UIColor whiteColor];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, view.height)];
+        label.backgroundColor = [UIColor clearColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = @"猜你喜欢";
+        label.font = [UIFont systemFontOfSize:17];
+        label.textColor = DEFAULT_BG_COLOR;
+        [view addSubview:label];
+        return view;
+    }
+    
+    return nil;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    if (section == HaoWuDetailSectionGuessLike) {
+        return 50;
+    }
+    
+    return CGFLOAT_MIN;
+    
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,13 +189,16 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
         return cell;
     }
     
-    if (indexPath.section == HaoWuDetailSectionDetail) {
-        HaowuDetailCell *cell = (HaowuDetailCell*)[tableView dequeueReusableCellWithIdentifier:@"HaowuDetailCell"];
+    if (indexPath.section == HaoWuDetailSectionGuessLike) {
+        
+        YHQTableViewCell *cell = (YHQTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"YHQTableViewCell"];
         if (cell == nil) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"HaowuDetailCell" owner:self options:nil] lastObject];
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"YHQTableViewCell" owner:self options:nil] lastObject];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        [cell.detailWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_detailStr]]];
+        
+        MaterialDetailModel *model = _dataSourceArray[indexPath.row];
+        [cell setupWithModel:model];
         return cell;
     }
     
@@ -129,76 +209,57 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    YHQInfoModel *infoModel = _dataSourceArray[indexPath.row];
-    
-    //    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
-    
-    //    SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
-    //    [self.navigationController pushViewController:smsSendVC animated:YES];
+    if (indexPath.section != HaoWuDetailSectionGuessLike) {
+        return;
+    }
+    MaterialDetailModel *infoModel = _dataSourceArray[indexPath.row];
+    HaoWuDetailViewController *vc = [[HaoWuDetailViewController alloc] init];
+    vc.infoModel = infoModel;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //点击领劵购买
 -(void)juanAction {
+    
     NSString *couponUrl = [CommonHelper addHttpsForUrlStr:self.infoModel.coupon_share_url];
+    couponUrl = [NSString stringWithFormat:@"%@&%@",couponUrl,@"pid=mm_17747039_25550611_101788700150"];
     
-    id<AlibcTradePage> page = [AlibcTradePageFactory page:couponUrl];
-    //    [AlibcTradePageFactory itemDetailPage:@"45281461519"];
-    id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
-    AlibcTradeShowParams *showParams = [[AlibcTradeShowParams alloc] init];
-    showParams.openType = AlibcOpenTypeNative;
     
-    AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
-    taokeParams.pid = @"mm_17747039_0_0";
+    SMSWebViewController *webView = [[SMSWebViewController alloc] initWithUrlString:couponUrl];
+    webView.title = @"领券";
+    [self.navigationController pushViewController:webView animated:YES];
     
-    [service
-     show:showParams.isNeedPush ? self.navigationController : self
-     page:page
-     showParams:showParams
-     taoKeParams:taokeParams
-     trackParam:nil
-     tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
-         
-     } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-         
-     }];
+    
+//    NSString *couponUrl = [CommonHelper addHttpsForUrlStr:self.infoModel.coupon_share_url];
+//
+//    id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
+//    AlibcTradeShowParams *showParams = [[AlibcTradeShowParams alloc] init];
+//    showParams.openType = AlibcOpenTypeAuto;
+//
+//    AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
+//    taokeParams.pid = @"mm_17747039_25550611_101788700150";
+//    taokeParams.extParams = @{
+//                              @"taokeAppkey":@"23832822"
+//                              };
+//    [service openByUrl:couponUrl identity:@"trade" webView:nil parentController:showParams.isNeedPush ? self.navigationController : self showParams:showParams taoKeParams:taokeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+//
+//    } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+//
+//    }];
+    
+    
+//    [service
+//     show:showParams.isNeedPush ? self.navigationController : self
+//     page:page
+//     showParams:showParams
+//     taoKeParams:taokeParams
+//     trackParam:nil
+//     tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+//
+//     } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+//
+//     }];
 }
-
-#pragma mark - APIManagerDelegate
--(void)APIManagerDidSucess:(BaseAPIManager *)manager
-{
-    if ( manager == self.tb_itemDetailAPIManager) {
-        
-        NSDictionary *dic = manager.dataSourceDic;
-        self.detailStr = dic[@"data"][@"item"][@"tmallDescUrl"];
-        if ([NSString isEmpty:_detailStr]) {
-            _detailStr = dic[@"data"][@"item"][@"taobaoDescUrl"];
-        }
-        
-        _detailStr = [CommonHelper addHttpsForUrlStr:_detailStr];
-        
-        [_showTableView reloadData];
-        
-        [_showTableView.mj_header endRefreshing];
-        [_showTableView.mj_footer endRefreshing];
-    }
-}
-
--(void)APIManagerDidFailed:(BaseAPIManager *)manager
-{
-    NSLog(@"请求失败: %@", manager.requestError.description);
-    [_showTableView.mj_header endRefreshing];
-    [_showTableView.mj_footer endRefreshing];
-}
-
--(TB_ItemH5DetailAPIManager *)tb_itemDetailAPIManager
-{
-    if (!_tb_itemDetailAPIManager) {
-        _tb_itemDetailAPIManager = [[TB_ItemH5DetailAPIManager alloc] init];
-        _tb_itemDetailAPIManager.delegate = self;
-    }
-    return _tb_itemDetailAPIManager;
-}
-
 
 -(UITableView *)showTableView
 {
@@ -234,6 +295,25 @@ typedef NS_ENUM(NSUInteger, HaoWuDetailSection) {
     return _bottomBtn;
 }
 
+-(UILabel *)noDataLabel
+{
+    if (_noDataLabel == nil) {
+        self.noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, SCREEN_WIDTH + 115 + 40 + 20, SCREEN_WIDTH - 20, 40.0f)];
+        _noDataLabel.text = @"没有找到您喜欢的哦";
+        _noDataLabel.textColor = [UIColor lightGrayColor];
+        _noDataLabel.textAlignment = NSTextAlignmentCenter;
+        
+        if(_dataSourceArray && _dataSourceArray.count > 0)
+        {
+            _noDataLabel.hidden = YES;
+        }
+        else
+        {
+            _noDataLabel.hidden = NO;
+        }
+    }
+    return _noDataLabel;
+}
 
 /*
 #pragma mark - Navigation

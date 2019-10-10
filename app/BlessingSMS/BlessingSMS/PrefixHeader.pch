@@ -29,6 +29,7 @@
 #import "MJExtension.h"
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+EasyShow.h"
+#import "UIView+HUD.h"
 #import "MobClick.h"
 #import "NSDate+CalendarHelper.h"
 #import "UIImageView+WebCache.h"

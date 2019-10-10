@@ -7,6 +7,10 @@
 //
 
 #import "TBAPIManager.h"
+#import <CommonCrypto/CommonHMAC.h>
+
+#import "IPHelper.h"
+
 
 #define TB_APPKEY       @"23832822"
 #define TB_APPSECRET    @"56f5bd4a4969f98aad2c73e030a308f9"
@@ -20,7 +24,7 @@
 +(NSDictionary *)TBAPIBaseParamDic
 {
     return @{@"app_key":TB_APPKEY,
-             @"timestamp":[DateHelper currentDateToStringWithFormat:@"yyyy-MM-dd HH:mm:ss"],
+             @"timestamp":[[self class] currentDateToStringWithFormat:@"yyyy-MM-dd HH:mm:ss"],
              @"v":@"2.0",
              @"sign_method":@"md5",
              @"format":@"json"};
@@ -49,6 +53,15 @@
     
     NSString *sign = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],result[8], result[9], result[10], result[11],result[12], result[13], result[14], result[15]];
     return sign;
+}
+
++(NSString *)currentDateToStringWithFormat:(NSString *)formatStr
+{
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *format  =  [[NSDateFormatter alloc] init];
+    [format setDateFormat:formatStr];
+    NSString *dateStr = [format stringFromDate:currentDate];
+    return dateStr;
 }
 
 @end
@@ -277,6 +290,131 @@
     NSString *baseUrlStr = [NSString stringWithFormat:@"https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?data=%@",encodedString];
     
     [self setGETRequestWithEncodeUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+#pragma mark - 通用物料搜索API:()
+@implementation TB_SearchMaterialAPIManager
+
+-(void)getTB_SearchMaterialWithPageNum:(NSInteger)pageNum cat:(NSString *)cat searchStr:(NSString *)searchStr complete:(APIManagerComplete)complete{
+    self.completeBlock = complete;
+    
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.dg.material.optional" forKey:@"method"];
+    [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
+    
+    [parameterDic setObject:@(pageNum) forKey:@"page_no"];
+    [parameterDic setObject:@(20) forKey:@"page_size"];
+    [parameterDic setObject:@(2) forKey:@"platform"];
+    [parameterDic setObject:@"true" forKey:@"has_coupon"];
+    
+    
+    //类别
+    if (![NSString isEmpty:cat]) {
+        [parameterDic setObject:cat forKey:@"cat"];
+    }
+    
+    //搜索词
+    if (![NSString isEmpty:searchStr]) {
+        [parameterDic setObject:searchStr forKey:@"q"];
+    }
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+
+#pragma mark - 猜你喜欢API:()
+@implementation TB_GuessLikeAPIManager
+
+-(void)getTB_GuessLikeWithPageNum:(NSInteger)pageNum complete:(APIManagerComplete)complete
+{
+    self.completeBlock = complete;
+    
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.item.guess.like" forKey:@"method"];
+    [parameterDic setObject:ADZONE_ID forKey:@"adzone_id"];
+    [parameterDic setObject:@(pageNum) forKey:@"page_no"];
+    [parameterDic setObject:@(20) forKey:@"page_size"];
+    [parameterDic setObject:@"ios" forKey:@"os"];
+    
+    [parameterDic setObject:[IPHelper getIPAddress:YES] forKey:@"ip"];
+    
+    NSString *ua = [NSString stringWithFormat:@"%@/%@ (Mac OS X %@)", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey], [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[NSProcessInfo processInfo] operatingSystemVersionString]];
+    [parameterDic setObject:ua forKey:@"ua"];
+    
+    AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
+        [parameterDic setObject:@"wifi" forKey:@"net"];
+    } else if (status == AFNetworkReachabilityStatusReachableViaWWAN){
+        [parameterDic setObject:@"cell" forKey:@"net"];
+    } else {
+        [parameterDic setObject:@"unknown" forKey:@"net"];
+    }
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
+}
+
+-(NSString *)apiMethodName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
+
+#pragma mark - 淘口令生成API:()
+@implementation TB_TKLCreateAPIManager
+
+-(void)getTB_TKLCreateWithTtitle:(NSString *)title url:(NSString *)url logo:(NSString *)logo complete:(APIManagerComplete)complete
+{
+    self.completeBlock = complete;
+    
+    NSMutableDictionary *parameterDic = [[NSMutableDictionary alloc]
+                                         initWithDictionary:[[self class] TBAPIBaseParamDic]];
+    
+    [parameterDic setObject:@"taobao.tbk.tpwd.create" forKey:@"method"];
+    
+    NSString * tempUrl = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)url,NULL,(CFStringRef)@"&",kCFStringEncodingUTF8));
+    
+    [parameterDic setObject:title forKey:@"text"];
+    [parameterDic setObject:tempUrl forKey:@"url"];
+    [parameterDic setObject:logo forKey:@"logo"];
+    
+    NSString *sign = [[self class] signForTBAPIWithParamDic:parameterDic];
+    [parameterDic setObject:sign forKey:@"sign"];
+    
+    NSString *paramStr = [[self class] paramStrForDic:parameterDic];
+    NSString *baseUrlStr = [NSString stringWithFormat:@"%@?%@", TBAPIUrl, paramStr];
+    
+    [self setGETRequestWithUrlStr:baseUrlStr];
 }
 
 -(NSString *)apiMethodName

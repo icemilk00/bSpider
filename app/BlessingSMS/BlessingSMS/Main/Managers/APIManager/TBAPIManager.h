@@ -61,3 +61,23 @@
 -(void)getTB_ItemDetailWithId:(NSString *)itemId;
 
 @end
+
+#pragma mark - 通用物料搜索API:()
+@interface TB_SearchMaterialAPIManager : TBAPIManager <APIManager>
+//通用搜索
+-(void)getTB_SearchMaterialWithPageNum:(NSInteger)pageNum cat:(NSString *)cat searchStr:(NSString *)searchStr complete:(APIManagerComplete)complete;
+
+@end
+
+#pragma mark - 猜你喜欢API:()
+@interface TB_GuessLikeAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_GuessLikeWithPageNum:(NSInteger)pageNum complete:(APIManagerComplete)complete;
+
+@end
+
+#pragma mark - 淘口令生成API:()
+@interface TB_TKLCreateAPIManager : TBAPIManager <APIManager>
+
+-(void)getTB_TKLCreateWithTtitle:(NSString *)title url:(NSString *)url logo:(NSString *)logo complete:(APIManagerComplete)complete;
+@end

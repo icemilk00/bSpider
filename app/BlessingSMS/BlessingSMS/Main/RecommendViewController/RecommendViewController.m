@@ -93,27 +93,33 @@
     
     [AnalyticsManager eventRecommendClickedWithFavID:model.num_iid withItemName:model.title];
     
-    id<AlibcTradePage> page = [AlibcTradePageFactory page:model.click_url];
-//    [AlibcTradePageFactory itemDetailPage:@"45281461519"];
     id<AlibcTradeService> service = [AlibcTradeSDK sharedInstance].tradeService;
     AlibcTradeShowParams *showParams = [[AlibcTradeShowParams alloc] init];
     showParams.openType = AlibcOpenTypeAuto;
 
     AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
-    taokeParams.pid = @"mm_17747039_0_0";
+    taokeParams.pid = @"mm_17747039_25550611_101788700150";
     
-    [service
-     show:showParams.isNeedPush ? self.navigationController : self
-     page:page
-     showParams:showParams
-     taoKeParams:taokeParams
-     trackParam:nil
-     tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
-
-     } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-         
-     }];
+    UIWebView *webview = [[UIWebView alloc] init];
     
+    [service openByUrl:model.click_url identity:@"trade" webView:webview parentController:showParams.isNeedPush ? self.navigationController : self showParams:showParams taoKeParams:taokeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+        
+    } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+        
+    }];
+    
+//    [service
+//     show:showParams.isNeedPush ? self.navigationController : self
+//     page:page
+//     showParams:showParams
+//     taoKeParams:taokeParams
+//     trackParam:nil
+//     tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+//
+//     } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+//
+//     }];
+//
     
     return;
 }

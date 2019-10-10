@@ -10,16 +10,16 @@
 #import "YHQTableViewCell.h"
 #import "HaoWuDetailViewController.h"
 #import "HaoWuThemeView.h"
-
+#define angelToRandian(x) ((x)/180.0*M_PI)
 @interface HaoWuViewController ()
 {
     NSMutableArray *_dataSourceArray;
     NSInteger _pageIndex;
-    NSString *_favID;
 }
 @property (strong, nonatomic) TB_MaterialAPIManager *tb_MaterialAPIManager;
 @property (strong, nonatomic) UITableView *showTableView;
 @property (strong, nonatomic) HaoWuThemeView *themeView;
+@property (strong, nonatomic) UIButton *QYHButton;           //红包
 @end
 
 @implementation HaoWuViewController
@@ -35,8 +35,28 @@
     [self arrayInit];
     
     [self.view addSubview:self.showTableView];
+    if([[ClientConfigManager sharedInstance] canGoDetailPage])
+    {
+        [self.view addSubview:self.QYHButton];
+        CAKeyframeAnimation* anim=[CAKeyframeAnimation animation];
+        anim.keyPath=@"transform.rotation";
+        anim.values=@[@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0))];
+        anim.repeatCount = MAXFLOAT;
+        anim.duration = 3;
+        anim.removedOnCompletion = NO;
+        anim.fillMode = kCAFillModeForwards;
+        [self.QYHButton.layer addAnimation:anim forKey:nil];
+    }
+    
     
     [self loadData];
+    
+}
+
+-(void)QYHAction{
+    
+    NSString *urlStr = [NSString stringWithFormat:@"https://apps.apple.com/cn/app/优惠券/id%@", @"1448205043"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
 }
 
@@ -162,6 +182,21 @@
         _themeView = [[HaoWuThemeView alloc] initWithFrame:CGRectMake(0.0f, 0.0, SCREEN_WIDTH, 180)];
     }
     return _themeView;
+}
+
+-(UIButton *)QYHButton
+{
+    if (!_QYHButton) {
+        _QYHButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 52, SCREEN_HEIGTH - 54 - TABBAR_HEIGHT, 36, 40)];
+        [_QYHButton setImage:[UIImage imageNamed:@"quan_appIcon"] forState:UIControlStateNormal];
+        [_QYHButton addTarget:self action:@selector(QYHAction) forControlEvents:UIControlEventTouchUpInside];
+        _QYHButton.layer.cornerRadius = 10;
+        _QYHButton.layer.masksToBounds = YES;
+        _QYHButton.layer.shadowColor = [UIColor grayColor].CGColor;
+        _QYHButton.layer.shadowOffset = CGSizeMake(1, 1);
+        _QYHButton.layer.shadowOpacity = 0.8;
+    }
+    return _QYHButton;
 }
 
 /*

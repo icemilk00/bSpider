@@ -57,7 +57,10 @@ static TBManager *tbManager = nil;
     // 配置全局的淘客参数
     //如果没有阿里妈妈的淘客账号,setTaokeParams函数需要调用
     AlibcTradeTaokeParams *taokeParams = [[AlibcTradeTaokeParams alloc] init];
-    taokeParams.pid = @"mm_17747039_0_0"; //mm_XXXXX为你自己申请的阿里妈妈淘客pid
+    taokeParams.pid = @"mm_17747039_25550611_101788700150"; //mm_XXXXX为你自己申请的阿里妈妈淘客pid
+    taokeParams.extParams = @{
+                              @"taokeAppkey":@"23832822"
+                              };
     [[AlibcTradeSDK sharedInstance] setTaokeParams:taokeParams];
     
     //设置全局的app标识，在电商模块里等同于isv_code
@@ -65,7 +68,7 @@ static TBManager *tbManager = nil;
 //    [[AlibcTradeSDK sharedInstance] setISVCode:@"your_isv_code"];
     
     // 设置全局配置，是否强制使用h5
-    [[AlibcTradeSDK sharedInstance] setIsForceH5:NO];
+//    [[AlibcTradeSDK sharedInstance] setIsForceH5:NO];
 }
 
 -(void)initTBFavList
