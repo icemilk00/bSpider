@@ -10,9 +10,8 @@
 #import "SMSTabbarController.h"
 #import "HaoWuViewController.h"
 #import "CalendarViewController.h"
-
 @interface AppDelegate ()
-
+@property (nonatomic, strong) BaseNavController *navigationController;
 @end
 
 @implementation AppDelegate
@@ -22,6 +21,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [ADManager showSplashAD];
     [[ClientConfigManager sharedInstance] initConfig];
     
     [[ShareManager sharedInstance] shareInit];
@@ -32,8 +32,6 @@
     
     [[TBManager sharedInstance] initConfig];    //初始化SDK
     [[TBManager sharedInstance] initTBFavList]; //获取选品库列表
-    
-    [ADManager showSplashAD];
     
     //角标清0
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
@@ -61,24 +59,32 @@
     [tabbar addChildVc:[HaoWuViewController new] title:@"好物" image:@"好物1" selectedImage:@"好物2"];
     [tabbar addChildVc:[CalendarViewController new] title:@"提醒" image:@"闹钟1" selectedImage:@"闹钟2"];
     
+    self.navigationController = [[BaseNavController alloc] initWithRootViewController:tabbar];
+    self.navigationController.navigationBarHidden = YES;
     
-    BaseNavController *navigationController = [[BaseNavController alloc] initWithRootViewController:tabbar];
-    navigationController.navigationBarHidden = YES;
+    UIViewController *vc = [[UIViewController alloc] init];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:vc.view.bounds];
+    imageView.backgroundColor = [UIColor whiteColor];
+    [vc.view addSubview:imageView];
     
-    self.window.rootViewController = navigationController;
-    
+    self.window.rootViewController = vc;
     self.window.backgroundColor = DEFAULT_BG_COLOR;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
+- (void)splashAdWillClosed:(GDTSplashAd *)splashAd {
+    
+    self.window.rootViewController = self.navigationController;
+}
 
 /**
- *  开屏广告成功展示
+ *  点击以后全屏广告页将要关闭
  */
--(void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd
-{
+- (void)splashAdWillDismissFullScreenModal:(GDTSplashAd *)splashAd {
     
+    self.window.rootViewController = self.navigationController;
 }
 
 /**
@@ -86,7 +92,7 @@
  */
 -(void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error
 {
-    
+    self.window.rootViewController = self.navigationController;
 }
 
 #pragma mark -  Open Platform

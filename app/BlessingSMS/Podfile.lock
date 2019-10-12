@@ -20,24 +20,41 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - GDTMobSDK (4.10.14):
+    - GDTMobSDK/GDTMobSDK (= 4.10.14)
+  - GDTMobSDK/GDTMobSDK (4.10.14)
   - JSONKit (1.5pre)
-  - MJExtension (3.0.13)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - MJExtension (3.2.1)
+  - MJRefresh (3.2.0)
+  - SDWebImage (5.2.3):
+    - SDWebImage/Core (= 5.2.3)
+  - SDWebImage/Core (5.2.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - GDTMobSDK (~> 4.10.14)
   - JSONKit (~> 1.5pre)
   - MJExtension
+  - MJRefresh
   - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - GDTMobSDK
+    - JSONKit
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  GDTMobSDK: b974c327ab530e5fbc165cf4a44466f58110bfac
   JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
 
-PODFILE CHECKSUM: aa15c3585337cf459c138db908b546a3295cce37
+PODFILE CHECKSUM: dd1b19a7355bfde4f745b61426df3634f1970cda
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.8.3

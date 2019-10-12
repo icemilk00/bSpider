@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "GDTSplashAd.h"
 
+
 @interface ADManager : NSObject
 
 +(void)showSplashAD;

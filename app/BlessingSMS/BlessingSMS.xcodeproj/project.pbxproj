@@ -17,25 +17,6 @@
 		E600ED3E1C3685F500AB6916 /* SmsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED3C1C3685F500AB6916 /* SmsCell.m */; };
 		E600ED3F1C3685F500AB6916 /* SmsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E600ED3D1C3685F500AB6916 /* SmsCell.xib */; };
 		E600ED451C36897900AB6916 /* LayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED441C36897900AB6916 /* LayerHelper.m */; };
-		E600ED731C36994500AB6916 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED491C36994500AB6916 /* MJRefreshAutoFooter.m */; };
-		E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED4B1C36994500AB6916 /* MJRefreshBackFooter.m */; };
-		E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED4D1C36994500AB6916 /* MJRefreshComponent.m */; };
-		E600ED761C36994500AB6916 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED4F1C36994500AB6916 /* MJRefreshFooter.m */; };
-		E600ED771C36994500AB6916 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED511C36994500AB6916 /* MJRefreshHeader.m */; };
-		E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED561C36994500AB6916 /* MJRefreshAutoGifFooter.m */; };
-		E600ED791C36994500AB6916 /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED581C36994500AB6916 /* MJRefreshAutoNormalFooter.m */; };
-		E600ED7A1C36994500AB6916 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED5A1C36994500AB6916 /* MJRefreshAutoStateFooter.m */; };
-		E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED5D1C36994500AB6916 /* MJRefreshBackGifFooter.m */; };
-		E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED5F1C36994500AB6916 /* MJRefreshBackNormalFooter.m */; };
-		E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED611C36994500AB6916 /* MJRefreshBackStateFooter.m */; };
-		E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED641C36994500AB6916 /* MJRefreshGifHeader.m */; };
-		E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED661C36994500AB6916 /* MJRefreshNormalHeader.m */; };
-		E600ED801C36994500AB6916 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED681C36994500AB6916 /* MJRefreshStateHeader.m */; };
-		E600ED811C36994500AB6916 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E600ED691C36994500AB6916 /* MJRefresh.bundle */; };
-		E600ED821C36994500AB6916 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED6C1C36994500AB6916 /* MJRefreshConst.m */; };
-		E600ED831C36994500AB6916 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED6E1C36994500AB6916 /* UIScrollView+MJExtension.m */; };
-		E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED701C36994500AB6916 /* UIScrollView+MJRefresh.m */; };
-		E600ED851C36994500AB6916 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E600ED721C36994500AB6916 /* UIView+MJExtension.m */; };
 		E604002D228287C5007099F6 /* SMSTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E604002B228287C5007099F6 /* SMSTabbarController.m */; };
 		E604003122828D2E007099F6 /* HaoWuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E604003022828D2E007099F6 /* HaoWuViewController.m */; };
 		E60400352282B782007099F6 /* NSString+JFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E60400342282B782007099F6 /* NSString+JFKit.m */; };
@@ -43,26 +24,6 @@
 		E60F10571C3971CE006B62CC /* SMSCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10561C3971CE006B62CC /* SMSCategoryModel.m */; };
 		E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F10591C397939006B62CC /* SMSCategoryCell.m */; };
 		E60F105C1C397939006B62CC /* SMSCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60F105A1C397939006B62CC /* SMSCategoryCell.xib */; };
-		E61002C6234EC9FC003A4561 /* AlibabaAuthSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61002B1234EC9FC003A4561 /* AlibabaAuthSDK.bundle */; };
-		E61002C7234EC9FC003A4561 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61002B2234EC9FC003A4561 /* AlipaySDK.bundle */; };
-		E61002C8234EC9FC003A4561 /* SmartLink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61002B3234EC9FC003A4561 /* SmartLink.bundle */; };
-		E61002C9234EC9FC003A4561 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61002B4234EC9FC003A4561 /* NBResource.bundle */; };
-		E61002CA234EC9FC003A4561 /* AlibabaAuthExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002B6234EC9FC003A4561 /* AlibabaAuthExt.framework */; };
-		E61002CB234EC9FC003A4561 /* MtopSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002B7234EC9FC003A4561 /* MtopSDK.framework */; };
-		E61002CC234EC9FC003A4561 /* mtopext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002B8234EC9FC003A4561 /* mtopext.framework */; };
-		E61002CD234EC9FC003A4561 /* AlibabaAuthSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002B9234EC9FC003A4561 /* AlibabaAuthSDK.framework */; };
-		E61002CE234EC9FC003A4561 /* AlibcTradeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BA234EC9FC003A4561 /* AlibcTradeSDK.framework */; };
-		E61002CF234EC9FC003A4561 /* AlibcLinkPartnerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BB234EC9FC003A4561 /* AlibcLinkPartnerSDK.framework */; };
-		E61002D0234EC9FC003A4561 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BC234EC9FC003A4561 /* SecurityGuardSDK.framework */; };
-		E61002D1234EC9FC003A4561 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BD234EC9FC003A4561 /* UTDID.framework */; };
-		E61002D2234EC9FC003A4561 /* AlibcTradeBiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BE234EC9FC003A4561 /* AlibcTradeBiz.framework */; };
-		E61002D3234EC9FC003A4561 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002BF234EC9FC003A4561 /* SGMain.framework */; };
-		E61002D4234EC9FC003A4561 /* mtopcoreopen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C0234EC9FC003A4561 /* mtopcoreopen.framework */; };
-		E61002D5234EC9FC003A4561 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C1234EC9FC003A4561 /* UTMini.framework */; };
-		E61002D6234EC9FC003A4561 /* SGAVMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C2234EC9FC003A4561 /* SGAVMP.framework */; };
-		E61002D7234EC9FC003A4561 /* SGMiddleTier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C3234EC9FC003A4561 /* SGMiddleTier.framework */; };
-		E61002D8234EC9FC003A4561 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C4234EC9FC003A4561 /* AlipaySDK.framework */; };
-		E61002D9234EC9FC003A4561 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61002C5234EC9FC003A4561 /* SGSecurityBody.framework */; };
 		E61002DB234ECAB5003A4561 /* mtopsdk_configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E61002DA234ECAB5003A4561 /* mtopsdk_configuration.plist */; };
 		E617497C1FF7424000726AE0 /* hb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E617497A1FF7424000726AE0 /* hb@2x.png */; };
 		E617497D1FF7424000726AE0 /* hb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E617497B1FF7424000726AE0 /* hb@3x.png */; };
@@ -128,6 +89,26 @@
 		E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D61C78C5AF009CB7EE /* NSDate+CalendarHelper.m */; };
 		E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */; };
 		E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E66BD4411C352F57005E3597 /* SMSInfoModel.m */; };
+		E66E12292351BF47008AF72D /* AlibabaAuthSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E66E12142351BF46008AF72D /* AlibabaAuthSDK.bundle */; };
+		E66E122A2351BF47008AF72D /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E66E12152351BF46008AF72D /* AlipaySDK.bundle */; };
+		E66E122B2351BF47008AF72D /* SmartLink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E66E12162351BF46008AF72D /* SmartLink.bundle */; };
+		E66E122C2351BF47008AF72D /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E66E12172351BF46008AF72D /* NBResource.bundle */; };
+		E66E122D2351BF47008AF72D /* AlibabaAuthExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12192351BF46008AF72D /* AlibabaAuthExt.framework */; };
+		E66E122E2351BF47008AF72D /* MtopSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121A2351BF46008AF72D /* MtopSDK.framework */; };
+		E66E122F2351BF47008AF72D /* mtopext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121B2351BF46008AF72D /* mtopext.framework */; };
+		E66E12302351BF47008AF72D /* AlibabaAuthSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121C2351BF46008AF72D /* AlibabaAuthSDK.framework */; };
+		E66E12312351BF47008AF72D /* AlibcTradeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121D2351BF46008AF72D /* AlibcTradeSDK.framework */; };
+		E66E12322351BF47008AF72D /* AlibcLinkPartnerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121E2351BF46008AF72D /* AlibcLinkPartnerSDK.framework */; };
+		E66E12332351BF47008AF72D /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E121F2351BF46008AF72D /* SecurityGuardSDK.framework */; };
+		E66E12342351BF47008AF72D /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12202351BF46008AF72D /* UTDID.framework */; };
+		E66E12352351BF47008AF72D /* AlibcTradeBiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12212351BF46008AF72D /* AlibcTradeBiz.framework */; };
+		E66E12362351BF47008AF72D /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12222351BF46008AF72D /* SGMain.framework */; };
+		E66E12372351BF47008AF72D /* mtopcoreopen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12232351BF46008AF72D /* mtopcoreopen.framework */; };
+		E66E12382351BF47008AF72D /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12242351BF46008AF72D /* UTMini.framework */; };
+		E66E12392351BF47008AF72D /* SGAVMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12252351BF46008AF72D /* SGAVMP.framework */; };
+		E66E123A2351BF47008AF72D /* SGMiddleTier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12262351BF46008AF72D /* SGMiddleTier.framework */; };
+		E66E123B2351BF47008AF72D /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12272351BF46008AF72D /* AlipaySDK.framework */; };
+		E66E123C2351BF47008AF72D /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66E12282351BF46008AF72D /* SGSecurityBody.framework */; };
 		E66F34BB229016950029E7E2 /* HaowuDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E66F34B9229016950029E7E2 /* HaowuDetailCell.m */; };
 		E66F34BC229016950029E7E2 /* HaowuDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66F34BA229016950029E7E2 /* HaowuDetailCell.xib */; };
 		E66F34C722902BB80029E7E2 /* 首页-未选中@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E66F34C322902BB60029E7E2 /* 首页-未选中@3x.png */; };
@@ -171,7 +152,6 @@
 		E6837C05228ABADF007449A2 /* MaterialBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837C03228ABADF007449A2 /* MaterialBannerCell.m */; };
 		E6837C09228AC19D007449A2 /* MaterialInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6837C07228AC19D007449A2 /* MaterialInfoCell.m */; };
 		E6837C0A228AC19D007449A2 /* MaterialInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6837C08228AC19D007449A2 /* MaterialInfoCell.xib */; };
-		E692F9CB1EDFFC9B00E6FF0B /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */; };
 		E692F9CD1EDFFCB400E6FF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */; };
 		E692F9CE1EDFFCB900E6FF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A080CD1C47F7AD000E67CC /* AdSupport.framework */; };
 		E692F9D01EDFFCD100E6FF0B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E692F9CF1EDFFCD100E6FF0B /* StoreKit.framework */; };
@@ -228,6 +208,8 @@
 		E6AD689B1C5FA2530056C04F /* PushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AD689A1C5FA2530056C04F /* PushManager.m */; };
 		E6AD68A01C5FA38B0056C04F /* libXG-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD689D1C5FA38B0056C04F /* libXG-SDK.a */; };
 		E6AD68A21C5FA3B00056C04F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */; };
+		E6B31E7C235037A100060325 /* SmsADCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B31E7A235037A100060325 /* SmsADCell.m */; };
+		E6B31E7D235037A100060325 /* SmsADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B31E7B235037A100060325 /* SmsADCell.xib */; };
 		E6E67B78234F09AD002EF806 /* IPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E67B77234F09AD002EF806 /* IPHelper.m */; };
 		E6E67B7B234F0BB2002EF806 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E67B7A234F0BB2002EF806 /* UIView+HUD.m */; };
 		E6E67B84234F1915002EF806 /* SMSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E67B83234F1915002EF806 /* SMSWebViewController.m */; };
@@ -272,44 +254,6 @@
 		E600ED3D1C3685F500AB6916 /* SmsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmsCell.xib; sourceTree = "<group>"; };
 		E600ED431C36897900AB6916 /* LayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerHelper.h; sourceTree = "<group>"; };
 		E600ED441C36897900AB6916 /* LayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerHelper.m; sourceTree = "<group>"; };
-		E600ED481C36994500AB6916 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
-		E600ED491C36994500AB6916 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
-		E600ED4A1C36994500AB6916 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
-		E600ED4B1C36994500AB6916 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackFooter.m; sourceTree = "<group>"; };
-		E600ED4C1C36994500AB6916 /* MJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshComponent.h; sourceTree = "<group>"; };
-		E600ED4D1C36994500AB6916 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
-		E600ED4E1C36994500AB6916 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
-		E600ED4F1C36994500AB6916 /* MJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooter.m; sourceTree = "<group>"; };
-		E600ED501C36994500AB6916 /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
-		E600ED511C36994500AB6916 /* MJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeader.m; sourceTree = "<group>"; };
-		E600ED551C36994500AB6916 /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
-		E600ED561C36994500AB6916 /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
-		E600ED571C36994500AB6916 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
-		E600ED581C36994500AB6916 /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
-		E600ED591C36994500AB6916 /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
-		E600ED5A1C36994500AB6916 /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
-		E600ED5C1C36994500AB6916 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
-		E600ED5D1C36994500AB6916 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
-		E600ED5E1C36994500AB6916 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
-		E600ED5F1C36994500AB6916 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
-		E600ED601C36994500AB6916 /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
-		E600ED611C36994500AB6916 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
-		E600ED631C36994500AB6916 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifHeader.h; sourceTree = "<group>"; };
-		E600ED641C36994500AB6916 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshGifHeader.m; sourceTree = "<group>"; };
-		E600ED651C36994500AB6916 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshNormalHeader.h; sourceTree = "<group>"; };
-		E600ED661C36994500AB6916 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshNormalHeader.m; sourceTree = "<group>"; };
-		E600ED671C36994500AB6916 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshStateHeader.h; sourceTree = "<group>"; };
-		E600ED681C36994500AB6916 /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshStateHeader.m; sourceTree = "<group>"; };
-		E600ED691C36994500AB6916 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
-		E600ED6A1C36994500AB6916 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
-		E600ED6B1C36994500AB6916 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
-		E600ED6C1C36994500AB6916 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
-		E600ED6D1C36994500AB6916 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
-		E600ED6E1C36994500AB6916 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
-		E600ED6F1C36994500AB6916 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
-		E600ED701C36994500AB6916 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
-		E600ED711C36994500AB6916 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
-		E600ED721C36994500AB6916 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		E604002B228287C5007099F6 /* SMSTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSTabbarController.m; sourceTree = "<group>"; };
 		E604002C228287C5007099F6 /* SMSTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSTabbarController.h; sourceTree = "<group>"; };
 		E604002F22828D2E007099F6 /* HaoWuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaoWuViewController.h; sourceTree = "<group>"; };
@@ -323,26 +267,6 @@
 		E60F10581C397939006B62CC /* SMSCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCategoryCell.h; sourceTree = "<group>"; };
 		E60F10591C397939006B62CC /* SMSCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCategoryCell.m; sourceTree = "<group>"; };
 		E60F105A1C397939006B62CC /* SMSCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMSCategoryCell.xib; sourceTree = "<group>"; };
-		E61002B1234EC9FC003A4561 /* AlibabaAuthSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlibabaAuthSDK.bundle; sourceTree = "<group>"; };
-		E61002B2234EC9FC003A4561 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		E61002B3234EC9FC003A4561 /* SmartLink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SmartLink.bundle; sourceTree = "<group>"; };
-		E61002B4234EC9FC003A4561 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
-		E61002B6234EC9FC003A4561 /* AlibabaAuthExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthExt.framework; sourceTree = "<group>"; };
-		E61002B7234EC9FC003A4561 /* MtopSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MtopSDK.framework; sourceTree = "<group>"; };
-		E61002B8234EC9FC003A4561 /* mtopext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mtopext.framework; sourceTree = "<group>"; };
-		E61002B9234EC9FC003A4561 /* AlibabaAuthSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthSDK.framework; sourceTree = "<group>"; };
-		E61002BA234EC9FC003A4561 /* AlibcTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeSDK.framework; sourceTree = "<group>"; };
-		E61002BB234EC9FC003A4561 /* AlibcLinkPartnerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcLinkPartnerSDK.framework; sourceTree = "<group>"; };
-		E61002BC234EC9FC003A4561 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
-		E61002BD234EC9FC003A4561 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
-		E61002BE234EC9FC003A4561 /* AlibcTradeBiz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeBiz.framework; sourceTree = "<group>"; };
-		E61002BF234EC9FC003A4561 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
-		E61002C0234EC9FC003A4561 /* mtopcoreopen.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mtopcoreopen.framework; sourceTree = "<group>"; };
-		E61002C1234EC9FC003A4561 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
-		E61002C2234EC9FC003A4561 /* SGAVMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGAVMP.framework; sourceTree = "<group>"; };
-		E61002C3234EC9FC003A4561 /* SGMiddleTier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMiddleTier.framework; sourceTree = "<group>"; };
-		E61002C4234EC9FC003A4561 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		E61002C5234EC9FC003A4561 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
 		E61002DA234ECAB5003A4561 /* mtopsdk_configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = mtopsdk_configuration.plist; sourceTree = "<group>"; };
 		E617497A1FF7424000726AE0 /* hb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hb@2x.png"; sourceTree = "<group>"; };
 		E617497B1FF7424000726AE0 /* hb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hb@3x.png"; sourceTree = "<group>"; };
@@ -433,6 +357,26 @@
 		E66AE7D91C78C5AF009CB7EE /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E66BD4401C352F57005E3597 /* SMSInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSInfoModel.h; sourceTree = "<group>"; };
 		E66BD4411C352F57005E3597 /* SMSInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSInfoModel.m; sourceTree = "<group>"; };
+		E66E12142351BF46008AF72D /* AlibabaAuthSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlibabaAuthSDK.bundle; sourceTree = "<group>"; };
+		E66E12152351BF46008AF72D /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		E66E12162351BF46008AF72D /* SmartLink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SmartLink.bundle; sourceTree = "<group>"; };
+		E66E12172351BF46008AF72D /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
+		E66E12192351BF46008AF72D /* AlibabaAuthExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthExt.framework; sourceTree = "<group>"; };
+		E66E121A2351BF46008AF72D /* MtopSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MtopSDK.framework; sourceTree = "<group>"; };
+		E66E121B2351BF46008AF72D /* mtopext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mtopext.framework; sourceTree = "<group>"; };
+		E66E121C2351BF46008AF72D /* AlibabaAuthSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthSDK.framework; sourceTree = "<group>"; };
+		E66E121D2351BF46008AF72D /* AlibcTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeSDK.framework; sourceTree = "<group>"; };
+		E66E121E2351BF46008AF72D /* AlibcLinkPartnerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcLinkPartnerSDK.framework; sourceTree = "<group>"; };
+		E66E121F2351BF46008AF72D /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		E66E12202351BF46008AF72D /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		E66E12212351BF46008AF72D /* AlibcTradeBiz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeBiz.framework; sourceTree = "<group>"; };
+		E66E12222351BF46008AF72D /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
+		E66E12232351BF46008AF72D /* mtopcoreopen.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mtopcoreopen.framework; sourceTree = "<group>"; };
+		E66E12242351BF46008AF72D /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		E66E12252351BF46008AF72D /* SGAVMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGAVMP.framework; sourceTree = "<group>"; };
+		E66E12262351BF46008AF72D /* SGMiddleTier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMiddleTier.framework; sourceTree = "<group>"; };
+		E66E12272351BF46008AF72D /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		E66E12282351BF46008AF72D /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
 		E66F34B8229016950029E7E2 /* HaowuDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaowuDetailCell.h; sourceTree = "<group>"; };
 		E66F34B9229016950029E7E2 /* HaowuDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaowuDetailCell.m; sourceTree = "<group>"; };
 		E66F34BA229016950029E7E2 /* HaowuDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaowuDetailCell.xib; sourceTree = "<group>"; };
@@ -487,12 +431,6 @@
 		E6837C06228AC19D007449A2 /* MaterialInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialInfoCell.h; sourceTree = "<group>"; };
 		E6837C07228AC19D007449A2 /* MaterialInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaterialInfoCell.m; sourceTree = "<group>"; };
 		E6837C08228AC19D007449A2 /* MaterialInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialInfoCell.xib; sourceTree = "<group>"; };
-		E692F9C51EDFFC9B00E6FF0B /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		E692F9C61EDFFC9B00E6FF0B /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		E692F9C71EDFFC9B00E6FF0B /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		E692F9C81EDFFC9B00E6FF0B /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		E692F9C91EDFFC9B00E6FF0B /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
-		E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		E692F9CC1EDFFCB400E6FF0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E692F9CF1EDFFCD100E6FF0B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E692F9D21EDFFCF000E6FF0B /* ADManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADManager.h; sourceTree = "<group>"; };
@@ -577,6 +515,9 @@
 		E6AD689E1C5FA38B0056C04F /* XGPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGPush.h; sourceTree = "<group>"; };
 		E6AD689F1C5FA38B0056C04F /* XGSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSetting.h; sourceTree = "<group>"; };
 		E6AD68A11C5FA3B00056C04F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E6B31E79235037A100060325 /* SmsADCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmsADCell.h; sourceTree = "<group>"; };
+		E6B31E7A235037A100060325 /* SmsADCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmsADCell.m; sourceTree = "<group>"; };
+		E6B31E7B235037A100060325 /* SmsADCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmsADCell.xib; sourceTree = "<group>"; };
 		E6E67B76234F09AD002EF806 /* IPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPHelper.h; sourceTree = "<group>"; };
 		E6E67B77234F09AD002EF806 /* IPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPHelper.m; sourceTree = "<group>"; };
 		E6E67B79234F0BB2002EF806 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
@@ -627,44 +568,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61002CF234EC9FC003A4561 /* AlibcLinkPartnerSDK.framework in Frameworks */,
+				E66E12312351BF47008AF72D /* AlibcTradeSDK.framework in Frameworks */,
 				E692F9D01EDFFCD100E6FF0B /* StoreKit.framework in Frameworks */,
-				E61002D5234EC9FC003A4561 /* UTMini.framework in Frameworks */,
-				E61002CE234EC9FC003A4561 /* AlibcTradeSDK.framework in Frameworks */,
-				E61002D2234EC9FC003A4561 /* AlibcTradeBiz.framework in Frameworks */,
 				E692F9CE1EDFFCB900E6FF0B /* AdSupport.framework in Frameworks */,
-				E61002CD234EC9FC003A4561 /* AlibabaAuthSDK.framework in Frameworks */,
 				E692F9CD1EDFFCB400E6FF0B /* CoreLocation.framework in Frameworks */,
 				E65B889F1ECDC888006CD3E4 /* CoreMotion.framework in Frameworks */,
-				E61002CC234EC9FC003A4561 /* mtopext.framework in Frameworks */,
 				E6AD68A21C5FA3B00056C04F /* CFNetwork.framework in Frameworks */,
-				E61002D0234EC9FC003A4561 /* SecurityGuardSDK.framework in Frameworks */,
-				E61002D3234EC9FC003A4561 /* SGMain.framework in Frameworks */,
 				E6A080DC1C47F86F000E67CC /* libz.tbd in Frameworks */,
-				E692F9CB1EDFFC9B00E6FF0B /* libGDTMobSDK.a in Frameworks */,
-				E61002D4234EC9FC003A4561 /* mtopcoreopen.framework in Frameworks */,
-				E61002CB234EC9FC003A4561 /* MtopSDK.framework in Frameworks */,
+				E66E123C2351BF47008AF72D /* SGSecurityBody.framework in Frameworks */,
+				E66E122E2351BF47008AF72D /* MtopSDK.framework in Frameworks */,
 				E6A080DA1C47F868000E67CC /* libstdc++.tbd in Frameworks */,
 				E6A080D81C47F85A000E67CC /* CoreTelephony.framework in Frameworks */,
 				E6A080D61C47F84E000E67CC /* CoreGraphics.framework in Frameworks */,
+				E66E12382351BF47008AF72D /* UTMini.framework in Frameworks */,
 				E6A080D41C47F842000E67CC /* SystemConfiguration.framework in Frameworks */,
 				E6A080D21C47F835000E67CC /* libiconv.tbd in Frameworks */,
+				E66E12372351BF47008AF72D /* mtopcoreopen.framework in Frameworks */,
+				E66E12322351BF47008AF72D /* AlibcLinkPartnerSDK.framework in Frameworks */,
+				E66E12362351BF47008AF72D /* SGMain.framework in Frameworks */,
+				E66E123B2351BF47008AF72D /* AlipaySDK.framework in Frameworks */,
 				E6A080D01C47F826000E67CC /* Security.framework in Frameworks */,
+				E66E12342351BF47008AF72D /* UTDID.framework in Frameworks */,
+				E66E12332351BF47008AF72D /* SecurityGuardSDK.framework in Frameworks */,
 				E6A080CC1C47F798000E67CC /* libsqlite3.tbd in Frameworks */,
+				E66E122F2351BF47008AF72D /* mtopext.framework in Frameworks */,
+				E66E12352351BF47008AF72D /* AlibcTradeBiz.framework in Frameworks */,
 				E6A080CA1C47F77D000E67CC /* ImageIO.framework in Frameworks */,
+				E66E12392351BF47008AF72D /* SGAVMP.framework in Frameworks */,
 				E65624231C4AA071002DCE76 /* libMobClickLibrary.a in Frameworks */,
 				E6A080C71C47F5D3000E67CC /* libWeiboSDK.a in Frameworks */,
-				E61002D7234EC9FC003A4561 /* SGMiddleTier.framework in Frameworks */,
-				E61002D9234EC9FC003A4561 /* SGSecurityBody.framework in Frameworks */,
-				E61002D1234EC9FC003A4561 /* UTDID.framework in Frameworks */,
 				E682C6791C3ACF3400499693 /* MessageUI.framework in Frameworks */,
-				E61002D6234EC9FC003A4561 /* SGAVMP.framework in Frameworks */,
+				E66E12302351BF47008AF72D /* AlibabaAuthSDK.framework in Frameworks */,
 				E6A080B51C47F124000E67CC /* TencentOpenAPI.framework in Frameworks */,
-				E61002D8234EC9FC003A4561 /* AlipaySDK.framework in Frameworks */,
+				E66E123A2351BF47008AF72D /* SGMiddleTier.framework in Frameworks */,
 				E6A080B71C47F124000E67CC /* libWeChatSDK.a in Frameworks */,
+				E66E122D2351BF47008AF72D /* AlibabaAuthExt.framework in Frameworks */,
 				E6AD68A01C5FA38B0056C04F /* libXG-SDK.a in Frameworks */,
 				E72122F92AA64E4F14B5BD84 /* libPods-BlessingSMS.a in Frameworks */,
-				E61002CA234EC9FC003A4561 /* AlibabaAuthExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,99 +686,6 @@
 			path = LayerHelper;
 			sourceTree = "<group>";
 		};
-		E600ED461C36994500AB6916 /* MJRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED471C36994500AB6916 /* Base */,
-				E600ED521C36994500AB6916 /* Custom */,
-				E600ED691C36994500AB6916 /* MJRefresh.bundle */,
-				E600ED6A1C36994500AB6916 /* MJRefresh.h */,
-				E600ED6B1C36994500AB6916 /* MJRefreshConst.h */,
-				E600ED6C1C36994500AB6916 /* MJRefreshConst.m */,
-				E600ED6D1C36994500AB6916 /* UIScrollView+MJExtension.h */,
-				E600ED6E1C36994500AB6916 /* UIScrollView+MJExtension.m */,
-				E600ED6F1C36994500AB6916 /* UIScrollView+MJRefresh.h */,
-				E600ED701C36994500AB6916 /* UIScrollView+MJRefresh.m */,
-				E600ED711C36994500AB6916 /* UIView+MJExtension.h */,
-				E600ED721C36994500AB6916 /* UIView+MJExtension.m */,
-			);
-			path = MJRefresh;
-			sourceTree = "<group>";
-		};
-		E600ED471C36994500AB6916 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED481C36994500AB6916 /* MJRefreshAutoFooter.h */,
-				E600ED491C36994500AB6916 /* MJRefreshAutoFooter.m */,
-				E600ED4A1C36994500AB6916 /* MJRefreshBackFooter.h */,
-				E600ED4B1C36994500AB6916 /* MJRefreshBackFooter.m */,
-				E600ED4C1C36994500AB6916 /* MJRefreshComponent.h */,
-				E600ED4D1C36994500AB6916 /* MJRefreshComponent.m */,
-				E600ED4E1C36994500AB6916 /* MJRefreshFooter.h */,
-				E600ED4F1C36994500AB6916 /* MJRefreshFooter.m */,
-				E600ED501C36994500AB6916 /* MJRefreshHeader.h */,
-				E600ED511C36994500AB6916 /* MJRefreshHeader.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		E600ED521C36994500AB6916 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED531C36994500AB6916 /* Footer */,
-				E600ED621C36994500AB6916 /* Header */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		E600ED531C36994500AB6916 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED541C36994500AB6916 /* Auto */,
-				E600ED5B1C36994500AB6916 /* Back */,
-			);
-			path = Footer;
-			sourceTree = "<group>";
-		};
-		E600ED541C36994500AB6916 /* Auto */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED551C36994500AB6916 /* MJRefreshAutoGifFooter.h */,
-				E600ED561C36994500AB6916 /* MJRefreshAutoGifFooter.m */,
-				E600ED571C36994500AB6916 /* MJRefreshAutoNormalFooter.h */,
-				E600ED581C36994500AB6916 /* MJRefreshAutoNormalFooter.m */,
-				E600ED591C36994500AB6916 /* MJRefreshAutoStateFooter.h */,
-				E600ED5A1C36994500AB6916 /* MJRefreshAutoStateFooter.m */,
-			);
-			path = Auto;
-			sourceTree = "<group>";
-		};
-		E600ED5B1C36994500AB6916 /* Back */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED5C1C36994500AB6916 /* MJRefreshBackGifFooter.h */,
-				E600ED5D1C36994500AB6916 /* MJRefreshBackGifFooter.m */,
-				E600ED5E1C36994500AB6916 /* MJRefreshBackNormalFooter.h */,
-				E600ED5F1C36994500AB6916 /* MJRefreshBackNormalFooter.m */,
-				E600ED601C36994500AB6916 /* MJRefreshBackStateFooter.h */,
-				E600ED611C36994500AB6916 /* MJRefreshBackStateFooter.m */,
-			);
-			path = Back;
-			sourceTree = "<group>";
-		};
-		E600ED621C36994500AB6916 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				E600ED631C36994500AB6916 /* MJRefreshGifHeader.h */,
-				E600ED641C36994500AB6916 /* MJRefreshGifHeader.m */,
-				E600ED651C36994500AB6916 /* MJRefreshNormalHeader.h */,
-				E600ED661C36994500AB6916 /* MJRefreshNormalHeader.m */,
-				E600ED671C36994500AB6916 /* MJRefreshStateHeader.h */,
-				E600ED681C36994500AB6916 /* MJRefreshStateHeader.m */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		E604002A228287C5007099F6 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -913,40 +760,6 @@
 				E6A27EC92294FC25009A077C /* icon60@3x.png */,
 			);
 			path = icon;
-			sourceTree = "<group>";
-		};
-		E61002B0234EC9FC003A4561 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E61002B1234EC9FC003A4561 /* AlibabaAuthSDK.bundle */,
-				E61002B2234EC9FC003A4561 /* AlipaySDK.bundle */,
-				E61002B3234EC9FC003A4561 /* SmartLink.bundle */,
-				E61002B4234EC9FC003A4561 /* NBResource.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		E61002B5234EC9FC003A4561 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E61002B6234EC9FC003A4561 /* AlibabaAuthExt.framework */,
-				E61002B7234EC9FC003A4561 /* MtopSDK.framework */,
-				E61002B8234EC9FC003A4561 /* mtopext.framework */,
-				E61002B9234EC9FC003A4561 /* AlibabaAuthSDK.framework */,
-				E61002BA234EC9FC003A4561 /* AlibcTradeSDK.framework */,
-				E61002BB234EC9FC003A4561 /* AlibcLinkPartnerSDK.framework */,
-				E61002BC234EC9FC003A4561 /* SecurityGuardSDK.framework */,
-				E61002BD234EC9FC003A4561 /* UTDID.framework */,
-				E61002BE234EC9FC003A4561 /* AlibcTradeBiz.framework */,
-				E61002BF234EC9FC003A4561 /* SGMain.framework */,
-				E61002C0234EC9FC003A4561 /* mtopcoreopen.framework */,
-				E61002C1234EC9FC003A4561 /* UTMini.framework */,
-				E61002C2234EC9FC003A4561 /* SGAVMP.framework */,
-				E61002C3234EC9FC003A4561 /* SGMiddleTier.framework */,
-				E61002C4234EC9FC003A4561 /* AlipaySDK.framework */,
-				E61002C5234EC9FC003A4561 /* SGSecurityBody.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		E633437E1C4692380055A9C9 /* sourceImg */ = {
@@ -1116,15 +929,6 @@
 			path = AnalyticsManager;
 			sourceTree = "<group>";
 		};
-		E65B88711ECDA31A006CD3E4 /* ALiSDK */ = {
-			isa = PBXGroup;
-			children = (
-				E61002B5234EC9FC003A4561 /* Frameworks */,
-				E61002B0234EC9FC003A4561 /* Resources */,
-			);
-			path = ALiSDK;
-			sourceTree = "<group>";
-		};
 		E66609301C79FF5800B5E5A7 /* CalendarNotifiCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1170,6 +974,49 @@
 			path = CalendarView;
 			sourceTree = "<group>";
 		};
+		E66E12122351BF46008AF72D /* ALiSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E66E12132351BF46008AF72D /* Resources */,
+				E66E12182351BF46008AF72D /* Frameworks */,
+			);
+			path = ALiSDK;
+			sourceTree = "<group>";
+		};
+		E66E12132351BF46008AF72D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E66E12142351BF46008AF72D /* AlibabaAuthSDK.bundle */,
+				E66E12152351BF46008AF72D /* AlipaySDK.bundle */,
+				E66E12162351BF46008AF72D /* SmartLink.bundle */,
+				E66E12172351BF46008AF72D /* NBResource.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E66E12182351BF46008AF72D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E66E12192351BF46008AF72D /* AlibabaAuthExt.framework */,
+				E66E121A2351BF46008AF72D /* MtopSDK.framework */,
+				E66E121B2351BF46008AF72D /* mtopext.framework */,
+				E66E121C2351BF46008AF72D /* AlibabaAuthSDK.framework */,
+				E66E121D2351BF46008AF72D /* AlibcTradeSDK.framework */,
+				E66E121E2351BF46008AF72D /* AlibcLinkPartnerSDK.framework */,
+				E66E121F2351BF46008AF72D /* SecurityGuardSDK.framework */,
+				E66E12202351BF46008AF72D /* UTDID.framework */,
+				E66E12212351BF46008AF72D /* AlibcTradeBiz.framework */,
+				E66E12222351BF46008AF72D /* SGMain.framework */,
+				E66E12232351BF46008AF72D /* mtopcoreopen.framework */,
+				E66E12242351BF46008AF72D /* UTMini.framework */,
+				E66E12252351BF46008AF72D /* SGAVMP.framework */,
+				E66E12262351BF46008AF72D /* SGMiddleTier.framework */,
+				E66E12272351BF46008AF72D /* AlipaySDK.framework */,
+				E66E12282351BF46008AF72D /* SGSecurityBody.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		E67D91561ED42C0E00F86AC3 /* ClientConfigManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1177,19 +1024,6 @@
 				E67D91581ED42C1900F86AC3 /* ClientConfigManager.m */,
 			);
 			path = ClientConfigManager;
-			sourceTree = "<group>";
-		};
-		E692F9C41EDFFC9B00E6FF0B /* GDTSDK */ = {
-			isa = PBXGroup;
-			children = (
-				E692F9C51EDFFC9B00E6FF0B /* GDTMobBannerView.h */,
-				E692F9C61EDFFC9B00E6FF0B /* GDTMobInterstitial.h */,
-				E692F9C71EDFFC9B00E6FF0B /* GDTNativeAd.h */,
-				E692F9C81EDFFC9B00E6FF0B /* GDTSplashAd.h */,
-				E692F9C91EDFFC9B00E6FF0B /* GDTTrack.h */,
-				E692F9CA1EDFFC9B00E6FF0B /* libGDTMobSDK.a */,
-			);
-			path = GDTSDK;
 			sourceTree = "<group>";
 		};
 		E692F9D11EDFFCF000E6FF0B /* ADManager */ = {
@@ -1248,8 +1082,7 @@
 		E6A080AC1C47F124000E67CC /* OpenPlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
-				E692F9C41EDFFC9B00E6FF0B /* GDTSDK */,
-				E65B88711ECDA31A006CD3E4 /* ALiSDK */,
+				E66E12122351BF46008AF72D /* ALiSDK */,
 				E6AD689C1C5FA38B0056C04F /* XGPushSDK */,
 				E656241F1C4AA071002DCE76 /* UMAnalytics */,
 				E6A080BA1C47F5D3000E67CC /* WeiboSDK */,
@@ -1470,7 +1303,6 @@
 			isa = PBXGroup;
 			children = (
 				E65624171C4A70A6002DCE76 /* MBProgressHUD */,
-				E600ED461C36994500AB6916 /* MJRefresh */,
 				E6E6F5791C33D5F1008005EA /* RESideMenu */,
 			);
 			path = OpenSourceClass;
@@ -1560,6 +1392,9 @@
 				E600ED3D1C3685F500AB6916 /* SmsCell.xib */,
 				E66BD4401C352F57005E3597 /* SMSInfoModel.h */,
 				E66BD4411C352F57005E3597 /* SMSInfoModel.m */,
+				E6B31E79235037A100060325 /* SmsADCell.h */,
+				E6B31E7A235037A100060325 /* SmsADCell.m */,
+				E6B31E7B235037A100060325 /* SmsADCell.xib */,
 			);
 			path = MainShowViewController;
 			sourceTree = "<group>";
@@ -1606,8 +1441,7 @@
 				E6E6F5301C33BAF4008005EA /* Sources */,
 				E6E6F5311C33BAF4008005EA /* Frameworks */,
 				E6E6F5321C33BAF4008005EA /* Resources */,
-				6A50FADB9B95C68C440F2E35 /* [CP] Embed Pods Frameworks */,
-				631BAE71A5811C9802BE4554 /* [CP] Copy Pods Resources */,
+				5E2E3EAE115539AC6248A6FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1644,6 +1478,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1675,8 +1510,9 @@
 				E6A20EB71C817C73005890FD /* Setting@2x.png in Resources */,
 				E6A20EBB1C81907C005890FD /* add_noti@2x.png in Resources */,
 				E6A20EBF1C819AA2005890FD /* weeklyTitle@2x.png in Resources */,
-				E61002C6234EC9FC003A4561 /* AlibabaAuthSDK.bundle in Resources */,
+				E6B31E7D235037A100060325 /* SmsADCell.xib in Resources */,
 				E6934BC51C7F689B0041F4C5 /* calendar@2x.png in Resources */,
+				E66E122A2351BF47008AF72D /* AlipaySDK.bundle in Resources */,
 				E6934BC61C7F689B0041F4C5 /* calendar@3x.png in Resources */,
 				E63343961C46A7CF0055A9C9 /* weibo@3x.png in Resources */,
 				E66F34D722902E0A0029E7E2 /* 好物1@3x.png in Resources */,
@@ -1687,6 +1523,7 @@
 				E666093B1C7A0CDE00B5E5A7 /* CalendarNotiViewController.xib in Resources */,
 				E66F34C822902BB80029E7E2 /* 首页-选中@2x.png in Resources */,
 				E63343991C46B4C80055A9C9 /* send@2x.png in Resources */,
+				E66E122C2351BF47008AF72D /* NBResource.bundle in Resources */,
 				E6734BF02294157200E3948A /* 好物居@2x.png in Resources */,
 				E6AC2DEA2286D05600E9A95F /* 券@2x.png in Resources */,
 				E63343941C46A7CF0055A9C9 /* qq@3x.png in Resources */,
@@ -1697,7 +1534,6 @@
 				E63343951C46A7CF0055A9C9 /* weibo@2x.png in Resources */,
 				E66F34C922902BB80029E7E2 /* 首页-选中@3x.png in Resources */,
 				E6A080C81C47F5D3000E67CC /* WeiboSDK.bundle in Resources */,
-				E600ED811C36994500AB6916 /* MJRefresh.bundle in Resources */,
 				E62C84731C44122300FD29D5 /* arrow@3x.png in Resources */,
 				E6A20EB21C817707005890FD /* hasClock@3x.png in Resources */,
 				E633439E1C46B8770055A9C9 /* sms_bg@3x.png in Resources */,
@@ -1707,6 +1543,7 @@
 				E6AC2DF12286D29A00E9A95F /* 天猫@3x.png in Resources */,
 				E6AC2DF22286D29A00E9A95F /* 淘宝@2x.png in Resources */,
 				E6353A081C3E1585005E3A2F /* cell_unSelected@2x.png in Resources */,
+				E66E122B2351BF47008AF72D /* SmartLink.bundle in Resources */,
 				E63343861C46A28F0055A9C9 /* main_cell_arrow@3x.png in Resources */,
 				E65B889D1ECDC0B2006CD3E4 /* yw_1222.jpg in Resources */,
 				E6A080B61C47F124000E67CC /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -1743,7 +1580,6 @@
 				E66F34CF22902D900029E7E2 /* 短信2@3x.png in Resources */,
 				04C8205D1FF62256002EC0E7 /* ActivityShowView.xib in Resources */,
 				E6734BF7229415F400E3948A /* 购物车@3x.png in Resources */,
-				E61002C7234EC9FC003A4561 /* AlipaySDK.bundle in Resources */,
 				E6734BFB2294162C00E3948A /* 潮流@3x.png in Resources */,
 				E6AC2DEB2286D05600E9A95F /* 券@3x.png in Resources */,
 				E6A27ECA2294FC25009A077C /* icon60@2x.png in Resources */,
@@ -1753,18 +1589,17 @@
 				E640529D1C3A7D5900598B62 /* cell_arrow_down@2x.png in Resources */,
 				E64052A01C3A7D5900598B62 /* cell_arrow_up@3x.png in Resources */,
 				E66F34D822902E0A0029E7E2 /* 好物1@2x.png in Resources */,
-				E61002C9234EC9FC003A4561 /* NBResource.bundle in Resources */,
 				E6353A071C3E1585005E3A2F /* cell_selected@3x.png in Resources */,
 				E6E6F5941C33DDC3008005EA /* navigationbar_back@2x.png in Resources */,
 				E66F34CA22902BB80029E7E2 /* 首页-未选中@2x.png in Resources */,
 				E6353A011C3E1418005E3A2F /* SmsSendCell.xib in Resources */,
-				E61002C8234EC9FC003A4561 /* SmartLink.bundle in Resources */,
 				E62C84721C44122300FD29D5 /* arrow@2x.png in Resources */,
 				E66AE7DD1C78C5AF009CB7EE /* CalendarTileView.xib in Resources */,
 				E6E6F5971C33DDC3008005EA /* navigationbarBg@3x.png in Resources */,
 				E6837C0A228AC19D007449A2 /* MaterialInfoCell.xib in Resources */,
 				E640529F1C3A7D5900598B62 /* cell_arrow_up@2x.png in Resources */,
 				E6AC2DF32286D29A00E9A95F /* 淘宝@3x.png in Resources */,
+				E66E12292351BF47008AF72D /* AlibabaAuthSDK.bundle in Resources */,
 				E6734BF3229415C200E3948A /* 品牌@2x.png in Resources */,
 				E6734BF8229415F400E3948A /* 购物车@2x.png in Resources */,
 				E63343851C46A28F0055A9C9 /* main_cell_arrow@2x.png in Resources */,
@@ -1785,34 +1620,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		631BAE71A5811C9802BE4554 /* [CP] Copy Pods Resources */ = {
+		5E2E3EAE115539AC6248A6FB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A50FADB9B95C68C440F2E35 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BlessingSMS/Pods-BlessingSMS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5718352B594BFC5815769BD /* [CP] Check Pods Manifest.lock */ = {
@@ -1821,13 +1644,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlessingSMS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1849,8 +1675,6 @@
 				04C8205B1FF6217E002EC0E7 /* ActivityShowView.m in Sources */,
 				E6837C02228ABAD2007449A2 /* JFBannerView.m in Sources */,
 				E656241E1C4A721E002DCE76 /* MBProgressHUD+EasyShow.m in Sources */,
-				E600ED791C36994500AB6916 /* MJRefreshAutoNormalFooter.m in Sources */,
-				E600ED7F1C36994500AB6916 /* MJRefreshNormalHeader.m in Sources */,
 				E6E6F5781C33D1AF008005EA /* DefaultNavView.m in Sources */,
 				E6353A001C3E1418005E3A2F /* SmsSendCell.m in Sources */,
 				E644076A1C7AF8860062102A /* DataStore.m in Sources */,
@@ -1860,24 +1684,19 @@
 				E692F9D41EDFFCF000E6FF0B /* ADManager.m in Sources */,
 				E6AD689B1C5FA2530056C04F /* PushManager.m in Sources */,
 				E60F105B1C397939006B62CC /* SMSCategoryCell.m in Sources */,
-				E600ED841C36994500AB6916 /* UIScrollView+MJRefresh.m in Sources */,
 				E60F10571C3971CE006B62CC /* SMSCategoryModel.m in Sources */,
 				E6837C09228AC19D007449A2 /* MaterialInfoCell.m in Sources */,
 				E6E6F5871C33D917008005EA /* MainShowViewController.m in Sources */,
 				E600ED451C36897900AB6916 /* LayerHelper.m in Sources */,
 				E6E6F53C1C33BAF4008005EA /* AppDelegate.m in Sources */,
-				E600ED7A1C36994500AB6916 /* MJRefreshAutoStateFooter.m in Sources */,
 				E604002D228287C5007099F6 /* SMSTabbarController.m in Sources */,
 				E6E6F5621C33CF7F008005EA /* DataReformer.m in Sources */,
 				E6A20EC61C81DF01005890FD /* AboutSMSViewController.m in Sources */,
 				E63539F81C3E06FE005E3A2F /* AddressBookHelper.m in Sources */,
-				E600ED781C36994500AB6916 /* MJRefreshAutoGifFooter.m in Sources */,
-				E600ED7C1C36994500AB6916 /* MJRefreshBackNormalFooter.m in Sources */,
 				E6734BE02293F92B00E3948A /* HaoWuThemeView.m in Sources */,
 				E6837BFF228A9665007449A2 /* CommonHelper.m in Sources */,
 				E63D30A51ED410370017488A /* TBManager.m in Sources */,
 				E66AE7DE1C78C5AF009CB7EE /* CalendarView.m in Sources */,
-				E600ED751C36994500AB6916 /* MJRefreshComponent.m in Sources */,
 				E66AE7E11C78C5AF009CB7EE /* CalendarViewController.m in Sources */,
 				04C8205A1FF6217E002EC0E7 /* ActivityManager.m in Sources */,
 				E6E6F5761C33D1AF008005EA /* BaseTabBarController.m in Sources */,
@@ -1885,19 +1704,16 @@
 				E65624271C4AA36C002DCE76 /* AnalyticsManager.m in Sources */,
 				E6837C05228ABADF007449A2 /* MaterialBannerCell.m in Sources */,
 				E6837BFC228A6E07007449A2 /* MaterialDetailModel.m in Sources */,
+				E6B31E7C235037A100060325 /* SmsADCell.m in Sources */,
 				E66AE7DC1C78C5AF009CB7EE /* CalendarTileView.m in Sources */,
-				E600ED741C36994500AB6916 /* MJRefreshBackFooter.m in Sources */,
 				E6935B441ED2E51400F3A279 /* RecommendCell.m in Sources */,
 				E63539FC1C3E0B1F005E3A2F /* AddressBookViewController.m in Sources */,
-				E600ED7D1C36994500AB6916 /* MJRefreshBackStateFooter.m in Sources */,
 				E660C78022850EE700DAB7CE /* YHQInfoModel.m in Sources */,
 				E6E67B78234F09AD002EF806 /* IPHelper.m in Sources */,
 				E66AE7DB1C78C5AF009CB7EE /* CalendarDataModel.m in Sources */,
 				E6AC2DF92286E08C00E9A95F /* HaoWuDetailModel.m in Sources */,
-				E600ED7E1C36994500AB6916 /* MJRefreshGifHeader.m in Sources */,
 				E656241A1C4A70A6002DCE76 /* MBProgressHUD.m in Sources */,
 				E67D91591ED42C1900F86AC3 /* ClientConfigManager.m in Sources */,
-				E600ED7B1C36994500AB6916 /* MJRefreshBackGifFooter.m in Sources */,
 				E66F34BB229016950029E7E2 /* HaowuDetailCell.m in Sources */,
 				E6734BE522940CCA00E3948A /* UIView+JFKit.m in Sources */,
 				E66609331C7A008200B5E5A7 /* CalendarNotifiCenter.m in Sources */,
@@ -1905,28 +1721,21 @@
 				E60EDFD71C4D36D300FAA637 /* PinyinHelper.m in Sources */,
 				E6935B391ED2CB7700F3A279 /* RecommendViewController.m in Sources */,
 				E6472FF81C7EEC7D00C3D9BB /* CalendarNotiTableViewCell.m in Sources */,
-				E600ED821C36994500AB6916 /* MJRefreshConst.m in Sources */,
 				E6935B321ED2866700F3A279 /* DateHelper.m in Sources */,
 				E66609361C7A020600B5E5A7 /* CalendarNotiModel.m in Sources */,
 				E6935B481ED2E90C00F3A279 /* RecommendCollectionView.m in Sources */,
 				E66BD4421C352F57005E3597 /* SMSInfoModel.m in Sources */,
 				E6E6F5391C33BAF4008005EA /* main.m in Sources */,
 				E60400352282B782007099F6 /* NSString+JFKit.m in Sources */,
-				E600ED731C36994500AB6916 /* MJRefreshAutoFooter.m in Sources */,
 				E66AE7DF1C78C5AF009CB7EE /* NSDate+CalendarHelper.m in Sources */,
 				E666093A1C7A0CDE00B5E5A7 /* CalendarNotiViewController.m in Sources */,
 				E6E6F5611C33CF7F008005EA /* BaseAPIManager.m in Sources */,
 				E66AE7DA1C78C5AF009CB7EE /* CalendarDatePickerView.m in Sources */,
-				E600ED761C36994500AB6916 /* MJRefreshFooter.m in Sources */,
 				E6734BE822940DB100E3948A /* HaoWuThemeViewController.m in Sources */,
-				E600ED851C36994500AB6916 /* UIView+MJExtension.m in Sources */,
 				E6E67B84234F1915002EF806 /* SMSWebViewController.m in Sources */,
 				E64052A41C3A845A00598B62 /* SMSSendViewController.m in Sources */,
 				E6935B351ED2B8B300F3A279 /* TBAPIManager.m in Sources */,
-				E600ED831C36994500AB6916 /* UIScrollView+MJExtension.m in Sources */,
-				E600ED771C36994500AB6916 /* MJRefreshHeader.m in Sources */,
 				E604003122828D2E007099F6 /* HaoWuViewController.m in Sources */,
-				E600ED801C36994500AB6916 /* MJRefreshStateHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1971,7 +1780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -2012,7 +1821,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2031,6 +1840,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2040,7 +1850,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2048,8 +1858,17 @@
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/XGPushSDK",
-					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/GDTSDK",
+					"${PODS_ROOT}/GDTMobSDK/lib",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeixinSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
+					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/XGPushSDK",
+					"${PODS_ROOT}/GDTMobSDK/lib",
+				);
+				MARKETING_VERSION = 5.1.0;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"$(inherited)",
@@ -2084,6 +1903,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 92U9K98A75;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2093,7 +1913,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BlessingSMS/PrefixHeader.pch";
 				INFOPLIST_FILE = BlessingSMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2101,8 +1921,9 @@
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/WeiboSDK",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/UMAnalytics",
 					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/XGPushSDK",
-					"$(PROJECT_DIR)/BlessingSMS/OpenPlatformSDK/GDTSDK",
+					"${PODS_ROOT}/GDTMobSDK/lib",
 				);
+				MARKETING_VERSION = 5.1.0;
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"$(inherited)",

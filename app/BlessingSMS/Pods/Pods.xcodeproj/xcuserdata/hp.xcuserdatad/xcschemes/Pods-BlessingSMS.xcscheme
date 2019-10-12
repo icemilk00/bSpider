@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2C7BDDA9CB627FC7D341C596672A6F61'
-               BlueprintName = 'Pods-BlessingSMS'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-BlessingSMS.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "31B01BFF86D3D05E2A8CCD3AD3663666"
+               BuildableName = "libPods-BlessingSMS.a"
+               BlueprintName = "Pods-BlessingSMS"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -13,7 +13,13 @@
 #import "RecommendViewController.h"
 #import "ActivityManager.h"
 
-@interface MainShowViewController ()
+#import "GDTNativeExpressAd.h"
+#import "GDTNativeExpressAdView.h"
+#import "SmsADCell.h"
+
+#define AD_SHOW_INDEX  6
+
+@interface MainShowViewController () <GDTNativeExpressAdDelegete>
 {
     NSMutableArray *_dataSourceArray;
     NSInteger pageIndex;
@@ -27,6 +33,11 @@
 @property (strong, nonatomic) UITableView *showTableView;
 @property (strong, nonatomic) UIButton *recommendButton;    //淘宝客推荐
 @property (strong, nonatomic) UIButton *hbButton;           //红包
+@property (assign, nonatomic) BOOL firstIn;
+
+@property (nonatomic, strong) NSMutableArray *expressAdViews;
+@property (nonatomic, strong) GDTNativeExpressAd *nativeExpressAd;
+@property (nonatomic, assign) BOOL hasLoadAd;
 
 @end
 
@@ -39,6 +50,9 @@
     self.title = @"推荐";
     pageIndex = 1;
     currentCategoryId = @"0";
+    _hasLoadAd = NO;
+    self.firstIn = YES;
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hbShow:) name:ActivityUpdateNotifi object:nil];
     
@@ -46,6 +60,11 @@
     [self.defaultNavView.leftButton setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     
     [self arrayInit];
+    
+    self.nativeExpressAd = [[GDTNativeExpressAd alloc] initWithAppId:@"1106197212" placementId:@"6020680663999247" adSize:CGSizeMake(SCREEN_WIDTH - 20, 87)];
+    self.nativeExpressAd.delegate = self;
+    [self.nativeExpressAd loadAd:10];
+    
     [self loadData];
     
     [self.view addSubview:self.showTableView];
@@ -56,6 +75,7 @@
 -(void)arrayInit
 {
     _dataSourceArray = [[NSMutableArray alloc] init];
+    self.expressAdViews = [[NSMutableArray alloc] init];
 }
 
 -(void)loadDataWithCategoryId:(NSString *)requestCategoryId andCategoryName:(NSString *)categoryName
@@ -69,22 +89,56 @@
     currentCategoryId = requestCategoryId;
     pageIndex = 1;
     [self loadData];
-    
+    [self.nativeExpressAd loadAd:10];
 }
 
 -(void)loadData
 {
+    if (self.firstIn) [self.view showHud];
     [self.smsApiManager getSmsWithCategoryId:currentCategoryId andPageNum:pageIndex];
+    
+}
+
+#pragma mark - AD Delegate
+- (void)nativeExpressAdSuccessToLoad:(GDTNativeExpressAd
+                                      *)nativeExpressAd views:(NSArray<__kindof
+                                                               GDTNativeExpressAdView *> *)views
+{
+    [self.expressAdViews removeAllObjects];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    if (self.expressAdViews.count > 0) {
+        [self.expressAdViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            GDTNativeExpressAdView *expressView = (GDTNativeExpressAdView *)obj;
+            expressView.controller = self;
+            [expressView render];
+        }];
+        _hasLoadAd = YES;
+    }
+    // 广告位 render 后刷新 tableView
+    [self.showTableView reloadData];
+}
+
+- (void)nativeExpressAdFailToLoad:(GDTNativeExpressAd *)nativeExpressAd error:(NSError *)error
+{
+    NSLog(@"Express Ad Load Fail : %@",error);
 }
 
 #pragma mark - APIManagerDelegate
 -(void)APIManagerDidSucess:(BaseAPIManager *)manager
 {
+    self.firstIn = NO;
+    [self.view hideHud];
     if (manager == self.smsApiManager) [self getSmsSuccessWithManager:manager];
 }
 
 -(void)APIManagerDidFailed:(BaseAPIManager *)manager
 {
+    self.firstIn = NO;
+    [self.view hideHud];
 //    NSLog(@"请求失败: %@", manager.requestError.description);
     [_showTableView.mj_header endRefreshing];
     [_showTableView.mj_footer endRefreshing];
@@ -117,36 +171,85 @@
 #pragma mark - TableViewDelegate and DataSource
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *content = ((SMSInfoModel *)(_dataSourceArray[indexPath.row])).content;
     
-    return [LayerHelper sizeWithContent:content andFont:[UIFont systemFontOfSize:15] andDrawSize:CGSizeMake(SCREEN_WIDTH - 15.0f, MAXFLOAT)].height + 14.0f + 14.0f;
+    if (_hasLoadAd && indexPath.row % AD_SHOW_INDEX == 0 && indexPath.row != 0 && indexPath.row/AD_SHOW_INDEX < self.expressAdViews.count) {
+        // cell 高度取 adView render 后的值，这里的值是SDK算出来的
+        UIView *view = [self.expressAdViews objectAtIndex:indexPath.row / AD_SHOW_INDEX];
+        return view.bounds.size.height + 14;
+    } else {
+        NSInteger showAdNum = indexPath.row/AD_SHOW_INDEX;
+        showAdNum = showAdNum > self.expressAdViews.count ?  self.expressAdViews.count :  showAdNum;
+        NSInteger dataIndex = indexPath.row - showAdNum;
+        SMSInfoModel *model = _dataSourceArray[dataIndex];
+        NSString *content = model.content;
+        return [LayerHelper sizeWithContent:content andFont:[UIFont systemFontOfSize:15] andDrawSize:CGSizeMake(SCREEN_WIDTH - 15.0f, MAXFLOAT)].height + 14.0f + 14.0f;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return _dataSourceArray.count;
+    if (_hasLoadAd) {
+        NSInteger adNum = _dataSourceArray.count/AD_SHOW_INDEX;         //目前可以容纳的总广告量
+        NSInteger adNum_now = self.expressAdViews.count;    //目前拉出来的总共广告量
+        NSInteger showAdCount = adNum >= adNum_now ? adNum_now : adNum;
+        return _dataSourceArray.count + showAdCount;
+    } else {
+        return _dataSourceArray.count;
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    SmsCell *cell = (SmsCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsCell" owner:self options:nil] lastObject];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    UITableViewCell *cell = nil;
+    if (_hasLoadAd && indexPath.row % AD_SHOW_INDEX == 0 && indexPath.row != 0 && indexPath.row/AD_SHOW_INDEX < self.expressAdViews.count) {
+        SmsADCell *cell = (SmsADCell*)[tableView dequeueReusableCellWithIdentifier:@"SmsADCell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsADCell" owner:self options:nil] lastObject];
+            //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        UIView *subView = (UIView *)[cell.bgView viewWithTag:1000];
+        if ([subView superview]) {
+            [subView removeFromSuperview];
+        }
+        UIView *view = [self.expressAdViews objectAtIndex:indexPath.row / AD_SHOW_INDEX];
+        view.tag = 1000;
+        [cell.bgView addSubview:view];
+        return cell;
+    } else {
+        SmsCell *cell = (SmsCell*)[tableView dequeueReusableCellWithIdentifier:@"smsCell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"SmsCell" owner:self options:nil] lastObject];
+            //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        NSInteger showAdNum = indexPath.row/AD_SHOW_INDEX;
+        showAdNum = showAdNum > self.expressAdViews.count ?  self.expressAdViews.count :  showAdNum;
+        NSInteger dataIndex = indexPath.row - showAdNum;
+        SMSInfoModel *model = _dataSourceArray[dataIndex];
+        
+        cell.contentLabel.text = model.content;
+        return cell;
     }
-    
-    SMSInfoModel *model = _dataSourceArray[indexPath.row];
-    
-    cell.contentLabel.text = model.content;
     return cell;
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SMSInfoModel *infoModel = _dataSourceArray[indexPath.row];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[SmsADCell class]]) {
+        return;
+    }
     
+    NSInteger showAdNum = indexPath.row/AD_SHOW_INDEX;
+    showAdNum = showAdNum > self.expressAdViews.count ?  self.expressAdViews.count :  showAdNum;
+    NSInteger dataIndex = indexPath.row - showAdNum;
+    SMSInfoModel *infoModel = _dataSourceArray[dataIndex];
+        
     [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
     
     SMSSendViewController *smsSendVC = [[SMSSendViewController alloc] initWithSMSModel:infoModel];
@@ -199,6 +302,7 @@
 -(void)headRefresh
 {
     pageIndex = 1;
+    [self.nativeExpressAd loadAd:10];
     [self loadData];
 }
 

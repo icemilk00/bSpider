@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarNotiViewController">
             <connections>
                 <outlet property="dateLabel" destination="9nI-Fa-OG5" id="2XV-IX-EMf"/>
+                <outlet property="lastLine" destination="WXu-WI-yHQ" id="epG-jg-X9x"/>
                 <outlet property="notiContentTextView" destination="jp5-n9-tNL" id="eHi-4W-5eK"/>
                 <outlet property="notiTimeBgView" destination="uoC-Pk-Oem" id="Lig-7b-ci3"/>
                 <outlet property="noticeTextViewTop" destination="cah-Xa-7JZ" id="2K9-u2-6gT"/>
@@ -160,7 +159,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="20.800000000000001" y="82.758620689655174"/>
+            <point key="canvasLocation" x="-262" y="56"/>
         </view>
     </objects>
     <resources>

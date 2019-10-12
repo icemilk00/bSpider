@@ -66,6 +66,9 @@
     selectTextAttrs[NSForegroundColorAttributeName] = [UIColor redColor];
     [childVc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [childVc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+    if (@available(iOS 13.0, *)) {
+        [[UITabBar appearance] setUnselectedItemTintColor:[UIColor grayColor]];
+    }
 //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
 //    nav.navigationBar.translucent = NO;
     // 添加为子控制器

@@ -182,6 +182,7 @@
     SettingViewController *settingVC = [[SettingViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:settingVC];
     nav.navigationBarHidden = YES;
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.sideMenuViewController presentViewController:nav animated:YES completion:nil];
 }
 

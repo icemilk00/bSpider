@@ -17,7 +17,7 @@
 
 static ShareManager *shareManager = nil;
 
-@interface ShareManager ()
+@interface ShareManager () 
 {
     OpenPlatformType _openPlatformType;
     NSString *_shareText;

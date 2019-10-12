@@ -11,7 +11,13 @@
 #import "HaoWuDetailViewController.h"
 #import "HaoWuThemeView.h"
 #define angelToRandian(x) ((x)/180.0*M_PI)
-@interface HaoWuViewController ()
+
+#import "GDTNativeExpressAd.h"
+#import "GDTNativeExpressAdView.h"
+
+#define AD_SHOW_INDEX  6
+
+@interface HaoWuViewController () <GDTNativeExpressAdDelegete>
 {
     NSMutableArray *_dataSourceArray;
     NSInteger _pageIndex;
@@ -19,7 +25,12 @@
 @property (strong, nonatomic) TB_MaterialAPIManager *tb_MaterialAPIManager;
 @property (strong, nonatomic) UITableView *showTableView;
 @property (strong, nonatomic) HaoWuThemeView *themeView;
-@property (strong, nonatomic) UIButton *QYHButton;           //红包
+@property (strong, nonatomic) UIButton *QYHButton;           //推荐按钮
+
+@property (nonatomic, strong) NSMutableArray *expressAdViews;
+@property (nonatomic, strong) GDTNativeExpressAd *nativeExpressAd;
+@property (nonatomic, assign) BOOL hasLoadAd;
+
 @end
 
 @implementation HaoWuViewController
@@ -35,22 +46,32 @@
     [self arrayInit];
     
     [self.view addSubview:self.showTableView];
-    if([[ClientConfigManager sharedInstance] canGoDetailPage])
-    {
-        [self.view addSubview:self.QYHButton];
-        CAKeyframeAnimation* anim=[CAKeyframeAnimation animation];
-        anim.keyPath=@"transform.rotation";
-        anim.values=@[@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0))];
-        anim.repeatCount = MAXFLOAT;
-        anim.duration = 3;
-        anim.removedOnCompletion = NO;
-        anim.fillMode = kCAFillModeForwards;
-        [self.QYHButton.layer addAnimation:anim forKey:nil];
-    }
     
+    [self.view addSubview:self.QYHButton];
+    CAKeyframeAnimation* anim=[CAKeyframeAnimation animation];
+    anim.keyPath=@"transform.rotation";
+    anim.values=@[@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(-9)),@(angelToRandian(9)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0)),@(angelToRandian(0))];
+    anim.repeatCount = MAXFLOAT;
+    anim.duration = 3;
+    anim.removedOnCompletion = NO;
+    anim.fillMode = kCAFillModeForwards;
+    [self.QYHButton.layer addAnimation:anim forKey:nil];
+
+    
+    self.nativeExpressAd = [[GDTNativeExpressAd alloc] initWithAppId:@"1106197212" placementId:@"6090784686841960" adSize:CGSizeMake(SCREEN_WIDTH - 20, 87)];
+    self.nativeExpressAd.delegate = self;
+    [self.nativeExpressAd loadAd:10];
     
     [self loadData];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if([[ClientConfigManager sharedInstance] canGoDetailPage]) {
+        self.QYHButton.hidden = NO;
+    
+    }
 }
 
 -(void)QYHAction{
@@ -63,6 +84,7 @@
 -(void)arrayInit
 {
     _dataSourceArray = [[NSMutableArray alloc] init];
+    self.expressAdViews = [[NSMutableArray alloc] init];
 }
 
 //4094 特惠
@@ -71,12 +93,54 @@
     [self.tb_MaterialAPIManager getTB_MaterialWithId:@"9660" andPageNum:_pageIndex];
 }
 
+#pragma mark - AD Delegate
+- (void)nativeExpressAdSuccessToLoad:(GDTNativeExpressAd
+                                      *)nativeExpressAd views:(NSArray<__kindof
+                                                               GDTNativeExpressAdView *> *)views
+{
+    [self.expressAdViews removeAllObjects];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    [self.expressAdViews addObjectsFromArray:views];
+    if (self.expressAdViews.count > 0) {
+        [self.expressAdViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            GDTNativeExpressAdView *expressView = (GDTNativeExpressAdView *)obj;
+            expressView.controller = self;
+            [expressView render];
+        }];
+        _hasLoadAd = YES;
+    }
+    // 广告位 render 后刷新 tableView
+    [self.showTableView reloadData];
+}
+
+- (void)nativeExpressAdFailToLoad:(GDTNativeExpressAd *)nativeExpressAd error:(NSError *)error
+{
+    NSLog(@"Express Ad Load Fail : %@",error);
+}
+
 #pragma mark - TableViewDelegate and DataSource
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_hasLoadAd && indexPath.row % AD_SHOW_INDEX == 0 && indexPath.row != 0 && indexPath.row/AD_SHOW_INDEX < self.expressAdViews.count) {
+        // cell 高度取 adView render 后的值，这里的值是SDK算出来的
+        UIView *view = [self.expressAdViews objectAtIndex:indexPath.row / AD_SHOW_INDEX];
+        return view.bounds.size.height;
+    }
+    
     return 106;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    if (_hasLoadAd) {
+        NSInteger adNum = _dataSourceArray.count/AD_SHOW_INDEX;         //目前可以容纳的总广告量
+        NSInteger adNum_now = self.expressAdViews.count;    //目前拉出来的总共广告量
+        NSInteger showAdCount = adNum >= adNum_now ? adNum_now : adNum;
+        return _dataSourceArray.count + showAdCount;
+    }
     
     return _dataSourceArray.count;
 }
@@ -84,21 +148,49 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (_hasLoadAd && indexPath.row % AD_SHOW_INDEX == 0 && indexPath.row != 0 && indexPath.row/AD_SHOW_INDEX < self.expressAdViews.count) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SmsADCell"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] init];
+            //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        UIView *subView = (UIView *)[cell.contentView viewWithTag:1000];
+        if ([subView superview]) {
+            [subView removeFromSuperview];
+        }
+        UIView *view = [self.expressAdViews objectAtIndex:indexPath.row / AD_SHOW_INDEX];
+        view.tag = 1000;
+        [cell.contentView addSubview:view];
+        return cell;
+    }
+    
     YHQTableViewCell *cell = (YHQTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"YHQTableViewCell"];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"YHQTableViewCell" owner:self options:nil] lastObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    MaterialDetailModel *model = _dataSourceArray[indexPath.row];
+    NSInteger showAdNum = indexPath.row/AD_SHOW_INDEX;
+    showAdNum = showAdNum > self.expressAdViews.count ?  self.expressAdViews.count :  showAdNum;
+    NSInteger dataIndex = indexPath.row - showAdNum;
+    MaterialDetailModel *model = _dataSourceArray[dataIndex];
     [cell setupWithModel:model];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MaterialDetailModel *infoModel = _dataSourceArray[indexPath.row];
-//    [AnalyticsManager eventSmsChooseWithCategoryID:infoModel.category_id withSMSID:infoModel.id];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (![cell isKindOfClass:[YHQTableViewCell class]]) {
+        return;
+    }
+    
+    NSInteger showAdNum = indexPath.row/AD_SHOW_INDEX;
+    showAdNum = showAdNum > self.expressAdViews.count ?  self.expressAdViews.count :  showAdNum;
+    NSInteger dataIndex = indexPath.row - showAdNum;
+    MaterialDetailModel *infoModel = _dataSourceArray[dataIndex];
     
     HaoWuDetailViewController *vc = [[HaoWuDetailViewController alloc] init];
     vc.infoModel = infoModel;
@@ -109,7 +201,9 @@
 -(void)headRefresh
 {
     _pageIndex = 1;
+    [self.nativeExpressAd loadAd:10];
     [self loadData];
+    
 }
 
 -(void)footRefresh
@@ -195,6 +289,7 @@
         _QYHButton.layer.shadowColor = [UIColor grayColor].CGColor;
         _QYHButton.layer.shadowOffset = CGSizeMake(1, 1);
         _QYHButton.layer.shadowOpacity = 0.8;
+        _QYHButton.hidden = YES;
     }
     return _QYHButton;
 }

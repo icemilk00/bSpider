@@ -9,7 +9,9 @@
 #import "SMSSendViewController.h"
 #import "AddressBookViewController.h"
 
-@interface SMSSendViewController ()
+#import "GDTUnifiedInterstitialAd.h"
+
+@interface SMSSendViewController () <GDTUnifiedInterstitialAdDelegate>
 {
     SMSInfoModel *_currentShowSMSInfoModel;
 }
@@ -21,6 +23,9 @@
 @property (nonatomic ,strong) UIButton *qqSendButton;
 @property (nonatomic ,strong) UIButton *weiboSendButton;
 @property (nonatomic ,strong) UIImageView *smsBgImageView;
+
+@property (nonatomic ,assign) BOOL isFirstIn;
+@property (nonatomic, strong) GDTUnifiedInterstitialAd *interstitial;
 
 @end
 
@@ -39,6 +44,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.isFirstIn = YES;
     self.title = _currentShowSMSInfoModel.category_name;
     
     [self setupDefaultNavWitConfig:@[KeyLeftButton]];
@@ -51,6 +57,42 @@
     [self.view addSubview:self.qqSendButton];
     [self.view addSubview:self.weiboSendButton];
     
+    [self loadAd];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (self.interstitial && self.interstitial.isAdValid && !_isFirstIn) {
+        [self showAd];
+    }
+    _isFirstIn = NO;
+}
+
+
+- (void)loadAd {
+    if (self.interstitial) {
+        self.interstitial.delegate = nil;
+        self.interstitial = nil;
+    }
+    self.interstitial = [[GDTUnifiedInterstitialAd alloc] initWithAppId:@"1106197212" placementId:@"5040584676779403"];
+    self.interstitial.delegate = self;
+
+    [self.interstitial loadAd];
+}
+
+- (void)showAd  {
+    [self.interstitial presentAdFromRootViewController:self];
+}
+
+/**
+ *  全屏广告页被关闭
+ */
+- (void)unifiedInterstitialAdDidDismissFullScreenModal:(GDTUnifiedInterstitialAd *)unifiedInterstitial {
+    [self loadAd];
+}
+
+- (void)unifiedInterstitialDidDismissScreen:(GDTUnifiedInterstitialAd *)unifiedInterstitial{
+    
+    [self loadAd];
 }
 
 #pragma mark - button action
@@ -59,8 +101,8 @@
     
     [AnalyticsManager eventSmsSendWithPlatform:eventSMSSendFirst withCategoryID:_currentShowSMSInfoModel.category_id withSMSID:_currentShowSMSInfoModel.id];
     AddressBookViewController *addressVC = [[AddressBookViewController alloc] initWithSmsInfo:_currentShowSMSInfoModel];
+    addressVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.navigationController presentViewController:addressVC animated:YES completion:nil];
-
 }
 
 -(void)weixinSend
@@ -158,6 +200,19 @@
     }
     return _weiboSendButton;
 }
+
+//- (GDTUnifiedBannerView *)bannerView
+//{
+//    if (!_bannerView) {
+//        CGRect rect = {CGPointMake(0.0f, self.view.height - self.view.width/6.4f), CGSizeMake(self.view.width, self.view.width/6.4f)};
+//        _bannerView = [[GDTUnifiedBannerView alloc]
+//                       initWithFrame:rect appId:@"1106197212"
+//                       placementId:@"7040886655460813"
+//                       viewController:self];
+//        _bannerView.delegate = self;
+//    }
+//    return _bannerView;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

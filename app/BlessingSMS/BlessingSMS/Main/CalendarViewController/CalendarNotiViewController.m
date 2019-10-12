@@ -8,7 +8,7 @@
 
 #import "CalendarNotiViewController.h"
 #import "CalendarNotiModel.h"
-
+#import "GDTUnifiedBannerView.h"
 
 typedef NS_ENUM(NSInteger, CalendarNotiType) {
 
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     CalendarNotiTypeEdit
 };
 
-@interface CalendarNotiViewController ()
+@interface CalendarNotiViewController () <GDTUnifiedBannerViewDelegate>
 {
     CalendarNotiType calendarNotiType;
     NSInteger _editIndex;
@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
 @property (nonatomic, strong) CalendarDataModel *calendarModel;
 
 @property (nonatomic, strong) NSDate *pushDate;
+
+@property (nonatomic, strong) GDTUnifiedBannerView *bannerView;
 
 @end
 
@@ -81,11 +83,33 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
     }
     
     self.dateLabel.text = [NSString stringWithFormat:@"%lu月%lu日 %@", (unsigned long)_calendarModel.month, (unsigned long)_calendarModel.day, [_calendarModel.date weeklyOrdinalityStr]];
+    
+//    [self loadAdAndShow];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadAdAndShow];
+}
+
+- (void)loadAdAndShow {
+    if (self.bannerView.superview) {
+        [self removeAd];
+    }
+    [self.view addSubview:self.bannerView];
+    [self.bannerView loadAdAndShow];
+}
+
+- (void)removeAd {
+    self.bannerView.delegate = nil;
+    [self.bannerView removeFromSuperview];
+    self.bannerView = nil;
 }
 
 -(void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.noticeTextViewTop.constant = NAVIGATIONBAR_HEIGHT + 40;
+
 }
 
 
@@ -218,6 +242,20 @@ typedef NS_ENUM(NSInteger, CalendarNotiType) {
         return;
     }
 }
+
+- (GDTUnifiedBannerView *)bannerView
+{
+    if (!_bannerView) {
+        CGRect rect = {CGPointMake(0.0f, self.lastLine.frame.origin.y + 5), CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH/6.4f)};
+        _bannerView = [[GDTUnifiedBannerView alloc]
+                       initWithFrame:rect appId:@"1106197212"
+                       placementId:@"7040886655460813"
+                       viewController:self];
+        _bannerView.delegate = self;
+    }
+    return _bannerView;
+}
+
 
 #pragma mark - setter and getter
 - (void)didReceiveMemoryWarning {
